@@ -25,13 +25,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-dxn-darkgreen shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-dxn-gold rounded-full flex items-center justify-center font-bold text-white text-sm">DXN</div>
-            <span className="text-white font-bold text-lg hidden sm:block">Grow with DXN</span>
+            <img src="/logo.png" alt="Grow with DXN" className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -41,7 +40,7 @@ export default function Navbar() {
                 key={l.to}
                 to={l.to}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? 'text-dxn-gold' : 'text-gray-200 hover:text-white'}`
+                  `text-sm font-medium transition-colors ${isActive ? 'text-dxn-green font-bold' : 'text-gray-700 hover:text-dxn-darkgreen'}`
                 }
                 end={l.to === '/'}
               >
@@ -53,7 +52,7 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             {/* Cart */}
-            <Link to="/cart" className="relative text-gray-200 hover:text-white transition-colors">
+            <Link to="/cart" className="relative text-gray-700 hover:text-dxn-darkgreen transition-colors">
               <FiShoppingCart size={22} />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-dxn-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
@@ -67,7 +66,7 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-gray-700 hover:text-dxn-darkgreen transition-colors"
                 >
                   <div className="w-8 h-8 bg-dxn-gold rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {user.name?.charAt(0).toUpperCase()}
@@ -95,7 +94,7 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="hidden md:flex items-center gap-2">
-                <Link to="/login" className="text-gray-200 hover:text-white text-sm font-medium transition-colors">Login</Link>
+                <Link to="/login" className="text-gray-700 hover:text-dxn-darkgreen text-sm font-medium transition-colors">Login</Link>
                 <Link to="/register" className="bg-dxn-gold text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-dxn-lightgold transition-colors">
                   Join Now
                 </Link>
@@ -103,7 +102,7 @@ export default function Navbar() {
             )}
 
             {/* Mobile menu button */}
-            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-gray-200 hover:text-white">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-gray-700 hover:text-dxn-darkgreen">
               {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
           </div>
@@ -111,16 +110,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden pb-4 border-t border-green-800 mt-2">
+          <div className="md:hidden pb-4 border-t border-gray-200 mt-2">
             <div className="flex flex-col gap-2 pt-3">
               {navLinks.map((l) => (
-                <NavLink key={l.to} to={l.to} onClick={() => setMenuOpen(false)} className="text-gray-200 hover:text-white px-2 py-2 text-sm font-medium" end={l.to === '/'}>
+                <NavLink key={l.to} to={l.to} onClick={() => setMenuOpen(false)} className="text-gray-700 hover:text-dxn-darkgreen px-2 py-2 text-sm font-medium" end={l.to === '/'}>
                   {l.label}
                 </NavLink>
               ))}
               {!user && (
                 <>
-                  <Link to="/login" onClick={() => setMenuOpen(false)} className="text-gray-200 hover:text-white px-2 py-2 text-sm">Login</Link>
+                  <Link to="/login" onClick={() => setMenuOpen(false)} className="text-gray-700 hover:text-dxn-darkgreen px-2 py-2 text-sm">Login</Link>
                   <Link to="/register" onClick={() => setMenuOpen(false)} className="bg-dxn-gold text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Join Now</Link>
                 </>
               )}

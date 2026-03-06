@@ -8,8 +8,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-1 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 bg-dxn-gold rounded-full flex items-center justify-center font-bold text-white text-sm">DXN</div>
-            <span className="text-white font-bold text-lg">Grow with DXN</span>
+            <img src="/logo.png" alt="Grow with DXN" className="h-10 w-auto object-contain" />
           </div>
           <p className="text-sm text-gray-400 mb-4">
             Your trusted DXN distributor. We help you achieve health and financial freedom through DXN's world-class products.
