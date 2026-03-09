@@ -493,8 +493,11 @@ export default function BlogPost() {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
           <div className="prose prose-lg max-w-none">
             {post.content?.split('\n\n').map((para, i) => {
+              if (para.startsWith('## ')) {
+                return <h2 key={i} style={{ fontSize: '30px' }} className="font-bold text-dxn-darkgreen mt-8 mb-3">{para.replace(/^## /, '')}</h2>;
+              }
               if (para.startsWith('**') && para.endsWith('**')) {
-                return <h2 key={i} className="text-xl font-bold text-dxn-darkgreen mt-8 mb-3">{para.replace(/\*\*/g, '')}</h2>;
+                return <h1 key={i} style={{ fontSize: '50px' }} className="font-bold text-dxn-darkgreen mt-10 mb-4 leading-tight">{para.replace(/\*\*/g, '')}</h1>;
               }
               if (para.startsWith('**')) {
                 const parts = para.split('**');
@@ -506,8 +509,25 @@ export default function BlogPost() {
                   </div>
                 );
               }
+              if (para.startsWith('> ')) {
+                return <blockquote key={i} className="border-l-4 border-dxn-gold pl-4 italic text-gray-500 my-4">{para.replace(/^> /, '')}</blockquote>;
+              }
+              if (para === '---') {
+                return <hr key={i} className="my-8 border-gray-200" />;
+              }
+              if (para.match(/^- /)) {
+                return (
+                  <ul key={i} className="list-disc pl-6 mb-4 space-y-1 text-gray-600">
+                    {para.split('\n').map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}
+                  </ul>
+                );
+              }
               if (para.match(/^\d+\./)) {
-                return <p key={i} className="text-gray-600 leading-relaxed mb-3 pl-4">{para}</p>;
+                return (
+                  <ol key={i} className="list-decimal pl-6 mb-4 space-y-1 text-gray-600">
+                    {para.split('\n').map((item, j) => <li key={j}>{item.replace(/^\d+\.\s*/, '')}</li>)}
+                  </ol>
+                );
               }
               return <p key={i} className="text-gray-600 leading-relaxed mb-4">{para}</p>;
             })}
