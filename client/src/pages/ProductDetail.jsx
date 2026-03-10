@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
@@ -11,6 +11,18 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [qty, setQty] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [zoom, setZoom] = useState(false);
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+  const imgContainerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!imgContainerRef.current) return;
+    const rect = imgContainerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setZoomPos({ x, y });
+  };
 
   useEffect(() => {
     axios.get(`/api/products/${id}`)
@@ -40,13 +52,61 @@ export default function ProductDetail() {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-2xl shadow-lg overflow-hidden p-8">
-          {/* Image */}
-          <div className="bg-gray-100 rounded-xl overflow-hidden aspect-square">
-            <img
-              src={product.image || `https://placehold.co/600x600/1a5c2e/white?text=${encodeURIComponent(product.name)}`}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
+          {/* Images */}
+          <div>
+            <div
+              ref={imgContainerRef}
+              className="bg-gray-100 rounded-xl overflow-hidden aspect-square mb-3 relative cursor-crosshair"
+              onMouseEnter={() => setZoom(true)}
+              onMouseLeave={() => setZoom(false)}
+              onMouseMove={handleMouseMove}
+            >
+              <img
+                src={selectedImage || product.image || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`}
+                alt={product.name}
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+              {zoom && (
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage: `url(${selectedImage || product.image || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`})`,
+                    backgroundSize: '250%',
+                    backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                />
+              )}
+              {zoom && (
+                <span className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                  Move to zoom
+                </span>
+              )}
+            </div>
+            {product.images?.length > 0 && (
+              <div className="grid grid-cols-5 gap-2">
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${!selectedImage ? 'border-dxn-green' : 'border-gray-200 hover:border-gray-400'}`}
+                >
+                  <img
+                    src={product.image || `https://placehold.co/100x100/16392d/white?text=${encodeURIComponent(product.name?.charAt(0))}`}
+                    alt="Main"
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+                {product.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImage(img)}
+                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === img ? 'border-dxn-green' : 'border-gray-200 hover:border-gray-400'}`}
+                  >
+                    <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Info */}

@@ -16,6 +16,8 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import AdminPanel from './pages/AdminPanel';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -34,6 +36,8 @@ export default function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
               <Route path="/admin" element={<PrivateRoute adminOnly><AdminPanel /></PrivateRoute>} />

@@ -14,11 +14,14 @@ const productSchema = new mongoose.Schema(
     images: [{ type: String }],
     inStock: { type: Boolean, default: true },
     stockCount: { type: Number, default: 0 },
-    sku: { type: String, unique: true },
+    sku: { type: String, unique: true, sparse: true },
     benefits: [{ type: String }],
     ingredients: { type: String },
     usage: { type: String },
     featured: { type: Boolean, default: false },
+    dxnId: { type: String, default: '' },
+    sourceUrl: { type: String, default: '' },
+    dxnCategory: { type: String, default: '' },
     rating: { type: Number, default: 0 },
     reviews: [
       {

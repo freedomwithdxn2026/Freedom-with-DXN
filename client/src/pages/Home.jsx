@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
+import Bestsellers from '../components/Bestsellers';
 import { FiArrowRight, FiStar, FiUsers, FiGlobe, FiAward, FiCheck } from 'react-icons/fi';
 
 const STATS = [
@@ -37,7 +38,7 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="bg-hero min-h-[85vh] flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #c9973a 0%, transparent 50%)' }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #dfc378 0%, transparent 50%)' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-block bg-dxn-gold/20 text-dxn-gold px-4 py-1 rounded-full text-sm font-medium mb-4">
@@ -82,7 +83,7 @@ export default function Home() {
             <div key={label} className="text-center text-white">
               <Icon className="mx-auto mb-2 text-dxn-gold" size={28} />
               <div className="text-3xl font-bold">{value}</div>
-              <div className="text-green-200 text-sm">{label}</div>
+              <div className="text-gray-300 text-sm">{label}</div>
             </div>
           ))}
         </div>
@@ -115,8 +116,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Join */}
+      {/* Bestsellers */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <Bestsellers limit={4} />
+        </div>
+      </section>
+
+      {/* Why Join */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-dxn-gold font-semibold text-sm uppercase tracking-widest">Business Opportunity</span>
@@ -174,6 +182,40 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Preview */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="section-title">Latest from Our Blog</h2>
+          <p className="section-subtitle">Health tips, business guides, and success stories</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: '10 Amazing Benefits of Ganoderma', slug: '10-benefits-ganoderma', category: 'health', excerpt: 'Discover why Ganoderma has been called the King of Herbs for over 2000 years.' },
+              { title: 'How to Start Your DXN Business', slug: 'start-dxn-business-2026', category: 'business', excerpt: 'A complete guide for beginners who want to start earning with DXN.' },
+              { title: '5 Tips to Grow Your Downline Fast', slug: '5-tips-grow-downline', category: 'tips', excerpt: 'Proven strategies to build your DXN downline using social media and referrals.' },
+            ].map((post) => (
+              <Link key={post.slug} to={`/blog/${post.slug}`} className="card group overflow-hidden">
+                <div className="bg-gradient-to-br from-dxn-green to-dxn-darkgreen h-36 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-dxn-gold text-2xl font-bold">DXN</div>
+                    <div className="text-green-200 text-xs uppercase tracking-widest">{post.category}</div>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <span className="text-xs text-dxn-gold font-medium uppercase">{post.category}</span>
+                  <h3 className="font-bold text-dxn-darkgreen mt-1 mb-2 group-hover:text-dxn-green transition-colors">{post.title}</h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">{post.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/blog" className="btn-outline inline-flex items-center gap-2">
+              Read More Articles <FiArrowRight />
+            </Link>
           </div>
         </div>
       </section>

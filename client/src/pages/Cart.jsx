@@ -27,7 +27,7 @@ export default function Cart() {
             {cart.map((item) => (
               <div key={item._id} className="card p-4 flex gap-4 items-center">
                 <img
-                  src={item.image || `https://placehold.co/80x80/1a5c2e/white?text=${encodeURIComponent(item.name?.charAt(0))}`}
+                  src={item.image || `https://placehold.co/80x80/16392d/white?text=${encodeURIComponent(item.name?.charAt(0))}`}
                   alt={item.name}
                   className="w-20 h-20 object-cover rounded-lg bg-gray-100"
                 />

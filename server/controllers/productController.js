@@ -1,4 +1,5 @@
 const Product = require('../models/Product');
+const { scrapeAllProducts } = require('../scraper/dxnScraper');
 
 // GET /api/products
 const getProducts = async (req, res) => {
@@ -79,4 +80,59 @@ const addReview = async (req, res) => {
   }
 };
 
-module.exports = { getProducts, getProduct, createProduct, updateProduct, deleteProduct, addReview };
+// GET /api/products/scrape (admin) - Scrape DXN products and save to DB
+const scrapeProducts = async (req, res) => {
+  try {
+    const scrapedProducts = await scrapeAllProducts();
+
+    let created = 0;
+    let updated = 0;
+
+    for (const p of scrapedProducts) {
+      const existing = await Product.findOne({ sku: p.sku });
+      if (existing) {
+        // Update image and name but keep any manual edits to price/description
+        existing.name = p.name;
+        existing.image = p.image;
+        existing.category = p.category;
+        existing.dxnId = p.dxnId || '';
+        existing.sourceUrl = p.sourceUrl || '';
+        existing.dxnCategory = p.dxnCategory || '';
+        if (!existing.description || existing.description.includes('premium DXN')) {
+          existing.description = p.description;
+        }
+        await existing.save();
+        updated++;
+      } else {
+        await Product.create({
+          name: p.name,
+          description: p.description,
+          price: p.price,
+          category: p.category,
+          image: p.image,
+          sku: p.sku,
+          benefits: p.benefits,
+          inStock: p.inStock,
+          featured: p.featured,
+          rating: p.rating,
+          dxnId: p.dxnId || '',
+          sourceUrl: p.sourceUrl || '',
+          dxnCategory: p.dxnCategory || '',
+        });
+        created++;
+      }
+    }
+
+    res.json({
+      message: `Scrape complete! ${created} new products added, ${updated} existing products updated.`,
+      total: scrapedProducts.length,
+      created,
+      updated,
+    });
+  } catch (err) {
+    console.error('Scrape error:', err);
+    res.status(500).json({ message: 'Scrape failed: ' + err.message });
+  }
+};
+
+module.exports = { getProducts, getProduct, createProduct, updateProduct, deleteProduct, addReview, scrapeProducts };

@@ -24,7 +24,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            {[['/', 'Home'], ['/products', 'Products'], ['/business', 'Business Opportunity'], ['/contact', 'Contact Us']].map(([to, label]) => (
+            {[['/', 'Home'], ['/products', 'Products'], ['/business', 'Business Opportunity'], ['/blog', 'Blog'], ['/contact', 'Contact Us']].map(([to, label]) => (
               <li key={to}><Link to={to} className="text-gray-400 hover:text-dxn-gold transition-colors">{label}</Link></li>
             ))}
           </ul>
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-green-900 py-4 text-center text-sm text-gray-500">
+      <div className="border-t border-dxn-green py-4 text-center text-sm text-gray-500">
         <p>&copy; {new Date().getFullYear()} Grow with DXN. All rights reserved.</p>
         <p className="text-xs mt-1 text-gray-600">Independent DXN Distributor. DXN is a registered trademark of DXN Holdings Berhad.</p>
       </div>

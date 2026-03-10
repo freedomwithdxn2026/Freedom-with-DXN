@@ -12,21 +12,33 @@ export default function ProductCard({ product }) {
     toast.success(`${product.name} added to cart!`);
   };
 
+  const mainImage = product.image || `https://placehold.co/400x400/16392d/white?text=${encodeURIComponent(product.name)}`;
+  const secondImage = product.images?.length > 0 ? product.images[0] : null;
+
   return (
     <Link to={`/products/${product._id}`} className="card group block overflow-hidden">
       <div className="relative overflow-hidden bg-gray-100 aspect-square">
+        {/* Main image */}
         <img
-          src={product.image || `https://placehold.co/400x400/1a5c2e/white?text=${encodeURIComponent(product.name)}`}
+          src={mainImage}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${secondImage ? 'group-hover:opacity-0 group-hover:scale-105' : 'group-hover:scale-105'}`}
         />
+        {/* Second image on hover */}
+        {secondImage && (
+          <img
+            src={secondImage}
+            alt={`${product.name} hover`}
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-500 scale-105 group-hover:scale-100"
+          />
+        )}
         {product.featured && (
-          <span className="absolute top-2 left-2 bg-dxn-gold text-white text-xs px-2 py-1 rounded-full font-semibold">
+          <span className="absolute top-2 left-2 bg-dxn-gold text-white text-xs px-2 py-1 rounded-full font-semibold z-10">
             Featured
           </span>
         )}
         {!product.inStock && (
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
             <span className="text-white font-bold text-lg">Out of Stock</span>
           </div>
         )}

@@ -92,7 +92,8 @@ export default function Products() {
           </div>
         </div>
 
-        {/* Products Grid */}
+        {/* All Products */}
+        <h2 className="text-2xl font-bold text-dxn-darkgreen mb-6">All Products</h2>
         {loading ? (
           <div className="flex justify-center py-20">
             <div className="w-12 h-12 border-4 border-dxn-green border-t-transparent rounded-full animate-spin"></div>
