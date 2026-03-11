@@ -1,12 +1,22 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import { useLang } from '../context/LanguageContext';
 import { FiMenu, FiX, FiUser, FiLogOut, FiGrid } from 'react-icons/fi';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
 
+=======
+import { useCart } from '../context/CartContext';
+import { useLang } from '../context/LanguageContext';
+import { FiShoppingCart, FiMenu, FiX, FiUser, FiLogOut, FiGrid } from 'react-icons/fi';
+
+export default function Navbar() {
+  const { user, logout } = useAuth();
+  const { cartCount } = useCart();
+>>>>>>> 4a3b40bb0679c0af8b3317d2416d65d81feec29f
   const { lang, setLang, t } = useLang();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +32,11 @@ export default function Navbar() {
     { to: '/', labelKey: 'home' },
     { to: '/about', labelKey: 'about' },
     { to: '/products', labelKey: 'products' },
+<<<<<<< HEAD
     { to: null, href: 'https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn', labelKey: 'joinDxn' },
+=======
+    { to: '/join', labelKey: 'joinDxn' },
+>>>>>>> 4a3b40bb0679c0af8b3317d2416d65d81feec29f
     { to: '/zoom', labelKey: 'zoom' },
     { to: '/blog', labelKey: 'blog' },
     { to: '/contact', labelKey: 'contact' },
@@ -39,6 +53,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-5">
+<<<<<<< HEAD
             {navLinks.map((l) =>
               l.href ? (
                 <a
@@ -63,6 +78,20 @@ export default function Navbar() {
                 </NavLink>
               )
             )}
+=======
+            {navLinks.map((l) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors whitespace-nowrap ${isActive ? 'text-dxn-gold font-bold' : 'text-white hover:text-dxn-gold'}`
+                }
+                end={l.to === '/'}
+              >
+                {t(l.labelKey)}
+              </NavLink>
+            ))}
+>>>>>>> 4a3b40bb0679c0af8b3317d2416d65d81feec29f
           </div>
 
           {/* Right side */}
@@ -75,6 +104,19 @@ export default function Navbar() {
             >
               {lang === 'en' ? '🇦🇪 AR' : '🇬🇧 EN'}
             </button>
+<<<<<<< HEAD
+=======
+
+            {/* Cart */}
+            <Link to="/cart" className="relative text-white hover:text-dxn-gold transition-colors">
+              <FiShoppingCart size={22} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-dxn-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+>>>>>>> 4a3b40bb0679c0af8b3317d2416d65d81feec29f
 
             {/* Auth */}
             {user ? (
@@ -127,6 +169,7 @@ export default function Navbar() {
         {menuOpen && (
           <div className="lg:hidden pb-4 border-t border-dxn-gold/30 mt-2">
             <div className="flex flex-col gap-1 pt-3">
+<<<<<<< HEAD
               {navLinks.map((l) =>
                 l.href ? (
                   <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer"
@@ -141,6 +184,14 @@ export default function Navbar() {
                   </NavLink>
                 )
               )}
+=======
+              {navLinks.map((l) => (
+                <NavLink key={l.to} to={l.to} onClick={() => setMenuOpen(false)}
+                  className="text-white hover:text-dxn-gold px-2 py-2 text-sm font-medium" end={l.to === '/'}>
+                  {t(l.labelKey)}
+                </NavLink>
+              ))}
+>>>>>>> 4a3b40bb0679c0af8b3317d2416d65d81feec29f
               {!user && (
                 <>
                   <Link to="/login" onClick={() => setMenuOpen(false)} className="text-white hover:text-dxn-gold px-2 py-2 text-sm">{t('login')}</Link>
