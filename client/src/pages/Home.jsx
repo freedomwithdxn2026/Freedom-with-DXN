@@ -75,9 +75,9 @@ export default function Home() {
             <p className="text-gray-300 text-lg mb-8 max-w-lg">{t('heroSub')}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/products" className="btn-gold text-center">{t('heroBtn1')}</Link>
-              <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
+              <Link to="/join" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
                 <FiUsers size={16} /> {lang === 'ar' ? 'انضم كموزع' : 'Join as a Distributor'}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:flex justify-center">
