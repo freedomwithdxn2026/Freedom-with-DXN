@@ -35,6 +35,13 @@ export default function Products() {
   const [total, setTotal]           = useState(0);
   const [view, setView]             = useState('grid'); // grid | list
 
+  useEffect(() => {
+    const cat = searchParams.get('category') || 'all';
+    setCategory(cat);
+    setSearch('');
+    setPage(1);
+  }, [searchParams]);
+
   useEffect(() => { fetchProducts(); }, [category, page, sort]);
 
   const fetchProducts = async () => {
