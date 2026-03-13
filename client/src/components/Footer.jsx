@@ -52,22 +52,22 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <FiMapPin className="text-dxn-gold mt-0.5 shrink-0" />
-              <span className="text-gray-400">Your City, Your Country</span>
+              <span className="text-gray-400">United Arab Emirates</span>
             </li>
             <li className="flex items-center gap-2">
               <FiPhone className="text-dxn-gold shrink-0" />
-              <span className="text-gray-400">+1 234 567 890</span>
+              <span className="text-gray-400">+971 50 666 2875</span>
             </li>
             <li className="flex items-center gap-2">
               <FiMail className="text-dxn-gold shrink-0" />
-              <span className="text-gray-400">info@growwithdxn.com</span>
+              <span className="text-gray-400">info@freedomwithdxn.com</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-dxn-green py-4 text-center text-sm text-gray-500">
-        <p>&copy; {new Date().getFullYear()} Grow with DXN. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Freedom with DXN. All rights reserved.</p>
         <p className="text-xs mt-1 text-gray-600">Independent DXN Distributor. DXN is a registered trademark of DXN Holdings Berhad.</p>
       </div>
     </footer>
