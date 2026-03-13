@@ -262,24 +262,84 @@ function Topbar({ page, collapsed, setCollapsed, showToast }) {
 // ══════════════════════════════════════════════════════════════
 // DASHBOARD PAGE
 // ══════════════════════════════════════════════════════════════
+const CAT_COLORS = { coffee:'#7c3f1e', ganoderma:'#2d7a4f', supplements:'#c9a84c', skincare:'#e1306c', beverages:'#d4a017', 'personal-care':'#6b7280', other:'#8b5cf6' };
+
 function DashboardPage({ showToast }) {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => { setTimeout(() => setLoading(false), 1000); }, []);
+  const [loading, setLoading]         = useState(true);
+  const [allOrders, setAllOrders]     = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [memberCount, setMemberCount] = useState(0);
+  const [myProfile, setMyProfile]     = useState(null);
+  const TOKEN = localStorage.getItem('token');
+
+  useEffect(() => {
+    const h = { Authorization: `Bearer ${TOKEN}` };
+    Promise.all([
+      fetch('/api/orders',       { headers: h }).then(r => r.json()),
+      fetch('/api/products?limit=100').then(r => r.json()),
+      fetch('/api/auth/users',   { headers: h }).then(r => r.json()),
+      fetch('/api/auth/me',      { headers: h }).then(r => r.json()),
+    ]).then(([orders, prods, users, me]) => {
+      setAllOrders(Array.isArray(orders) ? orders : []);
+      setAllProducts((prods?.products || []).slice(0, 4));
+      setMemberCount(Array.isArray(users) ? users.length : 0);
+      setMyProfile(me);
+    }).catch(() => {}).finally(() => setLoading(false));
+  }, []);
+
+  // Stats
+  const now = new Date();
+  const thisMonthOrders = allOrders.filter(o => {
+    const d = new Date(o.createdAt);
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  });
+  const totalSales = allOrders.reduce((s, o) => s + (o.totalAmount || 0), 0);
+
+  // Sales chart — group by date (last 30 days)
+  const salesChartData = (() => {
+    const map = {};
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 30);
+    allOrders.forEach(o => {
+      const d = new Date(o.createdAt);
+      if (d < cutoff) return;
+      const key = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      map[key] = (map[key] || 0) + (o.totalAmount || 0);
+    });
+    return Object.entries(map).map(([date, sales]) => ({ date, sales: Math.round(sales) }))
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+  })();
+
+  // Category chart — count items per category from orders
+  const catChartData = (() => {
+    const map = {};
+    allOrders.forEach(o => {
+      (o.items || []).forEach(item => {
+        const cat = item.category || 'other';
+        map[cat] = (map[cat] || 0) + (item.price * item.quantity || 0);
+      });
+    });
+    const total = Object.values(map).reduce((a, b) => a + b, 0) || 1;
+    return Object.entries(map).map(([name, val]) => ({
+      name: name.charAt(0).toUpperCase() + name.slice(1),
+      value: Math.round((val / total) * 100),
+      color: CAT_COLORS[name] || '#8b5cf6',
+    })).sort((a, b) => b.value - a.value).slice(0, 6);
+  })();
+
+  const referralLink = `https://freedomwithdxn.com/join?ref=${myProfile?.referralCode || ''}`;
 
   const stats = [
-    { label: 'Total Downlines', value: 47, prefix: '', suffix: '', trend: +12.5, Icon: Users, color: '#3b82f6' },
-    { label: 'Orders This Month', value: 89, prefix: '', suffix: '', trend: +8.3, Icon: ShoppingCart, color: C.green },
-    { label: 'Total Sales', value: 12840, prefix: '$', suffix: '', trend: +15.2, Icon: DollarSign, color: C.gold },
-    { label: 'Current Rank', value: 'Gold', isText: true, trend: null, Icon: Award, color: '#f59e0b', cta: 'Upgrade to Diamond' },
+    { label: 'Total Members',      value: memberCount,                    prefix: '',  Icon: Users,         color: '#3b82f6' },
+    { label: 'Orders This Month',  value: thisMonthOrders.length,         prefix: '',  Icon: ShoppingCart,  color: C.green },
+    { label: 'Total Revenue',      value: Math.round(totalSales),         prefix: '$', Icon: DollarSign,    color: C.gold },
+    { label: 'Total Orders',       value: allOrders.length,               prefix: '',  Icon: Award,         color: '#f59e0b' },
   ];
-
-  const referralLink = 'https://freedomwithdxn.com/join?ref=TAHA2026';
 
   return (
     <div className="space-y-6">
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-        {stats.map(({ label, value, prefix, suffix, trend, Icon, color, isText, cta }) => (
+        {stats.map(({ label, value, prefix, Icon, color }) => (
           <div key={label} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
             {loading ? (
               <div className="space-y-3"><Skeleton className="h-4 w-24" /><Skeleton className="h-8 w-20" /></div>
@@ -292,18 +352,8 @@ function DashboardPage({ showToast }) {
                   </div>
                 </div>
                 <div className="text-2xl font-bold" style={{ color: C.text, fontFamily: 'Playfair Display, serif' }}>
-                  {isText ? value : <CountUp end={value} prefix={prefix} suffix={suffix} />}
+                  <CountUp end={value} prefix={prefix} />
                 </div>
-                {trend !== null ? (
-                  <div className={`flex items-center gap-1 mt-1.5 text-xs font-medium ${trend > 0 ? 'text-green-600' : 'text-red-500'}`}>
-                    {trend > 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
-                    {Math.abs(trend)}% from last month
-                  </div>
-                ) : (
-                  <div className="mt-1.5">
-                    <span className="text-xs font-semibold cursor-pointer hover:underline" style={{ color: C.gold }}>{cta} →</span>
-                  </div>
-                )}
               </>
             )}
           </div>
@@ -319,21 +369,15 @@ function DashboardPage({ showToast }) {
               <h3 className="font-bold text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>Sales Overview</h3>
               <p className="text-xs text-gray-400 mt-0.5">Last 30 days revenue</p>
             </div>
-            <div className="flex gap-2">
-              {['7D', '30D', '90D'].map(p => (
-                <button key={p} className={`px-3 py-1 text-xs rounded-lg font-medium transition-colors ${p === '30D' ? 'text-white' : 'text-gray-500 bg-gray-50 hover:bg-gray-100'}`}
-                  style={p === '30D' ? { background: C.gold } : {}}>
-                  {p}
-                </button>
-              ))}
-            </div>
           </div>
-          {loading ? <Skeleton className="h-52 w-full" /> : (
+          {loading ? <Skeleton className="h-52 w-full" /> : salesChartData.length === 0 ? (
+            <div className="h-52 flex items-center justify-center text-gray-400 text-sm">No sales data yet</div>
+          ) : (
             <ResponsiveContainer width="100%" height={200}>
-              <LineChart data={salesData}>
+              <LineChart data={salesChartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                 <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#9ca3af' }} tickLine={false} axisLine={false} />
-                <YAxis tick={{ fontSize: 11, fill: '#9ca3af' }} tickLine={false} axisLine={false} tickFormatter={v => `$${v/1000}k`} />
+                <YAxis tick={{ fontSize: 11, fill: '#9ca3af' }} tickLine={false} axisLine={false} tickFormatter={v => `$${v}`} />
                 <Tooltip formatter={(v) => [`$${v.toLocaleString()}`, 'Sales']} contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
                 <Line type="monotone" dataKey="sales" stroke={C.gold} strokeWidth={2.5} dot={false} activeDot={{ r: 5, fill: C.gold }} />
               </LineChart>
@@ -345,18 +389,20 @@ function DashboardPage({ showToast }) {
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h3 className="font-bold text-gray-800 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>Sales by Category</h3>
           <p className="text-xs text-gray-400 mb-4">Product breakdown</p>
-          {loading ? <Skeleton className="h-52 w-full" /> : (
+          {loading ? <Skeleton className="h-52 w-full" /> : catChartData.length === 0 ? (
+            <div className="h-40 flex items-center justify-center text-gray-400 text-sm">No order data yet</div>
+          ) : (
             <>
               <ResponsiveContainer width="100%" height={160}>
                 <PieChart>
-                  <Pie data={categoryData} cx="50%" cy="50%" innerRadius={45} outerRadius={70} paddingAngle={3} dataKey="value">
-                    {categoryData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
+                  <Pie data={catChartData} cx="50%" cy="50%" innerRadius={45} outerRadius={70} paddingAngle={3} dataKey="value">
+                    {catChartData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
                   </Pie>
                   <Tooltip formatter={(v) => [`${v}%`]} contentStyle={{ borderRadius: 10, border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="space-y-2 mt-2">
-                {categoryData.map(({ name, value, color }) => (
+                {catChartData.map(({ name, value, color }) => (
                   <div key={name} className="flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full" style={{ background: color }} />
@@ -377,21 +423,23 @@ function DashboardPage({ showToast }) {
         <div className="xl:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <h3 className="font-bold text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>Recent Orders</h3>
-            <button className="text-xs font-medium flex items-center gap-1" style={{ color: C.gold }}>View all <ArrowUpRight size={12} /></button>
+            <span className="text-xs text-gray-400">{allOrders.length} total</span>
           </div>
           {loading ? (
             <div className="p-4 space-y-3">{[1,2,3].map(i => <Skeleton key={i} className="h-12 w-full" />)}</div>
+          ) : allOrders.length === 0 ? (
+            <div className="p-8 text-center text-gray-400 text-sm">No orders yet</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
-                <thead><tr className="bg-gray-50">{['Order ID','Customer','Product','Amount','Status'].map(h => <th key={h} className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">{h}</th>)}</tr></thead>
+                <thead><tr className="bg-gray-50">{['Order ID','Customer','Items','Amount','Status'].map(h => <th key={h} className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">{h}</th>)}</tr></thead>
                 <tbody>
-                  {orders.slice(0,5).map(o => (
-                    <tr key={o.id} className="border-t border-gray-50 hover:bg-gray-50/50 transition-colors">
-                      <td className="px-4 py-3 font-mono text-xs text-gray-500">{o.id}</td>
-                      <td className="px-4 py-3 font-medium text-gray-800">{o.customer}</td>
-                      <td className="px-4 py-3 text-gray-500 max-w-[160px] truncate">{o.product}</td>
-                      <td className="px-4 py-3 font-semibold text-gray-800">${o.amount.toFixed(2)}</td>
+                  {allOrders.slice(0, 5).map(o => (
+                    <tr key={o._id} className="border-t border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td className="px-4 py-3 font-mono text-xs text-gray-400">{o._id?.slice(-8).toUpperCase()}</td>
+                      <td className="px-4 py-3 font-medium text-gray-800">{o.user?.name || '—'}</td>
+                      <td className="px-4 py-3 text-gray-500 text-xs">{o.items?.length || 0} item{o.items?.length !== 1 ? 's' : ''}</td>
+                      <td className="px-4 py-3 font-semibold text-gray-800">${(o.totalAmount || 0).toFixed(2)}</td>
                       <td className="px-4 py-3"><StatusBadge status={o.status} /></td>
                     </tr>
                   ))}
@@ -405,20 +453,22 @@ function DashboardPage({ showToast }) {
         <div className="space-y-4">
           {/* Top products */}
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <h3 className="font-bold text-gray-800 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>Top Products</h3>
-            {loading ? <div className="space-y-3">{[1,2,3].map(i => <Skeleton key={i} className="h-10 w-full" />)}</div> : (
+            <h3 className="font-bold text-gray-800 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>Products</h3>
+            {loading ? <div className="space-y-3">{[1,2,3].map(i => <Skeleton key={i} className="h-10 w-full" />)}</div> : allProducts.length === 0 ? (
+              <p className="text-sm text-gray-400">No products added yet</p>
+            ) : (
               <div className="space-y-3">
-                {topProducts.slice(0,4).map((p, i) => (
-                  <div key={p.name} className="flex items-center gap-3">
+                {allProducts.map((p, i) => (
+                  <div key={p._id} className="flex items-center gap-3">
                     <span className="text-xs font-bold text-gray-300 w-4">{i+1}</span>
-                    <div className="w-9 h-9 rounded-lg overflow-hidden bg-gray-100 shrink-0">
-                      <img src={p.image} alt={p.name} className="w-full h-full object-cover" onError={e => { e.target.style.display='none'; }} />
+                    <div className="w-9 h-9 rounded-lg overflow-hidden bg-gray-100 shrink-0" style={{ background: C.sidebar }}>
+                      {p.image ? <img src={p.image} alt={p.name} className="w-full h-full object-cover" onError={e => { e.target.style.display='none'; }} /> : null}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-semibold text-gray-800 truncate">{p.name}</p>
-                      <p className="text-xs text-gray-400">{p.sold} sold</p>
+                      <p className="text-xs text-gray-400 capitalize">{p.category}</p>
                     </div>
-                    <span className="text-xs font-bold text-green-600">{fmt(p.revenue)}</span>
+                    <span className="text-xs font-bold" style={{ color: C.gold }}>${p.price?.toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -432,21 +482,11 @@ function DashboardPage({ showToast }) {
               <h3 className="font-bold text-white text-sm" style={{ fontFamily: 'Playfair Display, serif' }}>Your Referral Link</h3>
             </div>
             <div className="flex gap-2 mb-3">
-              <input readOnly value="freedomwithdxn.com/join?ref=TAHA2026"
+              <input readOnly value={myProfile?.referralCode ? referralLink : 'Loading…'}
                 className="flex-1 text-xs bg-white/10 text-white/80 border border-white/10 rounded-lg px-3 py-2 focus:outline-none min-w-0" />
-              <button onClick={() => { navigator.clipboard.writeText('https://freedomwithdxn.com/join?ref=TAHA2026'); showToast('Link copied!'); }}
+              <button onClick={() => { navigator.clipboard.writeText(referralLink); showToast('Link copied!'); }}
                 className="px-3 py-2 rounded-lg text-xs font-semibold text-white flex items-center gap-1 shrink-0" style={{ background: C.gold }}>
                 <Copy size={12} /> Copy
-              </button>
-            </div>
-            <div className="flex gap-2">
-              {[{ Icon: Facebook, color: '#1877f2' }, { Icon: Twitter, color: '#1da1f2' }, { Icon: Instagram, color: '#e1306c' }].map(({ Icon, color }) => (
-                <button key={color} className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors">
-                  <Icon size={14} style={{ color }} />
-                </button>
-              ))}
-              <button className="flex-1 text-xs font-medium text-white/60 hover:text-white transition-colors flex items-center justify-end gap-1">
-                <Share2 size={12} /> Share
               </button>
             </div>
           </div>
