@@ -47,7 +47,21 @@ export function SiteProvider({ children }) {
 
   useEffect(() => {
     axios.get('/api/site-settings')
-      .then(({ data }) => { setSettings({ ...DEFAULT, ...data }); applyCSS({ ...DEFAULT, ...data }); })
+      .then(({ data }) => {
+        const merged = {
+          colors:  { ...DEFAULT.colors,  ...data.colors },
+          fonts:   { ...DEFAULT.fonts,   ...data.fonts },
+          hero:    { ...DEFAULT.hero,    ...data.hero },
+          contact: { ...DEFAULT.contact, ...data.contact },
+          social:  { ...DEFAULT.social,  ...data.social },
+          seo:     { ...DEFAULT.seo,     ...data.seo },
+          footer:  { ...DEFAULT.footer,  ...data.footer },
+          navbar:  { ...DEFAULT.navbar,  ...data.navbar },
+          charts:  { ...DEFAULT.charts,  ...data.charts },
+        };
+        setSettings(merged);
+        applyCSS(merged);
+      })
       .catch(() => applyCSS(DEFAULT))
       .finally(() => setLoading(false));
   }, []);
@@ -56,7 +70,17 @@ export function SiteProvider({ children }) {
     const { data } = await axios.put('/api/site-settings', partial, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
-    const merged = { ...DEFAULT, ...data };
+    const merged = {
+      colors:  { ...DEFAULT.colors,  ...data.colors },
+      fonts:   { ...DEFAULT.fonts,   ...data.fonts },
+      hero:    { ...DEFAULT.hero,    ...data.hero },
+      contact: { ...DEFAULT.contact, ...data.contact },
+      social:  { ...DEFAULT.social,  ...data.social },
+      seo:     { ...DEFAULT.seo,     ...data.seo },
+      footer:  { ...DEFAULT.footer,  ...data.footer },
+      navbar:  { ...DEFAULT.navbar,  ...data.navbar },
+      charts:  { ...DEFAULT.charts,  ...data.charts },
+    };
     setSettings(merged);
     applyCSS(merged);
     return merged;
