@@ -5,11 +5,23 @@ import { useLang } from '../context/LanguageContext';
 
 const WHATSAPP_URL = 'https://wa.me/message/EFSQ2IDNVG3YB1';
 
+const CATEGORY_AR = {
+  coffee: 'قهوة',
+  ganoderma: 'غانوديرما',
+  supplements: 'مكملات',
+  skincare: 'العناية بالبشرة',
+  beverages: 'مشروبات',
+  'personal-care': 'العناية الشخصية',
+  other: 'أخرى',
+};
+
 export default function ProductCard({ product }) {
   const { lang } = useLang();
   const [hovered, setHovered] = useState(false);
 
-  const mainImage = product.image || '';
+  const displayName = lang === 'ar' && product.nameAr ? product.nameAr : product.name;
+  const displayDesc = lang === 'ar' && product.descriptionAr ? product.descriptionAr : product.description;
+  const mainImage = product.landingImage || product.image || '';
   const secondImage = product.images?.length > 0 ? product.images[0] : null;
 
   const handleWhatsApp = (e) => {
@@ -17,9 +29,12 @@ export default function ProductCard({ product }) {
     window.open(WHATSAPP_URL, '_blank');
   };
 
+  const Wrapper = product.landingPage
+    ? ({ children, ...props }) => <a href={product.landingPage} {...props}>{children}</a>
+    : ({ children, ...props }) => <Link to={`/products/${product._id}`} {...props}>{children}</Link>;
+
   return (
-    <Link
-      to={`/products/${product._id}`}
+    <Wrapper
       className="card group block overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -30,7 +45,7 @@ export default function ProductCard({ product }) {
             {/* Main image */}
             <img
               src={mainImage}
-              alt={product.name}
+              alt={displayName}
               style={{
                 opacity: hovered && secondImage ? 0 : 1,
                 transform: hovered && secondImage ? 'scale(1.05)' : 'scale(1)',
@@ -55,7 +70,7 @@ export default function ProductCard({ product }) {
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-dxn-darkgreen to-dxn-green flex flex-col items-center justify-center p-4 text-center">
             <span className="text-dxn-gold text-4xl font-bold mb-2">DXN</span>
-            <span className="text-white/90 text-sm font-medium leading-tight">{product.name}</span>
+            <span className="text-white/90 text-sm font-medium leading-tight">{displayName}</span>
           </div>
         )}
         {product.featured && (
@@ -70,9 +85,9 @@ export default function ProductCard({ product }) {
         )}
       </div>
       <div className="p-4">
-        <span className="text-xs text-dxn-green font-medium uppercase tracking-wide">{product.category}</span>
+        <span className="text-xs text-dxn-green font-medium uppercase tracking-wide">{lang === 'ar' ? CATEGORY_AR[product.category] || product.category : product.category}</span>
         <h3 className="font-semibold text-gray-800 mt-1 mb-1 line-clamp-2 group-hover:text-dxn-green transition-colors">
-          {product.name}
+          {displayName}
         </h3>
         <div className="flex items-center gap-1 mb-3">
           <FiStar className="text-yellow-400 fill-yellow-400" size={14} />
@@ -89,6 +104,6 @@ export default function ProductCard({ product }) {
           </button>
         </div>
       </div>
-    </Link>
+    </Wrapper>
   );
 }

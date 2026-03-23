@@ -120,9 +120,9 @@ export default function JoinDXN() {
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">{t('joinSub')}</p>
           <div className="flex flex-wrap gap-4 justify-center mt-8">
             <WhatsAppButton label={lang === 'ar' ? 'ابدأ الآن عبر واتساب' : 'Get Started on WhatsApp'} />
-            <Link to="/zoom" className="btn-outline border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
+            <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="btn-outline border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
               {lang === 'ar' ? 'احضر زووم مجاني أولاً' : 'Attend Free Zoom First'}
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -211,9 +211,9 @@ export default function JoinDXN() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <WhatsAppButton />
-            <Link to="/zoom" className="btn-outline border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
+            <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="btn-outline border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
               {lang === 'ar' ? 'احضر زووم أولاً' : 'Attend Zoom First'}
-            </Link>
+            </a>
           </div>
         </div>
       </section>

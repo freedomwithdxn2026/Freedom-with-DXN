@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganozhi Lipstick - Pearly Pink | DXN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-green: #0f3f2b;
+      --deep-green: #064f3a;
+      --light-green: #eaf5ef;
+      --accent: #e94f1f;
+      --accent2: #f48f33;
+      --text: #1f2f2a;
+      --muted: #556b64;
+      --white: #fff;
+      --border: #dbe5de;
+      --shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Inter', sans-serif; background:#fff; color:#1b2f29; line-height:1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    section { padding: 70px 20px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .button { display: inline-flex; align-items: center; justify-content:center; padding: 14px 24px; border-radius: 32px; border:0; cursor:pointer; font-weight:700; background: linear-gradient(120deg, var(--accent), var(--accent2)); color:#fff; box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .button:active { transform: translateY(1px); }
+
+    .hero {
+      min-height: 95vh;
+      color: #f8fff9;
+      background: linear-gradient(rgba(9,31,20,.72), rgba(0,0,0,.62)), url('https://picsum.photos/id/1032/1600/900') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center; text-align:center; padding: 80px 20px;
+    }
+    .hero h1 { font-size:clamp(2.2rem, 6vw, 4.2rem); margin:0 0 16px; line-height:1.1; }
+    .hero p { font-size:clamp(1.05rem, 2.2vw, 1.6rem); color:#e7f1e9; margin-bottom:24px; }
+
+    .grid-2 { display:flex; gap:30px; align-items:center; flex-wrap:wrap; }
+    .grid-2 .col { flex:1; min-width:280px; }
+    .card-grid { display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); }
+    .benefit-card, .audience-card, .product-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px; box-shadow: var(--shadow); }
+    .benefit-card h4, .audience-card h4 { margin:0 0 12px; color:#0b442d; }
+    .benefit-card ul, .audience-card ul { margin:0; padding-left:20px; color:#4c695b; }
+
+    .section-intro h2 { font-size:clamp(2.2rem,4vw,3rem); margin-bottom:12px; color:#0f3f2b; }
+    .section-intro p { max-width:680px; }
+
+    .full-bg {
+      background: linear-gradient(120deg, rgba(10,49,35,.86), rgba(13,40,36,.88)), url('https://picsum.photos/id/1018/1600/900') center/cover no-repeat;
+      color:#f7fbf6;
+    }
+    .full-bg .container { position:relative; z-index:2; }
+
+    .cta-dark {
+      background: linear-gradient(135deg, #0b3c1f, #063828);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-dark::after {
+      content:''; position:absolute; inset:0; background: radial-gradient(circle at 100% 40%, rgba(255,255,255,.07), transparent 45%);
+    }
+    .cta-inner { position:relative; z-index:3; }
+
+    .product-card img, .benefit-img { width:100%; height:auto; border-radius:12px; object-fit:cover; }
+
+    .flex-center { display:flex; align-items:center; gap:14px; }
+    .divider { width: 60px; height: 4px; background: var(--accent); border-radius: 999px; margin:16px 0; }
+
+    .footer { background:#122a21; color:#d1e7db; padding:40px 20px; }
+    .footer .footer-grid { display:grid; gap:24px; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); }
+    .footer h5 { margin:0 0 12px; color:#fff; }
+    .footer a { color:#9bcfbb; }
+    .footer a:hover { color:#fff; }
+
+    @media (max-width:900px) {
+      section { padding: 45px 16px; }
+      .grid-2 { flex-direction:column; }
+      .hero { min-height:70vh; padding:60px 14px; }
+      .cta-banner { padding: 40px 18px; }
+    }
+
+    @media (max-width:560px) {
+      .hero h1 { font-size:2rem; }
+      .hero p { font-size:1rem; }
+      .button { width:100%; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Ganozhi Lipstick - Pearly Pink</h1>
+      <p>Nature-infused color care for soft, hydrated, radiant lips — backed by DXN's premium Ganoderma wellness heritage.</p>
+      <a href="#cta" class="button">Shop Ganozhi Lipstick</a>
+    </div>
+  </section>
+
+  <section class="section-intro">
+    <div class="container grid-2">
+      <div class="col">
+        <h2>Unlock the Power of Ganozhi Lipstick</h2>
+        <p>Ganozhi Lipstick in Pearly Pink merges beauty and botanical care in one swipe. Enriched with Ganoderma lucidum extract, nourishing shea butter, and antioxidant vitamins, it delivers lasting shine, moisturization, and gentle lip protection.
+        This premium formula supports lip softness, improves texture, and enhances natural color with a luminous finish.</p>
+        <p>DXN quality commitment: from GMP-certified labs to traceable ingredients, every stick is hypoallergenic, cruelty-free and crafted with safety-tested standards.</p>
+      </div>
+      <div class="col">
+        <img class="benefit-img" src="https://picsum.photos/seed/lipstick/700/500" alt="Ganozhi Lipstick Pearly Pink"> 
+      </div>
+    </div>
+  </section>
+
+  <section class="full-bg">
+    <div class="container">
+      <h2 style="font-size:clamp(2.1rem,3.5vw,2.8rem); margin-bottom:8px;">Why Choose Ganozhi Lipstick?</h2>
+      <p style="max-width:780px; color:#d8ebdd;">True lip care is more than cosmetics. Ganozhi Lipstick is designed to nourish while delivering a luminous pink glow that complements every outfit and mood.</p>
+      <div class="card-grid" style="margin-top:30px;">
+        <div class="benefit-card" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25);">
+          <h4>Ganoderma Skin Support</h4>
+          <ul>
+            <li>Ganoderma extract helps hydrate and sustain softness.</li>
+            <li>Antioxidants guard against environmental stressors.</li>
+          </ul>
+        </div>
+        <div class="benefit-card" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25);">
+          <h4>Long-Lasting Shine</h4>
+          <ul>
+            <li>Pearly pigments deliver a natural shimmer without stickiness.</li>
+            <li>Micro-fine color layer keeps finish smooth over hours.</li>
+          </ul>
+        </div>
+        <div class="benefit-card" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25);">
+          <h4>Deep Hydration</h4>
+          <ul>
+            <li>Shea butter and natural waxes keep lips supple.</li>
+            <li>Vitamin E and olive oil keep moisture locked in all day.
+</li>
+          </ul>
+        </div>
+        <div class="benefit-card" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25);">
+          <h4>Clean, Trusted Formula</h4>
+          <ul>
+            <li>No parabens, no silicones, no animal testing.</li>
+            <li>DXN’s proven raw material checks ensure product safety.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Who Can Benefit?</h2>
+      <div class="divider"></div>
+      <div class="card-grid">
+        <div class="audience-card">
+          <h4>Beauty Lovers</h4>
+          <ul>
+            <li>Want subtle, daily glow with wellness-grade ingredients.</li>
+            <li>Prefer eco-friendly color cosmetics with clean beauty claim.</li>
+          </ul>
+        </div>
+        <div class="audience-card">
+          <h4>Professionals</h4>
+          <ul>
+            <li>Need a polished look with long-lasting hydration at meetings.</li>
+            <li>Enjoy sleek and low-maintenance lip care for busy days.</li>
+          </ul>
+        </div>
+        <div class="audience-card">
+          <h4>Active Individuals</h4>
+          <ul>
+            <li>Seek moisture and protection through sports and outdoor activities.</li>
+            <li>Prefer a lightweight, non-greasy lipstick for all-day comfort.</li>
+          </ul>
+        </div>
+        <div class="audience-card">
+          <h4>Health-Conscious Shoppers</h4>
+          <ul>
+            <li>Value natural Ganoderma-based formulas in personal care.</li>
+            <li>Prefer cruelty-free and responsibly produced beauty products.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#f4f9f4;">
+    <div class="container">
+      <h2>How to Enjoy / Use</h2>
+      <div class="divider" style="background: var(--dark-green);"></div>
+      <ul style="list-style:none; padding:0; max-width:760px; color:#3f5f52;">
+        <li style="margin-bottom:12px;"><strong>Lip Care:</strong> Apply 1-2 swipes from center to corners on clean, dry lips for a luminous effect.</li>
+        <li style="margin-bottom:12px;"><strong>Daily Use:</strong> Reapply after meals and whenever lips feel dry to maintain pearly hydration.</li>
+        <li style="margin-bottom:12px;"><strong>Evening Routine:</strong> For extra conditioning, use as an overnight moisturizing treatment with a second layer.</li>
+      </ul>
+      <p style="max-width:780px; color:#546d61;">For best results, pair with DXN lip serum and gentle exfoliation once a week. This keeps lips soft, smooth, and luminous every day.</p>
+    </div>
+  </section>
+
+  <section id="cta" class="cta-dark">
+    <div class="container cta-inner grid-2" style="align-items:center; gap:30px;">
+      <div class="col">
+        <h2>Your Path to Wellness Starts with Luscious Lips</h2>
+        <p>Lock in hydration, color, and confidence in one botanical lipstick. Ganozhi Lipstick - Pearly Pink is your everyday beauty essential inspired by the power of Ganoderma.</p>
+        <a class="button" href="#" style="margin-top:14px;">Buy Now - Ganozhi Lipstick</a>
+      </div>
+      <div class="col" style="text-align:center;">
+        <img class="benefit-img" src="https://picsum.photos/seed/ganozhi/600/420" alt="Ganozhi Lipstick CTA" style="max-width:95%; border: 3px solid rgba(255,255,255,.3); box-shadow:0 15px 35px rgba(0,0,0,.25);">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Related Products</h2>
+      <div class="divider"></div>
+      <div class="card-grid" style="margin-top:20px;">
+        <div class="product-card">
+          <img src="https://placehold.co/400x230?text=DXN+Ganoderma+Coffee" alt="DXN Ganoderma Coffee" />
+          <h4>DXN Ganoderma Coffee</h4>
+          <p>Iconic wellness coffee with Ganoderma extract for energy and focus.</p>
+          <button class="button" style="width:100%; margin-top:12px;">BUY NOW</button>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/400x230?text=DXN+Cocozhi" alt="DXN Cocozhi" />
+          <h4>DXN Cocozhi</h4>
+          <p>Hydrating cocozhi cream for skin moisture and smoothness.</p>
+          <button class="button" style="width:100%; margin-top:12px;">BUY NOW</button>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/400x230?text=DXN+Ganozhi+Lip+Serum" alt="DXN Ganozhi Lip Serum" />
+          <h4>Ganozhi Lip Serum</h4>
+          <p>Potent, antioxidant lip serum for deep repair and softness.</p>
+          <button class="button" style="width:100%; margin-top:12px;">BUY NOW</button>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/400x230?text=DXN+Sparkling+Cream" alt="DXN Sparkling Cream" />
+          <h4>DXN Sparkling Beauty Cream</h4>
+          <p>Brightening cream that enhances facial radiance with botanical extracts.</p>
+          <button class="button" style="width:100%; margin-top:12px;">BUY NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h5>DXN Global</h5>
+        <p>DXN Cyberville, Jalan Teknokrat 1, Cyber 3, 63000 Cyberjaya, Selangor.</p>
+        <p>General Line: +603-60339800</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul style="list-style:none; padding:0;">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Wellness Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Customer Support</h5>
+        <ul style="list-style:none; padding:0;">
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow Us</h5>
+        <div style="display:flex; gap:12px; margin-top:8px;">
+          <a href="#" style="color:#9bcfbb;">Facebook</a>
+          <a href="#" style="color:#9bcfbb;">Instagram</a>
+          <a href="#" style="color:#9bcfbb;">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:30px; color:#84b69c;">© 2026 DXN Holdings Bhd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

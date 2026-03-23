@@ -6,10 +6,13 @@ server/node_modules/
 # Environment variables
 .env
 server/.env
+.env.local
+.env.production
 
 # Build output
 client/dist/
 client/build/
+server/public/
 
 # Logs
 *.log
@@ -28,3 +31,6 @@ laravel-server/.env
 # OS files
 .DS_Store
 Thumbs.db
+
+# Docker
+.dockerignore

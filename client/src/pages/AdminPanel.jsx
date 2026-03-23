@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { FiUsers, FiShoppingBag, FiPackage, FiPlus, FiEdit, FiTrash2, FiX, FiFileText } from 'react-icons/fi';
 import RichTextEditor from '../components/RichTextEditor';
 
-const EMPTY_FORM = { name: '', description: '', price: '', category: 'coffee', inStock: true, featured: false, image: '', images: ['', '', '', '', ''] };
+const EMPTY_FORM = { name: '', description: '', price: '', category: 'coffee', inStock: true, featured: false, image: '', landingImage: '', landingPage: '', images: ['', '', '', '', ''] };
 const EMPTY_BLOG_FORM = { title: '', excerpt: '', content: '', category: 'health', tags: '', image: '', published: true };
 const BLOG_CATEGORIES = ['health', 'business', 'products', 'success-stories', 'tips'];
 
@@ -63,6 +63,8 @@ export default function AdminPanel() {
       inStock: product.inStock ?? true,
       featured: product.featured ?? false,
       image: product.image || '',
+      landingImage: product.landingImage || '',
+      landingPage: product.landingPage || '',
       images: paddedImages,
     });
     setEditingProduct(product._id);
@@ -239,6 +241,16 @@ export default function AdminPanel() {
                         <label className="block text-sm font-medium mb-1">Main Image URL</label>
                         <input value={productForm.image} onChange={(e) => setProductForm({...productForm, image: e.target.value})} className="input-field" placeholder="https://..." />
                       </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-1">Landing Page Image URL</label>
+                        <input value={productForm.landingImage} onChange={(e) => setProductForm({...productForm, landingImage: e.target.value})} className="input-field" placeholder="https://..." />
+                        <p className="text-xs text-gray-400 mt-1">This image is used on product landing pages and featured sections.</p>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-1">Landing Page URL</label>
+                        <input value={productForm.landingPage} onChange={(e) => setProductForm({...productForm, landingPage: e.target.value})} className="input-field" placeholder="/landing/ganozhi-lipstick.html" />
+                        <p className="text-xs text-gray-400 mt-1">If set, clicking this product will open this page instead of the default detail page.</p>
+                      </div>
                       <div className="sm:col-span-2">
                         <label className="block text-sm font-medium mb-1">Description *</label>
                         <textarea required rows={3} value={productForm.description} onChange={(e) => setProductForm({...productForm, description: e.target.value})} className="input-field resize-none" />
@@ -301,7 +313,7 @@ export default function AdminPanel() {
                             <td className="px-4 py-3">
                               <div className="flex items-center gap-3">
                                 <img
-                                  src={p.image || `https://placehold.co/40x40/1a5c2e/white?text=${encodeURIComponent(p.name?.charAt(0))}`}
+                                  src={p.landingImage || p.image || `https://placehold.co/40x40/1a5c2e/white?text=${encodeURIComponent(p.name?.charAt(0))}`}
                                   alt={p.name}
                                   className="w-10 h-10 rounded-lg object-cover bg-gray-100"
                                 />

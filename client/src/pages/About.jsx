@@ -157,7 +157,7 @@ export default function About() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <WhatsAppButton />
-            <Link to="/zoom" className="btn-primary">{lang === 'ar' ? 'احضر زووم مجاني' : 'Attend Free Zoom'}</Link>
+            <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="btn-primary">{lang === 'ar' ? 'احضر زووم مجاني' : 'Attend Free Zoom'}</a>
             <Link to="/join" className="btn-outline">{t('joinDistributor')}</Link>
           </div>
         </div>

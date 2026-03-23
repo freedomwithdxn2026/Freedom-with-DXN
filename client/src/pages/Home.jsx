@@ -145,9 +145,9 @@ export default function Home() {
                 : 'Learn about DXN products and the business opportunity. Weekly sessions in Arabic and English.'}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/zoom" className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
+              <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
                 <FiCalendar size={16} /> {lang === 'ar' ? 'عرض الجدول' : 'View Schedule'}
-              </Link>
+              </a>
               <WhatsAppButton label={lang === 'ar' ? 'احصل على الرابط' : 'Get the Link'} />
             </div>
           </div>
@@ -241,9 +241,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/join" className="btn-gold">{lang === 'ar' ? 'انضم مجاناً' : 'Join For Free'}</Link>
             <WhatsAppButton />
-            <Link to="/zoom" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
+            <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all">
               <FiVideo size={16} /> {lang === 'ar' ? 'احضر زووم' : 'Free Zoom'}
-            </Link>
+            </a>
           </div>
         </div>
       </section>

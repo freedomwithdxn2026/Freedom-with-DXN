@@ -6,6 +6,16 @@ import { useLang } from '../context/LanguageContext';
 
 const WHATSAPP_URL = 'https://wa.me/message/EFSQ2IDNVG3YB1';
 
+const CATEGORY_AR = {
+  coffee: 'قهوة',
+  ganoderma: 'غانوديرما',
+  supplements: 'مكملات',
+  skincare: 'العناية بالبشرة',
+  beverages: 'مشروبات',
+  'personal-care': 'العناية الشخصية',
+  other: 'أخرى',
+};
+
 export default function ProductDetail() {
   const { id } = useParams();
   const { lang } = useLang();
@@ -14,6 +24,13 @@ export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [zoom, setZoom] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+
+  const displayName = lang === 'ar' && product?.nameAr ? product.nameAr : product?.name;
+  const displayDesc = lang === 'ar' && product?.descriptionAr ? product.descriptionAr : product?.description;
+  const displayBenefits = lang === 'ar' && product?.benefitsAr?.length > 0 ? product.benefitsAr : product?.benefits;
+  const displayUsage = lang === 'ar' && product?.usageAr ? product.usageAr : product?.usage;
+  const displayCategory = lang === 'ar' ? CATEGORY_AR[product?.category] || product?.category : product?.category;
+  const defaultImage = product?.landingImage || product?.image || null;
   const imgContainerRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -68,7 +85,7 @@ export default function ProductDetail() {
             >
               {/* Base image — hidden when zooming */}
               <img
-                src={selectedImage || product.image || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`}
+                src={selectedImage || defaultImage || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`}
                 alt={product.name}
                 className="w-full h-full object-cover"
                 style={{ opacity: zoom ? 0 : 1 }}
@@ -78,7 +95,7 @@ export default function ProductDetail() {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  backgroundImage: `url(${selectedImage || product.image || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`})`,
+                  backgroundImage: `url(${selectedImage || defaultImage || `https://placehold.co/600x600/16392d/white?text=${encodeURIComponent(product.name)}`})`,
                   backgroundSize: '300%',
                   backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
                   backgroundRepeat: 'no-repeat',
