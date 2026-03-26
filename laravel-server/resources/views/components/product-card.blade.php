@@ -3,7 +3,7 @@
 @php
     $lang = session('lang', 'en');
     $mainImage = $product->landing_image ?: ($product->image ?: '');
-    $link = $product->landing_page ?: route('products.show', $product);
+    $link = route('products.show', $product);
     $whatsapp = 'https://wa.me/+971506662875';
     $rating = $product->rating ?? 0;
     $displayName = ($lang === 'ar' && $product->name_ar) ? $product->name_ar : $product->name;
