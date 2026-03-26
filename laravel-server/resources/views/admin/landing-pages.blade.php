@@ -27,8 +27,8 @@
                 @forelse($pages as $page)
                     <tr class="border-t">
                         <td class="px-4 py-3 text-gray-400 text-xs">{{ $pages->firstItem() + $loop->index }}</td>
-                        <td class="px-4 py-3 font-medium">{{ $page->title }}</td>
-                        <td class="px-4 py-3 text-gray-500">{{ $page->product->name ?? '—' }}</td>
+                        <td class="px-4 py-3 font-medium whitespace-nowrap">{{ $page->title }}</td>
+                        <td class="px-4 py-3 text-gray-500 whitespace-nowrap">{{ $page->product->name ?? '—' }}</td>
                         <td class="px-4 py-3">
                             <a href="{{ route('landing', $page->slug) }}" target="_blank" class="text-dxn-green hover:underline text-xs">/landing/{{ $page->slug }}</a>
                         </td>

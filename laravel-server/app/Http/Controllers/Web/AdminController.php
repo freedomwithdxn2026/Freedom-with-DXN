@@ -142,7 +142,7 @@ class AdminController extends Controller
     // ── Landing Pages ──────────────────────────────────
     public function landingPages()
     {
-        $pages = LandingPage::with('product')->orderByDesc('created_at')->paginate(20);
+        $pages = LandingPage::with('product')->orderBy('id')->paginate(100);
         $products = Product::orderBy('name')->get();
         return view('admin.landing-pages', compact('pages', 'products'));
     }
