@@ -29,7 +29,7 @@
                         <td class="px-4 py-3 text-gray-400 text-xs">{{ $pages->firstItem() + $loop->index }}</td>
                         <td class="px-4 py-3 font-medium whitespace-nowrap">{{ $page->title }}</td>
                         <td class="px-4 py-3 text-gray-500 whitespace-nowrap">{{ $page->product->name ?? '—' }}</td>
-                        <td class="px-4 py-3">
+                        <td class="px-4 py-3 whitespace-nowrap">
                             <a href="{{ route('landing', $page->slug) }}" target="_blank" class="text-dxn-green hover:underline text-xs">/landing/{{ $page->slug }}</a>
                         </td>
                         <td class="px-4 py-3">
