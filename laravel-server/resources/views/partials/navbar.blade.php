@@ -62,16 +62,6 @@
                     </div>
                 </div>
 
-                {{-- Cart --}}
-                <a href="{{ route('cart') }}" class="relative text-brand-violet hover:text-brand-green transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    @if($cartCount > 0)
-                        <span class="absolute -top-2 -right-2 bg-brand-red text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
-                            {{ $cartCount }}
-                        </span>
-                    @endif
-                </a>
-
                 {{-- Auth --}}
                 @auth
                     <div class="relative" @click.outside="dropdownOpen = false">

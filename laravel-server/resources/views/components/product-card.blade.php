@@ -37,7 +37,7 @@
         <div class="relative overflow-hidden bg-gray-50">
             @if($mainImage)
                 <img src="{{ $mainImage }}" alt="{{ $product->name }}"
-                     class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                     class="w-full h-52 object-contain p-2 group-hover:scale-105 transition-transform duration-500">
             @else
                 <div class="w-full h-52 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #452aa8, #3a2290);">
                     <span class="text-3xl font-bold" style="color: #43af73;">DXN</span>
