@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-hero {
-    background: linear-gradient(135deg, #452aa8 0%, #3a2290 50%, #43af73 100%);
+    background: #000;
 }
 
 /* Smooth scrolling */

@@ -10,21 +10,58 @@
         : ['Low startup cost', 'World-class Ganoderma products', 'One-world one-market', 'Passive income via downline', 'Free training', 'No monthly quota'];
 
     $testi = $lang === 'ar' ? [
-        ['name' => 'سارة م.', 'role' => 'موزعة ماسية', 'text' => 'غيّرت DXN حياتي. حسّنت صحتي وأصبحت أكسب دخلاً كاملاً.', 'avatar' => 'س'],
-        ['name' => 'جيمس ك.', 'role' => 'موزع ذهبي', 'text' => 'بنيت فريقاً من أكثر من 50 موزعاً. أفضل قرار!', 'avatar' => 'ج'],
-        ['name' => 'ماريا ل.', 'role' => 'عضوة نجمة ياقوتية', 'text' => 'القهوة رائعة وفريقي يتنامى كل شهر!', 'avatar' => 'م'],
+        ['name' => 'سارة م.', 'role' => 'موزعة ماسية', 'text' => 'غيّرت DXN حياتي. حسّنت صحتي وأصبحت أكسب دخلاً كاملاً.', 'avatar' => 'س', 'img' => '/images/avatars/sarah.jpg'],
+        ['name' => 'جيمس ك.', 'role' => 'موزع ذهبي', 'text' => 'بنيت فريقاً من أكثر من 50 موزعاً. أفضل قرار!', 'avatar' => 'ج', 'img' => '/images/avatars/james.jpg'],
+        ['name' => 'ماريا ل.', 'role' => 'عضوة نجمة ياقوتية', 'text' => 'القهوة رائعة وفريقي يتنامى كل شهر!', 'avatar' => 'م', 'img' => '/images/avatars/maria.jpg'],
     ] : [
-        ['name' => 'Sarah M.', 'role' => 'Diamond Distributor', 'text' => 'DXN changed my life. Ganoderma improved my health and I earn full-time income.', 'avatar' => 'S'],
-        ['name' => 'James K.', 'role' => 'Gold Distributor', 'text' => 'Built a team of 50+ distributors. Best decision ever!', 'avatar' => 'J'],
-        ['name' => 'Maria L.', 'role' => 'Star Ruby', 'text' => 'The coffee is amazing and my downline keeps growing!', 'avatar' => 'M'],
+        ['name' => 'Sarah M.', 'role' => 'Diamond Distributor', 'text' => 'DXN changed my life. Ganoderma improved my health and I earn full-time income.', 'avatar' => 'S', 'img' => '/images/avatars/sarah.jpg'],
+        ['name' => 'James K.', 'role' => 'Gold Distributor', 'text' => 'Built a team of 50+ distributors. Best decision ever!', 'avatar' => 'J', 'img' => '/images/avatars/james.jpg'],
+        ['name' => 'Maria L.', 'role' => 'Star Ruby', 'text' => 'The coffee is amazing and my downline keeps growing!', 'avatar' => 'M', 'img' => '/images/avatars/maria.jpg'],
     ];
 @endphp
 
 @section('content')
 {{-- Hero --}}
-<section class="bg-hero min-h-[85vh] flex items-center relative overflow-hidden">
+<section class="bg-hero min-h-screen flex items-center relative overflow-hidden">
+    <video id="heroVideo" autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+        <source src="{{ asset('Video/hero.mp4') }}" type="video/mp4">
+    </video>
+    <script>
+        (function() {
+            var v = document.getElementById('heroVideo');
+            // Keep video alive — check every 500ms
+            setInterval(function() {
+                if (v.paused && !document.hidden) {
+                    v.play().catch(function() {});
+                }
+                // Loop before end
+                if (v.duration && v.duration - v.currentTime < 0.3) {
+                    v.currentTime = 0;
+                    v.play().catch(function() {});
+                }
+            }, 500);
+            // Also monitor for stalls — if currentTime doesn't change for 2s, restart
+            var lastTime = 0;
+            var stallCount = 0;
+            setInterval(function() {
+                if (Math.abs(v.currentTime - lastTime) < 0.1 && !v.paused) {
+                    stallCount++;
+                    if (stallCount >= 2) {
+                        v.currentTime = v.currentTime + 0.1;
+                        v.play().catch(function() {});
+                        stallCount = 0;
+                    }
+                } else {
+                    stallCount = 0;
+                }
+                lastTime = v.currentTime;
+            }, 1000);
+            v.play().catch(function() {});
+        })();
+    </script>
+    <div class="absolute inset-0 bg-black/50"></div>
     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 30% 50%, #43af73 0%, transparent 50%)"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
             <span class="inline-block bg-white/15 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4 border border-white/20">
                 {{ $lang === 'ar' ? 'موزع مستقل معتمد من DXN' : ($hero['badge'] ?? 'Independent DXN Distributor') }}
@@ -78,14 +115,16 @@
 {{-- Featured Products + Bestsellers with background image --}}
 <div class="relative">
     {{-- Fixed background image — replace /images/products-bg.jpg with your own image --}}
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/images/products-bg.jpg');"></div>
-    <div class="absolute inset-0" style="background: rgba(255,255,255,0.88);"></div>
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/products-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(255,255,255,0.2);"></div>
 
     {{-- Featured Products --}}
     <section class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="section-title">{{ $lang === 'ar' ? 'المنتجات المميزة' : 'Featured Products' }}</h2>
-            <p class="section-subtitle">{{ $lang === 'ar' ? 'منتجات صحية عالية الجودة مدعومة بالغانودرما' : 'Premium health products powered by Ganoderma Lucidum' }}</p>
+            <div class="text-center mb-8">
+                <h2 class="inline-block px-6 py-3 rounded-2xl text-3xl md:text-4xl font-extrabold" style="background-color: #452aa8; color: #bf3c36;">{{ $lang === 'ar' ? 'المنتجات المميزة' : 'Featured Products' }}</h2>
+                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #43af73; color: #ffffff;">{{ $lang === 'ar' ? 'منتجات صحية عالية الجودة مدعومة بالغانودرما' : 'Premium health products powered by Ganoderma Lucidum' }}</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($featured as $product)
                     @include('components.product-card', ['product' => $product])
@@ -97,12 +136,21 @@
         </div>
     </section>
 
+    {{-- Divider --}}
+    <div class="relative z-10 flex items-center justify-center py-6">
+        <div style="height: 3px; width: 35%; background: linear-gradient(to right, transparent, #ffffff, #452aa8);"></div>
+        <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #452aa8; margin: 0 20px; box-shadow: 0 0 15px rgba(69,42,168,0.6), 0 0 30px rgba(69,42,168,0.3);"></div>
+        <div style="height: 3px; width: 35%; background: linear-gradient(to left, transparent, #ffffff, #452aa8);"></div>
+    </div>
+
     {{-- Bestsellers --}}
     @if($bestsellers->count() > 0)
     <section class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="section-title">{{ $lang === 'ar' ? 'الأكثر مبيعاً' : 'Bestsellers' }}</h2>
-            <p class="section-subtitle">{{ $lang === 'ar' ? 'الخيارات الأكثر شعبية بين عملائنا' : 'Most popular choices among our customers' }}</p>
+            <div class="text-center mb-8">
+                <h2 class="inline-block px-6 py-3 rounded-2xl text-3xl md:text-4xl font-extrabold" style="background-color: #452aa8; color: #bf3c36;">{{ $lang === 'ar' ? 'الأكثر مبيعاً' : 'Bestsellers' }}</h2>
+                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #43af73; color: #ffffff;">{{ $lang === 'ar' ? 'الخيارات الأكثر شعبية بين عملائنا' : 'Most popular choices among our customers' }}</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($bestsellers as $product)
                     @include('components.product-card', ['product' => $product])
@@ -201,10 +249,14 @@
                     </div>
                     <p class="text-gray-600 italic mb-6">"{{ $t['text'] }}"</p>
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #452aa8;">{{ $t['avatar'] }}</div>
+                        @if(file_exists(public_path($t['img'])))
+                            <img src="{{ $t['img'] }}" alt="{{ $t['name'] }}" class="w-10 h-10 rounded-full object-cover">
+                        @else
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #452aa8;">{{ $t['avatar'] }}</div>
+                        @endif
                         <div>
                             <p class="font-semibold text-gray-800">{{ $t['name'] }}</p>
-                            <p class="text-sm" style="color: #43af73;">{{ $t['role'] }}</p>
+                            <p class="text-sm" style="color: #452aa8;">{{ $t['role'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -214,8 +266,10 @@
 </section>
 
 {{-- CTA Banner --}}
-<section class="bg-hero py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
+<section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.6);"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'هل أنت مستعد للبدء؟' : 'Ready to Get Started?' }}</h2>
         <p class="text-white/70 text-lg mb-8">{{ $lang === 'ar' ? 'انضم لآلاف الأشخاص الذين حوّلوا صحتهم وحياتهم مع DXN' : 'Join thousands who have transformed their health and lives with DXN' }}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

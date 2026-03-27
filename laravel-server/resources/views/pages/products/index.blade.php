@@ -37,7 +37,7 @@
             {{ $lang === 'ar' ? 'كتالوج منتجات DXN' : 'DXN Product Catalog' }}
         </h1>
         <p class="text-white/70 text-lg">
-            {{ $lang === 'ar' ? 'منتجات صحية فاخرة مدعومة بفطر غانوديرما لوسيدوم' : 'Premium health products powered by Ganoderma Lucidum' }}
+            {{ $lang === 'ar' ? 'منتجات صحية فاخرة مدعومة بفطر غانوديرما لوسيدوم' : 'Premium health products powered by DXN' }}
         </p>
     </div>
 </div>
@@ -59,15 +59,17 @@
 </div>
 
 {{-- Products Section --}}
-<div class="bg-gray-50 min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 py-10">
+<div class="relative min-h-screen">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/products-page-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(255,255,255,0.2);"></div>
+    <div class="max-w-7xl mx-auto px-4 py-10 relative z-10">
 
         {{-- Section Heading --}}
         <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-extrabold inline-block" style="color: #452aa8;">
+            <h1 class="text-4xl md:text-5xl font-extrabold inline-block px-6 py-3 rounded-2xl" style="color: #bf3c36; background-color: #452aa8;">
                 {{ $catIcons[$currentCategory] ?? '🌿' }}
                 {{ $lang === 'ar' ? ($catLabelsAr[$currentCategory] ?? 'جميع المنتجات') : ($catLabels[$currentCategory] ?? 'All Products') }}
-            </h2>
+            </h1>
             <div class="w-16 h-1 mx-auto mt-2 rounded-full" style="background: linear-gradient(90deg, #43af73, #5bc48a);"></div>
             <p class="text-gray-500 text-sm mt-2">{{ $products->total() }} {{ $lang === 'ar' ? 'منتج' : 'products' }}</p>
         </div>
@@ -110,8 +112,21 @@
                 @endforeach
             </div>
 
-            <div class="mt-12">
-                {{ $products->links() }}
+            <div class="mt-12 flex justify-between items-center">
+                <div>
+                    @if($products->previousPageUrl())
+                        <a href="{{ $products->previousPageUrl() }}" class="inline-flex items-center gap-2 text-white font-semibold px-6 py-2.5 rounded-xl transition-all" style="background-color: #bf3c36;" onmouseenter="this.style.backgroundColor='#a3322d'" onmouseleave="this.style.backgroundColor='#bf3c36'">
+                            {{ $lang === 'ar' ? 'السابق' : 'Previous' }}
+                        </a>
+                    @endif
+                </div>
+                <div>
+                    @if($products->nextPageUrl())
+                        <a href="{{ $products->nextPageUrl() }}" class="inline-flex items-center gap-2 text-white font-semibold px-6 py-2.5 rounded-xl transition-all" style="background-color: #bf3c36;" onmouseenter="this.style.backgroundColor='#a3322d'" onmouseleave="this.style.backgroundColor='#bf3c36'">
+                            {{ $lang === 'ar' ? 'التالي' : 'Next' }}
+                        </a>
+                    @endif
+                </div>
             </div>
         @else
             <div class="text-center py-24">
@@ -139,5 +154,24 @@
     }
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Pagination styling */
+    nav[role="navigation"] { display: flex; align-items: center; gap: 0; }
+    nav[role="navigation"] .flex.justify-between { display: none; }
+    nav[role="navigation"] .hidden.sm\\:flex-1 { display: flex !important; align-items: center; }
+    nav[role="navigation"] span[aria-current="page"] span {
+        background-color: #43af73 !important; color: white !important;
+        border-radius: 0.5rem; padding: 0.4rem 0.85rem; font-weight: 700;
+    }
+    nav[role="navigation"] a {
+        color: #452aa8 !important; font-weight: 600; padding: 0.4rem 0.85rem;
+        border-radius: 0.5rem; transition: all 0.2s;
+    }
+    nav[role="navigation"] a:hover {
+        background-color: #e8f5ee !important; color: #43af73 !important;
+    }
+    nav[role="navigation"] .relative span.cursor-default {
+        color: #9ca3af; padding: 0.4rem 0.85rem;
+    }
 </style>
 @endpush

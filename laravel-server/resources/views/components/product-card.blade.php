@@ -28,9 +28,9 @@
 @endphp
 
 <div class="group bg-white rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full"
-     style="box-shadow: 0 1px 8px rgba(0,0,0,0.06);"
-     onmouseenter="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'"
-     onmouseleave="this.style.boxShadow='0 1px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
+     style="box-shadow: inset 0 0px 0 0px #bf3c36, 0 1px 8px rgba(0,0,0,0.06); transition: box-shadow 0.3s, transform 0.3s;"
+     onmouseenter="this.style.boxShadow='inset 0 -4px 0 0px #bf3c36, 0 8px 30px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'"
+     onmouseleave="this.style.boxShadow='inset 0 0px 0 0px #bf3c36, 0 1px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
 
     <a href="{{ $link }}" class="block flex-1 flex flex-col">
         {{-- Image --}}
@@ -88,6 +88,4 @@
         </a>
     </div>
 
-    {{-- Green accent on hover --}}
-    <div class="h-0.5 bg-brand-green opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 </div>

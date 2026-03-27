@@ -48,7 +48,10 @@
 </div>
 
 {{-- Personal Story --}}
-<section class="py-20 bg-white">
+<section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-center bg-cover bg-fixed" style="background-image: url('/about-story-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(67,175,115,0);"></div>
+    <div class="relative z-10">
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="flex flex-col items-center gap-6">
             <div class="w-48 h-48 bg-gradient-to-br from-dxn-green to-dxn-darkgreen rounded-full flex items-center justify-center shadow-2xl">
@@ -73,30 +76,31 @@
         </div>
 
         <div>
-            <span class="text-dxn-gold font-semibold text-sm uppercase tracking-widest">
+            <span class="font-extrabold text-lg uppercase tracking-widest" style="color: #ffffff;">
                 {{ $lang === 'ar' ? 'كيف بدأ كل شيء' : 'How It All Started' }}
             </span>
-            <h2 class="text-3xl font-bold text-dxn-darkgreen mt-2 mb-6">
+            <h2 class="text-3xl font-bold mt-2 mb-6" style="color: #ffffff;">
                 {{ $lang === 'ar' ? 'من تجربة شخصية إلى مهمة مشتركة' : 'From a Personal Experience to a Shared Mission' }}
             </h2>
             <div class="space-y-4">
                 @foreach($story as $para)
-                    <p class="text-gray-600 leading-relaxed">{{ $para }}</p>
+                    <p class="leading-relaxed text-lg" style="color: rgba(255,255,255,0.9);">{{ $para }}</p>
                 @endforeach
             </div>
-            <div class="flex flex-wrap gap-3 mt-8">
-                <a href="{{ $whatsapp }}" target="_blank" class="btn-gold flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    WhatsApp Us
+            <div style="display: flex; flex-direction: row; gap: 12px; margin-top: 2rem; flex-wrap: nowrap;">
+                <a href="{{ $whatsapp }}" target="_blank" class="btn-gold" style="display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>WhatsApp Us</span>
                 </a>
-                <a href="{{ route('join') }}" class="btn-primary">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
+                <a href="{{ route('join') }}" class="btn-primary" style="white-space: nowrap;">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
 {{-- Values --}}
-<section class="py-20 bg-gray-50">
+<section class="py-20" style="background-color: #f0fdf4;">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'ما الذي يميزنا' : 'What Sets Us Apart' }}</h2>
@@ -117,21 +121,21 @@
 </section>
 
 {{-- DXN by the Numbers --}}
-<section class="py-20 bg-dxn-green">
+<section class="py-20" style="background-color: #fef2f2;">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white">{{ $lang === 'ar' ? 'DXN بالأرقام' : 'DXN by the Numbers' }}</h2>
+            <h2 class="text-3xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'DXN بالأرقام' : 'DXN by the Numbers' }}</h2>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             @foreach([
                 ['value' => '1993', 'label' => $lang === 'ar' ? 'تأسست عام' : 'Founded'],
                 ['value' => '180+', 'label' => $lang === 'ar' ? 'دولة' : 'Countries'],
                 ['value' => '9M+', 'label' => $lang === 'ar' ? 'عضو' : 'Members'],
                 ['value' => '1000+', 'label' => $lang === 'ar' ? 'منتج' : 'Products'],
             ] as $stat)
-                <div class="text-center text-white">
-                    <div class="text-4xl font-bold text-dxn-gold mb-1">{{ $stat['value'] }}</div>
-                    <div class="text-gray-300 text-sm">{{ $stat['label'] }}</div>
+                <div class="text-center p-6 rounded-2xl" style="background: rgba(191,60,54,0.08);">
+                    <div class="text-5xl font-extrabold mb-2" style="color: #43af73;">{{ $stat['value'] }}</div>
+                    <div class="text-sm font-semibold uppercase tracking-wide" style="color: #452aa8;">{{ $stat['label'] }}</div>
                 </div>
             @endforeach
         </div>
@@ -139,18 +143,20 @@
 </section>
 
 {{-- CTA --}}
-<section class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-dxn-darkgreen mb-4">
+<section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.6);"></div>
+    <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl font-bold text-white mb-4">
             {{ $lang === 'ar' ? 'هل أنت مستعد للانضمام إلى عائلتنا؟' : 'Ready to Join Our Family?' }}
         </h2>
-        <p class="text-gray-600 mb-8">
+        <p class="text-white/70 mb-8">
             {{ $lang === 'ar' ? 'سواء كنت تريد منتجات صحية أو فرصة عمل — أنا هنا لمساعدتك في كل خطوة.' : "Whether you want health products or a business opportunity — I'm here to help you every step of the way." }}
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
             <a href="{{ $whatsapp }}" target="_blank" class="btn-gold flex items-center gap-2">WhatsApp Us</a>
             <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="btn-primary">{{ $lang === 'ar' ? 'احضر زووم مجاني' : 'Attend Free Zoom' }}</a>
-            <a href="{{ route('join') }}" class="btn-outline">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
+            <a href="{{ route('join') }}" style="border: 2px solid #ffffff; color: #ffffff; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s;" onmouseenter="this.style.backgroundColor='#ffffff'; this.style.color='#452aa8'" onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#ffffff'">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
         </div>
     </div>
 </section>
