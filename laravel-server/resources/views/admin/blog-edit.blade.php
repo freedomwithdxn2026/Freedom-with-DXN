@@ -68,6 +68,38 @@
             <a href="{{ route('admin.blogs') }}" class="btn-primary" style="background: #6b7280;">Cancel</a>
         </div>
     </form>
+
+    {{-- Image Uploader --}}
+    <div class="card p-6 mt-6">
+        <h3 class="font-bold text-dxn-darkgreen mb-4">Upload Images for This Blog</h3>
+        <p class="text-xs text-gray-400 mb-4">Upload images here, then copy the URL and paste it into your HTML code.</p>
+
+        <form id="upload-form" enctype="multipart/form-data" class="flex items-end gap-4 mb-6">
+            @csrf
+            <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Select Image</label>
+                <input type="file" id="image-file" name="image" accept="image/*" class="input-field" required>
+            </div>
+            <button type="submit" class="btn-primary whitespace-nowrap">Upload</button>
+        </form>
+
+        <div id="upload-status" class="hidden mb-4 p-3 rounded-lg text-sm"></div>
+
+        {{-- Uploaded images list --}}
+        <div id="uploaded-images" class="space-y-3">
+            @if(file_exists(public_path('images/blog/' . $blog->id)))
+                @foreach(glob(public_path('images/blog/' . $blog->id . '/*')) as $file)
+                    @php $url = '/images/blog/' . $blog->id . '/' . basename($file); @endphp
+                    <div class="flex items-center gap-3 p-2 bg-gray-50 rounded-lg border">
+                        <img src="{{ $url }}" class="w-16 h-16 object-cover rounded">
+                        <input type="text" value="{{ $url }}" readonly class="input-field flex-1 text-sm font-mono bg-white" onclick="this.select()">
+                        <button onclick="copyUrl(this.previousElementSibling)" class="text-sm text-dxn-green hover:underline whitespace-nowrap">Copy URL</button>
+                        <button onclick="insertIntoHtml(this.parentElement.querySelector('input').value)" class="text-sm text-blue-600 hover:underline whitespace-nowrap">Insert as &lt;img&gt;</button>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
 </div>
 
 {{-- Find & Replace Modal --}}
@@ -157,6 +189,70 @@
         const result = document.getElementById('fr-result');
         result.textContent = count + ' occurrence(s) replaced.';
         result.classList.remove('hidden');
+    }
+
+    // Image upload
+    document.getElementById('upload-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const status = document.getElementById('upload-status');
+        const fileInput = document.getElementById('image-file');
+        if (!fileInput.files.length) return;
+
+        status.className = 'mb-4 p-3 rounded-lg text-sm bg-blue-50 text-blue-700';
+        status.textContent = 'Uploading...';
+        status.classList.remove('hidden');
+
+        const formData = new FormData();
+        formData.append('image', fileInput.files[0]);
+        formData.append('_token', '{{ csrf_token() }}');
+
+        try {
+            const res = await fetch('{{ route("admin.blogs.upload-image", $blog) }}', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await res.json();
+            if (data.url) {
+                status.className = 'mb-4 p-3 rounded-lg text-sm bg-green-50 text-green-700';
+                status.textContent = 'Uploaded successfully!';
+                fileInput.value = '';
+
+                // Add to list
+                const container = document.getElementById('uploaded-images');
+                const div = document.createElement('div');
+                div.className = 'flex items-center gap-3 p-2 bg-gray-50 rounded-lg border';
+                div.innerHTML = `
+                    <img src="${data.url}" class="w-16 h-16 object-cover rounded">
+                    <input type="text" value="${data.url}" readonly class="input-field flex-1 text-sm font-mono bg-white" onclick="this.select()">
+                    <button onclick="copyUrl(this.previousElementSibling)" class="text-sm text-dxn-green hover:underline whitespace-nowrap">Copy URL</button>
+                    <button onclick="insertIntoHtml('${data.url}')" class="text-sm text-blue-600 hover:underline whitespace-nowrap">Insert as &lt;img&gt;</button>
+                `;
+                container.prepend(div);
+            } else {
+                status.className = 'mb-4 p-3 rounded-lg text-sm bg-red-50 text-red-700';
+                status.textContent = data.error || 'Upload failed.';
+            }
+        } catch (err) {
+            status.className = 'mb-4 p-3 rounded-lg text-sm bg-red-50 text-red-700';
+            status.textContent = 'Upload failed: ' + err.message;
+        }
+    });
+
+    function copyUrl(input) {
+        input.select();
+        navigator.clipboard.writeText(input.value);
+        const btn = input.nextElementSibling;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy URL', 1500);
+    }
+
+    function insertIntoHtml(url) {
+        const textarea = document.getElementById('content-html');
+        if (!textarea) return;
+        const imgTag = `<img src="${url}" alt="" style="width:100%; max-height:400px; object-fit:cover; border-radius:6px;">`;
+        const pos = textarea.selectionStart;
+        textarea.value = textarea.value.slice(0, pos) + imgTag + textarea.value.slice(pos);
+        textarea.focus();
     }
 
     // Init on load

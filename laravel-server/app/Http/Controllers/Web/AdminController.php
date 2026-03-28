@@ -151,6 +151,18 @@ class AdminController extends Controller
         return back()->with('success', 'Blog post updated!');
     }
 
+    public function blogUploadImage(Request $request, Blog $blog)
+    {
+        $request->validate(['image' => 'required|image|max:5120']);
+
+        $dir = 'images/blog/' . $blog->id;
+        $file = $request->file('image');
+        $filename = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '', $file->getClientOriginalName());
+        $file->move(public_path($dir), $filename);
+
+        return response()->json(['url' => '/' . $dir . '/' . $filename]);
+    }
+
     public function blogDestroy(Blog $blog)
     {
         $blog->delete();

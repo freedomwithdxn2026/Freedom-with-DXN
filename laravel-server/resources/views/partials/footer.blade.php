@@ -7,15 +7,15 @@
 
 <footer style="background-color: #ffffff; color: #452aa8;">
     <div class="w-full h-px" style="background-color: rgba(69,42,168,0.1);"></div>
-    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="max-w-7xl mx-auto px-4 py-10" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         {{-- Brand --}}
-        <div class="col-span-1 md:col-span-1">
-            <img src="/footer-lg.png" alt="Grow with DXN" class="h-16 w-auto object-contain mb-4">
-            <p class="text-sm text-[#452aa8]/60 mb-4">
+        <div style="width: 22%;">
+            <img src="/footer-lg.png" alt="Grow with DXN" class="h-14 w-auto object-contain mb-2">
+            <p class="text-sm text-[#452aa8]/60 mb-2" style="text-align: justify;">
                 {{ $lang === 'ar' ? 'موزع DXN الموثوق. نساعدك على تحقيق الصحة والحرية المالية من خلال منتجات DXN العالمية.' : ($footer['description'] ?? "Your trusted DXN distributor. We help you achieve health and financial freedom through DXN's world-class products.") }}
             </p>
             {{-- Social Media Icons --}}
-            <div style="display: flex; flex-wrap: nowrap; gap: 12px; margin-top: 8px;">
+            <div style="display: flex; flex-wrap: nowrap; gap: 12px; margin-top: 4px;">
                 @if(!empty($social['facebook']))
                     <a href="{{ $social['facebook'] }}" target="_blank" rel="noopener noreferrer" class="transition-colors" style="color: #452aa8;" onmouseenter="this.style.color='#43af73'" onmouseleave="this.style.color='#452aa8'" title="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -55,7 +55,7 @@
         </div>
 
         {{-- Quick Links --}}
-        <div>
+        <div style="width: 18%;">
             <h3 class="text-brand-green font-semibold mb-4">{{ $lang === 'ar' ? 'روابط سريعة' : 'Quick Links' }}</h3>
             <ul class="space-y-2 text-sm">
                 <li><a href="{{ route('home') }}" class="transition-colors" style="color: #452aa8; opacity: 0.7; font-weight: 600;" onmouseenter="this.style.color='#43af73'; this.style.opacity='1'" onmouseleave="this.style.color='#452aa8'; this.style.opacity='0.7'">{{ $lang === 'ar' ? 'الرئيسية' : 'Home' }}</a></li>
@@ -67,7 +67,7 @@
         </div>
 
         {{-- Products --}}
-        <div>
+        <div style="width: 18%;">
             <h3 class="text-brand-green font-semibold mb-4">{{ $lang === 'ar' ? 'المنتجات' : 'Products' }}</h3>
             <ul class="space-y-2 text-sm">
                 @foreach([
@@ -83,7 +83,7 @@
         </div>
 
         {{-- Contact --}}
-        <div>
+        <div style="width: 28%;">
             <h3 class="text-brand-green font-semibold mb-4">{{ $lang === 'ar' ? 'اتصل بنا' : 'Contact' }}</h3>
             <ul class="space-y-3 text-sm">
                 <li class="flex items-start gap-2">

@@ -32,7 +32,7 @@
     ] : [
         ['q' => 'Is DXN legit?', 'a' => 'Yes. DXN was founded in 1993 in Malaysia and operates in 180+ countries. It is a legitimate direct-selling company with millions of members.'],
         ['q' => 'How much does it cost to start?', 'a' => 'The registration fee is typically $10–$25. There is NO monthly purchase quota.'],
-        ['q' => 'Is DXN halal?', 'a' => 'Yes. DXN products are halal-certified. The Ganoderma mushroom is a plant-based ingredient.'],
+        ['q' => 'Is DXN product halal?', 'a' => 'Yes. DXN products are halal-certified. The Ganoderma mushroom is a plant-based ingredient.'],
         ['q' => 'Do I need any experience?', 'a' => 'No experience needed. DXN provides free training through Zoom sessions and online resources.'],
         ['q' => 'How do I earn money?', 'a' => "You earn through retail profit, group bonus, and leadership bonuses as you advance in rank."],
         ['q' => 'Can I do this part-time?', 'a' => "Absolutely. No schedule, no quota, no pressure. Work at your own pace."],
@@ -54,7 +54,7 @@
 </div>
 
 {{-- Steps --}}
-<section class="py-20 bg-gray-50">
+<section class="py-20" style="background-color: #fef2f2;">
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'كيف تبدأ — خطوة بخطوة' : 'How to Get Started — Step by Step' }}</h2>
@@ -63,7 +63,7 @@
             @foreach($steps as $step)
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex gap-6 items-start hover:shadow-md transition-shadow">
                     <div class="w-14 h-14 bg-dxn-green rounded-2xl flex items-center justify-center shrink-0">
-                        <span class="text-dxn-gold font-bold text-lg">{{ $step['num'] }}</span>
+                        <span class="text-white font-bold text-lg">{{ $step['num'] }}</span>
                     </div>
                     <div class="flex-1">
                         <h3 class="font-bold text-dxn-darkgreen text-lg mb-2">{{ $step['title'] }}</h3>
@@ -149,13 +149,16 @@
 </section>
 
 {{-- CTA --}}
-<section class="bg-hero py-20">
-    <div class="max-w-3xl mx-auto px-4 text-center">
+<section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.6);"></div>
+    <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'خطوتك الأولى تبدأ هنا' : 'Your First Step Starts Here' }}</h2>
-        <p class="text-gray-300 mb-8">{{ $lang === 'ar' ? 'لا تنتظر اللحظة المثالية. ابدأ اليوم.' : "Don't wait for the perfect moment. Start today." }}</p>
+        <p class="text-white/70 mb-8">{{ $lang === 'ar' ? 'لا تنتظر اللحظة المثالية. ابدأ اليوم.' : "Don't wait for the perfect moment. Start today." }}</p>
         <div class="flex flex-wrap gap-4 justify-center">
-            <a href="{{ $whatsapp }}" target="_blank" class="btn-gold">{{ $lang === 'ar' ? 'واتساب الآن' : 'WhatsApp Us' }}</a>
-            <a href="{{ $calendly }}" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all inline-block">{{ $lang === 'ar' ? 'احضر زووم أولاً' : 'Attend Zoom First' }}</a>
+            <a href="{{ $whatsapp }}" target="_blank" class="btn-gold flex items-center gap-2">{{ $lang === 'ar' ? 'واتساب الآن' : 'WhatsApp Us' }}</a>
+            <a href="{{ $calendly }}" target="_blank" rel="noopener noreferrer" class="btn-primary">{{ $lang === 'ar' ? 'احضر زووم أولاً' : 'Attend Free Zoom' }}</a>
+            <a href="{{ route('join') }}" style="border: 2px solid #ffffff; color: #ffffff; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s;" onmouseenter="this.style.backgroundColor='#ffffff'; this.style.color='#452aa8'" onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#ffffff'">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
         </div>
     </div>
 </section>
