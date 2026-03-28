@@ -25,9 +25,9 @@ class BlogController extends Controller
     {
         $blog->increment('views');
 
-        // Full HTML pages render as standalone documents
+        // Full HTML pages render inside site layout with iframe
         if ($blog->content_type === 'full_html') {
-            return response($blog->content);
+            return view('pages.blog.show-html', compact('blog'));
         }
 
         $related = Blog::where('published', true)
@@ -37,5 +37,13 @@ class BlogController extends Controller
             ->get();
 
         return view('pages.blog.show', compact('blog', 'related'));
+    }
+
+    public function showRaw(Blog $blog)
+    {
+        if ($blog->content_type !== 'full_html') {
+            return redirect()->route('blog.show', $blog);
+        }
+        return response($blog->content)->header('Content-Type', 'text/html');
     }
 }

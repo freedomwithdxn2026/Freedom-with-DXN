@@ -131,6 +131,8 @@ class AdminController extends Controller
         $data['slug'] = \Illuminate\Support\Str::slug($request->title);
         $data['author_id'] = auth()->id();
         $data['content_type'] = $data['content_type'] ?? 'rich_text';
+        $data['excerpt'] = $data['excerpt'] ?? '';
+        $data['image'] = $data['image'] ?? '';
 
         // For full HTML mode, use the content_html field
         if ($isFullHtml) {

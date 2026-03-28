@@ -53,6 +53,7 @@ Route::get('/join', [PageController::class, 'joinDxn'])->name('join');
 Route::get('/zoom', function () { return redirect(route('join') . '#zoom'); })->name('zoom');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{blog}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{blog}/raw', [BlogController::class, 'showRaw'])->name('blog.show.raw');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'contactStore'])->name('contact.store');
 
