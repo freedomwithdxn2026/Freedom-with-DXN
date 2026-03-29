@@ -8,6 +8,10 @@
         <a href="{{ route('admin.index') }}" class="text-dxn-green hover:underline text-sm">← Back to Admin</a>
     </div>
 
+    @if(session('success'))
+        <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">{{ session('success') }}</div>
+    @endif
+
     <details class="card p-6 mb-8">
         <summary class="font-bold text-dxn-darkgreen cursor-pointer">+ New Blog Post</summary>
         <form method="POST" action="{{ route('admin.blogs.store') }}" class="mt-4 space-y-4">
@@ -66,13 +70,13 @@
         </form>
     </details>
 
-    <div class="card overflow-hidden">
-        <table class="w-full text-sm">
+    <div class="card overflow-x-auto">
+        <table class="w-full text-sm whitespace-nowrap">
             <thead class="bg-gray-50"><tr><th class="px-4 py-3 text-left">Title</th><th class="px-4 py-3 text-left">Type</th><th class="px-4 py-3 text-left">Category</th><th class="px-4 py-3 text-left">Views</th><th class="px-4 py-3 text-left">Status</th><th class="px-4 py-3 text-left">Actions</th></tr></thead>
             <tbody>
                 @forelse($blogs as $blog)
                     <tr class="border-t">
-                        <td class="px-4 py-3 font-medium">{{ Str::limit($blog->title, 40) }}</td>
+                        <td class="px-4 py-3 font-medium max-w-xs truncate">{{ Str::limit($blog->title, 40) }}</td>
                         <td class="px-4 py-3">
                             @if($blog->content_type === 'full_html')
                                 <span class="badge bg-purple-100 text-purple-700 text-xs">HTML Page</span>
@@ -83,13 +87,15 @@
                         <td class="px-4 py-3 text-gray-500 capitalize">{{ str_replace('-', ' ', $blog->category) }}</td>
                         <td class="px-4 py-3 text-gray-500">{{ $blog->views ?? 0 }}</td>
                         <td class="px-4 py-3"><span class="badge {{ $blog->published ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700' }}">{{ $blog->published ? 'Published' : 'Draft' }}</span></td>
-                        <td class="px-4 py-3 flex gap-2">
+                        <td class="px-4 py-3">
+                            <div class="flex gap-2">
                             <a href="{{ route('admin.blogs.edit', $blog) }}" class="text-blue-600 hover:underline text-sm">Edit</a>
                             <a href="{{ route('blog.show', $blog) }}" target="_blank" class="text-dxn-green hover:underline text-sm">View</a>
                             <form method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
                                 @csrf @method('DELETE')
                                 <button class="text-red-500 hover:text-red-700 text-sm">Delete</button>
                             </form>
+                            </div>
                         </td>
                     </tr>
                 @empty
