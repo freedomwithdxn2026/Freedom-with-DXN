@@ -2,10 +2,21 @@
 @section('title', 'Manage Blog - Admin')
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 py-8">
+<style>
+    @media (max-width: 768px) {
+        .blog-admin-wrap { padding-left: 12px !important; padding-right: 12px !important; }
+        .blog-admin-wrap .card { border-radius: 0 !important; }
+        .blog-admin-wrap table th,
+        .blog-admin-wrap table td { padding: 8px 10px !important; font-size: 13px !important; }
+        .blog-admin-wrap .content-toggle { flex-wrap: wrap; gap: 8px !important; }
+        .blog-admin-wrap .content-toggle .mode-hint { display: none; }
+        .blog-admin-wrap details { border-radius: 0 !important; }
+    }
+</style>
+<div class="max-w-6xl mx-auto px-4 py-8 blog-admin-wrap">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-2xl font-bold text-dxn-darkgreen">Blog Posts</h1>
-        <a href="{{ route('admin.index') }}" class="text-dxn-green hover:underline text-sm">← Back to Admin</a>
+        <a href="{{ route('admin.index') }}" class="text-dxn-green hover:underline text-sm">Back to Admin</a>
     </div>
 
     @if(session('success'))
@@ -18,7 +29,7 @@
             @csrf
 
             {{-- Content Type Toggle --}}
-            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg border">
+            <div class="flex flex-wrap items-center gap-4 p-3 bg-gray-50 rounded-lg border content-toggle">
                 <span class="text-sm font-medium text-gray-700">Content Mode:</span>
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input type="radio" name="content_type" value="rich_text" checked onchange="toggleContentMode(this.value)" class="text-dxn-green">
@@ -28,8 +39,8 @@
                     <input type="radio" name="content_type" value="full_html" onchange="toggleContentMode(this.value)" class="text-dxn-green">
                     <span class="text-sm">Full HTML Page</span>
                 </label>
-                <span id="mode-hint-rich" class="text-xs text-gray-400 ml-2">Normal blog post with TinyMCE editor</span>
-                <span id="mode-hint-html" class="text-xs text-gray-400 ml-2 hidden">Paste a complete HTML document with its own styles</span>
+                <span id="mode-hint-rich" class="text-xs text-gray-400 ml-2 mode-hint">Normal blog post with TinyMCE editor</span>
+                <span id="mode-hint-html" class="text-xs text-gray-400 ml-2 hidden mode-hint">Paste a complete HTML document with its own styles</span>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,7 +81,8 @@
         </form>
     </details>
 
-    <div class="card overflow-x-auto">
+    {{-- Desktop table --}}
+    <div class="card overflow-x-auto hidden md:block">
         <table class="w-full text-sm whitespace-nowrap">
             <thead class="bg-gray-50"><tr><th class="px-4 py-3 text-left">Title</th><th class="px-4 py-3 text-left">Type</th><th class="px-4 py-3 text-left">Category</th><th class="px-4 py-3 text-left">Views</th><th class="px-4 py-3 text-left">Status</th><th class="px-4 py-3 text-left">Actions</th></tr></thead>
             <tbody>
@@ -103,6 +115,38 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="p-4">{{ $blogs->links() }}</div>
+    </div>
+
+    {{-- Mobile cards --}}
+    <div class="md:hidden space-y-3">
+        @forelse($blogs as $blog)
+            <div class="card p-4">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                    <h3 class="font-medium text-sm leading-tight">{{ $blog->title }}</h3>
+                    <span class="badge flex-shrink-0 {{ $blog->published ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700' }} text-xs">{{ $blog->published ? 'Live' : 'Draft' }}</span>
+                </div>
+                <div class="flex items-center gap-2 mb-3 text-xs text-gray-500">
+                    @if($blog->content_type === 'full_html')
+                        <span class="badge bg-purple-100 text-purple-700 text-xs">HTML</span>
+                    @else
+                        <span class="badge bg-blue-100 text-blue-700 text-xs">Rich Text</span>
+                    @endif
+                    <span class="capitalize">{{ str_replace('-', ' ', $blog->category) }}</span>
+                    <span>{{ $blog->views ?? 0 }} views</span>
+                </div>
+                <div class="flex gap-3 border-t pt-2">
+                    <a href="{{ route('admin.blogs.edit', $blog) }}" class="text-blue-600 hover:underline text-sm font-medium">Edit</a>
+                    <a href="{{ route('blog.show', $blog) }}" target="_blank" class="text-dxn-green hover:underline text-sm font-medium">View</a>
+                    <form method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
+                        @csrf @method('DELETE')
+                        <button class="text-red-500 hover:text-red-700 text-sm font-medium">Delete</button>
+                    </form>
+                </div>
+            </div>
+        @empty
+            <div class="card p-8 text-center text-gray-400">No blog posts yet.</div>
+        @endforelse
         <div class="p-4">{{ $blogs->links() }}</div>
     </div>
 </div>
