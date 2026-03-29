@@ -83,7 +83,9 @@
 </section>
 
 {{-- Free Zoom Training --}}
-<section class="py-20 bg-white" id="zoom">
+<section class="py-20 relative bg-cover bg-center bg-no-repeat" id="zoom" style="background-image: url('/faq-bg.png')">
+    <div class="absolute inset-0 bg-white/90"></div>
+    <div class="relative">
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-4">
             <span class="inline-block bg-blue-500/10 text-blue-600 px-4 py-1 rounded-full text-sm font-medium mb-3">{{ $lang === 'ar' ? 'مجاني 100%' : '100% Free' }}</span>
@@ -128,10 +130,11 @@
             </a>
         </div>
     </div>
+    </div>
 </section>
 
 {{-- FAQs --}}
-<section class="py-20 relative bg-cover bg-center bg-no-repeat" style="background-image: url('/images/faq-bg.png')">
+<section class="py-20 relative bg-cover bg-center bg-no-repeat" style="background-image: url('/faq-bg.png')">
     <div class="absolute inset-0 bg-gray-50/90"></div>
     <div class="max-w-3xl mx-auto px-4 relative">
         <h2 class="text-3xl font-bold text-dxn-darkgreen text-center mb-8">{{ $lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions' }}</h2>
