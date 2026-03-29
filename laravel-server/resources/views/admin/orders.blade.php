@@ -2,7 +2,7 @@
 @section('title', 'Manage Orders - Admin')
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-2xl font-bold text-dxn-darkgreen">Orders</h1>
         <a href="{{ route('admin.index') }}" class="text-dxn-green hover:underline text-sm">← Back to Admin</a>

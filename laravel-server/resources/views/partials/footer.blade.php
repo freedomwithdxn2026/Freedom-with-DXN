@@ -7,7 +7,7 @@
 
 <footer style="background-color: #ffffff; color: #452aa8;">
     <div class="w-full h-px" style="background-color: rgba(69,42,168,0.1);"></div>
-    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {{-- Brand --}}
         <div>
             <img src="/footer-lg.png" alt="Grow with DXN" class="h-14 w-auto object-contain mb-2">

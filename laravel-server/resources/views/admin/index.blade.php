@@ -2,14 +2,14 @@
 @section('title', 'Admin Panel - Freedom with DXN')
 
 @section('content')
-<div class="bg-dxn-darkgreen py-10 px-4">
-    <div class="max-w-6xl mx-auto">
+<div class="bg-dxn-darkgreen py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
         <h1 class="text-2xl font-bold text-white">Admin Panel</h1>
         <p class="text-gray-300 mt-1">Manage your store</p>
     </div>
 </div>
 
-<div class="max-w-6xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     {{-- Stats --}}
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div class="card p-5 text-center">
