@@ -127,17 +127,7 @@
                         {{ $link['label'] }}
                     </a>
                 @endforeach
-                {{-- Mobile Language Toggle --}}
-                <div class="border-t border-gray-100 mt-2 pt-2">
-                    <a href="{{ route('lang.switch', 'en') }}" class="flex items-center gap-3 px-2 py-2 text-sm font-medium {{ $lang === 'en' ? 'text-brand-green' : 'text-gray-700' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="w-5 h-3.5 rounded-sm overflow-hidden shrink-0"><clipPath id="gb-mob"><rect width="60" height="30" rx="2"/></clipPath><g clip-path="url(#gb-mob)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#C8102E" stroke-width="6"/></g></svg>
-                        ENGLISH
-                    </a>
-                    <a href="{{ route('lang.switch', 'ar') }}" class="flex items-center gap-3 px-2 py-2 text-sm font-medium {{ $lang === 'ar' ? 'text-brand-green' : 'text-gray-700' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="w-5 h-3.5 rounded-sm overflow-hidden shrink-0"><rect width="60" height="30" fill="#fff"/><rect width="60" height="10" fill="#00732f"/><rect y="20" width="60" height="10" fill="#000"/><rect width="15" height="30" fill="#ff0000"/></svg>
-                        العربية
-                    </a>
-                </div>
+                {{-- Mobile Language Toggle — hidden since dropdown is already in top bar --}}
                 @guest
                     <a href="{{ route('login') }}" class="text-brand-violet hover:text-brand-green px-2 py-2 text-sm">
                         {{ $lang === 'ar' ? 'تسجيل الدخول' : 'Login' }}
