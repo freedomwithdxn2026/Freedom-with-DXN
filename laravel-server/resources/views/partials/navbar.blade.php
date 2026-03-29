@@ -12,10 +12,12 @@
     $cartCount = count(session('cart', []));
 @endphp
 
-<nav class="bg-white z-50 transition-shadow duration-300 shadow-sm"
+@php $isHome = request()->routeIs('home'); @endphp
+<nav class="z-50 transition-all duration-300"
      x-data="{ menuOpen: false, dropdownOpen: false, scrolled: false }"
-     x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
-     :class="scrolled ? 'shadow-lg' : 'shadow-sm'">
+     x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+     style="{{ $isHome ? 'position: absolute; top: 0; left: 0; right: 0;' : 'background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.08);' }}"
+     :style="scrolled ? 'position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);' : '{{ $isHome ? "background: transparent;" : "background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.08);" }}'"
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20 lg:h-28">
             {{-- Logo --}}
@@ -27,7 +29,8 @@
             <div class="hidden lg:flex items-center gap-6">
                 @foreach($navLinks as $link)
                     <a href="{{ $link['url'] }}"
-                       class="text-base font-medium transition-colors whitespace-nowrap relative {{ request()->url() === $link['url'] ? 'text-brand-green font-bold' : 'text-brand-violet hover:text-brand-green' }}">
+                       class="text-base font-medium transition-colors whitespace-nowrap relative {{ request()->url() === $link['url'] ? 'text-brand-green font-bold' : 'text-brand-violet hover:text-brand-green' }}"
+                       @if($isHome) :style="scrolled ? '' : 'color: {{ request()->url() === $link['url'] ? '#43af73' : '#fff' }}'" @endif>
                         {{ $link['label'] }}
                         @if(request()->url() === $link['url'])
                             <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-green rounded-full"></span>
@@ -40,7 +43,8 @@
             <div class="flex items-center gap-3 shrink-0">
                 {{-- Language Dropdown --}}
                 <div class="relative" x-data="{ langOpen: false }" @click.outside="langOpen = false">
-                    <button @click="langOpen = !langOpen" class="flex items-center gap-2 border border-brand-violet/30 text-brand-violet text-sm font-bold px-3 py-1.5 rounded-lg hover:bg-brand-violet/5 transition-colors">
+                    <button @click="langOpen = !langOpen" class="flex items-center gap-2 border text-sm font-bold px-3 py-1.5 rounded-lg transition-colors"
+                        @if($isHome) :style="scrolled ? 'border-color: rgba(69,42,168,0.3); color: #452aa8;' : 'border-color: rgba(255,255,255,0.4); color: #fff;'" @else style="border-color: rgba(69,42,168,0.3); color: #452aa8;" @endif>
                         @if($lang === 'en')
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="w-5 h-3.5 rounded-sm overflow-hidden shrink-0"><clipPath id="gb-btn"><rect width="60" height="30" rx="2"/></clipPath><g clip-path="url(#gb-btn)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#gb-btn)"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#C8102E" stroke-width="6"/></g></svg>
                         @else
@@ -96,7 +100,8 @@
                     </div>
                 @else
                     <div class="hidden md:flex items-center gap-2">
-                        <a href="{{ route('login') }}" class="text-brand-violet hover:text-brand-green text-sm font-medium transition-colors">
+                        <a href="{{ route('login') }}" class="hover:text-brand-green text-sm font-medium transition-colors"
+                           @if($isHome) :style="scrolled ? 'color: #452aa8;' : 'color: #fff;'" @else style="color: #452aa8;" @endif>
                             {{ $lang === 'ar' ? 'تسجيل الدخول' : 'Login' }}
                         </a>
                         <a href="{{ route('join') }}" class="bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-red-dark transition-colors whitespace-nowrap">
@@ -106,7 +111,8 @@
                 @endauth
 
                 {{-- Mobile menu button --}}
-                <button @click="menuOpen = !menuOpen" class="lg:hidden text-brand-violet hover:text-brand-green">
+                <button @click="menuOpen = !menuOpen" class="lg:hidden transition-colors"
+                    @if($isHome) :style="scrolled ? 'color: #452aa8;' : 'color: #fff;'" @else style="color: #452aa8;" @endif>
                     <svg x-show="!menuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                     <svg x-show="menuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
@@ -114,7 +120,7 @@
         </div>
 
         {{-- Mobile Menu --}}
-        <div x-show="menuOpen" x-transition class="lg:hidden pb-4 border-t border-gray-100 mt-2">
+        <div x-show="menuOpen" x-transition class="lg:hidden pb-4 border-t border-gray-100 mt-2" style="{{ $isHome ? 'background: #fff; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem;' : '' }}"
             <div class="flex flex-col gap-1 pt-3">
                 @foreach($navLinks as $link)
                     <a href="{{ $link['url'] }}" class="{{ request()->url() === $link['url'] ? 'text-brand-green font-bold' : 'text-brand-violet hover:text-brand-green' }} px-2 py-2 text-sm font-medium">
