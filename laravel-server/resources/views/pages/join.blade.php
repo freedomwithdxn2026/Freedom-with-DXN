@@ -84,7 +84,6 @@
 
 {{-- Free Zoom Training --}}
 <section class="py-20 relative bg-cover bg-center bg-no-repeat" id="zoom" style="background-image: url('/free-zoon-bg.png')">
-    <div class="absolute inset-0 bg-white/90"></div>
     <div class="relative">
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-4">
