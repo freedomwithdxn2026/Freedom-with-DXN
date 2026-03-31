@@ -591,7 +591,7 @@ INSERT INTO `blogs` (`id`,`title`,`slug`,`content`,`content_ar`,`content_type`,`
 
     <div class=\"faq\">
       <div class=\"faq-item\">
-        <p class=\"faq-q\">Is DXN halal?</p>
+        <p class=\"faq-q\">Is DXN products halal?</p>
         <p class=\"faq-a\">Yes. DXN products are halal certified, making them suitable for Muslim consumers across the UAE and the wider MENA region.</p>
       </div>
       <div class=\"faq-item\">

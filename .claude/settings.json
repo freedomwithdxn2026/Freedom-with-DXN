@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /i/Claude/grow-with-dxn/laravel-server -path */node_modules -prune -o -type f \\\\\\(-name *blog* -o -name *image* -o -name *upload* \\\\\\) -print)",
+      "Bash(find /i/Claude/grow-with-dxn/laravel-server/app -type f -name *.php)"
+    ]
+  }
+}

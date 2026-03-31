@@ -13,7 +13,7 @@ class Product extends Model
         'name', 'name_ar', 'description', 'description_ar', 'price', 'category',
         'image', 'images', 'in_stock', 'stock_count', 'sku',
         'benefits', 'benefits_ar', 'ingredients', 'usage', 'usage_ar',
-        'featured', 'dxn_id', 'source_url', 'landing_page', 'dxn_category', 'rating',
+        'featured', 'bestseller', 'dxn_id', 'source_url', 'landing_page', 'dxn_category', 'rating',
     ];
 
     protected $casts = [
@@ -23,7 +23,8 @@ class Product extends Model
         'price'     => 'float',
         'rating'    => 'float',
         'in_stock'  => 'boolean',
-        'featured'  => 'boolean',
+        'featured'    => 'boolean',
+        'bestseller'  => 'boolean',
     ];
 
     public function reviews()

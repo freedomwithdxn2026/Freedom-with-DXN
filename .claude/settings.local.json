@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \":*)",
+      "Bash(php artisan:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000)",
+      "Bash(mysql -u root -p1997 -e \"SELECT 1\")",
+      "Bash(ls \"i:/Claude/grow-with-dxn/laravel-server/public/build/assets/\"*.css)",
+      "Bash(find /i/Claude/grow-with-dxn -type f \\\\\\(-name *.mp4 -o -name *.webm -o -name *.mov -o -name *.avi -o -name *.mkv \\\\\\))",
+      "Bash(find /i/Claude/grow-with-dxn/client -type f \\\\\\(-name tailwind.config.* -o -name index.css -o -name *.css \\\\\\))",
+      "Bash(cmd.exe /c \"rmdir /s /q \"\"I:\\\\Claude\\\\grow-with-dxn\\\\_reference\\\\client\"\"\")",
+      "WebSearch",
+      "WebFetch(domain:en.dxnproductsguide.com)",
+      "WebFetch(domain:www.godxn.com)",
+      "Bash(npm run:*)",
+      "Bash(ls /i/Claude/grow-with-dxn/laravel-server/public/cta-bg*)",
+      "Read(//c/Users/taham/AppData/Local/Temp/claude/i--Claude-grow-with-dxn/6368a7dd-1565-468a-94b3-0482a006b50a/tasks/**)",
+      "Bash(find /i/Claude/grow-with-dxn/client/src/pages -maxdepth 1 -name *Admin* -o -name *Blog*)",
+      "Bash(git -C /i/Claude/grow-with-dxn log --oneline --all)",
+      "Bash(find /i/Claude/grow-with-dxn/_reference/client/src -name *.jsx -o -name *.js -o -name *.css)",
+      "Bash(grep -E \"\\\\.\\(json|js|jsx|css\\)$\")",
+      "Bash(xargs wc:*)",
+      "Bash(node screenshot.js https://freedomwithdxn.com --viewport=mobile)",
+      "Bash(ssh -o StrictHostKeyChecking=no freedomw@freedomwithdxn.com \"cd ~/public_html && git pull origin main 2>&1 && cd laravel-server && php artisan view:clear 2>&1\")",
+      "Bash(ls \"i:/Claude/grow-with-dxn/laravel-server/public/images/faq\"*)",
+      "Bash(ls \"i:/Claude/grow-with-dxn/laravel-server/public/images/\"*bg*)"
+    ]
+  }
+}
