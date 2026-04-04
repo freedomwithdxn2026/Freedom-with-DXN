@@ -37,7 +37,7 @@
                      class="w-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" style="height: 13rem;">
             @else
                 <div class="w-full flex flex-col items-center justify-center" style="height: 13rem; background: linear-gradient(135deg, #452aa8, #3a2290);">
-                    <span class="text-3xl font-bold" style="color: #43af73;">DXN</span>
+                    <span class="text-3xl font-bold" style="color: #318c5a;">DXN</span>
                     <span class="text-white/90 text-xs mt-1 px-4 text-center line-clamp-2">{{ $product->name }}</span>
                 </div>
             @endif
@@ -58,7 +58,7 @@
 
         {{-- Info --}}
         <div class="px-4 pt-3 flex-1 flex flex-col">
-            <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full w-fit" style="background-color: rgba(67,175,115,0.1); color: #43af73;">{{ $displayCategory }}</span>
+            <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full w-fit" style="background-color: rgba(67,175,115,0.1); color: #318c5a;">{{ $displayCategory }}</span>
             <h3 class="text-sm font-bold mt-2 mb-2 line-clamp-2 leading-snug group-hover:text-brand-green transition-colors" style="color: #452aa8; min-height: 2.5rem;">{{ $displayName }}</h3>
 
             {{-- Rating + Price pushed to bottom --}}
@@ -70,7 +70,7 @@
                 </div>
             @endif
 
-            <span class="text-xl font-bold" style="color: #43af73;">{{ $displayPrice }}</span>
+            <span class="text-xl font-bold" style="color: #318c5a;">{{ $displayPrice }}</span>
         </div>
     </a>
 

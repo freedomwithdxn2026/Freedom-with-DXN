@@ -19,9 +19,9 @@
     --color-gold-600: #dcca8b;
 
     /* New brand colors */
-    --color-brand-green: #43af73;
-    --color-brand-green-light: #5bc48a;
-    --color-brand-green-dark: #369a60;
+    --color-brand-green: #318c5a;
+    --color-brand-green-light: #43af73;
+    --color-brand-green-dark: #276e47;
     --color-brand-red: #bf3c36;
     --color-brand-red-light: #d05550;
     --color-brand-red-dark: #a3322d;
@@ -30,7 +30,7 @@
     --color-brand-violet-dark: #3a2290;
 
     /* Legacy aliases pointing to new colors */
-    --color-dxn-green: #43af73;
+    --color-dxn-green: #318c5a;
     --color-dxn-darkgreen: #452aa8;
     --color-dxn-gold: #43af73;
     --color-dxn-lightgold: #5bc48a;
@@ -39,9 +39,9 @@
 }
 
 :root {
-    --brand-green: #43af73;
-    --brand-green-light: #5bc48a;
-    --brand-green-dark: #369a60;
+    --brand-green: #318c5a;
+    --brand-green-light: #43af73;
+    --brand-green-dark: #276e47;
     --brand-red: #bf3c36;
     --brand-red-dark: #a3322d;
     --brand-violet: #452aa8;
@@ -152,8 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hover utility classes (replaces inline onmouseenter/onmouseleave) */
-.hover-green { background-color: #43af73; transition: background-color 0.2s; }
-.hover-green:hover { background-color: #369a60; }
+.hover-green { background-color: #318c5a; transition: background-color 0.2s; }
+.hover-green:hover { background-color: #276e47; }
 
 .hover-red { background-color: #bf3c36; transition: background-color 0.2s; }
 .hover-red:hover { background-color: #a3322d; }
@@ -162,10 +162,10 @@ h1, h2, h3, h4, h5, h6 {
 .hover-violet:hover { background-color: #4a2db5; }
 
 .footer-social { color: #452aa8; transition: color 0.2s; }
-.footer-social:hover { color: #43af73; }
+.footer-social:hover { color: #318c5a; }
 
 .footer-link { color: #452aa8; opacity: 0.85; font-weight: 600; transition: color 0.2s, opacity 0.2s; }
-.footer-link:hover { color: #43af73; opacity: 1; }
+.footer-link:hover { color: #318c5a; opacity: 1; }
 
 .btn-outline-white { border: 2px solid #fff; color: #fff; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s; }
 .btn-outline-white:hover { background-color: #fff; color: #452aa8; }

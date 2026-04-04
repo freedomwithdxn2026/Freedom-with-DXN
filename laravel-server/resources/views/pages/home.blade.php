@@ -84,7 +84,7 @@
             <div class="w-80 h-80 rounded-full flex items-center justify-center backdrop-blur-sm" style="background: rgba(67,175,115,0.2);">
                 <div class="w-64 h-64 rounded-full flex items-center justify-center" style="background: rgba(67,175,115,0.3);">
                     <div class="text-center text-white">
-                        <div class="text-6xl font-bold" style="color: #43af73;">DXN</div>
+                        <div class="text-6xl font-bold" style="color: #318c5a;">DXN</div>
                         <div class="text-xl mt-2">Ganoderma</div>
                         <div class="text-sm text-white/90 mt-1">{{ $lang === 'ar' ? 'منذ 1993' : 'Since 1993' }}</div>
                     </div>
@@ -104,7 +104,7 @@
             ['v' => '1000+', 'l' => $lang === 'ar' ? 'منتج' : 'Products'],
         ] as $stat)
             <div class="text-center text-white">
-                <div class="text-3xl font-bold" style="color: #43af73;">{{ $stat['v'] }}</div>
+                <div class="text-3xl font-bold" style="color: #318c5a;">{{ $stat['v'] }}</div>
                 <div class="text-white/90 text-sm">{{ $stat['l'] }}</div>
             </div>
         @endforeach
@@ -122,7 +122,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="inline-block px-6 py-3 rounded-2xl text-3xl md:text-4xl font-extrabold" style="background-color: #452aa8; color: #bf3c36;">{{ $lang === 'ar' ? 'المنتجات المميزة' : 'Featured Products' }}</h2>
-                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #43af73; color: #ffffff;">{{ $lang === 'ar' ? 'منتجات صحية عالية الجودة مدعومة بالغانودرما' : 'Premium health products powered by Ganoderma Lucidum' }}</span>
+                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #318c5a; color: #ffffff;">{{ $lang === 'ar' ? 'منتجات صحية عالية الجودة مدعومة بالغانودرما' : 'Premium health products powered by Ganoderma Lucidum' }}</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($featured as $product)
@@ -148,7 +148,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="inline-block px-6 py-3 rounded-2xl text-3xl md:text-4xl font-extrabold" style="background-color: #452aa8; color: #bf3c36;">{{ $lang === 'ar' ? 'الأكثر مبيعاً' : 'Bestsellers' }}</h2>
-                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #43af73; color: #ffffff;">{{ $lang === 'ar' ? 'الخيارات الأكثر شعبية بين عملائنا' : 'Most popular choices among our customers' }}</span>
+                <br><span class="inline-block px-5 py-2 rounded-xl mt-3 text-sm font-medium" style="background-color: #318c5a; color: #ffffff;">{{ $lang === 'ar' ? 'الخيارات الأكثر شعبية بين عملائنا' : 'Most popular choices among our customers' }}</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($bestsellers as $product)
@@ -189,7 +189,7 @@
             ] as $s)
                 <div class="bg-white rounded-xl p-4 shadow-sm" style="border: 1px solid rgba(55,28,155,0.1);">
                     <p class="font-bold" style="color: #452aa8;">{{ $s['d'] }}</p>
-                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-1 font-medium" style="background: rgba(67,175,115,0.1); color: #43af73;">{{ $s['b'] }}</span>
+                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-1 font-medium" style="background: rgba(67,175,115,0.1); color: #318c5a;">{{ $s['b'] }}</span>
                 </div>
             @endforeach
         </div>
@@ -200,12 +200,12 @@
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-            <span class="font-semibold text-sm uppercase tracking-widest" style="color: #43af73;">{{ $lang === 'ar' ? 'فرصة العمل' : 'Business Opportunity' }}</span>
+            <span class="font-semibold text-sm uppercase tracking-widest" style="color: #318c5a;">{{ $lang === 'ar' ? 'فرصة العمل' : 'Business Opportunity' }}</span>
             <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" style="color: #452aa8;">{{ $lang === 'ar' ? 'لماذا تنضم إلى DXN؟' : 'Why Join DXN?' }}</h2>
             <ul class="space-y-3 mb-8">
                 @foreach($why as $item)
                     <li class="flex items-start gap-3">
-                        <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5" style="background-color: #43af73;">
+                        <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5" style="background-color: #318c5a;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <span class="text-gray-600">{{ $item }}</span>
