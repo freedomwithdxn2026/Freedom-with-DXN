@@ -41,16 +41,21 @@
 @section('content')
 {{-- Hero --}}
 <section class="bg-hero min-h-screen flex items-center relative overflow-hidden">
-    <video id="heroVideo" autoplay loop muted playsinline preload="metadata" poster="{{ asset('Video/hero-poster.png') }}" class="absolute inset-0 w-full h-full object-cover" style="background: #000;">
+    {{-- Mobile: static poster image only (no video download) --}}
+    <img src="{{ asset('Video/hero-poster.png') }}" alt="" class="absolute inset-0 w-full h-full object-cover md:hidden" fetchpriority="high">
+    {{-- Desktop: video with poster --}}
+    <video id="heroVideo" autoplay loop muted playsinline preload="metadata" poster="{{ asset('Video/hero-poster.png') }}" class="absolute inset-0 w-full h-full object-cover hidden md:block" style="background: #000;">
         <source src="{{ asset('Video/hero.mp4') }}" type="video/mp4">
     </video>
     <script>
         (function() {
             var v = document.getElementById('heroVideo');
-            v.play().catch(function() {});
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) v.play().catch(function() {});
-            });
+            if (v && window.innerWidth >= 768) {
+                v.play().catch(function() {});
+                document.addEventListener('visibilitychange', function() {
+                    if (!document.hidden) v.play().catch(function() {});
+                });
+            }
         })();
     </script>
     <div class="absolute inset-0 bg-black/50"></div>
@@ -81,7 +86,7 @@
                     <div class="text-center text-white">
                         <div class="text-6xl font-bold" style="color: #43af73;">DXN</div>
                         <div class="text-xl mt-2">Ganoderma</div>
-                        <div class="text-sm text-white/60 mt-1">{{ $lang === 'ar' ? 'منذ 1993' : 'Since 1993' }}</div>
+                        <div class="text-sm text-white/80 mt-1">{{ $lang === 'ar' ? 'منذ 1993' : 'Since 1993' }}</div>
                     </div>
                 </div>
             </div>
@@ -100,7 +105,7 @@
         ] as $stat)
             <div class="text-center text-white">
                 <div class="text-3xl font-bold" style="color: #43af73;">{{ $stat['v'] }}</div>
-                <div class="text-white/60 text-sm">{{ $stat['l'] }}</div>
+                <div class="text-white/80 text-sm">{{ $stat['l'] }}</div>
             </div>
         @endforeach
     </div>
@@ -109,7 +114,7 @@
 {{-- Featured Products + Bestsellers with background image --}}
 <div class="relative">
     {{-- Fixed background image — replace /images/products-bg.jpg with your own image --}}
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/products-bg.jpeg');"></div>
+    <div class="absolute inset-0 bg-center bg-cover md:bg-fixed" style="background-image: url('/products-bg.jpeg');"></div>
     <div class="absolute inset-0" style="background: rgba(255,255,255,0.2);"></div>
 
     {{-- Featured Products --}}
@@ -265,7 +270,7 @@
     <div class="absolute inset-0" style="background: rgba(0,0,0,0.6);"></div>
     <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'هل أنت مستعد للبدء؟' : 'Ready to Get Started?' }}</h2>
-        <p class="text-white/70 text-lg mb-8">{{ $lang === 'ar' ? 'انضم لآلاف الأشخاص الذين حوّلوا صحتهم وحياتهم مع DXN' : 'Join thousands who have transformed their health and lives with DXN' }}</p>
+        <p class="text-white/80 text-lg mb-8">{{ $lang === 'ar' ? 'انضم لآلاف الأشخاص الذين حوّلوا صحتهم وحياتهم مع DXN' : 'Join thousands who have transformed their health and lives with DXN' }}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('join') }}" class="btn-primary px-8 py-3.5 shadow-lg">
                 {{ $lang === 'ar' ? 'انضم مجاناً' : 'Join For Free' }}
