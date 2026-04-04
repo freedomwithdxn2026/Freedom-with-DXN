@@ -41,7 +41,7 @@
 @section('content')
 {{-- Hero --}}
 <section class="bg-hero min-h-screen flex items-center relative overflow-hidden">
-    <video id="heroVideo" autoplay loop muted playsinline preload="metadata" poster="{{ asset('Video/hero-poster.jpg') }}" class="absolute inset-0 w-full h-full object-cover" style="background: #000;">
+    <video id="heroVideo" autoplay loop muted playsinline preload="metadata" poster="{{ asset('Video/hero-poster.png') }}" class="absolute inset-0 w-full h-full object-cover" style="background: #000;">
         <source src="{{ asset('Video/hero.mp4') }}" type="video/mp4">
     </video>
     <script>
