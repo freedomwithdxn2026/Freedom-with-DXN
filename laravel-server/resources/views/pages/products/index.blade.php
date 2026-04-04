@@ -187,7 +187,7 @@
         border-radius: 0.5rem; transition: all 0.2s;
     }
     nav[role="navigation"] a:hover {
-        background-color: #e8f5ee !important; color: #318c5a !important;
+        background-color: #e8f5ee !important; color: #1e6b42 !important;
     }
     nav[role="navigation"] .relative span.cursor-default {
         color: #9ca3af; padding: 0.4rem 0.85rem;

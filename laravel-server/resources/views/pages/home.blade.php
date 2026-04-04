@@ -68,7 +68,7 @@
     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 30% 50%, #43af73 0%, transparent 50%)"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-            <span class="inline-block bg-white/15 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4 border border-white/20">
+            <span class="inline-block bg-white/25 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium mb-4 border border-white/30">
                 {{ $lang === 'ar' ? 'موزع مستقل معتمد من DXN' : ($hero['badge'] ?? 'Independent DXN Distributor') }}
             </span>
             <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
@@ -90,7 +90,7 @@
             <div class="w-80 h-80 rounded-full flex items-center justify-center backdrop-blur-sm" style="background: rgba(67,175,115,0.2);">
                 <div class="w-64 h-64 rounded-full flex items-center justify-center" style="background: rgba(67,175,115,0.3);">
                     <div class="text-center text-white">
-                        <div class="text-6xl font-bold" style="color: #318c5a;">DXN</div>
+                        <div class="text-6xl font-bold" style="color: #43af73;">DXN</div>
                         <div class="text-xl mt-2">Ganoderma</div>
                         <div class="text-sm text-white/90 mt-1">{{ $lang === 'ar' ? 'منذ 1993' : 'Since 1993' }}</div>
                     </div>
@@ -195,7 +195,7 @@
             ] as $s)
                 <div class="bg-white rounded-xl p-4 shadow-sm" style="border: 1px solid rgba(55,28,155,0.1);">
                     <p class="font-bold" style="color: #452aa8;">{{ $s['d'] }}</p>
-                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-1 font-medium" style="background: rgba(67,175,115,0.1); color: #318c5a;">{{ $s['b'] }}</span>
+                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-1 font-medium" style="background: rgba(49,140,90,0.1); color: #1e6b42;">{{ $s['b'] }}</span>
                 </div>
             @endforeach
         </div>

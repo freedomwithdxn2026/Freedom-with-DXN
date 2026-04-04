@@ -112,7 +112,7 @@
                         <img :src="activeImage" alt="{{ $product->name }}" width="400" height="384" class="w-full h-full object-contain p-4">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #452aa8, #3a2290);">
-                            <span class="text-6xl font-bold" style="color: #318c5a;">DXN</span>
+                            <span class="text-6xl font-bold" style="color: #43af73;">DXN</span>
                             <span class="text-white/70 text-sm mt-2">{{ $product->name }}</span>
                         </div>
                     @endif
@@ -135,7 +135,7 @@
             {{-- Center: Product Info --}}
             <div class="lg:col-span-5">
                 {{-- Category --}}
-                <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-3" style="background-color: rgba(67,175,115,0.1); color: #318c5a;">{{ $displayCategory }}</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-3" style="background-color: rgba(49,140,90,0.1); color: #1e6b42;">{{ $displayCategory }}</span>
 
                 {{-- Title --}}
                 <h1 class="text-2xl lg:text-3xl font-bold mb-2" style="color: #452aa8;">{{ $displayName }}</h1>
