@@ -28,8 +28,50 @@
 
     @stack('seo')
     <link rel="icon" type="image/png" href="/favicon.png">
-    {{-- Fonts self-hosted in /public/fonts/ — no external requests --}}
+
+    {{-- Self-hosted DM Sans font (no Google Fonts request) --}}
+    <style>
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: optional; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: optional; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 600; font-display: optional; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: optional; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+    </style>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- Color overrides (bypasses Vite build) --}}
+    <style>
+        :root {
+            --brand-green: #236b43;
+            --brand-green-light: #43af73;
+            --brand-green-dark: #1a5535;
+            --brand-red: #bf3c36;
+            --brand-red-dark: #a3322d;
+            --brand-violet: #452aa8;
+            --brand-violet-dark: #3a2290;
+            --color-brand-green: #236b43;
+        }
+        .text-brand-green { color: #236b43 !important; }
+        .text-dxn-green { color: #236b43 !important; }
+        .btn-secondary { background-color: #236b43 !important; color: #fff !important; }
+        .btn-secondary:hover { background-color: #1a5535 !important; }
+        .hover-green { background-color: #236b43 !important; }
+        .hover-green:hover { background-color: #1a5535 !important; }
+        .hover-violet { background-color: #452aa8 !important; }
+        .hover-violet:hover { background-color: #3a2290 !important; }
+        .hover-whatsapp { background-color: #1a8d45 !important; }
+        .hover-whatsapp:hover { background-color: #15753a !important; }
+        .footer-social { color: #452aa8 !important; transition: color 0.2s; }
+        .footer-social:hover { color: #236b43 !important; }
+        .footer-link { color: #452aa8 !important; font-weight: 600; transition: color 0.2s; }
+        .footer-link:hover { color: #236b43 !important; }
+        .product-card-hover { box-shadow: inset 0 0 0 0 #bf3c36, 0 1px 8px rgba(0,0,0,0.06); transition: box-shadow 0.3s, transform 0.3s; }
+        .product-card-hover:hover { box-shadow: inset 0 -4px 0 0 #bf3c36, 0 8px 30px rgba(0,0,0,0.12); transform: translateY(-4px); }
+        .btn-outline-white { border: 2px solid #fff; color: #fff; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s; }
+        .btn-outline-white:hover { background-color: #fff; color: #452aa8; }
+        .btn-outline-violet { border: 2px solid #452aa8; color: #452aa8; background: transparent; transition: all 0.2s; }
+        .btn-outline-violet:hover { background-color: #452aa8; color: #fff; }
+    </style>
     @stack('styles')
 </head>
 <body class="min-h-screen flex flex-col">
