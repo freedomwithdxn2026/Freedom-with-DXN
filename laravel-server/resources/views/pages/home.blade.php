@@ -110,7 +110,7 @@
             ['v' => '1000+', 'l' => $lang === 'ar' ? 'منتج' : 'Products'],
         ] as $stat)
             <div class="text-center text-white">
-                <div class="text-3xl font-bold" style="color: #318c5a;">{{ $stat['v'] }}</div>
+                <div class="text-3xl font-bold" style="color: #5ddf8e;">{{ $stat['v'] }}</div>
                 <div class="text-white/90 text-sm">{{ $stat['l'] }}</div>
             </div>
         @endforeach
