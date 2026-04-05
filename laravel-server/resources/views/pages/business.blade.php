@@ -29,11 +29,32 @@
     ];
 @endphp
 
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        @foreach($faqs as $faq)
+        {
+            "@type": "Question",
+            "name": "{{ $faq['q'] }}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ $faq['a'] }}"
+            }
+        }@if(!$loop->last),@endif
+        @endforeach
+    ]
+}
+</script>
+@endpush
+
 @section('content')
-<section class="bg-hero py-20 px-4">
+<section class="bg-hero py-20 px-4" aria-labelledby="business-hero-heading">
     <div class="max-w-4xl mx-auto text-center">
         <span class="inline-block bg-dxn-gold/20 text-dxn-gold px-4 py-1 rounded-full text-sm font-medium mb-4">Business Opportunity</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Build Your Dream Business with DXN</h1>
+        <h1 id="business-hero-heading" class="text-4xl md:text-5xl font-bold text-white mb-6">Build Your Dream Business with DXN</h1>
         <p class="text-gray-300 text-lg mb-8">Join one of the world's fastest-growing network marketing companies. DXN offers a unique one-world, one-market business model.</p>
         <a href="{{ route('register') }}" class="btn-gold inline-flex items-center gap-2 text-lg">Start for Free →</a>
     </div>
@@ -117,9 +138,9 @@
     </div>
 </section>
 
-<section class="bg-hero py-16 px-4">
+<section class="bg-hero py-16 px-4" aria-labelledby="business-cta-heading">
     <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-white mb-4">Ready to Change Your Life?</h2>
+        <h2 id="business-cta-heading" class="text-3xl font-bold text-white mb-4">Ready to Change Your Life?</h2>
         <p class="text-gray-300 mb-8">Sign up today and I'll personally guide you through your first steps.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('register') }}" class="btn-gold">Join Now — It's Free</a>

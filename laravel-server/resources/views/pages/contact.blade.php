@@ -7,6 +7,32 @@
     $whatsapp = $settings->contact['whatsapp'] ?? 'https://wa.me/message/EFSQ2IDNVG3YB1';
 @endphp
 
+@section('keywords', 'contact DXN distributor, DXN UAE contact, freedom with DXN contact, WhatsApp DXN')
+
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Freedom with DXN",
+    "description": "Get in touch with Freedom With DXN for products, distributor signup, or business opportunities.",
+    "url": "{{ url('/contact') }}",
+    "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "Freedom with DXN",
+        "telephone": "{{ $settings->contact['phone'] ?? '+971 50 666 2875' }}",
+        "email": "{{ $settings->contact['email'] ?? 'info@freedomwithdxn.com' }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AE",
+            "addressRegion": "{{ $settings->contact['location'] ?? 'United Arab Emirates' }}"
+        },
+        "url": "https://freedomwithdxn.com"
+    }
+}
+</script>
+@endpush
+
 @section('content')
 {{-- Header --}}
 <div class="bg-dxn-darkgreen py-16 px-4 text-center relative overflow-hidden">
@@ -85,10 +111,10 @@
 </div>
 
 {{-- DXN UAE Offices --}}
-<div class="bg-gray-50 py-16">
+<section class="bg-gray-50 py-16" aria-labelledby="offices-heading">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-10">
-            <h2 class="text-2xl md:text-3xl font-bold" style="color: #452aa8;">
+            <h2 id="offices-heading" class="text-2xl md:text-3xl font-bold" style="color: #452aa8;">
                 {{ $lang === 'ar' ? 'مكاتب DXN في الإمارات' : 'DXN Offices in UAE' }}
             </h2>
             <p class="text-gray-600 mt-2">{{ $lang === 'ar' ? '10 فروع في جميع أنحاء الإمارات' : '10 branches across the UAE' }}</p>
@@ -205,12 +231,12 @@
                         <h3 class="font-bold text-gray-800 text-lg mb-3">{{ $branch['name'] }}</h3>
                         <div class="space-y-3 text-sm">
                             <div class="flex items-start gap-3">
-                                <span style="color: #43af73; font-size: 16px; line-height: 1; flex-shrink: 0; margin-top: 2px;">&#x1F4CD;</span>
-                                <span class="text-gray-600">{{ $branch['address'] }}</span>
+                                <span style="color: #43af73; font-size: 16px; line-height: 1; flex-shrink: 0; margin-top: 2px;" aria-hidden="true">&#x1F4CD;</span>
+                                <span class="text-gray-600"><span class="sr-only">{{ $lang === 'ar' ? 'العنوان:' : 'Address:' }} </span>{{ $branch['address'] }}</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span style="color: #43af73; font-size: 16px; line-height: 1; flex-shrink: 0;">&#x1F552;</span>
-                                <span class="text-gray-600">{{ $branch['hours'] }}</span>
+                                <span style="color: #43af73; font-size: 16px; line-height: 1; flex-shrink: 0;" aria-hidden="true">&#x1F552;</span>
+                                <span class="text-gray-600"><span class="sr-only">{{ $lang === 'ar' ? 'الأوقات:' : 'Hours:' }} </span>{{ $branch['hours'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -218,5 +244,5 @@
             @endforeach
         </div>
     </div>
-</div>
+</section>
 @endsection

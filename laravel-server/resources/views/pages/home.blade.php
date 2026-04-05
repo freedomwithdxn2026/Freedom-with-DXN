@@ -17,7 +17,36 @@
     "url": "https://freedomwithdxn.com",
     "logo": "https://freedomwithdxn.com/logo.png",
     "description": "Premium DXN health products including Lingzhi Coffee, Cocozhi, and Spirulina.",
-    "sameAs": []
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971506662875",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Arabic"]
+    },
+    "sameAs": [
+        @if(!empty($settings->social['facebook']))"{{ $settings->social['facebook'] }}"@endif
+        @if(!empty($settings->social['instagram'])),
+        "{{ $settings->social['instagram'] }}"@endif
+        @if(!empty($settings->social['youtube'])),
+        "{{ $settings->social['youtube'] }}"@endif
+        @if(!empty($settings->social['linkedin'])),
+        "{{ $settings->social['linkedin'] }}"@endif
+        @if(!empty($settings->social['tiktok'])),
+        "{{ $settings->social['tiktok'] }}"@endif
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Freedom with DXN",
+    "url": "https://freedomwithdxn.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://freedomwithdxn.com/products?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
 }
 </script>
 @endpush

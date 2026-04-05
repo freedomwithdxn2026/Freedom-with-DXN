@@ -12,28 +12,68 @@ use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\LandingController;
 use Illuminate\Support\Facades\Route;
 
-// Debug: test auth
-Route::get('/test-auth', function () {
-    return response()->json([
-        'logged_in' => auth()->check(),
-        'user' => auth()->user()?->only('id', 'name', 'email', 'role'),
-        'session_id' => session()->getId(),
-        'guard' => config('auth.defaults.guard'),
-        'driver' => config('auth.guards.web.driver'),
-        'session_driver' => config('session.driver'),
-        'session_data' => session()->all(),
-    ]);
-});
+// Sitemap
+Route::get('/sitemap.xml', function () {
+    $products = \App\Models\Product::select('id', 'updated_at')->orderBy('updated_at', 'desc')->get();
+    $blogs = \App\Models\Blog::where('published', true)->select('id', 'slug', 'updated_at')->orderBy('updated_at', 'desc')->get();
+    $landings = \App\Models\LandingPage::where('published', true)->select('slug', 'updated_at')->orderBy('updated_at', 'desc')->get();
 
-// Debug: force login test
-Route::get('/test-login', function () {
-    $user = \App\Models\User::where('email', 'info@freedomwithdxn.com')->first();
-    auth()->login($user);
-    return response()->json([
-        'after_login' => auth()->check(),
-        'user' => auth()->user()?->only('id', 'name', 'email', 'role'),
-    ]);
-});
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+    // Static pages
+    $staticPages = [
+        ['url' => '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
+        ['url' => '/products', 'priority' => '0.9', 'changefreq' => 'daily'],
+        ['url' => '/blog', 'priority' => '0.8', 'changefreq' => 'daily'],
+        ['url' => '/about', 'priority' => '0.7', 'changefreq' => 'monthly'],
+        ['url' => '/business', 'priority' => '0.7', 'changefreq' => 'monthly'],
+        ['url' => '/join', 'priority' => '0.8', 'changefreq' => 'monthly'],
+        ['url' => '/contact', 'priority' => '0.6', 'changefreq' => 'monthly'],
+    ];
+
+    foreach ($staticPages as $page) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>https://freedomwithdxn.com' . $page['url'] . '</loc>' . "\n";
+        $xml .= '    <changefreq>' . $page['changefreq'] . '</changefreq>' . "\n";
+        $xml .= '    <priority>' . $page['priority'] . '</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    // Products
+    foreach ($products as $product) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>https://freedomwithdxn.com/products/' . $product->id . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $product->updated_at->toW3cString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+        $xml .= '    <priority>0.7</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    // Blog posts
+    foreach ($blogs as $blog) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>https://freedomwithdxn.com/blog/' . $blog->slug . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $blog->updated_at->toW3cString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>monthly</changefreq>' . "\n";
+        $xml .= '    <priority>0.6</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    // Landing pages
+    foreach ($landings as $landing) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>https://freedomwithdxn.com/landing/' . $landing->slug . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $landing->updated_at->toW3cString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>monthly</changefreq>' . "\n";
+        $xml .= '    <priority>0.6</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    $xml .= '</urlset>';
+
+    return response($xml, 200)->header('Content-Type', 'application/xml');
+})->name('sitemap');
 
 // Language toggle
 Route::get('/lang/{locale}', function (string $locale) {

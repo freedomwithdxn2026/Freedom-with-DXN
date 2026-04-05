@@ -41,6 +41,27 @@
     ];
 @endphp
 
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        @foreach($faqs as $faq)
+        {
+            "@type": "Question",
+            "name": "{{ $faq['q'] }}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ $faq['a'] }}"
+            }
+        }@if(!$loop->last),@endif
+        @endforeach
+    ]
+}
+</script>
+@endpush
+
 @section('content')
 <div class="bg-dxn-darkgreen py-20 px-4 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 30% 50%, #dfc378 0%, transparent 60%)"></div>
@@ -56,10 +77,10 @@
 </div>
 
 {{-- Steps --}}
-<section class="py-20" style="background-color: #fef2f2;">
+<section class="py-20" style="background-color: #fef2f2;" aria-labelledby="steps-heading">
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'كيف تبدأ — خطوة بخطوة' : 'How to Get Started — Step by Step' }}</h2>
+            <h2 id="steps-heading" class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'كيف تبدأ — خطوة بخطوة' : 'How to Get Started — Step by Step' }}</h2>
         </div>
         <div class="space-y-6">
             @foreach($steps as $step)
@@ -85,12 +106,12 @@
 </section>
 
 {{-- Free Zoom Training --}}
-<section class="py-20 relative bg-cover bg-center bg-no-repeat" id="zoom" style="background-image: url('/free-zoon-bg.png')">
+<section class="py-20 relative bg-cover bg-center bg-no-repeat" id="zoom" style="background-image: url('/free-zoon-bg.png')" aria-labelledby="zoom-training-heading">
     <div class="relative">
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-4">
             <span class="inline-block bg-blue-500/10 text-blue-600 px-4 py-1 rounded-full text-sm font-medium mb-3">{{ $lang === 'ar' ? 'مجاني 100%' : '100% Free' }}</span>
-            <h2 class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'جلسات تدريب زووم المجانية' : 'Free Zoom Training Sessions' }}</h2>
+            <h2 id="zoom-training-heading" class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'جلسات تدريب زووم المجانية' : 'Free Zoom Training Sessions' }}</h2>
             <p class="text-gray-600 mt-3 max-w-2xl mx-auto">{{ $lang === 'ar' ? 'تعلم عن منتجات DXN وفرصة العمل من خبراء حقيقيين' : 'Learn about DXN products and the business opportunity from real experts' }}</p>
         </div>
 
@@ -135,10 +156,10 @@
 </section>
 
 {{-- FAQs --}}
-<section class="py-20 relative bg-cover bg-center bg-no-repeat" style="background-image: url('/faq-bg.png')">
-    <div class="absolute inset-0 bg-gray-50/90"></div>
+<section class="py-20 relative bg-cover bg-center bg-no-repeat" style="background-image: url('/faq-bg.png')" aria-labelledby="faq-heading">
+    <div class="absolute inset-0 bg-gray-50/90" aria-hidden="true"></div>
     <div class="max-w-3xl mx-auto px-4 relative">
-        <h2 class="text-3xl font-bold text-dxn-darkgreen text-center mb-8">{{ $lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions' }}</h2>
+        <h2 id="faq-heading" class="text-3xl font-bold text-dxn-darkgreen text-center mb-8">{{ $lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions' }}</h2>
         <div class="space-y-4">
             @foreach($faqs as $faq)
                 <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
@@ -154,11 +175,11 @@
 </section>
 
 {{-- CTA --}}
-<section class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
-    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);"></div>
+<section class="py-20 relative overflow-hidden" aria-labelledby="join-cta-heading">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);" aria-hidden="true"></div>
     <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
-        <h2 class="text-3xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'خطوتك الأولى تبدأ هنا' : 'Your First Step Starts Here' }}</h2>
+        <h2 id="join-cta-heading" class="text-3xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'خطوتك الأولى تبدأ هنا' : 'Your First Step Starts Here' }}</h2>
         <p class="text-white mb-8">{{ $lang === 'ar' ? 'لا تنتظر اللحظة المثالية. ابدأ اليوم.' : "Don't wait for the perfect moment. Start today." }}</p>
         <div class="flex flex-wrap gap-4 justify-center">
             <a href="{{ $whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-gold flex items-center gap-2">{{ $lang === 'ar' ? 'واتساب الآن' : 'WhatsApp Us' }}</a>

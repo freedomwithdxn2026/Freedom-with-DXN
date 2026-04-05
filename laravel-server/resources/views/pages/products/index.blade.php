@@ -24,12 +24,38 @@
     ];
 @endphp
 
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "DXN Product Catalog",
+    "description": "Explore our full range of authentic DXN health products.",
+    "url": "{{ url('/products') }}",
+    "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": {{ $products->total() }},
+        "itemListElement": [
+            @foreach($products as $i => $p)
+            {
+                "@type": "ListItem",
+                "position": {{ $i + 1 }},
+                "url": "{{ route('products.show', $p) }}",
+                "name": "{{ $p->name }}"
+            }@if(!$loop->last),@endif
+            @endforeach
+        ]
+    }
+}
+</script>
+@endpush
+
 @section('content')
 
 {{-- Hero Header --}}
 <div class="py-16 px-4 relative overflow-hidden" style="background-color: #452aa8;">
-    <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-1/2 translate-x-1/2" style="background: rgba(67,175,115,0.08);"></div>
-    <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full translate-y-1/2 -translate-x-1/2" style="background: rgba(67,175,115,0.08);"></div>
+    <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-1/2 translate-x-1/2" style="background: rgba(67,175,115,0.08);" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full translate-y-1/2 -translate-x-1/2" style="background: rgba(67,175,115,0.08);" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto text-center relative z-10">
         <span class="inline-block text-white px-5 py-1.5 rounded-full text-sm font-semibold mb-4 border border-white/20" style="background: rgba(0,0,0,0.5);">
@@ -62,8 +88,8 @@
 
 {{-- Products Section --}}
 <div class="relative min-h-screen">
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/products-page-bg.jpeg');"></div>
-    <div class="absolute inset-0" style="background: rgba(255,255,255,0.2);"></div>
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/products-page-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(255,255,255,0.2);" aria-hidden="true"></div>
     <div class="max-w-7xl mx-auto px-4 py-10 relative z-10">
 
         {{-- Section Heading --}}

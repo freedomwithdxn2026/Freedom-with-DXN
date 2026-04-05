@@ -9,6 +9,26 @@
     $blogCategories = ['all', 'health', 'business', 'products', 'success-stories', 'tips'];
 @endphp
 
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Freedom with DXN Blog",
+    "description": "Health tips, product reviews, and business insights for DXN distributors.",
+    "url": "{{ url('/blog') }}",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Freedom with DXN",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://freedomwithdxn.com/logo.png"
+        }
+    }
+}
+</script>
+@endpush
+
 @section('content')
 <div class="bg-dxn-darkgreen py-16 px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -65,11 +85,11 @@
     @endif
 </div>
 
-<section class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
-    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);"></div>
+<section class="py-20 relative overflow-hidden" aria-labelledby="blog-cta-heading">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);" aria-hidden="true"></div>
     <div class="max-w-2xl mx-auto px-4 text-center relative z-10">
-        <h2 class="text-3xl font-bold text-white mb-4">Want to Write for Us?</h2>
+        <h2 id="blog-cta-heading" class="text-3xl font-bold text-white mb-4">Want to Write for Us?</h2>
         <p class="text-white text-lg mb-8">Share your DXN success story or health tips with our growing community.</p>
         <a href="{{ route('contact') }}" class="btn-gold">Contact Us</a>
     </div>

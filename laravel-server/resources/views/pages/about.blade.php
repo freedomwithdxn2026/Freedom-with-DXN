@@ -36,6 +36,30 @@
         : ['Certified DXN Independent Distributor', 'UAE-based, serving the Gulf region', 'Bilingual support — Arabic & English', 'Free Zoom training sessions every week', 'Personal guidance from registration to success'];
 @endphp
 
+@push('seo')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Freedom with DXN",
+    "description": "Learn about DXN network marketing, our Ganoderma wellness mission, and how Freedom With DXN helps you build a health business.",
+    "url": "{{ url('/about') }}",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "Freedom with DXN",
+        "url": "https://freedomwithdxn.com",
+        "foundingDate": "1993",
+        "areaServed": "Worldwide",
+        "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": "9000000",
+            "unitText": "members"
+        }
+    }
+}
+</script>
+@endpush
+
 @section('content')
 {{-- Header --}}
 <div class="bg-dxn-darkgreen py-20 px-4 text-center relative overflow-hidden">
@@ -50,9 +74,9 @@
 </div>
 
 {{-- Personal Story --}}
-<section class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-center bg-cover bg-fixed" style="background-image: url('/about-story-bg.jpeg');"></div>
-    <div class="absolute inset-0" style="background: rgba(67,175,115,0);"></div>
+<section class="py-20 relative overflow-hidden" aria-labelledby="story-heading">
+    <div class="absolute inset-0 bg-center bg-cover bg-fixed" style="background-image: url('/about-story-bg.jpeg');" role="img" aria-label="{{ $lang === 'ar' ? 'خلفية القصة' : 'Story background' }}"></div>
+    <div class="absolute inset-0" style="background: rgba(67,175,115,0);" aria-hidden="true"></div>
     <div class="relative z-10">
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="flex flex-col items-center gap-6">
@@ -81,7 +105,7 @@
             <span class="font-extrabold text-lg uppercase tracking-widest" style="color: #ffffff;">
                 {{ $lang === 'ar' ? 'كيف بدأ كل شيء' : 'How It All Started' }}
             </span>
-            <h2 class="text-3xl font-bold mt-2 mb-6" style="color: #ffffff;">
+            <h2 id="story-heading" class="text-3xl font-bold mt-2 mb-6" style="color: #ffffff;">
                 {{ $lang === 'ar' ? 'من تجربة شخصية إلى مهمة مشتركة' : 'From a Personal Experience to a Shared Mission' }}
             </h2>
             <div class="space-y-4">
@@ -102,10 +126,10 @@
 </section>
 
 {{-- Values --}}
-<section class="py-20" style="background-color: #f0fdf4;">
+<section class="py-20" style="background-color: #f0fdf4;" aria-labelledby="values-heading">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'ما الذي يميزنا' : 'What Sets Us Apart' }}</h2>
+            <h2 id="values-heading" class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'ما الذي يميزنا' : 'What Sets Us Apart' }}</h2>
             <p class="text-gray-600 mt-2">{{ $lang === 'ar' ? 'نؤمن بالصحة والثروة والحرية للجميع.' : 'We believe in health, wealth, and freedom for everyone.' }}</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -123,10 +147,10 @@
 </section>
 
 {{-- DXN by the Numbers --}}
-<section class="py-20" style="background-color: #fef2f2;">
+<section class="py-20" style="background-color: #fef2f2;" aria-labelledby="numbers-heading">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'DXN بالأرقام' : 'DXN by the Numbers' }}</h2>
+            <h2 id="numbers-heading" class="text-3xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'DXN بالأرقام' : 'DXN by the Numbers' }}</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             @foreach([
@@ -145,11 +169,11 @@
 </section>
 
 {{-- CTA --}}
-<section class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');"></div>
-    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);"></div>
+<section class="py-20 relative overflow-hidden" aria-labelledby="about-cta-heading">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);" aria-hidden="true"></div>
     <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
-        <h2 class="text-3xl font-bold text-white mb-4">
+        <h2 id="about-cta-heading" class="text-3xl font-bold text-white mb-4">
             {{ $lang === 'ar' ? 'هل أنت مستعد للانضمام إلى عائلتنا؟' : 'Ready to Join Our Family?' }}
         </h2>
         <p class="text-white mb-8">

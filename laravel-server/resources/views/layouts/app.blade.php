@@ -33,9 +33,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', $settings->seo['pageTitle'] ?? 'Freedom with DXN')">
     <meta name="twitter:description" content="@yield('description', $settings->seo['description'] ?? '')">
+    @hasSection('og_image')
+        <meta name="twitter:image" content="@yield('og_image')">
+    @else
+        <meta name="twitter:image" content="{{ url('/logo.png') }}">
+    @endif
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     @stack('seo')
     <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    {{-- Preconnect to external origins --}}
+    <link rel="dns-prefetch" href="https://calendly.com">
+    <link rel="dns-prefetch" href="https://wa.me">
 
     {{-- Preload LCP image (hero poster) --}}
     @hasSection('preload')

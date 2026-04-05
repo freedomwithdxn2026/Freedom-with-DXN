@@ -32,6 +32,17 @@
     @endif
 }
 </script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freedomwithdxn.com" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://freedomwithdxn.com/products" },
+        { "@type": "ListItem", "position": 3, "name": "{{ $product->name }}" }
+    ]
+}
+</script>
 @endpush
 
 @php

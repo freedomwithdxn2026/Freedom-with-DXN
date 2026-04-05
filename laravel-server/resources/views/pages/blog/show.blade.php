@@ -15,11 +15,32 @@
     "description": "{{ Str::limit($blog->excerpt ?: strip_tags($blog->content), 200) }}",
     @if($blog->image)"image": "{{ url($blog->image) }}",@endif
     "datePublished": "{{ $blog->created_at->toIso8601String() }}",
+    "dateModified": "{{ $blog->updated_at->toIso8601String() }}",
+    "author": {
+        "@type": "Organization",
+        "name": "Freedom with DXN",
+        "url": "https://freedomwithdxn.com"
+    },
     "publisher": {
         "@type": "Organization",
         "name": "Freedom with DXN",
         "logo": { "@type": "ImageObject", "url": "{{ url('/logo.png') }}" }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ url()->current() }}"
     }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freedomwithdxn.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://freedomwithdxn.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "{{ $blog->title }}" }
+    ]
 }
 </script>
 @endpush
