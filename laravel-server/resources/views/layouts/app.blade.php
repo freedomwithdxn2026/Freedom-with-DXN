@@ -67,11 +67,6 @@
     @stack('styles')
 </head>
 <body class="min-h-screen flex flex-col">
-    {{-- Skip to main content (accessibility) --}}
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-brand-violet focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
-        {{ session('lang', 'en') === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : 'Skip to main content' }}
-    </a>
-
     @include('partials.navbar')
 
     {{-- Flash Messages --}}
