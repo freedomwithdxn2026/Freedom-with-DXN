@@ -42,19 +42,26 @@
         } catch(e) {}
 
         // Intercept anchor clicks: scroll parent page to correct position
+        // Open external links in new tab instead of inside iframe
         try {
             const doc = frame.contentWindow.document;
-            doc.querySelectorAll('a[href^="#"]').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const id = this.getAttribute('href').substring(1);
-                    const target = doc.getElementById(id);
-                    if (target) {
-                        const frameTop = frame.getBoundingClientRect().top + window.scrollY;
-                        const targetTop = target.getBoundingClientRect().top;
-                        window.scrollTo({ top: frameTop + targetTop - 80, behavior: 'smooth' });
-                    }
-                });
+            doc.querySelectorAll('a').forEach(function(link) {
+                const href = link.getAttribute('href') || '';
+                if (href.startsWith('#')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const id = this.getAttribute('href').substring(1);
+                        const target = doc.getElementById(id);
+                        if (target) {
+                            const frameTop = frame.getBoundingClientRect().top + window.scrollY;
+                            const targetTop = target.getBoundingClientRect().top;
+                            window.scrollTo({ top: frameTop + targetTop - 80, behavior: 'smooth' });
+                        }
+                    });
+                } else if (href.startsWith('http') || href.startsWith('//')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
             });
         } catch(e) {}
     });
