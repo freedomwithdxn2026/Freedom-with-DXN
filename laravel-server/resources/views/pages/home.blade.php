@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Freedom With DXN – Buy DXN Health Products Online | Ganoderma Coffee & Supplements')
+@section('title', 'Freedom With DXN | Ganoderma Coffee & Supplements UAE')
 @section('description', 'Freedom With DXN offers premium DXN health products including Lingzhi Coffee, Cocozhi, and Spirulina. Join our community and start your wellness journey today.')
 @section('keywords', 'DXN health products, buy DXN products online, DXN distributor, freedom with DXN, ganoderma coffee, DXN supplements')
 
