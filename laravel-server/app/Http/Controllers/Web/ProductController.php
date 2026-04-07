@@ -35,7 +35,7 @@ class ProductController extends Controller
 
         $products = $query->paginate(12)->appends($request->query());
 
-        $categories = ['all', 'coffee', 'ganoderma', 'supplements', 'skincare', 'beverages', 'personal-care', 'other'];
+        $categories = ['all', 'coffee', 'supplements', 'skincare', 'beverages', 'personal-care', 'other'];
 
         return view('pages.products.index', compact('products', 'categories'));
     }
