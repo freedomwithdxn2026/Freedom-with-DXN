@@ -80,6 +80,8 @@
         .hover-whatsapp:hover { background-color: #20ba5a; }
         .hover-red { background-color: #bf3c36; transition: background-color 0.2s; }
         .hover-red:hover { background-color: #a3322d; }
+        .product-card-hover { box-shadow: inset 0 0 0 0 #bf3c36, 0 1px 8px rgba(0,0,0,0.06); transition: box-shadow 0.3s, transform 0.3s; }
+        .product-card-hover:hover { box-shadow: inset 0 -4px 0 0 #bf3c36, 0 8px 30px rgba(0,0,0,0.12); transform: translateY(-4px); }
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
