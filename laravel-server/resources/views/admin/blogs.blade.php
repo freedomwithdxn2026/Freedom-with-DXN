@@ -103,7 +103,7 @@
                             <div class="flex items-center gap-2">
                             <a href="{{ route('admin.blogs.edit', $blog) }}" class="text-blue-600 hover:underline text-sm">Edit</a>
                             <a href="{{ route('blog.show', $blog) }}" target="_blank" class="text-dxn-green hover:underline text-sm">View</a>
-                            <form class="inline" method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
+                            <form style="display:inline" method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
                                 @csrf @method('DELETE')
                                 <button class="text-red-500 hover:text-red-700 text-sm">Delete</button>
                             </form>
@@ -135,10 +135,10 @@
                     <span class="capitalize">{{ str_replace('-', ' ', $blog->category) }}</span>
                     <span>{{ $blog->views ?? 0 }} views</span>
                 </div>
-                <div class="flex gap-3 border-t pt-2">
+                <div class="flex items-center gap-3 border-t pt-2">
                     <a href="{{ route('admin.blogs.edit', $blog) }}" class="text-blue-600 hover:underline text-sm font-medium">Edit</a>
                     <a href="{{ route('blog.show', $blog) }}" target="_blank" class="text-dxn-green hover:underline text-sm font-medium">View</a>
-                    <form method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
+                    <form style="display:inline" method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" onsubmit="return confirm('Delete this post?')">
                         @csrf @method('DELETE')
                         <button class="text-red-500 hover:text-red-700 text-sm font-medium">Delete</button>
                     </form>
