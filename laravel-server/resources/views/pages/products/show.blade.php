@@ -546,7 +546,7 @@
                                     </div>
 
                                     {{-- Comment --}}
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ $review->comment }}</p>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ ($lang === 'ar' && $review->comment_ar) ? $review->comment_ar : $review->comment }}</p>
 
                                     {{-- Helpful --}}
                                     <div class="flex items-center gap-4 text-xs text-gray-400">
