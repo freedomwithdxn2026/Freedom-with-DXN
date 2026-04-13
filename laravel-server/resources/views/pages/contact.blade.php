@@ -67,7 +67,6 @@
             @foreach([
                 ['label' => $lang === 'ar' ? 'هاتف / واتساب' : 'Phone / WhatsApp', 'value' => $settings->contact['phone'] ?? '+971 50 666 2875'],
                 ['label' => $lang === 'ar' ? 'البريد الإلكتروني' : 'Email', 'value' => $settings->contact['email'] ?? 'info@freedomwithdxn.com'],
-                ['label' => $lang === 'ar' ? 'الموقع' : 'Location', 'value' => $settings->contact['location'] ?? ($lang === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates')],
             ] as $item)
                 <div class="flex items-start gap-3">
                     <div class="w-10 h-10 bg-dxn-green/10 rounded-lg flex items-center justify-center shrink-0">
