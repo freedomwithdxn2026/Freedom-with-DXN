@@ -43,7 +43,7 @@ class AdminController extends Controller
 
         $data = $request->only([
             'name', 'name_ar', 'description', 'description_ar', 'price', 'category', 'image', 'landing_image',
-            'in_stock', 'stock_count', 'sku', 'ingredients', 'usage',
+            'in_stock', 'stock_count', 'sku', 'ingredients', 'ingredients_ar', 'usage', 'usage_ar',
             'featured', 'dxn_id', 'source_url', 'landing_page', 'dxn_category', 'rating',
         ]);
         $data['in_stock'] = $request->has('in_stock');
@@ -63,7 +63,7 @@ class AdminController extends Controller
     {
         $data = $request->only([
             'name', 'name_ar', 'description', 'description_ar', 'price', 'category', 'image', 'landing_image',
-            'in_stock', 'stock_count', 'sku', 'ingredients', 'usage',
+            'in_stock', 'stock_count', 'sku', 'ingredients', 'ingredients_ar', 'usage', 'usage_ar',
             'featured', 'dxn_id', 'source_url', 'landing_page', 'dxn_category', 'rating',
         ]);
         $data['in_stock'] = $request->has('in_stock');
@@ -227,6 +227,7 @@ class AdminController extends Controller
             'description'      => $request->input('description', ''),
             'description_ar'   => $request->input('description_ar', ''),
             'ingredients'      => $request->input('ingredients', ''),
+            'ingredients_ar'   => $request->input('ingredients_ar', ''),
             'usage_directions' => $request->input('usage_directions', ''),
             'usage_directions_ar' => $request->input('usage_directions_ar', ''),
             'cta_text'         => $request->input('cta_text', ''),
@@ -277,7 +278,7 @@ class AdminController extends Controller
 
         $data = $request->only([
             'title', 'product_id', 'hero_image', 'hero_title', 'hero_subtitle',
-            'hero_bg_color', 'description', 'description_ar', 'ingredients',
+            'hero_bg_color', 'description', 'description_ar', 'ingredients', 'ingredients_ar',
             'usage_directions', 'usage_directions_ar',
             'cta_text', 'cta_link', 'custom_css', 'custom_html',
         ]);

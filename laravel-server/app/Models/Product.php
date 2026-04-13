@@ -12,7 +12,7 @@ class Product extends Model
     protected $fillable = [
         'name', 'name_ar', 'description', 'description_ar', 'price', 'category',
         'image', 'images', 'in_stock', 'stock_count', 'sku',
-        'benefits', 'benefits_ar', 'ingredients', 'usage', 'usage_ar',
+        'benefits', 'benefits_ar', 'ingredients', 'ingredients_ar', 'usage', 'usage_ar',
         'featured', 'bestseller', 'dxn_id', 'source_url', 'landing_page', 'dxn_category', 'rating',
     ];
 

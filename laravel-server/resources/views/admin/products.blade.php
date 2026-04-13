@@ -32,6 +32,10 @@
             </div>
             <div><label class="block text-sm font-medium text-gray-700 mb-1">Description *</label><textarea name="description" required rows="3" class="input-field"></textarea></div>
             <div><label class="block text-sm font-medium text-gray-700 mb-1">Description (Arabic)</label><textarea name="description_ar" rows="3" class="input-field" dir="rtl" placeholder="الوصف بالعربية"></textarea></div>
+            <div><label class="block text-sm font-medium text-gray-700 mb-1">Ingredients</label><textarea name="ingredients" rows="2" class="input-field" placeholder="Non-dairy creamer, sugar, instant coffee powder..."></textarea></div>
+            <div><label class="block text-sm font-medium text-gray-700 mb-1">Ingredients (Arabic)</label><textarea name="ingredients_ar" rows="2" class="input-field" dir="rtl" placeholder="مبيض نباتي، سكر، مسحوق قهوة سريعة التحضير..."></textarea></div>
+            <div><label class="block text-sm font-medium text-gray-700 mb-1">Usage / How to Use</label><textarea name="usage" rows="2" class="input-field" placeholder="Mix one sachet with hot water..."></textarea></div>
+            <div><label class="block text-sm font-medium text-gray-700 mb-1">Usage (Arabic)</label><textarea name="usage_ar" rows="2" class="input-field" dir="rtl" placeholder="اخلط كيسًا واحدًا مع الماء الساخن..."></textarea></div>
             <div class="flex items-center gap-4">
                 <label class="flex items-center gap-2"><input type="checkbox" name="in_stock" value="1" checked> In Stock</label>
                 <label class="flex items-center gap-2"><input type="checkbox" name="featured" value="1"> Featured</label>
@@ -88,6 +92,10 @@
                                 </div>
                                 <div><label class="block text-xs font-medium text-gray-500 mb-1">Description</label><textarea name="description" rows="2" class="input-field text-sm">{{ $product->description }}</textarea></div>
                                 <div><label class="block text-xs font-medium text-gray-500 mb-1">Description (Arabic)</label><textarea name="description_ar" rows="2" class="input-field text-sm" dir="rtl">{{ $product->description_ar }}</textarea></div>
+                                <div><label class="block text-xs font-medium text-gray-500 mb-1">Ingredients</label><textarea name="ingredients" rows="2" class="input-field text-sm">{{ $product->ingredients }}</textarea></div>
+                                <div><label class="block text-xs font-medium text-gray-500 mb-1">Ingredients (Arabic)</label><textarea name="ingredients_ar" rows="2" class="input-field text-sm" dir="rtl">{{ $product->ingredients_ar }}</textarea></div>
+                                <div><label class="block text-xs font-medium text-gray-500 mb-1">Usage / How to Use</label><textarea name="usage" rows="2" class="input-field text-sm">{{ $product->usage }}</textarea></div>
+                                <div><label class="block text-xs font-medium text-gray-500 mb-1">Usage (Arabic)</label><textarea name="usage_ar" rows="2" class="input-field text-sm" dir="rtl">{{ $product->usage_ar }}</textarea></div>
                                 <div class="flex items-center gap-4">
                                     <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="in_stock" value="1" {{ $product->in_stock ? 'checked' : '' }}> In Stock</label>
                                     <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="featured" value="1" {{ $product->featured ? 'checked' : '' }}> Featured</label>

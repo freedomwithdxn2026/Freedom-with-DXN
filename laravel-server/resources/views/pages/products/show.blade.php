@@ -66,7 +66,9 @@
     $displayUsage = $lp && $lp->usage_directions
         ? ($lang === 'ar' && $lp->usage_directions_ar ? $lp->usage_directions_ar : $lp->usage_directions)
         : (($lang === 'ar' && $product->usage_ar) ? $product->usage_ar : $product->usage);
-    $displayIngredients = $lp && $lp->ingredients ? $lp->ingredients : $product->ingredients;
+    $displayIngredients = $lp && $lp->ingredients
+        ? ($lang === 'ar' && $lp->ingredients_ar ? $lp->ingredients_ar : $lp->ingredients)
+        : (($lang === 'ar' && $product->ingredients_ar) ? $product->ingredients_ar : $product->ingredients);
     $displayQna = $lp && !empty($lp->qna) ? $lp->qna : null;
     $catLabelsAr = [
         'coffee' => 'قهوة', 'beverages' => 'مشروبات', 'supplements' => 'مكملات',
@@ -346,7 +348,7 @@
 
             {{-- Questions & Answers --}}
             @php
-                $defaultQas = [
+                $defaultQasEn = [
                     'coffee' => [
                         ['q' => 'Is this coffee suitable for people with caffeine sensitivity?', 'a' => 'This coffee contains regular caffeine levels. However, the Ganoderma extract helps balance the effects of caffeine, making it smoother than regular coffee. If you are very sensitive, we recommend starting with half a sachet.', 'by' => 'Freedom with DXN', 'votes' => 24],
                         ['q' => 'How many sachets are in one box?', 'a' => 'Each box contains 20 individually wrapped sachets, making it convenient for daily use at home or on the go.', 'by' => 'Freedom with DXN', 'votes' => 18],
@@ -376,6 +378,37 @@
                         ['q' => 'What is the shelf life?', 'a' => 'Unopened products have a shelf life of 2-3 years. Once opened, we recommend using within 12 months. Check the packaging for the exact expiry date.', 'by' => 'Noor Al Hashimi', 'votes' => 11],
                     ],
                 ];
+                $defaultQasAr = [
+                    'coffee' => [
+                        ['q' => 'هل هذه القهوة مناسبة لمن لديهم حساسية من الكافيين؟', 'a' => 'تحتوي هذه القهوة على مستويات عادية من الكافيين. ومع ذلك، يساعد مستخلص الجانوديرما على موازنة تأثيرات الكافيين، مما يجعلها أخف من القهوة العادية. إذا كنت حساسًا جدًا، ننصح بالبدء بنصف كيس.', 'by' => 'Freedom with DXN', 'votes' => 24],
+                        ['q' => 'كم عدد الأكياس في العلبة الواحدة؟', 'a' => 'تحتوي كل علبة على 20 كيسًا مغلفًا بشكل فردي، مما يجعلها مريحة للاستخدام اليومي في المنزل أو أثناء التنقل.', 'by' => 'Freedom with DXN', 'votes' => 18],
+                        ['q' => 'هل يمكنني شرب هذه القهوة أثناء الحمل؟', 'a' => 'ننصح باستشارة طبيبك قبل تناول أي مكمل أو منتج صحي أثناء الحمل. يحتوي المنتج على الكافيين ومستخلص الجانوديرما.', 'by' => 'Freedom with DXN', 'votes' => 31],
+                        ['q' => 'هل طعمها مثل القهوة العادية؟', 'a' => 'نعم، طعمها قريب جدًا من القهوة سريعة التحضير العادية مع نكهة ترابية خفيفة وناعمة من الجانوديرما. معظم الناس لا يستطيعون التمييز بل يفضلون طعمها.', 'by' => 'Ahmed Al Mansouri', 'votes' => 15],
+                    ],
+                    'beverages' => [
+                        ['q' => 'هل يحتاج هذا المنتج للتبريد؟', 'a' => 'يمكن تخزين العبوات غير المفتوحة في درجة حرارة الغرفة. بعد الفتح، يرجى حفظها في الثلاجة واستهلاكها خلال 7 أيام للحصول على أفضل جودة.', 'by' => 'Freedom with DXN', 'votes' => 22],
+                        ['q' => 'هل هذا المنتج مناسب للأطفال؟', 'a' => 'نعم، معظم مشروبات DXN مناسبة للأطفال. ومع ذلك، ننصح بحصص أصغر للأطفال تحت 12 سنة. تحقق دائمًا من ملصق المنتج.', 'by' => 'Freedom with DXN', 'votes' => 19],
+                        ['q' => 'هل يمكنني مزجه مع مشروبات أخرى؟', 'a' => 'بالتأكيد! كثير من العملاء يمزجونه مع العصير أو السموثي أو حتى الماء العادي. إنه متعدد الاستخدامات وطعمه رائع في مختلف الخلطات.', 'by' => 'Sarah Johnson', 'votes' => 12],
+                    ],
+                    'supplements' => [
+                        ['q' => 'ما هو أفضل وقت لتناول هذا المكمل؟', 'a' => 'للحصول على أفضل النتائج، تناوله قبل 30 دقيقة من الوجبات على معدة فارغة. هذا يسمح بامتصاص مثالي. تناوله مع كوب كامل من الماء.', 'by' => 'Freedom with DXN', 'votes' => 35],
+                        ['q' => 'هل هناك أي آثار جانبية؟', 'a' => 'مكملات DXN مصنوعة من مكونات طبيعية 100%. معظم الناس لا يعانون من أي آثار جانبية. قد يلاحظ البعض أعراض إزالة سموم خفيفة في الأيام الأولى، وهذا طبيعي ومؤقت.', 'by' => 'Freedom with DXN', 'votes' => 28],
+                        ['q' => 'هل يمكنني تناوله مع أدويتي؟', 'a' => 'على الرغم من أن منتجات DXN طبيعية، ننصح دائمًا باستشارة مقدم الرعاية الصحية الخاص بك قبل الجمع بين المكملات والأدوية الموصوفة.', 'by' => 'Freedom with DXN', 'votes' => 41],
+                        ['q' => 'كم من الوقت قبل أن أرى نتائج؟', 'a' => 'تختلف النتائج من شخص لآخر. معظم العملاء يلاحظون تحسنًا ملموسًا خلال 2-4 أسابيع من الاستخدام اليومي المنتظم. للحصول على أفضل النتائج، استخدمه لمدة 90 يومًا على الأقل.', 'by' => 'Priya Sharma', 'votes' => 16],
+                    ],
+                    'personal-care' => [
+                        ['q' => 'هل هذا المنتج مناسب للبشرة الحساسة؟', 'a' => 'نعم، منتجات العناية الشخصية من DXN مصنوعة بمكونات طبيعية بما في ذلك مستخلص الجانوديرما المعروف بخصائصه اللطيفة. ومع ذلك، ننصح بإجراء اختبار على منطقة صغيرة أولاً.', 'by' => 'Freedom with DXN', 'votes' => 20],
+                        ['q' => 'هل هذا المنتج خالٍ من التجارب على الحيوانات؟', 'a' => 'لا تقوم DXN بإجراء تجارب على الحيوانات. منتجاتها مصنوعة من مكونات نباتية ومشتقة من الفطر.', 'by' => 'Freedom with DXN', 'votes' => 17],
+                        ['q' => 'هل يمكن لجميع أفراد العائلة استخدامه؟', 'a' => 'نعم! منتجات العناية الشخصية من DXN مناسبة لجميع أفراد العائلة. إنها لطيفة بما يكفي للاستخدام اليومي من قبل البالغين والأطفال على حد سواء.', 'by' => 'Fatima Hassan', 'votes' => 14],
+                    ],
+                    'skincare' => [
+                        ['q' => 'هل هذا المنتج مناسب للبشرة الدهنية؟', 'a' => 'نعم، هذا المنتج خفيف ولا يسد المسام. يعمل بشكل جيد مع جميع أنواع البشرة بما في ذلك الدهنية والمختلطة. يُمتص بسرعة دون ترك بقايا دهنية.', 'by' => 'Freedom with DXN', 'votes' => 23],
+                        ['q' => 'هل يمكنني استخدامه مع ماركات عناية بالبشرة أخرى؟', 'a' => 'نعم، يمكن استخدام منتجات العناية بالبشرة من DXN بجانب ماركات أخرى. ومع ذلك، للحصول على أفضل النتائج، ننصح باستخدام مجموعة DXN الكاملة للعناية بالبشرة معًا.', 'by' => 'Freedom with DXN', 'votes' => 15],
+                        ['q' => 'هل يحتوي على البارابين أو الكبريتات؟', 'a' => 'منتجات العناية بالبشرة من DXN مصنوعة لتكون لطيفة قدر الإمكان. التركيبات الأحدث (خطوط Plus و Aloe.V) خالية من البارابين والكبريتات.', 'by' => 'Freedom with DXN', 'votes' => 29],
+                        ['q' => 'ما هي مدة صلاحية المنتج؟', 'a' => 'المنتجات غير المفتوحة لها صلاحية 2-3 سنوات. بعد الفتح، ننصح بالاستخدام خلال 12 شهرًا. تحقق من العبوة لمعرفة تاريخ الانتهاء بالضبط.', 'by' => 'Noor Al Hashimi', 'votes' => 11],
+                    ],
+                ];
+                $defaultQas = $lang === 'ar' ? $defaultQasAr : $defaultQasEn;
                 $productQas = $displayQna ?: ($defaultQas[$product->category] ?? $defaultQas['coffee']);
             @endphp
 
@@ -484,7 +517,7 @@
 
                                     {{-- Date + Verified --}}
                                     <div class="flex items-center gap-3 mb-3 text-xs text-gray-400">
-                                        <span>{{ $lang === 'ar' ? 'تمت المراجعة في' : 'Reviewed on' }} {{ \Carbon\Carbon::parse($review->created_at)->format('F j, Y') }}</span>
+                                        <span>{{ $lang === 'ar' ? 'تمت المراجعة في' : 'Reviewed on' }} {{ $lang === 'ar' ? \Carbon\Carbon::parse($review->created_at)->format('Y/m/d') : \Carbon\Carbon::parse($review->created_at)->format('F j, Y') }}</span>
                                         <span class="inline-flex items-center gap-1 text-white font-medium px-3 py-1 rounded-full" style="background-color: #236b43;">
                                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                                             {{ $lang === 'ar' ? 'عملية شراء موثقة' : 'Verified Purchase' }}

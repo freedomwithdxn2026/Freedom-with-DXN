@@ -100,9 +100,15 @@
         {{-- Ingredients --}}
         <div class="card p-6">
             <h2 class="font-bold text-dxn-darkgreen text-lg mb-4">Ingredients</h2>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Ingredients List</label>
-                <textarea name="ingredients" rows="4" class="input-field" placeholder="Non-dairy creamer, sugar, instant coffee powder, Ganoderma lucidum extract...">{{ old('ingredients', $page->ingredients ?? '') }}</textarea>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Ingredients List (English)</label>
+                    <textarea name="ingredients" rows="4" class="input-field" placeholder="Non-dairy creamer, sugar, instant coffee powder, Ganoderma lucidum extract...">{{ old('ingredients', $page->ingredients ?? '') }}</textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Ingredients List (Arabic)</label>
+                    <textarea name="ingredients_ar" rows="4" class="input-field" dir="rtl" placeholder="مبيض نباتي، سكر، مسحوق قهوة سريعة التحضير، مستخلص فطر الجانوديرما لوسيدوم...">{{ old('ingredients_ar', $page->ingredients_ar ?? '') }}</textarea>
+                </div>
             </div>
         </div>
 
