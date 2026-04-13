@@ -180,7 +180,7 @@
     .video-section { background: #111; padding: clamp(70px, 10vw, 120px) 20px; position: relative; }
     .video-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center top, rgba(70,56,123,0.25), transparent 60%); pointer-events: none; }
     .video-inner { max-width: 960px; margin: 0 auto; position: relative; }
-    .video-title { text-align: center; font-size: clamp(32px, 5vw, 56px); color: #fff; margin-bottom: 14px; }
+    .video-title { text-align: center; font-size: clamp(18px, 4vw, 44px); color: #fff; margin-bottom: 14px; white-space: nowrap; }
     .video-subtitle { text-align: center; color: rgba(255,255,255,0.55); font-size: 16px; margin-bottom: 48px; max-width: 540px; margin-left: auto; margin-right: auto; }
     .video-wrapper { position: relative; padding: 4px; border-radius: 20px; background: linear-gradient(135deg, var(--dxn-violet), var(--dxn-green) 40%, var(--dxn-gold) 70%, var(--dxn-red)); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
     .video-frame { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #000; }
