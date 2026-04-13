@@ -198,7 +198,7 @@
     .benefit-card { position: relative; background: #fff; border-radius: 16px; padding: 36px 28px; border: 1px solid #ececf5; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease; }
     .benefit-card::before {
         content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-        background: linear-gradient(90deg, var(--dxn-green), var(--dxn-gold));
+        background: linear-gradient(90deg, var(--dxn-green), var(--dxn-gold), var(--dxn-red));
         transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease;
     }
     .benefit-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(70,56,123,0.15); }
@@ -238,9 +238,14 @@
     /* ZOOM SCHEDULE */
     .zoom-section { background: #fff; padding: clamp(70px, 10vw, 120px) 20px; }
     .zoom-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1120px; margin: 0 auto; }
-    .zoom-card { display: block; position: relative; background: #fff; border: 1px solid #ececf5; border-radius: 16px; padding: 32px 24px; text-decoration: none; color: inherit; overflow: hidden; text-align: center; box-shadow: inset 0 0 0 0 var(--dxn-red), 0 1px 8px rgba(0,0,0,0.06); transition: box-shadow 0.3s, transform 0.3s; }
-    .zoom-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, var(--dxn-green)); }
-    .zoom-card:hover { box-shadow: inset 0 -4px 0 0 var(--dxn-red), 0 8px 30px rgba(0,0,0,0.12); transform: translateY(-4px); }
+    .zoom-card { display: block; position: relative; background: #fff; border: 1px solid #ececf5; border-radius: 16px; padding: 32px 24px; text-decoration: none; color: inherit; overflow: hidden; text-align: center; transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .zoom-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, var(--dxn-green), var(--dxn-gold), var(--dxn-red));
+        transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease;
+    }
+    .zoom-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(70,56,123,0.15); }
+    .zoom-card:hover::before { transform: scaleX(1); }
     .zoom-day { font-family: 'DM Sans', 'DM Sans Fallback', 'Inter', system-ui, sans-serif; font-size: 26px; font-weight: 700; color: var(--dxn-violet); margin-bottom: 6px; }
     .zoom-time { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
     .zoom-lang { display: inline-block; background: #f7f5fc; color: var(--dxn-violet); padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
@@ -431,7 +436,7 @@
             </div>
             <div class="zoom-grid">
                 @foreach($zoomSessions as $session)
-                    <a href="{{ $calendly }}" target="_blank" rel="noopener noreferrer" class="zoom-card reveal" style="--accent: {{ $session['accent'] }};">
+                    <a href="{{ $calendly }}" target="_blank" rel="noopener noreferrer" class="zoom-card reveal">
                         <div class="zoom-day">{{ $session['day'] }}</div>
                         <div class="zoom-time">{{ $session['time'] }}</div>
                         <span class="zoom-lang">{{ $session['lang_label'] }}</span>
