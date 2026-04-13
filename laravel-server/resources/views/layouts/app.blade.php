@@ -70,7 +70,7 @@
         .btn-gold:hover { background-color: #a3322d; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .btn-outline-white { border: 2px solid #fff; color: #fff; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s; display: inline-block; text-align: center; }
         .btn-outline-white:hover { background-color: #fff; color: #452aa8; }
-        .btn-outline-violet { border: 2px solid #452aa8; color: #452aa8; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s; display: inline-block; text-align: center; }
+        .btn-outline-violet { border: 2px solid #452aa8; color: #452aa8; background: transparent; padding: 10px 24px; border-radius: 12px; font-weight: 600; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-align: center; }
         .btn-outline-violet:hover { background-color: #452aa8; color: #fff; }
         .hover-violet { background-color: #452aa8; transition: background-color 0.2s; }
         .hover-violet:hover { background-color: #4a2db5; }
