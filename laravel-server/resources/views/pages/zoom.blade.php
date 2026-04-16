@@ -7,14 +7,15 @@
 @endphp
 
 @section('content')
-<div class="bg-dxn-darkgreen py-20 px-4 relative overflow-hidden">
+<div class="page-shell">
+<section class="page-hero page-hero--center">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 30% 50%, #dfc378 0%, transparent 60%)"></div>
-    <div class="relative max-w-4xl mx-auto text-center">
+    <div class="page-hero-inner">
         <span class="inline-block bg-blue-500/20 text-blue-300 px-4 py-1 rounded-full text-sm font-medium mb-4">{{ $lang === 'ar' ? 'مجاني 100%' : '100% Free' }}</span>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'جلسات تدريب زووم المجانية' : 'Free Zoom Training Sessions' }}</h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto">{{ $lang === 'ar' ? 'تعلم عن منتجات DXN وفرصة العمل من خبراء حقيقيين' : 'Learn about DXN products and the business opportunity from real experts' }}</p>
     </div>
-</div>
+</section>
 
 {{-- What You'll Learn + Schedule --}}
 <div class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('/images/zoom-bg.jpg')">
@@ -65,11 +66,12 @@
     </div>
 </div>
 
-<section class="bg-hero py-16 px-4">
-    <div class="max-w-2xl mx-auto text-center">
+<section class="page-band-cta">
+    <div class="page-band-cta__inner">
         <h2 class="text-2xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'لا تفوت الجلسة القادمة!' : "Don't Miss the Next Session!" }}</h2>
         <p class="text-gray-300 mb-6">{{ $lang === 'ar' ? 'أرسل لي رسالة واتساب وسأرسل لك التذكير والرابط.' : "Send me a WhatsApp message and I'll send you the Sunday 3pm-5pm reminder and link." }}</p>
         <a href="{{ $whatsapp }}" target="_blank" class="btn-gold">{{ $lang === 'ar' ? 'واتساب الآن' : 'WhatsApp Now' }}</a>
     </div>
 </section>
+</div>
 @endsection

@@ -51,27 +51,28 @@
 @endpush
 
 @section('content')
+<div class="page-shell">
 
 {{-- Hero Header --}}
-<div class="py-16 px-4 relative overflow-hidden" style="background-color: #452aa8;">
+<section class="page-hero page-hero--center">
     <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-1/2 translate-x-1/2" style="background: rgba(67,175,115,0.08);" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full translate-y-1/2 -translate-x-1/2" style="background: rgba(67,175,115,0.08);" aria-hidden="true"></div>
 
-    <div class="max-w-7xl mx-auto text-center relative z-10">
-        <span class="inline-block text-white px-5 py-1.5 rounded-full text-sm font-semibold mb-4 border border-white/20" style="background: rgba(0,0,0,0.5);">
+    <div class="page-hero-inner">
+        <span class="page-eyebrow" style="color: #fff; border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.08);">
             {{ $lang === 'ar' ? 'منتجات DXN الرسمية' : 'Official DXN Products' }}
         </span>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-3">
+        <h1 class="page-title page-title--md">
             {{ $lang === 'ar' ? 'كتالوج منتجات DXN' : 'DXN Product Catalog' }}
         </h1>
-        <p class="text-white text-lg">
+        <p class="page-lead">
             {{ $lang === 'ar' ? 'منتجات صحية فاخرة مدعومة بفطر غانوديرما لوسيدوم' : 'Premium health products powered by DXN' }}
         </p>
     </div>
-</div>
+</section>
 
 {{-- Category Tabs --}}
-<div class="bg-white border-b shadow-sm">
+<div class="bg-white border-b border-gray-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center gap-1.5 overflow-x-auto py-3 scrollbar-hide">
             @foreach($categories as $cat)
@@ -101,7 +102,8 @@
         </div>
 
         {{-- Search + Sort --}}
-        <div class="flex flex-col md:flex-row gap-3 mb-8">
+        <div class="page-card page-card-pad mb-8">
+        <div class="flex flex-col md:flex-row gap-3">
             <form method="GET" action="{{ route('products') }}" class="flex-1 flex gap-2">
                 @if($currentCategory !== 'all')
                     <input type="hidden" name="category" value="{{ $currentCategory }}">
@@ -130,6 +132,8 @@
         </div>
 
         {{-- Product Grid --}}
+        </div>
+
         @if($products->count() > 0)
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 @foreach($products as $index => $product)
@@ -156,7 +160,7 @@
                 </div>
             </div>
         @else
-            <div class="text-center py-24">
+            <div class="page-card page-card-pad text-center py-24 max-w-2xl mx-auto">
                 <div class="text-6xl mb-4">🔍</div>
                 <p class="text-xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'لم يتم العثور على منتجات' : 'No products found' }}</p>
                 <p class="text-gray-600 text-sm mt-2">{{ $lang === 'ar' ? 'جرب فئة أو كلمة بحث مختلفة' : 'Try a different category or search term' }}</p>
@@ -166,6 +170,7 @@
             </div>
         @endif
     </div>
+</div>
 </div>
 
 @endsection

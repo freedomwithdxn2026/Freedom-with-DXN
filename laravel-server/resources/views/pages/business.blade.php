@@ -51,19 +51,20 @@
 @endpush
 
 @section('content')
-<section class="bg-hero py-20 px-4" aria-labelledby="business-hero-heading">
-    <div class="max-w-4xl mx-auto text-center">
-        <span class="inline-block bg-dxn-gold/20 text-dxn-gold px-4 py-1 rounded-full text-sm font-medium mb-4">Business Opportunity</span>
-        <h1 id="business-hero-heading" class="text-4xl md:text-5xl font-bold text-white mb-6">Build Your Dream Business with DXN</h1>
-        <p class="text-gray-300 text-lg mb-8">Join one of the world's fastest-growing network marketing companies. DXN offers a unique one-world, one-market business model.</p>
+<div class="page-shell">
+<section class="page-hero page-hero--center" aria-labelledby="business-hero-heading">
+    <div class="page-hero-inner">
+        <span class="page-eyebrow">Business Opportunity</span>
+        <h1 id="business-hero-heading" class="page-title page-title--md">Build Your Dream Business with DXN</h1>
+        <p class="page-lead">Join one of the world's fastest-growing network marketing companies. DXN offers a unique one-world, one-market business model.</p>
         <a href="{{ route('register') }}" class="btn-gold inline-flex items-center gap-2 text-lg">Start for Free →</a>
     </div>
 </section>
 
-<section class="py-20 bg-white">
+<section class="page-section page-section-soft">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="section-title">Why DXN Business?</h2>
-        <p class="section-subtitle">DXN is different from ordinary MLM companies. Here's why thousands choose DXN.</p>
+        <h2 class="page-section-title text-center">Why DXN Business?</h2>
+        <p class="page-section-sub text-center">DXN is different from ordinary MLM companies. Here's why thousands choose DXN.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach([
                 ['title' => 'Low Startup Cost', 'desc' => 'Start with minimal investment. No expensive kits or inventory required.'],
@@ -71,7 +72,7 @@
                 ['title' => 'Strong Community', 'desc' => 'Join a supportive network of 9 million+ distributors worldwide.'],
                 ['title' => 'Multiple Income Streams', 'desc' => 'Earn from retail profits, group bonuses, royalty income, and more.'],
             ] as $item)
-                <div class="card p-6 text-center">
+                <div class="page-card page-card-pad text-center">
                     <div class="w-14 h-14 bg-dxn-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16392d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
@@ -83,15 +84,15 @@
     </div>
 </section>
 
-<section class="py-20 bg-gray-50">
+<section class="page-section page-section-dark">
     <div class="max-w-5xl mx-auto px-4">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">5 simple steps to start your DXN business journey</p>
+        <h2 class="page-section-title text-center">How It Works</h2>
+        <p class="page-section-sub text-center">5 simple steps to start your DXN business journey</p>
         <div class="space-y-6">
             @foreach($howItWorks as $item)
                 <div class="flex items-start gap-6">
                     <div class="w-14 h-14 bg-dxn-green rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg">{{ $item['step'] }}</div>
-                    <div class="card p-6 flex-1">
+                    <div class="page-card page-card-pad flex-1">
                         <h3 class="font-bold text-dxn-darkgreen text-lg mb-2">{{ $item['title'] }}</h3>
                         <p class="text-gray-600">{{ $item['desc'] }}</p>
                     </div>
@@ -101,13 +102,13 @@
     </div>
 </section>
 
-<section class="py-20 bg-white">
+<section class="page-section page-section-light">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="section-title">Income & Rank Structure</h2>
-        <p class="section-subtitle">The more you grow, the more you earn.</p>
+        <h2 class="page-section-title text-center">Income & Rank Structure</h2>
+        <p class="page-section-sub text-center">The more you grow, the more you earn.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach($incomeLevels as $level)
-                <div class="border-2 rounded-xl p-5 {{ $level['c'] }}">
+                <div class="page-card border-2 rounded-xl p-5 {{ $level['c'] }}">
                     <h3 class="font-bold text-dxn-darkgreen text-lg mb-1">{{ $level['rank'] }}</h3>
                     <p class="text-sm text-gray-600 mb-2">{{ $level['req'] }}</p>
                     <div class="flex items-center gap-2">
@@ -121,12 +122,12 @@
     </div>
 </section>
 
-<section class="py-20 bg-gray-50">
+<section class="page-section page-section-soft">
     <div class="max-w-3xl mx-auto px-4">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="page-section-title text-center">Frequently Asked Questions</h2>
         <div class="space-y-4 mt-8">
             @foreach($faqs as $faq)
-                <details class="card p-5 cursor-pointer group">
+                <details class="page-card p-5 cursor-pointer group">
                     <summary class="font-semibold text-dxn-darkgreen list-none flex justify-between items-center">
                         {{ $faq['q'] }}
                         <span class="text-dxn-green group-open:rotate-45 transition-transform text-xl">+</span>
@@ -138,14 +139,15 @@
     </div>
 </section>
 
-<section class="bg-hero py-16 px-4" aria-labelledby="business-cta-heading">
-    <div class="max-w-2xl mx-auto text-center">
+<section class="page-band-cta" aria-labelledby="business-cta-heading">
+    <div class="page-band-cta__inner">
         <h2 id="business-cta-heading" class="text-3xl font-bold text-white mb-4">Ready to Change Your Life?</h2>
         <p class="text-gray-300 mb-8">Sign up today and I'll personally guide you through your first steps.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="page-cta-row justify-center">
             <a href="{{ route('register') }}" class="btn-gold">Join Now — It's Free</a>
             <a href="{{ route('contact') }}" class="border-2 border-white text-white hover:bg-white hover:text-dxn-darkgreen px-6 py-3 rounded-lg font-semibold transition-all inline-block text-center">Ask Me Anything</a>
         </div>
     </div>
 </section>
+</div>
 @endsection
