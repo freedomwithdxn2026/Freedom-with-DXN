@@ -481,7 +481,6 @@
 </div>
 
 @push('scripts')
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 var joinPlayer;
 function onYouTubeIframeAPIReady() {
@@ -497,6 +496,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 </script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function() {
     // FAQ accordion toggle
