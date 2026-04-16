@@ -61,33 +61,32 @@
 @endpush
 
 @section('content')
-<div class="page-shell">
 {{-- Header --}}
-<section class="page-hero page-hero--center">
+<div class="bg-dxn-darkgreen py-20 px-4 text-center relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 70% 50%, #dfc378 0%, transparent 60%)"></div>
-    <div class="page-hero-inner">
-        <span class="page-eyebrow">
+    <div class="relative max-w-3xl mx-auto">
+        <span class="inline-block bg-dxn-gold/20 text-dxn-gold px-4 py-1 rounded-full text-sm font-medium mb-4">
             {{ $lang === 'ar' ? 'قصتنا' : 'Our Story' }}
         </span>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'من نحن' : 'About Us' }}</h1>
         <p class="text-gray-300 text-lg">{{ $lang === 'ar' ? 'رحلة حقيقية من الصحة والعمل الجاد' : 'A real journey of health and hard work' }}</p>
     </div>
-</section>
+</div>
 
 {{-- Personal Story --}}
-<section class="page-section page-section-dark" aria-labelledby="story-heading">
+<section class="py-20 relative overflow-hidden" aria-labelledby="story-heading">
     <div class="absolute inset-0 bg-center bg-cover bg-fixed" style="background-image: url('/about-story-bg.jpeg');" role="img" aria-label="{{ $lang === 'ar' ? 'خلفية القصة' : 'Story background' }}"></div>
-    <div class="absolute inset-0 bg-black/55" aria-hidden="true"></div>
-    <div class="page-section-inner">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="absolute inset-0" style="background: rgba(67,175,115,0);" aria-hidden="true"></div>
+    <div class="relative z-10">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="flex flex-col items-center gap-6">
-            <div class="w-48 h-48 rounded-full flex items-center justify-center shadow-2xl" style="background: linear-gradient(135deg, var(--dxn-green), var(--dxn-violet));">
+            <div class="w-48 h-48 bg-gradient-to-br from-dxn-green to-dxn-darkgreen rounded-full flex items-center justify-center shadow-2xl">
                 <div class="text-center text-white">
                     <div class="text-5xl font-bold text-dxn-gold">DXN</div>
                     <div class="text-sm text-green-200 mt-1">{{ $lang === 'ar' ? 'موزع مستقل' : 'Independent Distributor' }}</div>
                 </div>
             </div>
-            <div class="page-card page-card-pad w-full">
+            <div class="bg-gray-50 rounded-2xl p-6 w-full">
                 <h3 class="font-bold text-dxn-darkgreen mb-4 text-lg">{{ $lang === 'ar' ? 'بيانات الاعتماد' : 'Credentials' }}</h3>
                 <ul class="space-y-3">
                     @foreach($credentials as $c)
@@ -102,8 +101,8 @@
             </div>
         </div>
 
-        <div class="page-card page-card-pad" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.18); backdrop-filter: blur(8px);">
-            <span class="font-extrabold text-lg uppercase tracking-widest" style="color: var(--dxn-gold);">
+        <div style="background: #1a6b3a; backdrop-filter: blur(6px); border-radius: 16px; padding: 32px;">
+            <span class="font-extrabold text-lg uppercase tracking-widest" style="color: #ffffff;">
                 {{ $lang === 'ar' ? 'كيف بدأ كل شيء' : 'How It All Started' }}
             </span>
             <h2 id="story-heading" class="text-3xl font-bold mt-2 mb-6" style="color: #ffffff;">
@@ -127,15 +126,15 @@
 </section>
 
 {{-- Values --}}
-<section class="page-section page-section-soft" aria-labelledby="values-heading">
-    <div class="page-section-inner">
-        <div class="page-section-head">
+<section class="py-20" style="background-color: #f0fdf4;" aria-labelledby="values-heading">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
             <h2 id="values-heading" class="text-3xl font-bold text-dxn-darkgreen">{{ $lang === 'ar' ? 'ما الذي يميزنا' : 'What Sets Us Apart' }}</h2>
             <p class="text-gray-600 mt-2">{{ $lang === 'ar' ? 'نؤمن بالصحة والثروة والحرية للجميع.' : 'We believe in health, wealth, and freedom for everyone.' }}</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($values as $v)
-                <div class="page-card page-card-pad text-center">
+                <div class="card p-6 text-center hover:shadow-lg transition-shadow">
                     <div class="w-14 h-14 bg-dxn-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16392d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
@@ -148,9 +147,9 @@
 </section>
 
 {{-- DXN by the Numbers --}}
-<section class="page-section page-section-light" aria-labelledby="numbers-heading">
-    <div class="page-section-inner">
-        <div class="page-section-head">
+<section class="py-20" style="background-color: #fef2f2;" aria-labelledby="numbers-heading">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
             <h2 id="numbers-heading" class="text-3xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'DXN بالأرقام' : 'DXN by the Numbers' }}</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -160,7 +159,7 @@
                 ['value' => '9M+', 'label' => $lang === 'ar' ? 'عضو' : 'Members'],
                 ['value' => '1000+', 'label' => $lang === 'ar' ? 'منتج' : 'Products'],
             ] as $stat)
-                <div class="page-card page-card-pad text-center">
+                <div class="text-center p-6 rounded-2xl" style="background: rgba(191,60,54,0.08);">
                     <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2" style="color: #236b43;">{{ $stat['value'] }}</div>
                     <div class="text-sm font-semibold uppercase tracking-wide" style="color: #452aa8;">{{ $stat['label'] }}</div>
                 </div>
@@ -170,20 +169,21 @@
 </section>
 
 {{-- CTA --}}
-<section class="page-band-cta" aria-labelledby="about-cta-heading">
-    <div class="page-band-cta__inner">
-        <h2 id="about-cta-heading">
+<section class="py-20 relative overflow-hidden" aria-labelledby="about-cta-heading">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);" aria-hidden="true"></div>
+    <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+        <h2 id="about-cta-heading" class="text-3xl font-bold text-white mb-4">
             {{ $lang === 'ar' ? 'هل أنت مستعد للانضمام إلى عائلتنا؟' : 'Ready to Join Our Family?' }}
         </h2>
-        <p>
+        <p class="text-white mb-8">
             {{ $lang === 'ar' ? 'سواء كنت تريد منتجات صحية أو فرصة عمل — أنا هنا لمساعدتك في كل خطوة.' : "Whether you want health products or a business opportunity — I'm here to help you every step of the way." }}
         </p>
-        <div class="page-cta-row justify-center">
+        <div class="flex flex-wrap gap-4 justify-center">
             <a href="{{ $whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-gold flex items-center gap-2">WhatsApp Us</a>
             <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="btn-primary">{{ $lang === 'ar' ? 'احضر زووم مجاني' : 'Attend Free Zoom' }}</a>
             <a href="{{ route('join') }}" class="btn-outline-white">{{ $lang === 'ar' ? 'انضم كموزع' : 'Join as Distributor' }}</a>
         </div>
     </div>
 </section>
-</div>
 @endsection

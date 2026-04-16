@@ -72,7 +72,6 @@
 @endphp
 
 @section('content')
-<div class="page-shell">
 {{-- Hero --}}
 <section class="bg-hero flex items-center relative overflow-hidden" style="min-height: 100vh; min-height: 100dvh;" aria-label="{{ $lang === 'ar' ? 'القسم الرئيسي' : 'Hero section' }}">
     {{-- Poster shown instantly for fast LCP --}}
@@ -183,8 +182,8 @@
 </div>
 
 {{-- Zoom Banner --}}
-<section class="page-section page-section-soft" aria-labelledby="zoom-heading">
-    <div class="page-section-inner grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<section class="py-16 border-y" style="background-color: #eeeaf8; border-color: rgba(55,28,155,0.1);" aria-labelledby="zoom-heading">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
             <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full text-sm font-semibold mb-3" style="background: rgba(55,28,155,0.1); color: #452aa8;">
                 {{ $lang === 'ar' ? 'مجاني 100%' : '100% Free' }}
@@ -206,7 +205,7 @@
             @foreach([
                 ['d' => 'Sunday', 't' => '3pm-5pm', 'b' => 'Arabic'],
             ] as $s)
-                <div class="page-card page-card-pad min-h-[184px] flex flex-col justify-start">
+                <div class="bg-white rounded-xl p-6 shadow-sm min-h-[184px] flex flex-col justify-start" style="border: 1px solid rgba(55,28,155,0.1);">
                     <p class="font-bold" style="color: #452aa8;">{{ $s['d'] }}</p>
                     <p class="text-sm text-gray-600 mt-1">{{ $s['t'] }}</p>
                     <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-2 font-medium w-fit" style="background: rgba(49,140,90,0.1); color: #1e6b42;">{{ $s['b'] }}</span>
@@ -217,8 +216,8 @@
 </section>
 
 {{-- Why Join --}}
-<section class="page-section page-section-light" aria-labelledby="whyjoin-heading">
-    <div class="page-section-inner grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section class="py-20 bg-white" aria-labelledby="whyjoin-heading">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
             <span class="font-semibold text-sm uppercase tracking-widest" style="color: #236b43;">{{ $lang === 'ar' ? 'فرصة العمل' : 'Business Opportunity' }}</span>
             <h2 id="whyjoin-heading" class="text-3xl md:text-4xl font-bold mt-2 mb-6" style="color: #452aa8;">{{ $lang === 'ar' ? 'لماذا تنضم إلى DXN؟' : 'Why Join DXN?' }}</h2>
@@ -244,7 +243,7 @@
                 ['t' => $lang === 'ar' ? 'الشبكة' : 'Network', 'd' => $lang === 'ar' ? 'مجتمع موزعين عالمي' : 'Global distributor community', 'c' => 'background: #e8f5ee; border-color: rgba(67,175,115,0.2);'],
                 ['t' => $lang === 'ar' ? 'الحرية' : 'Freedom', 'd' => $lang === 'ar' ? 'اعمل وفق جدولك' : 'Work on your schedule', 'c' => 'background: #eeeaf8; border-color: rgba(55,28,155,0.2);'],
             ] as $card)
-                <div class="page-card page-card-pad" style="{{ $card['c'] }}">
+                <div class="p-6 rounded-xl border-2" style="{{ $card['c'] }}">
                     <h3 class="font-bold text-xl mb-2" style="color: #452aa8;">{{ $card['t'] }}</h3>
                     <p class="text-gray-600 text-sm">{{ $card['d'] }}</p>
                 </div>
@@ -254,13 +253,13 @@
 </section>
 
 {{-- Testimonials --}}
-<section class="page-section page-section-soft" aria-labelledby="testimonials-heading">
-    <div class="page-section-inner">
+<section class="py-20 bg-gray-50" aria-labelledby="testimonials-heading">
+    <div class="max-w-7xl mx-auto px-4">
         <h2 id="testimonials-heading" class="section-title">{{ $lang === 'ar' ? 'قصص النجاح' : 'Success Stories' }}</h2>
         <p class="section-subtitle">{{ $lang === 'ar' ? 'أشخاص حقيقيون. نتائج حقيقية.' : 'Real people. Real results.' }}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             @foreach($testi as $t)
-                <article class="page-card page-card-pad" style="border-top: 4px solid #43af73;">
+                <article class="card p-6" style="border-top: 4px solid #43af73;">
                     <div class="flex items-center gap-1 mb-4" aria-label="{{ $lang === 'ar' ? '5 من 5 نجوم' : '5 out of 5 stars' }}">
                         @for($i = 0; $i < 5; $i++)
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#bf3c36" stroke="#bf3c36" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -285,11 +284,13 @@
 </section>
 
 {{-- CTA Banner --}}
-<section class="page-band-cta" aria-labelledby="cta-heading">
-    <div class="page-band-cta__inner">
+<section class="py-20 relative overflow-hidden" aria-labelledby="cta-heading">
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('/cta-bg.jpeg');" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);" aria-hidden="true"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'هل أنت مستعد للبدء؟' : 'Ready to Get Started?' }}</h2>
         <p class="text-white text-lg mb-8">{{ $lang === 'ar' ? 'انضم لآلاف الأشخاص الذين حوّلوا صحتهم وحياتهم مع DXN' : 'Join thousands who have transformed their health and lives with DXN' }}</p>
-        <div class="page-cta-row justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('join') }}" class="btn-primary px-8 py-3.5 shadow-lg">
                 {{ $lang === 'ar' ? 'انضم مجاناً' : 'Join For Free' }}
             </a>
@@ -303,7 +304,6 @@
         </div>
     </div>
 </section>
-</div>
 @endsection
 
 @push('scripts')

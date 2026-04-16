@@ -34,16 +34,14 @@
 @endpush
 
 @section('content')
-<div class="page-shell">
 {{-- Header --}}
-<section class="page-hero page-hero--center">
+<div class="bg-dxn-darkgreen py-16 px-4 text-center relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 70% 50%, #dfc378 0%, transparent 60%)"></div>
-    <div class="page-hero-inner">
-        <span class="page-eyebrow">{{ $lang === 'ar' ? 'تواصل مباشر' : 'Direct Support' }}</span>
+    <div class="relative">
         <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">{{ $lang === 'ar' ? 'اتصل بنا' : 'Contact Us' }}</h1>
         <p class="text-gray-300">{{ $lang === 'ar' ? 'نحن هنا لمساعدتك' : "We're here to help" }}</p>
     </div>
-</section>
+</div>
 
 {{-- WhatsApp CTA --}}
 <div class="bg-[#25D366]/10 border-b border-[#25D366]/20 py-5">
@@ -56,8 +54,7 @@
     </div>
 </div>
 
-<section class="page-section page-section-soft">
-<div class="max-w-6xl mx-auto px-4">
+<div class="max-w-6xl mx-auto px-4 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {{-- Contact Info --}}
         <div class="space-y-6">
@@ -84,7 +81,7 @@
         </div>
 
         {{-- Form --}}
-        <div class="lg:col-span-2 page-card p-8">
+        <div class="lg:col-span-2 bg-white rounded-2xl shadow-lg p-8">
             <h2 class="text-xl font-bold text-dxn-darkgreen mb-6">{{ $lang === 'ar' ? 'أرسل رسالة' : 'Send a Message' }}</h2>
             <form method="POST" action="{{ route('contact.store') }}" class="space-y-4">
                 @csrf
@@ -111,7 +108,6 @@
         </div>
     </div>
 </div>
-</section>
 
 {{-- DXN UAE Offices — HIDDEN from visitors (data preserved below) --}}
 @if(false)
@@ -250,5 +246,4 @@
     </div>
 </section>
 @endif
-</div>
 @endsection

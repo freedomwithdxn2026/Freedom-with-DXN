@@ -102,7 +102,7 @@
 @endphp
 
 @section('content')
-<div class="page-shell bg-white">
+<div class="bg-white">
     {{-- Admin Edit Bar --}}
     @auth
         @if(auth()->user()->role === 'admin')
@@ -122,7 +122,7 @@
     @endauth
 
     {{-- Breadcrumb --}}
-    <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="max-w-7xl mx-auto px-4 py-3">
         <nav class="flex items-center gap-2 text-sm text-gray-600">
             <a href="{{ route('home') }}" class="hover:text-brand-violet">{{ $lang === 'ar' ? 'الرئيسية' : 'Home' }}</a>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -141,7 +141,7 @@
             {{-- Left: Images --}}
             <div class="lg:col-span-4" x-data="{ activeImage: '{{ $mainImage }}' }">
                 {{-- Main Image --}}
-                <div class="page-card overflow-hidden flex items-center justify-center mb-3 max-h-96" style="background: #faf9fe;">
+                <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 flex items-center justify-center mb-3 max-h-96">
                     @if($mainImage)
                         <img :src="activeImage" alt="{{ $product->name }}" width="400" height="384" class="w-full h-full object-contain p-4">
                     @else
@@ -241,7 +241,7 @@
 
             {{-- Right: Buy Box --}}
             <div class="lg:col-span-3">
-                <div class="page-card p-5 sticky top-24">
+                <div class="border border-gray-200 rounded-2xl p-5 sticky top-24">
                     <p class="text-2xl font-bold mb-1" style="color: #bf3c36;">${{ number_format($product->price, 2) }}</p>
                     <p class="text-sm text-gray-600 mb-4">{{ $lang === 'ar' ? 'شامل الضريبة' : 'Tax included' }}</p>
 
@@ -292,11 +292,11 @@
     </div>
 
     {{-- Product Details --}}
-    <div class="page-section page-section-soft border-t">
-        <div class="page-section-inner !max-w-7xl !px-4 space-y-10">
+    <div class="bg-gray-50 border-t">
+        <div class="max-w-7xl mx-auto px-4 py-12 space-y-10">
 
             {{-- Details --}}
-            <div class="page-card p-8">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 class="text-xl font-bold mb-4" style="color: #452aa8;">{{ $lang === 'ar' ? 'تفاصيل المنتج' : 'Product Details' }}</h3>
                 <p class="text-gray-600 leading-relaxed mb-6">{{ $displayDesc }}</p>
 
@@ -350,7 +350,7 @@
 
             {{-- Ingredients --}}
             @if($displayIngredients)
-            <div class="page-card p-8">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 class="text-xl font-bold mb-4" style="color: #452aa8;">{{ $lang === 'ar' ? 'المكونات' : 'Ingredients' }}</h3>
                 <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ $displayIngredients }}</p>
             </div>
@@ -358,7 +358,7 @@
 
             {{-- How to Use --}}
             @if($displayUsage)
-            <div class="page-card p-8">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 class="text-xl font-bold mb-4" style="color: #452aa8;">{{ $lang === 'ar' ? 'طريقة الاستخدام' : 'How to Use' }}</h3>
                 <div class="flex items-start gap-4 p-5 rounded-xl" style="background: rgba(67,175,115,0.08);">
                     <svg class="shrink-0 mt-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#43af73" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -433,7 +433,7 @@
                 $productQas = $displayQna ?: ($defaultQas[$product->category] ?? $defaultQas['coffee']);
             @endphp
 
-            <div class="page-card p-8">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-xl font-bold" style="color: #452aa8;">{{ $lang === 'ar' ? 'أسئلة وأجوبة' : 'Questions & Answers' }}</h3>
                     <span class="text-sm text-gray-400">{{ count($productQas) }} {{ $lang === 'ar' ? 'أسئلة مُجاب عليها' : 'answered questions' }}</span>
@@ -463,7 +463,8 @@
             </div>
 
             {{-- Customer Reviews --}}
-            <div class="page-card p-8">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <h3 class="text-xl font-bold mb-6" style="color: #452aa8;">{{ $lang === 'ar' ? 'تقييمات العملاء' : 'Customer Reviews' }}</h3>
 
                     @php
