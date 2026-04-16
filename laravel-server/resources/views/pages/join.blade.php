@@ -54,16 +54,8 @@
         ['num' => '06', 'title' => 'Build Your Team', 'desc' => 'Invite others to join under you. As your team grows, so does your passive income.'],
     ];
 
-    $zoomSessions = $lang === 'ar' ? [
-        ['day' => 'الاثنين', 'time' => '٨:٠٠ مساءً', 'lang_label' => 'عربي', 'accent' => '#43af73'],
-        ['day' => 'الأربعاء', 'time' => '٨:٠٠ مساءً', 'lang_label' => 'English', 'accent' => '#46387b'],
-        ['day' => 'الجمعة', 'time' => '٥:٠٠ مساءً', 'lang_label' => 'عربي/English', 'accent' => '#c9a84c'],
-        ['day' => 'السبت', 'time' => '١٠:٠٠ صباحًا', 'lang_label' => 'English', 'accent' => '#bf3c36'],
-    ] : [
-        ['day' => 'Monday', 'time' => '8:00 PM GST', 'lang_label' => 'Arabic', 'accent' => '#43af73'],
-        ['day' => 'Wednesday', 'time' => '8:00 PM GST', 'lang_label' => 'English', 'accent' => '#46387b'],
-        ['day' => 'Friday', 'time' => '5:00 PM GST', 'lang_label' => 'AR / EN', 'accent' => '#c9a84c'],
-        ['day' => 'Saturday', 'time' => '10:00 AM GST', 'lang_label' => 'English', 'accent' => '#bf3c36'],
+    $zoomSessions = [
+        ['day' => 'Sunday', 'time' => '3pm-5pm', 'lang_label' => 'Arabic', 'accent' => '#43af73'],
     ];
 
     $faqs = $lang === 'ar' ? [

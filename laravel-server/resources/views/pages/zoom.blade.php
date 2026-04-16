@@ -44,17 +44,14 @@
         <section class="py-16">
             <div class="max-w-4xl mx-auto px-4">
                 <h2 class="text-2xl font-bold text-dxn-darkgreen text-center mb-8">{{ $lang === 'ar' ? 'الجدول الأسبوعي' : 'Weekly Schedule' }}</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 gap-4 max-w-xl mx-auto">
                     @foreach([
-                        ['day' => $lang === 'ar' ? 'الاثنين' : 'Monday', 'time' => '8:00 PM GST', 'lang_label' => $lang === 'ar' ? 'عربي' : 'Arabic', 'c' => 'border-green-300 bg-green-50/80'],
-                        ['day' => $lang === 'ar' ? 'الأربعاء' : 'Wednesday', 'time' => '8:00 PM GST', 'lang_label' => 'English', 'c' => 'border-blue-300 bg-blue-50/80'],
-                        ['day' => $lang === 'ar' ? 'الجمعة' : 'Friday', 'time' => '5:00 PM GST', 'lang_label' => 'AR/EN', 'c' => 'border-purple-300 bg-purple-50/80'],
-                        ['day' => $lang === 'ar' ? 'السبت' : 'Saturday', 'time' => '10:00 AM GST', 'lang_label' => 'English', 'c' => 'border-blue-300 bg-blue-50/80'],
+                        ['day' => 'Sunday', 'time' => '3pm-5pm', 'lang_label' => 'Arabic', 'c' => 'border-green-300 bg-green-50/80'],
                     ] as $session)
-                        <div class="border-2 rounded-xl p-5 backdrop-blur-sm {{ $session['c'] }}">
+                        <div class="border-2 rounded-xl p-6 min-h-[184px] backdrop-blur-sm flex flex-col justify-start {{ $session['c'] }}">
                             <h3 class="font-bold text-dxn-darkgreen text-lg">{{ $session['day'] }}</h3>
                             <p class="text-gray-600 text-sm mt-1">{{ $session['time'] }}</p>
-                            <span class="inline-block bg-white text-sm px-3 py-1 rounded-full mt-2 font-medium">{{ $session['lang_label'] }}</span>
+                            <span class="inline-block bg-white text-sm px-3 py-1 rounded-full mt-2 font-medium w-fit">{{ $session['lang_label'] }}</span>
                         </div>
                     @endforeach
                 </div>
@@ -71,7 +68,7 @@
 <section class="bg-hero py-16 px-4">
     <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl font-bold text-white mb-4">{{ $lang === 'ar' ? 'لا تفوت الجلسة القادمة!' : "Don't Miss the Next Session!" }}</h2>
-        <p class="text-gray-300 mb-6">{{ $lang === 'ar' ? 'أرسل لي رسالة واتساب وسأرسل لك التذكير والرابط.' : "Send me a WhatsApp message and I'll send you the reminder and link." }}</p>
+        <p class="text-gray-300 mb-6">{{ $lang === 'ar' ? 'أرسل لي رسالة واتساب وسأرسل لك التذكير والرابط.' : "Send me a WhatsApp message and I'll send you the Sunday 3pm-5pm reminder and link." }}</p>
         <a href="{{ $whatsapp }}" target="_blank" class="btn-gold">{{ $lang === 'ar' ? 'واتساب الآن' : 'WhatsApp Now' }}</a>
     </div>
 </section>

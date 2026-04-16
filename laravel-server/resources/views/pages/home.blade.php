@@ -192,7 +192,7 @@
                 {{ $lang === 'ar' ? 'احضر جلسة زووم مجانية' : 'Attend a Free Zoom Session' }}
             </h2>
             <p class="text-gray-600 mb-4">
-                {{ $lang === 'ar' ? 'تعرف على منتجات DXN وفرصة العمل. جلسات أسبوعية بالعربية والإنجليزية.' : 'Learn about DXN products and the business opportunity. Weekly sessions in Arabic and English.' }}
+                {{ $lang === 'ar' ? 'تعرف على منتجات DXN وفرصة العمل. جلسة أسبوعية كل يوم أحد من 3pm-5pm.' : 'Learn about DXN products and the business opportunity. One weekly session every Sunday from 3pm-5pm.' }}
             </p>
             <div class="flex flex-wrap gap-3">
                 <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl hover-violet">
@@ -201,16 +201,14 @@
                 <a href="{{ $whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-gold">{{ $lang === 'ar' ? 'احصل على الرابط' : 'Get the Link' }}</a>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 gap-4">
             @foreach([
-                ['d' => $lang === 'ar' ? 'الاثنين' : 'Monday', 'b' => $lang === 'ar' ? 'عربي' : 'Arabic'],
-                ['d' => $lang === 'ar' ? 'الأربعاء' : 'Wednesday', 'b' => 'English'],
-                ['d' => $lang === 'ar' ? 'الجمعة' : 'Friday', 'b' => 'AR/EN'],
-                ['d' => $lang === 'ar' ? 'السبت' : 'Saturday', 'b' => 'English'],
+                ['d' => 'Sunday', 't' => '3pm-5pm', 'b' => 'Arabic'],
             ] as $s)
-                <div class="bg-white rounded-xl p-4 shadow-sm" style="border: 1px solid rgba(55,28,155,0.1);">
+                <div class="bg-white rounded-xl p-6 shadow-sm min-h-[184px] flex flex-col justify-start" style="border: 1px solid rgba(55,28,155,0.1);">
                     <p class="font-bold" style="color: #452aa8;">{{ $s['d'] }}</p>
-                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-1 font-medium" style="background: rgba(49,140,90,0.1); color: #1e6b42;">{{ $s['b'] }}</span>
+                    <p class="text-sm text-gray-600 mt-1">{{ $s['t'] }}</p>
+                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-2 font-medium w-fit" style="background: rgba(49,140,90,0.1); color: #1e6b42;">{{ $s['b'] }}</span>
                 </div>
             @endforeach
         </div>
