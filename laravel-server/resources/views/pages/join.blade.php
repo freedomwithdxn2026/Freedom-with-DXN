@@ -353,7 +353,7 @@
             </p>
             <div class="video-wrapper reveal">
                 <div class="video-frame">
-                    <div id="join-video"></div>
+                    <iframe id="join-video" src="https://www.youtube.com/embed/{{ $videoId }}?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1" title="DXN Opportunity" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -482,11 +482,8 @@
 
 @push('scripts')
 <script>
-var joinPlayer;
 function onYouTubeIframeAPIReady() {
-    joinPlayer = new YT.Player('join-video', {
-        videoId: '{{ $videoId }}',
-        playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0 },
+    new YT.Player('join-video', {
         events: {
             onReady: function(e) {
                 e.target.unMute();
