@@ -72,6 +72,29 @@ cd ~/public_html && git pull origin main
 # No restart needed — PHP changes are instant
 ```
 
+## /new-blog Command
+
+When the user types `/new-blog`:
+1. Ask: "Do you have a topic in mind, or should I choose one?"
+2. Wait for their answer before proceeding
+3. If they give a topic → use it (title, keyword, excerpt they provide, or derive from the topic)
+4. If they want me to choose → pick the next category in rotation (Health → Business → Products → Success Stories → Tips → repeat) and propose a specific title + keyword + excerpt for their approval
+5. Once topic is confirmed → generate two full standalone HTML files:
+   - `_reference/blog-english-{N}.html` — English version (~1200 words)
+   - `_reference/blog-ar-{N}.html` — Arabic RTL version (same content fully translated)
+6. After generating, output a summary card:
+   - Blog number, category emoji + name, title, keyword, excerpt
+   - Admin instructions: category slug, paste each file into the Full HTML Page field
+
+**Blog HTML design rules:**
+- Copy exact CSS variables, hero structure, and component styles from the most recent reference file
+- Hero height: fixed px only — NEVER use vh units (iframe constraint)
+- English grid: `grid-template-columns: 1fr 320px`
+- Arabic grid: `grid-template-columns: 320px 1fr` + `.sidebar { order: -1; }` in base CSS
+- WhatsApp link: `https://wa.me/message/EFSQ2IDNVG3YB1`
+- Calendly link: `https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn`
+- Arabic: `lang="ar" dir="rtl"`, border-right not border-left, `faq-q::before: 'س'`, TOC arrow `←`
+
 ## Notes
 
 - The site supports English and Arabic (language toggle in navbar)
