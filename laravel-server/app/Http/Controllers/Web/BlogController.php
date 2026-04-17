@@ -55,7 +55,7 @@ class BlogController extends Controller
             // Full-cover hero: image as background, text on right (RTL)
             $heroCSS = '
             .hero { height: 1000px !important; min-height: 0 !important; max-height: 1000px !important; display: flex !important; align-items: flex-end !important; overflow: hidden !important; }
-            .hero-img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; opacity: 0.45 !important; filter: saturate(1.1) !important; }
+            .hero-img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; opacity: 0.45 !important; filter: saturate(1.1) !important; }
             .hero-placeholder { display: none !important; }
             .sidebar .zoom-card { display: none !important; }
             .bottom-cards { display: none; }
@@ -173,7 +173,7 @@ class BlogController extends Controller
         // Full-cover hero: image as background, text on right (LTR)
         $heroCSS = '
         .hero { height: 1000px !important; min-height: 0 !important; max-height: 1000px !important; display: flex !important; align-items: flex-end !important; overflow: hidden !important; }
-        .hero-img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; opacity: 0.45 !important; filter: saturate(1.1) !important; }
+        .hero-img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; opacity: 0.45 !important; filter: saturate(1.1) !important; }
         .hero-placeholder { display: none !important; }
         .sidebar .zoom-card { display: none !important; }
         .bottom-cards { display: none; }
