@@ -33,11 +33,16 @@
   /* HERO */
   .hero {
     position: relative;
-    height: 560px;
     display: flex;
     align-items: flex-end;
-    overflow: hidden;
     background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
   }
 
   .hero-placeholder {
@@ -53,7 +58,9 @@
   }
 
   .hero-content {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     z-index: 2;
     padding: 0 clamp(20px, 6vw, 100px) 64px;
     max-width: 900px;
@@ -366,7 +373,7 @@
   @media (max-width: 860px) {
     .page-wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
     .sidebar { order: 1; }
-    .hero { height: 400px; }
+    .hero { min-height: auto; }
     .hero-content { padding-bottom: 48px; }
     .hero-title { font-size: clamp(30px, 5vw, 52px); }
     .two-col { grid-template-columns: 1fr; }
@@ -376,7 +383,7 @@
 
   @media (max-width: 540px) {
     body { font-size: 15px; line-height: 1.7; }
-    .hero { height: 340px; }
+    .hero { min-height: auto; }
     .hero-content { padding: 0 20px 36px; }
     .hero-title { font-size: 28px; margin-bottom: 14px; }
     .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
@@ -578,9 +585,9 @@
     </div>
 
     <div class="cta-banner">
-      <h3>مستعد لتجربة قهوة DXN لينجزي؟</h3>
-      <p>راسلنا على واتساب وسنساعدك في اختيار النوع المناسب، والإجابة على أي أسئلة، وترتيب التوصيل إلى موقعك في الإمارات. بدون التزام — مجرد نصيحة صادقة.</p>
-      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">اطلب عبر واتساب</a>
+      <h3>انضم إلى اجتماع زووم الأسبوعي المجاني</h3>
+      <p>كل أسبوع نستضيف جلسة مباشرة بالعربية والإنجليزية — تغطي المنتجات وفرصة العمل وعملية التسجيل. احضر، اسأل أي شيء، احجز بدون أي التزام.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">سجّل عبر واتساب</a>
     </div>
 
   </article>

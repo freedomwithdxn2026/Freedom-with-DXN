@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 منتجات DXN يجب على كل مبتدئ تجربتها أولًا | Freedom with DXN</title>
+<meta name="description" content="جديد على DXN؟ مع أكثر من 1,000 منتج للاختيار من بينها، إليك أفضل 5 منتجات DXN للبدء بها — بناءً على تجربة حقيقية من موزعين في الإمارات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 60px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #43af73;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* PRODUCT CARDS */
+  .product-pick {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-pick::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--emerald), var(--forest));
+  }
+
+  .pick-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--forest);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+
+  .pick-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+
+  .pick-label-best { background: var(--gold); color: #fff; }
+  .pick-label-daily { background: var(--emerald); color: #fff; }
+  .pick-label-essential { background: var(--forest); color: #fff; }
+
+  .product-pick h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 12px;
+  }
+
+  .product-pick .subtitle {
+    font-size: 14px;
+    color: var(--emerald);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .why-box {
+    background: #f3f0fa;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  .why-box h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+
+  .why-box ul { list-style: none; }
+
+  .why-box li {
+    font-size: 14px;
+    color: #4a4a4a;
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .why-box li::before { content: '\2713'; color: var(--emerald); font-weight: 700; flex-shrink: 0; }
+
+  /* QUICK COMPARE TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 14px;
+  }
+
+  .compare-table th {
+    background: var(--forest);
+    color: #fff;
+    padding: 12px 14px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .compare-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #4a4a4a;
+    vertical-align: top;
+  }
+
+  .compare-table tr:nth-child(even) td { background: #f7f5fc; }
+
+  .compare-table .check { color: var(--emerald); font-weight: 700; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: #edfaf3;
+    border: 1px solid #b5e8cc;
+    border-right: 4px solid var(--emerald);
+    border-left: none;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 15px;
+    color: #1a5a38;
+    line-height: 1.7;
+  }
+
+  .tip-box strong { color: #0d4028; }
+
+  /* FAQ */
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  /* CTA */
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  /* SIDEBAR */
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
+    .sidebar { order: 1; }
+    .hero { min-height: auto; }
+    .hero-content { padding-bottom: 48px; }
+    .hero-title { font-size: clamp(30px, 5vw, 52px); }
+    .compare-table { font-size: 12px; }
+    .compare-table th, .compare-table td { padding: 10px 10px; }
+    .cta-banner { padding: 36px 28px; }
+    .cta-banner h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .product-pick { padding: 24px 18px; }
+    .product-pick h3 { font-size: 19px; }
+    .why-box { padding: 14px 16px; }
+    .why-box li { font-size: 13px; }
+    .compare-table { font-size: 11px; }
+    .compare-table th, .compare-table td { padding: 8px 8px; }
+    .tip-box { font-size: 13px; padding: 16px 18px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .sidebar-card h4 { font-size: 15px; }
+    .zoom-card { padding: 20px 16px; }
+    .zoom-card h4 { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder">
+    <div class="hero-placeholder-text">
+      HERO IMAGE GOES HERE
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">دليل المبتدئين · الإمارات</div>
+    <h1 class="hero-title">5 منتجات DXN<br><em>يجب على كل مبتدئ</em><br>تجربتها أولًا</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٧ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      لدى DXN أكثر من 1,000 منتج. إذا كنت جديدًا، فقد يبدو ذلك مربكًا. لذلك سألنا أكثر موزعينا خبرة في الإمارات سؤالًا واحدًا: لو كان شخص يبدأ من الصفر، ما هي المنتجات الخمسة التي ستضعها في يديه أولًا؟ إليك ما قالوه — ولماذا.
+    </p>
+
+    <div class="section-head" id="why"><h2>لماذا تهم منتجاتك الأولى</h2></div>
+
+    <p>المنتجات التي تبدأ بها تشكّل تجربتك الكاملة مع DXN. اختر شيئًا تستمتع باستخدامه يوميًا وستستمر معه. اختر شيئًا يبدو مفروضًا أو غير مألوف وستفقد الاهتمام خلال أسبوع.</p>
+
+    <p>كل منتج في هذه القائمة تم اختياره لنفس السبب: هو شيء يمكنك استخدامه يوميًا، يحل محل شيء تشتريه بالفعل، والناس يلاحظون فرقًا حقيقيًا بعد أسابيع قليلة. لا مكملات غامضة. لا منتجات تتطلب تغييرًا جذريًا في نمط الحياة. فقط نقاط بداية ذكية وعملية.</p>
+
+    <div class="img-placeholder">صورة: عرض مسطح منسق لمنتجات DXN الخمسة الموصى بها على سطح نظيف وطبيعي بإضاءة ناعمة</div>
+
+    <div class="section-head" id="pick-1"><h2>#1 — لينجزي كوفي 3 في 1</h2></div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">1</span>
+        <span class="pick-label pick-label-best">أفضل نقطة بداية</span>
+      </div>
+      <h3>DXN لينجزي كوفي 3 في 1</h3>
+      <p class="subtitle">المنتج الذي يعرّف أكثر الناس على DXN من أي شيء آخر.</p>
+      <p>إذا كنت تشرب القهوة في الصباح — ومعظم الناس في الإمارات يفعلون ذلك — فهذا هو أسهل تبديل يمكنك القيام به. DXN لينجزي كوفي 3 في 1 هي قهوة سريعة التحضير كريمية وخفيفة ممزوجة بمستخلص الغانوديرما لوسيدوم. طعمها مثل كوب جيد من القهوة السريعة، لكن بحموضة أقل بشكل ملحوظ ونهاية أنعم.</p>
+      <p>معظم مستخدمي DXN الجدد يبدأون من هنا لأن الحاجز صفر. أنت لا تضيف عادة جديدة — أنت تطوّر عادة موجودة. خلال الأسبوع الأول، كثيرون يلاحظون أن القهوة أخف على المعدة. خلال شهر، تشعر أن الطاقة أكثر استقرارًا طوال اليوم.</p>
+      <div class="why-box">
+        <h4>لماذا تبدأ من هنا</h4>
+        <ul>
+          <li>تحل محل قهوتك الصباحية — لا تحتاج عادة جديدة</li>
+          <li>طعم كريمي مألوف يستمتع به معظم الناس فورًا</li>
+          <li>تحتوي على غانوديرما من مزارع DXN المعتمدة</li>
+          <li>حموضة أقل بشكل ملحوظ من القهوة السريعة العادية</li>
+          <li>أسهل منتج لمشاركته مع الأصدقاء والعائلة</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-2"><h2>#2 — أقراص سبيرولينا</h2></div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">2</span>
+        <span class="pick-label pick-label-daily">ضروري يوميًا</span>
+      </div>
+      <h3>DXN سبيرولينا 500 قرص</h3>
+      <p class="subtitle">أقرب شيء لفيتامين متعدد يومي في تشكيلة DXN.</p>
+      <p>سبيرولينا DXN مصنوعة من طحالب دقيقة نقية — واحدة من أكثر الأغذية كثافة بالمغذيات على الكوكب. تحتوي على البروتين والحديد وفيتامينات B ومجموعة واسعة من مضادات الأكسدة، كل ذلك في قرص بسيط تتناوله مع الماء. لا طعم، لا تحضير، لا عناء.</p>
+      <p>للأشخاص الذين يتخطون الفطور، أو يأكلون بشكل غير منتظم، أو ببساطة يريدون تغطية احتياجاتهم الغذائية، السبيرولينا تسد الثغرات التي تتركها معظم الأنظمة الغذائية الحديثة. وهي تحظى بشعبية خاصة بين الناس في الإمارات الذين يعيشون بجدول عمل سريع ولا يملكون دائمًا وقتًا لوجبات متوازنة.</p>
+      <div class="why-box">
+        <h4>لماذا تبدأ من هنا</h4>
+        <ul>
+          <li>غنية بالبروتين والحديد وفيتامينات B ومضادات الأكسدة</li>
+          <li>شكل أقراص بسيط — لا خلط، لا طعم</li>
+          <li>تسد الثغرات الغذائية من عادات الأكل غير المنتظمة</li>
+          <li>مثالية للمهنيين المشغولين في الإمارات</li>
+          <li>واحدة من أكثر منتجات DXN بأسعار معقولة يوميًا</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-3"><h2>#3 — معجون أسنان غانوزي</h2></div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">3</span>
+        <span class="pick-label pick-label-essential">بديل يومي</span>
+      </div>
+      <h3>DXN معجون أسنان غانوزي</h3>
+      <p class="subtitle">المنتج الذي يفاجئ الناس أكثر من غيره.</p>
+      <p>لا أحد يتوقع أن يكون معجون الأسنان منتجًا مميزًا. لكن معجون أسنان DXN غانوزي هو باستمرار أحد المنتجات التي تحوّل المشككين إلى مؤمنين. يحتوي على مستخلص الغانوديرما وبدون محليات صناعية — والفرق شيء تشعر به فورًا.</p>
+      <p>أول شيء يلاحظه الناس هو مدى نظافة الفم بعد التنظيف. ليست نظافة النعناع الكيميائي القوي لمعظم معاجين الأسنان التجارية، بل نظافة حقيقية ومنعشة تدوم طويلًا. كثير من المستخدمين يقولون إن لثتهم تبدو أصحّ خلال أول أسبوعين، وعدد من أطباء الأسنان في الإمارات أبدوا تعليقات إيجابية عندما تحوّل المرضى إليه.</p>
+      <div class="why-box">
+        <h4>لماذا تبدأ من هنا</h4>
+        <ul>
+          <li>يحل محل شيء تشتريه كل شهر بالفعل</li>
+          <li>بدون محليات صناعية — تركيبة معززة بالغانوديرما</li>
+          <li>إحساس بالنظافة أطول وأعمق بشكل ملحوظ</li>
+          <li>المستخدمون يبلّغون عن لثة أصحّ خلال أسبوعين</li>
+          <li>أنبوب واحد يدوم أطول من معظم العلامات التجارية</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-4"><h2>#4 — كبسولات RG/GL</h2></div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">4</span>
+        <span class="pick-label pick-label-daily">مكمل أساسي</span>
+      </div>
+      <h3>DXN ريشي غانو (RG) + غانوسيليوم (GL)</h3>
+      <p class="subtitle">أنقى شكل من الغانوديرما في تشكيلة DXN.</p>
+      <p>إذا كانت قهوة لينجزي تعرّفك على الغانوديرما، فكبسولات RG وGL هي المكان الذي تتعمق فيه أكثر. RG مصنوع من الجسم الثمري لفطر الغانوديرما؛ GL مصنوع من الميسيليوم — البنية الشبيهة بالجذور. معًا يوفران طيفًا أوسع من المركبات الفعالة للغانوديرما مقارنة بأي منتج منفرد.</p>
+      <p>معظم مستخدمي DXN الجادين يتناولون RG وGL يوميًا إلى جانب قهوتهم. عادةً ما يكونان المنتج الثاني أو الثالث الذي يضيفه الناس لروتينهم، بمجرد أن يجربوا القهوة ويريدوا زيادة تناولهم للغانوديرما. شكل الكبسولات يجعلها سهلة التناول — كبسولتان مع الماء، صباحًا ومساءً.</p>
+      <div class="why-box">
+        <h4>لماذا تبدأ من هنا</h4>
+        <ul>
+          <li>غانوديرما نقي بشكل كبسولات مركزة</li>
+          <li>RG + GL معًا يغطيان طيفًا كاملًا من المركبات الفعالة</li>
+          <li>سهل التناول — لا تحضير أو خلط</li>
+          <li>الخطوة الطبيعية التالية بعد تجربة قهوة لينجزي</li>
+          <li>يستخدمه يوميًا غالبية أعضاء DXN على المدى الطويل</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-5"><h2>#5 — كوكوزي (مشروب الشوكولاتة)</h2></div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">5</span>
+        <span class="pick-label pick-label-essential">المفضل العائلي</span>
+      </div>
+      <h3>DXN كوكوزي</h3>
+      <p class="subtitle">المنتج الذي يكسب كل من لا يشرب القهوة.</p>
+      <p>ليس كل شخص في بيتك يشرب القهوة. الأطفال لا يشربونها. كثير من الكبار يفضلون الشوكولاتة أو الشاي. DXN كوكوزي يحل هذه المشكلة — وهو مشروب شوكولاتة غني وكريمي معزز بمستخلص الغانوديرما، وطعمه فعلًا مثل شوكولاتة ساخنة فاخرة.</p>
+      <p>كوكوزي هو المنتج الذي يحوّل مستخدم DXN واحد إلى بيت DXN كامل. بمجرد أن يبدأ الأطفال بطلبه كل مساء، أو يبدأ شريك حياتك باختياره بدل الشوكولاتة الساخنة العادية، تكون العائلة بأكملها تستهلك الغانوديرما يوميًا دون أن يفكر أحد في ذلك. هذا قوي — وهذا هو السبب في أن الموزعين ذوي الخبرة ينصحون دائمًا بوجود علبة في البيت.</p>
+      <div class="why-box">
+        <h4>لماذا تبدأ من هنا</h4>
+        <ul>
+          <li>طعم شوكولاتة غني — يحبه الكبار والأطفال</li>
+          <li>يحتوي على غانوديرما بشكل يستمتع به من لا يشرب القهوة</li>
+          <li>يحوّل بيتك إلى بيت DXN</li>
+          <li>مثالي كمشروب مسائي أو متعة بعد الظهر</li>
+          <li>واحد من أسهل المنتجات لتقديمه للمشككين</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="compare"><h2>مقارنة سريعة</h2></div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>المنتج</th>
+          <th>الفئة</th>
+          <th>استخدام يومي</th>
+          <th>العائلة</th>
+          <th>الأنسب لـ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>لينجزي كوفي 3 في 1</strong></td>
+          <td>مشروب</td>
+          <td class="check">&#10003;</td>
+          <td>البالغين</td>
+          <td>بديل قهوة الصباح</td>
+        </tr>
+        <tr>
+          <td><strong>سبيرولينا 500</strong></td>
+          <td>مكمل</td>
+          <td class="check">&#10003;</td>
+          <td>جميع الأعمار</td>
+          <td>أساس غذائي</td>
+        </tr>
+        <tr>
+          <td><strong>معجون أسنان غانوزي</strong></td>
+          <td>عناية شخصية</td>
+          <td class="check">&#10003;</td>
+          <td>جميع الأعمار</td>
+          <td>ترقية العناية اليومية بالفم</td>
+        </tr>
+        <tr>
+          <td><strong>كبسولات RG/GL</strong></td>
+          <td>مكمل</td>
+          <td class="check">&#10003;</td>
+          <td>البالغين</td>
+          <td>تناول غانوديرما نقي</td>
+        </tr>
+        <tr>
+          <td><strong>كوكوزي</strong></td>
+          <td>مشروب</td>
+          <td class="check">&#10003;</td>
+          <td>جميع الأعمار</td>
+          <td>غير شاربي القهوة والأطفال</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <strong>نصيحة الموزع:</strong> لا تحتاج لشراء المنتجات الخمسة دفعة واحدة. ابدأ بلينجزي كوفي 3 في 1 — استخدمه لأسبوعين، جرّب الفرق بنفسك، ثم أضف منتجًا واحدًا في كل مرة. أفضل روتين DXN هو الذي تبنيه تدريجيًا وتحافظ عليه باستمرار.
+    </div>
+
+    <div class="section-head" id="faq"><h2>الأسئلة الشائعة</h2></div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل أحتاج لشراء المنتجات الخمسة كلها للبدء؟</p>
+        <p class="faq-a">لا. معظم الناس يبدأون بقهوة لينجزي فقط ويضيفون منتجات أخرى مع الوقت. الهدف هو بناء روتين تستمتع به، وليس إثقال نفسك من اليوم الأول.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل هذه المنتجات حلال؟</p>
+        <p class="faq-a">نعم. جميع منتجات DXN المذكورة هنا حاصلة على شهادة حلال، مما يجعلها مناسبة للمستهلكين المسلمين في الإمارات ومنطقة الشرق الأوسط وشمال أفريقيا.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">أين يمكنني شراء منتجات DXN في الإمارات؟</p>
+        <p class="faq-a">منتجات DXN متوفرة فقط عبر الموزعين المسجلين — وليس في المتاجر العادية. تواصل معنا عبر واتساب وسنساعدك في اختيار المنتجات المناسبة وترتيب التوصيل إلى موقعك.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل يمكن للأطفال استخدام منتجات DXN؟</p>
+        <p class="faq-a">كوكوزي وسبيرولينا ومعجون أسنان غانوزي يستخدمها الأطفال عادةً. منتجات القهوة تحتوي على كافيين ومخصصة للبالغين. كما هو الحال مع أي مكمل، استشر طبيب الأطفال إذا كانت لديك مخاوف.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل التسجيل كعضو DXN أرخص؟</p>
+        <p class="faq-a">نعم. التسجيل كعضو DXN يمنحك الوصول إلى أسعار الموزعين على جميع المنتجات — وهي أقل بكثير من سعر التجزئة. التسجيل بسيط ويتطلب رسمًا بسيطًا لمرة واحدة بدون أي التزام مستمر.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>انضم إلى اجتماع زووم الأسبوعي المجاني</h3>
+      <p>كل أسبوع نستضيف جلسة مباشرة بالعربية والإنجليزية — تغطي المنتجات وفرصة العمل وعملية التسجيل. احضر، اسأل أي شيء، احجز بدون أي التزام.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">سجّل عبر واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#why">لماذا تهم المنتجات الأولى</a></li>
+        <li><a href="#pick-1">#1 لينجزي كوفي 3 في 1</a></li>
+        <li><a href="#pick-2">#2 أقراص سبيرولينا</a></li>
+        <li><a href="#pick-3">#3 معجون أسنان غانوزي</a></li>
+        <li><a href="#pick-4">#4 كبسولات RG/GL</a></li>
+        <li><a href="#pick-5">#5 كوكوزي</a></li>
+        <li><a href="#compare">مقارنة سريعة</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>تدريب زووم مجاني</h4>
+      <p>تعرّف على منتجات DXN وفرصة العمل. كل أسبوع · عربي وإنجليزي</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">احجز مقعدك</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>قائمة مجموعة البداية</h4>
+      <ul class="fact-list">
+        <li>لينجزي كوفي 3 في 1 (20 كيس)</li>
+        <li>سبيرولينا 500 قرص</li>
+        <li>معجون أسنان غانوزي</li>
+        <li>كبسولات RG + GL (30 لكل منهما)</li>
+        <li>كوكوزي (20 كيس)</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>لماذا تختار DXN</h4>
+      <ul class="fact-list">
+        <li>أكثر من 30 عامًا في السوق</li>
+        <li>أكثر من 180 دولة حول العالم</li>
+        <li>مزارع غانوديرما خاصة</li>
+        <li>منتجات حاصلة على شهادة حلال</li>
+        <li>تكلفة بدء منخفضة للانضمام</li>
+        <li>متوفرة في جميع أنحاء الإمارات</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

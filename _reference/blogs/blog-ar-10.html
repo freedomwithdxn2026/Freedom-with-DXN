@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>روتين DXN الصباحي: 5 عادات بسيطة تُغيّر صحتك في 30 يومًا | Freedom with DXN</title>
+<meta name="description" content="اكتشف روتينًا صباحيًا من 5 خطوات باستخدام منتجات DXN الغانوديرما يساعدك على تعزيز طاقتك وتحسين تركيزك والشعور بصحة أفضل كل يوم.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    height: 560px;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--forest);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 100px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+  }
+
+  .steps { counter-reset: step; margin: 28px 0; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: start;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    background: var(--forest);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 6px; }
+  .step-body p { margin-bottom: 0; color: #4a4a4a; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: 1; }
+    .hero { height: 420px; min-height: 360px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { height: 340px; min-height: 300px; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .step { grid-template-columns: 40px 1fr; gap: 12px; margin-bottom: 20px; }
+    .step-num { width: 40px; height: 40px; font-size: 17px; }
+    .step-body h3 { font-size: 16px; }
+    .step-body p { font-size: 14px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .zoom-card { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">نصائح صحية · الإمارات</div>
+    <h1 class="hero-title">روتين DXN<br><em>الصباحي</em><br>الذي يغيّر كل شيء</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٧ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      معظم الناس في الإمارات يستيقظون وهم متعبون أصلًا. المنبّه يرن، الهاتف يخرج، واليوم يبدأ على عجل. ماذا لو أن أول ٢٠ دقيقة من صباحك يمكنها أن تغيّر شعورك تمامًا طوال الـ ١٢ ساعة القادمة؟
+    </p>
+
+    <div class="section-head" id="why-morning">
+      <h2>لماذا يحدد صباحك مسار يومك كله؟</h2>
+    </div>
+
+    <p>جسمك يكون في أعلى مستويات استجابته للتغذية والترطيب خلال الساعة الأولى بعد الاستيقاظ. ما تتناوله — وما تفعله — في تلك الدقائق الأولى يرسل إشارة مباشرة لجهازك بأكمله. لآلاف مستخدمي DXN في أنحاء الإمارات، أحدث روتين صباحي ثابت مبني على منتجات الغانوديرما فارقًا ملموسًا في طاقتهم وتركيزهم وشعورهم العام بالصحة.</p>
+
+    <p>هذا لا يتعلق بمكملات معقدة أو برامج مكلفة. خمس خطوات بسيطة لا تأخذ أكثر من ٢٠ دقيقة — والفوائد تتراكم مع كل أسبوع تلتزم فيه.</p>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="routine">
+      <h2>روتين DXN الصباحي من 5 خطوات</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">١</div>
+        <div class="step-body">
+          <h3>ابدأ بالماء الدافئ</h3>
+          <p>قبل أي شيء آخر، اشرب كوبًا كبيرًا من الماء الدافئ. جسمك كان بدون ترطيب لمدة ٦ إلى ٨ ساعات طوال الليل. الماء الدافئ — وليس البارد جدًا — يوقظ جهازك الهضمي بلطف ويُهيّئه لاستيعاب العناصر الغذائية التي ستعطيه إياها. أضف عصير ليمون صغير إن أحببت. هذا يكلف لا شيء تقريبًا وهو أحد أهم عادات الصحة التي يمكنك بناؤها.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٢</div>
+        <div class="step-body">
+          <h3>تناول كبسولات الغانوديرما (RG و GL)</h3>
+          <p>مع مائك الدافئ، تناول كبسولتين من RG وكبسولتين من GL من DXN. RG — ريشي غانو — يحتوي على ثمرة الغانوديرما الناضجة الغنية بالبوليساكاريد والتيربينويد. GL — غانوسيليوم — مستخلص من الميسيليوم وغني بالجرمانيوم العضوي. معًا يعملان على دعم جهاز المناعة ووظائف الكبد وإنتاج الطاقة الخلوية. الفوائد تراكمية لا فورية، لذا فالاتساق هو كل شيء.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٣</div>
+        <div class="step-body">
+          <h3>استبدل قهوتك العادية بقهوة DXN لينجزهي السوداء</h3>
+          <p>بدلًا من قهوتك التجارية المعتادة — التي كثيرًا ما تسبب ارتفاعًا حادًا في الطاقة يعقبه هبوط مفاجئ — انتقل إلى قهوة DXN لينجزهي السوداء. تجمع بين قهوة الأرابيكا الفاخرة ومستخلص الغانوديرما، مما يمنحك يقظة القهوة دون التوتر أو الخمول في منتصف النهار. حموضتها أقل مما يريح معدتك. حضّر كيسًا واحدًا بالماء الساخن وتناوله ببطء مع بداية صباحك.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٤</div>
+        <div class="step-body">
+          <h3>أضف السبيرولينا للتغذية الكاملة</h3>
+          <p>أقراص سبيرولينا DXN من أكثر الأطعمة كثافةً غذائية على وجه الأرض — توفر بروتينًا كاملًا وحديدًا وفيتامينات B ومضادات أكسدة قوية في قرص صغير. تناول ٤ إلى ٦ أقراص بعد نحو ٣٠ دقيقة من كبسولاتك مع كوب ثانٍ من الماء. السبيرولينا مفيدة بشكل خاص لمن يتخطون الفطور أو يجدون صعوبة في تناول الخضروات الطازجة خلال يوم العمل المزدحم في الإمارات — وهو واقع شائع جدًا.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٥</div>
+        <div class="step-body">
+          <h3>حرّك جسمك لمدة 15 دقيقة</h3>
+          <p>لا حاجة لصالة رياضية. مشي ١٥ دقيقة في الخارج، أو تمديد بسيط في شرفتك، أو تمارين خفيفة بوزن الجسم تكفي تمامًا. الحركة الصباحية تُشير لجسمك بزيادة الدورة الدموية وتنشيط الأيض وإفراز الإندورفين الطبيعي. مقترنةً بمنتجات DXN التي تناولتها، تُضاعف هذه الخطوة الأخيرة أثر الروتين بالكامل بشكل كبير.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="what-to-expect">
+      <h2>ماذا تتوقع في أول 30 يومًا؟</h2>
+    </div>
+
+    <p><strong>الأسبوع الأول</strong> مرحلة التكيّف. يلاحظ بعض الناس زيادة في الطاقة تقريبًا فور البدء. يمر آخرون بفترة تعديل خفيفة — صداع بسيط أو تعب عابر — بينما يبدأ الغانوديرما في تنظيم الجسم وتنقيته. هذا أمر طبيعي ويمر عادةً في غضون ٣ إلى ٥ أيام. حافظ على الترطيب ولا تخفض الجرعة في هذه الفترة.</p>
+
+    <p><strong>الأسبوع الثاني</strong> يُلاحظ فيه معظم المستخدمين المنتظمين تحسنًا في جودة النوم. للغانوديرما خصائص مُكيّفة موثقة — يساعد في تنظيم الكورتيزول، هرمون التوتر الرئيسي، مما يؤثر مباشرة على عمق نومك وجودة استعادتك. قد تجد نفسك تنام بسرعة أكبر وتستيقظ مرتاحًا حقًا للمرة الأولى منذ زمن.</p>
+
+    <p><strong>الأسبوع الثالث والرابع</strong> يظهر فيهما الأثر التراكمي. طاقة أكثر استقرارًا طوال اليوم، اعتماد أقل على القهوة، بشرة أصفى، وهدوء عام في استجابتك للضغوط. من حولك قد يلاحظون قبلك. هذه هي النقطة التي يتوقف فيها معظم مستخدمي DXN عن التفكير في الروتين الصباحي كانضباط ويبدأون في اعتباره ببساطة طريقة حياتهم.</p>
+
+    <p>ملاحظة مهمة: هذه النتائج مبنية على الاتساق اليومي. تناول المنتجات لثلاثة أيام وتوقع تغييرًا جذريًا سيُصيبك بخيبة أمل. الغانوديرما يعمل مع إيقاعات جسمك الطبيعية — وهذه الإيقاعات تستغرق أسابيع لا ساعات لتتغير.</p>
+
+    <div class="section-head" id="tips">
+      <h2>نصائح للبقاء ملتزمًا</h2>
+    </div>
+
+    <p>التحدي الأكبر مع أي روتين صباحي ليس معرفة ماذا تفعل — بل فعله فعلًا وأنت نصف نائم ولم يبدأ يومك بعد. أمور قليلة تُحدث فارقًا كبيرًا:</p>
+
+    <p>رتّب منتجاتك في الليلة السابقة. ضع كبسولات RG/GL وزجاجة السبيرولينا وكيس قهوة DXN بجانب كوب على طاولة المطبخ قبل النوم. إزالة القرار من الصباح يُزيل الاحتكاك ويجعل الفعل تلقائيًا.</p>
+
+    <p>اربط كل خطوة بشيء تفعله بالفعل. تناول كبسولاتك وأنت تنتظر الماء يغلي. اشرب قهوة لينجزهي أثناء القراءة أو الصلاة. العادة تتعلق بمرساة موجودة مسبقًا وتصبح آلية في غضون أسبوعين.</p>
+
+    <p>تتبع شعورك لا فقط ما تفعله. احتفظ بملاحظة بسيطة على هاتفك — مستوى الطاقة من ١٠، جودة النوم، المزاج. رؤية البيانات تتحسن خلال ٣٠ يومًا هي من أقوى الدوافع للاستمرار.</p>
+
+    <div class="section-head" id="faq">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل يمكن تناول كبسولات DXN على معدة فارغة؟</p>
+        <p class="faq-a">نعم. كبسولات RG وGL يُتحمل تناولها على معدة فارغة بشكل عام. إن شعرت بأي انزعاج طفيف في الأيام الأولى، تناولها مع كمية صغيرة من الطعام حتى يتكيف جسمك.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">متى أرى نتائج حقيقية؟</p>
+        <p class="faq-a">يلاحظ معظم المستخدمين تغييرات في الطاقة وجودة النوم خلال ٢ إلى ٤ أسابيع من الاستخدام اليومي المنتظم. الفوائد الكاملة للجهاز المناعي والجهازي تتطور عادةً على مدى ٢ إلى ٣ أشهر من الاستخدام المستمر.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل قهوة لينجزهي آمنة لمن يحساسية للكافيين؟</p>
+        <p class="faq-a">تحتوي على كمية كافيين أقل بكثير من القهوة التجارية العادية، ومستخلص الغانوديرما له أثر مُهدئ طبيعي يجعل التجربة أكثر راحة لكثير من الأشخاص الحساسين للكافيين.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل يمكن تناول جميع المنتجات في نفس الوقت؟</p>
+        <p class="faq-a">نعم. المنتجات في هذا الروتين مصممة لتكمل بعضها. تناول كبسولات RG/GL مع قهوة لينجزهي ثم السبيرولينا بعد ٣٠ دقيقة هو نهج شائع ومُتحمَّل جيدًا.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل أحتاج لأن أكون موزع DXN لشراء هذه المنتجات؟</p>
+        <p class="faq-a">يمكنك شراء منتجات DXN من خلال أي موزع مسجل. يجد كثير من العملاء أنه من المجدي التسجيل كموزع بأنفسهم — حتى دون بناء عمل تجاري — للوصول إلى أسعار الموزعين على احتياجاتهم الشخصية.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>هل تريد البدء بروتين DXN هذا الأسبوع؟</h3>
+      <p>انضم إلى جلسة زووم الأسبوعية المجانية بالعربية والإنجليزية — نشرح فيها المنتجات والروتين وطريقة الطلب. بدون أي التزام أو ضغط.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">راسلنا على واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#why-morning">لماذا يهم الصباح</a></li>
+        <li><a href="#routine">الروتين من 5 خطوات</a></li>
+        <li><a href="#what-to-expect">ماذا تتوقع</a></li>
+        <li><a href="#tips">نصائح للاستمرار</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">📹</div>
+      <h4>تدريب زووم مجاني</h4>
+      <p>كل أسبوع · عربي وإنجليزي · بدون التزام</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="btn-sage">احصل على الرابط</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>المنتجات في هذا الروتين</h4>
+      <ul class="fact-list">
+        <li>كبسولات RG غانوديرما</li>
+        <li>كبسولات GL غانوسيليوم</li>
+        <li>قهوة لينجزهي السوداء</li>
+        <li>أقراص السبيرولينا</li>
+        <li>عصير مورينزهي (اختياري)</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>ما يُبلّغ عنه المستخدمون</h4>
+      <ul class="fact-list">
+        <li>نوم أفضل في الأسبوع الثاني</li>
+        <li>طاقة أكثر استقرارًا طوال اليوم</li>
+        <li>اعتماد أقل على الكافيين</li>
+        <li>بشرة أصفى خلال 30 يومًا</li>
+        <li>استجابة أهدأ للضغوط</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

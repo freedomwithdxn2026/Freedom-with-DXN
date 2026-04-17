@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ما هو الغانوديرما؟ الفطر الخارق في قهوة DXN | Freedom with DXN</title>
+<meta name="description" content="معظم الناس يشربون قهوة DXN دون أن يعرفوا ما هو الغانوديرما فعلًا. إليك شرحًا بسيطًا مدعومًا بالأبحاث لهذا الفطر الخارق المتكيف القوي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a3a20 0%, #2d5a38 45%, #3a7a4a 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,58,32,0.96) 0%, rgba(45,90,56,0.4) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 60px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #43af73;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .timeline { margin: 28px 0; position: relative; padding-right: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--emerald), var(--forest));
+    border-radius: 2px;
+  }
+
+  .timeline-item { margin-bottom: 28px; position: relative; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    right: -22px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--emerald);
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--emerald);
+  }
+
+  .timeline-year {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p { margin-bottom: 0; font-size: 15px; }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .benefit-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    border-top: 3px solid var(--emerald);
+  }
+
+  .benefit-card .icon { font-size: 26px; margin-bottom: 10px; }
+  .benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .benefit-card p { font-size: 14px; color: #4a4a4a; margin-bottom: 0; }
+
+  .science-box {
+    background: var(--forest);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+    color: #fff;
+  }
+
+  .science-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--sage);
+  }
+
+  .science-box p { color: rgba(255,255,255,0.8); margin-bottom: 14px; font-size: 15px; }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  .compound-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .compound-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    align-items: flex-start;
+  }
+
+  .compound-list li:last-child { border-bottom: none; }
+
+  .compound-name {
+    font-weight: 500;
+    color: var(--sage);
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+
+  .disclaimer {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-right: 4px solid #d4a000;
+    border-left: 1px solid #f0d080;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: #5a4800;
+    line-height: 1.7;
+  }
+
+  .disclaimer strong { color: #3a3000; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
+    .sidebar { order: 1; }
+    .hero { min-height: auto; }
+    .hero-content { padding-bottom: 48px; }
+    .hero-title { font-size: clamp(30px, 5vw, 52px); }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .cta-banner { padding: 36px 28px; }
+    .cta-banner h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .sidebar-card h4 { font-size: 15px; }
+    .zoom-card { padding: 20px 16px; }
+    .zoom-card h4 { font-size: 15px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .benefit-card { padding: 18px 16px; }
+    .benefit-card h3 { font-size: 15px; }
+    .benefit-card p { font-size: 13px; }
+    .science-box { padding: 24px 18px; }
+    .science-box h3 { font-size: 18px; }
+    .science-box p { font-size: 14px; }
+    .compound-list li { font-size: 13px; }
+    .disclaimer { padding: 16px 18px; font-size: 13px; }
+    .timeline { padding-right: 22px; }
+    .timeline-item p { font-size: 14px; }
+    .timeline-item h3 { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder">
+    <div class="hero-placeholder-text">
+      HERO IMAGE GOES HERE
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">تثقيف المنتج · الغانوديرما</div>
+    <h1 class="hero-title">ما هو<br><em>الغانوديرما؟</em><br>الفطر الخارق في قهوتك</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٨ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      معظم الناس يشربون قهوة DXN دون أن يعرفوا ما هو الغانوديرما فعلًا. إليك شرحًا بسيطًا مدعومًا بالأبحاث لهذا الفطر الخارق المتكيف القوي — ولماذا يُستخدم منذ أكثر من 2000 عام.
+    </p>
+
+    <div class="section-head" id="what-is"><h2>ما هو الغانوديرما؟</h2></div>
+
+    <p>الغانوديرما لوسيدوم هو نوع من الفطر الطبي ينمو بشكل طبيعي على قاعدة الأشجار الصلبة في آسيا. استُخدم لأكثر من 2000 عام في الطب التقليدي الصيني والياباني والكوري — ويُعرف بأسماء عديدة: لينجزي بالصينية، وريشي باليابانية، ويونجي بالكورية. جميع هذه الأسماء تُترجم تقريبًا إلى نفس المعنى: فطر الخلود.</p>
+
+    <p>ليس من نوع الفطر الذي تجده في السلطة. الغانوديرما له ملمس صلب خشبي وطعم مرّ للغاية بمفرده — وهذا بالتحديد لماذا يُعتبر مزجه في القهوة أو المكملات الطريقة الأكثر عملية لاستهلاكه يوميًا. كانت DXN من أوائل الشركات في العالم التي جلبت الغانوديرما إلى شكل يومي سهل الاستخدام.</p>
+
+    <div class="img-placeholder">صورة: لقطة قريبة لفطر الغانوديرما لوسيدوم الطازج على سطح خشبي، بلون بني محمر غني مع خلفية غابة طبيعية</div>
+
+    <div class="section-head" id="history"><h2>تاريخ يمتد لـ 2000 عام</h2></div>
+
+    <p>الغانوديرما ليس اتجاهًا صحيًا اُخترع للتسويق الحديث. تاريخه طويل وموثق ومتجذر بعمق في الثقافة والطب الآسيوي.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">200 ق.م – 200 م</div>
+        <h3>أول السجلات المكتوبة</h3>
+        <p>يظهر الغانوديرما في شينونغ بن تساو جينغ — أحد أقدم النصوص الطبية الصينية — مصنفًا كعشب فائق بدون آثار جانبية سامة، مناسب للاستخدام اليومي طويل الأمد.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">سلالة مينغ (1368–1644)</div>
+        <h3>محجوز للملوك</h3>
+        <p>كان الغانوديرما نادرًا وثمينًا لدرجة أنه كان محجوزًا للأباطرة والبلاط الإمبراطوري الصيني. كان العثور عليه ينمو في البرية يُعتبر فألًا حسنًا.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">السبعينيات – الثمانينيات</div>
+        <h3>بداية البحث العلمي الحديث</h3>
+        <p>بدأ العلماء اليابانيون والصينيون بدراسة المركبات النشطة في الغانوديرما رسميًا، مما أدى إلى زراعته على نطاق واسع وأول الأبحاث السريرية في خصائصه البيولوجية.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993</div>
+        <h3>تأسيس DXN</h3>
+        <p>أسس الدكتور ليم سيو جين شركة DXN في ماليزيا بمهمة واحدة: زراعة الغانوديرما على نطاق واسع وتقديمه في منتجات استهلاكية يومية بأسعار معقولة للسوق العالمي.</p>
+      </div>
+    </div>
+
+    <div class="section-head" id="science"><h2>ماذا يقول العلم عن الغانوديرما</h2></div>
+
+    <p>حدد البحث الحديث مئات المركبات النشطة بيولوجيًا في الغانوديرما لوسيدوم. الأكثر دراسة تندرج ضمن فئتين رئيسيتين: السكريات المتعددة والتربينات الثلاثية. يُعتقد أن هذه المركبات مسؤولة عن كثير من الخصائص التي نسبها الطب التقليدي للفطر على مدى قرون.</p>
+
+    <div class="science-box">
+      <h3>المركبات النشطة الرئيسية في الغانوديرما</h3>
+      <ul class="compound-list">
+        <li>
+          <span class="compound-name">السكريات المتعددة</span>
+          <span>كربوهيدرات معقدة تدعم وظيفة الجهاز المناعي. البيتا جلوكان — نوع من السكريات المتعددة — من بين أكثر المركبات المدروسة في الفطر الطبي.</span>
+        </li>
+        <li>
+          <span class="compound-name">التربينات الثلاثية</span>
+          <span>مركبات مرّة مسؤولة عن طعم الغانوديرما المميز. تشير الأبحاث إلى أنها قد تدعم وظائف الكبد ولها خصائص مضادة للالتهابات.</span>
+        </li>
+        <li>
+          <span class="compound-name">الأدينوسين</span>
+          <span>مركب طبيعي مرتبط بالاسترخاء وجودة النوم. يوجد أيضًا في نباتات أخرى تُستخدم تقليديًا لتأثيراتها المهدئة.</span>
+        </li>
+        <li>
+          <span class="compound-name">الجرمانيوم</span>
+          <span>عنصر نادر عضوي يوجد بتركيزات أعلى في الغانوديرما مقارنة بمعظم الأطعمة الطبيعية الأخرى. موضوع اهتمام بحثي مستمر.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="disclaimer">
+      <strong>ملاحظة مهمة:</strong> المنتجات المعتمدة على الغانوديرما، بما فيها قهوة ومكملات DXN، هي منتجات غذائية — وليست أدوية. لا يُقصد بها تشخيص أو علاج أو شفاء أو الوقاية من أي مرض أو حالة طبية. المعلومات في هذا المقال تعليمية ولا تشكل نصيحة طبية. استشر دائمًا أخصائي رعاية صحية مؤهلًا لأي مخاوف صحية.
+    </div>
+
+    <div class="section-head" id="benefits"><h2>لماذا يضيف الناس الغانوديرما لروتينهم اليومي</h2></div>
+
+    <p>يُصنف الغانوديرما كمادة متكيفة (أدابتوجين) — مادة طبيعية يُعتقد أنها تساعد الجسم على التكيف مع الإجهاد الجسدي والنفسي مع الوقت. على عكس المنبهات التي تُنتج تأثيرًا فوريًا، تُستخدم المواد المتكيفة عادةً بشكل مستمر على مدى أسابيع وأشهر، مع تراكم الفوائد تدريجيًا.</p>
+
+    <p>إليك ما يُبلغ عنه مستخدمو DXN ومجتمع الغانوديرما الأوسع بشكل شائع بعد جعله عادة يومية:</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="icon">&#x1F6E1;</div>
+        <h3>دعم المناعة</h3>
+        <p>البيتا جلوكان في الغانوديرما من بين أكثر المركبات المدروسة لتنظيم الجهاز المناعي. كثير من المستخدمين يتناولونه تحديدًا لهذا السبب.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1F634;</div>
+        <h3>جودة النوم</h3>
+        <p>استُخدم الغانوديرما في الطب التقليدي كعامل مهدئ. كثير من المستخدمين اليوميين يُبلغون عن تحسن في عمق النوم ومدى شعورهم بالراحة عند الاستيقاظ.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x26A1;</div>
+        <h3>طاقة مستدامة</h3>
+        <p>على عكس الارتفاع الحاد والانخفاض المفاجئ للكافيين العادي، كثير من شاربي قهوة DXN يصفون طاقة أكثر سلاسة واستدامة بدون التوتر.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1F9D8;</div>
+        <h3>التكيف مع الإجهاد</h3>
+        <p>كمادة متكيفة، يُعتقد أن الغانوديرما يدعم استجابة الجسم للإجهاد اليومي — يساعد النظام على الحفاظ على التوازن بدلًا من أن يكون تفاعليًا.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1FAC0;</div>
+        <h3>دعم الكبد والتخلص من السموم</h3>
+        <p>التربينات الثلاثية الموجودة في الغانوديرما كانت محور أبحاث صحة الكبد. استُخدم منذ فترة طويلة في الطب التقليدي كمقوٍ للكبد.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x2615;</div>
+        <h3>ألطف على المعدة</h3>
+        <p>كثير من شاربي القهوة العاديين الذين يتحولون إلى قهوة DXN لينجزي يُبلغون عن انخفاض الحموضة وعدم الراحة المعدية — وهو ما يُنسب إلى تأثير الغانوديرما المتوازن.</p>
+      </div>
+    </div>
+
+    <div class="img-placeholder">صورة: كبسولات DXN غانوديرما RG/GL بجانب كوب قهوة لينجزي على سطح خشبي طبيعي</div>
+
+    <div class="section-head" id="dxn"><h2>كيف تحصل DXN على الغانوديرما</h2></div>
+
+    <p>أحد أهم ما يميز DXN هو تحكمها الكامل في سلسلة توريد الغانوديرما من المزرعة إلى المنتج. DXN لا تشتري الغانوديرما من موردين خارجيين. الشركة تزرع وتحصد وتعالج وتصنع كل شيء في مرافقها المعتمدة في ماليزيا.</p>
+
+    <p>هذا مهم لأن جودة الغانوديرما تتفاوت بشكل كبير حسب كيفية ومكان زراعته. الركيزة (المادة التي ينمو عليها الفطر) وتوقيت الحصاد وطريقة الاستخلاص كلها تؤثر على تركيز المركبات النشطة في المنتج النهائي. تحكم DXN الداخلي في كل خطوة من هذه الخطوات هو سبب حفاظ منتجاتها على جودة ثابتة عبر عقود وأسواق.</p>
+
+    <p>كل منتج غانوديرما من DXN — من كبسولات RG وGL إلى مجموعة قهوة لينجزي — يبدأ من نفس الغانوديرما المزروع في مزارع DXN. سواء كنت تشرب كوب قهوة 3 في 1 أو تتناول كبسولة مكمل، فإن الغانوديرما بداخله يعود إلى نفس المصدر المُتحكم فيه.</p>
+
+    <div class="section-head" id="faq"><h2>الأسئلة الشائعة</h2></div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل الغانوديرما آمن للاستهلاك اليومي؟</p>
+        <p class="faq-a">للغانوديرما تاريخ طويل من الاستخدام اليومي في الطب التقليدي ويُعتبر آمنًا بشكل عام للبالغين الأصحاء. كما هو الحال مع أي مكمل، يُنصح دائمًا باستشارة طبيبك قبل البدء، خاصة إذا كنتِ حاملًا أو مرضعة أو تتناول أدوية.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل الغانوديرما حلال؟</p>
+        <p class="faq-a">نعم. الغانوديرما فطر نباتي، ومنتجات DXN التي تحتوي على الغانوديرما حاصلة على شهادة حلال، مما يجعلها مناسبة للمستهلكين المسلمين في الإمارات ومنطقة الشرق الأوسط وشمال أفريقيا.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كم يستغرق الشعور بالفوائد؟</p>
+        <p class="faq-a">الغانوديرما مادة متكيفة — تأثيراته تتراكم تدريجيًا مع الاستخدام المستمر. معظم الناس يلاحظون تغييرات ملموسة في الطاقة أو جودة النوم بعد أسبوعين إلى أربعة أسابيع من الاستهلاك اليومي. إنه ليس حلًا سريعًا بل عادة طويلة الأمد.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">ما الفرق بين RG وGL؟</p>
+        <p class="faq-a">RG (ريشي غانو) مصنوع من الجسم الثمري لفطر الغانوديرما، بينما GL (غانوسيليوم) مصنوع من الميسيليوم — البنية الشبيهة بالجذور. كلاهما يحتوي على مركبات نشطة متكاملة. توصي DXN بتناولهما معًا للحصول على أكمل فائدة، ولهذا السبب يُباعان عادة كزوج.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل يمكنني الحصول على منتجات الغانوديرما في الإمارات؟</p>
+        <p class="faq-a">نعم. منتجات DXN بما فيها مكملات الغانوديرما وقهوة لينجزي متوفرة في الإمارات من خلال موزعي DXN المسجلين. تواصل معنا عبر واتساب وسنساعدك في طلب المنتجات المناسبة وترتيب التوصيل.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>انضم إلى اجتماع زووم الأسبوعي المجاني</h3>
+      <p>كل أسبوع نستضيف جلسة مباشرة بالعربية والإنجليزية — تغطي المنتجات وفرصة العمل وعملية التسجيل. احضر، اسأل أي شيء، احجز بدون أي التزام.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">سجّل عبر واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#what-is">ما هو الغانوديرما؟</a></li>
+        <li><a href="#history">تاريخ يمتد لـ 2000 عام</a></li>
+        <li><a href="#science">ماذا يقول العلم</a></li>
+        <li><a href="#benefits">فوائد الروتين اليومي</a></li>
+        <li><a href="#dxn">كيف تحصل عليه DXN</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>تدريب زووم مجاني</h4>
+      <p>تعرّف على منتجات الغانوديرما وأعمال DXN. كل أسبوع · عربي وإنجليزي</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">احجز مقعدك</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>منتجات DXN بالغانوديرما</h4>
+      <ul class="fact-list">
+        <li>كبسولات RG (الجسم الثمري)</li>
+        <li>كبسولات GL (الميسيليوم)</li>
+        <li>مكمل مايكوفيتا</li>
+        <li>قهوة لينجزي 3 في 1</li>
+        <li>لينجزي بلاك كوفي</li>
+        <li>كوردي باين مع غانوديرما</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>حقائق سريعة عن الغانوديرما</h4>
+      <ul class="fact-list">
+        <li>أكثر من 2000 عام من الاستخدام التقليدي</li>
+        <li>يُعرف أيضًا بـ ريشي / لينجزي</li>
+        <li>مصنف كمادة متكيفة (أدابتوجين)</li>
+        <li>حاصل على شهادة حلال في منتجات DXN</li>
+        <li>DXN تزرع مخزونها الخاص</li>
+        <li>متوفر في الإمارات</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

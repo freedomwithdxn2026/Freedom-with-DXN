@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Sceptic to Star Agent: One Expat's Honest Journey with DXN in the UAE | Freedom with DXN</title>
+<meta name="description" content="He thought network marketing was not for him. Eighteen months later he reached Star Agent rank. Here is what changed his mind — and what the journey actually looked like.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    height: 560px;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--forest);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-right: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-right: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 100px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-left: 4px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+  }
+
+  .steps { counter-reset: step; margin: 28px 0; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: start;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    background: var(--forest);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 6px; }
+  .step-body p { margin-bottom: 0; color: #4a4a4a; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'Q'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-left: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2192'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: -1; }
+    .hero { height: 420px; min-height: 360px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { height: 340px; min-height: 300px; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-left: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .step { grid-template-columns: 40px 1fr; gap: 12px; margin-bottom: 20px; }
+    .step-num { width: 40px; height: 40px; font-size: 17px; }
+    .step-body h3 { font-size: 16px; }
+    .step-body p { font-size: 14px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-left: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .zoom-card { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Success Story · Dubai</div>
+    <h1 class="hero-title">Sceptic.<br><em>Then</em><br>Star Agent.</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      He had a prepared answer for anyone who mentioned network marketing: not interested. He had given it so many times it had become automatic. Then his wife started making his morning coffee with DXN Lingzhi, and eighteen months later he stands at Star Agent rank with a team spread across three countries. Here is the unedited version of what happened between those two moments.
+    </p>
+
+    <div class="section-head" id="the-sceptic">
+      <h2>The Man Who Had Already Made Up His Mind</h2>
+    </div>
+
+    <p>Omar had lived in Dubai for eleven years when his wife Sarah started talking about DXN. He had built a stable career in IT support — fixed salary, health insurance, a predictable commute on Sheikh Zayed Road. He was not unhappy. He was also not free in the way he quietly wanted to be — free from the annual performance review that decided whether his salary moved by a few hundred dirhams, free from the knowledge that his income had a ceiling he could see clearly from where he stood.</p>
+
+    <p>He had encountered network marketing twice before, and both times it had confirmed everything he suspected. A colleague had joined a supplement company and spent six months awkwardly pitching every person in the office before quietly disappearing from the scheme. A friend had joined something recruitment-heavy that turned every gathering into a business presentation nobody had asked for. Omar had drawn a conclusion that felt reasonable: the whole industry operates the same way — social pressure, exaggerated promises, products that exist mainly to justify the recruitment cycle. That conclusion was not wrong about those two experiences. It was just too broadly applied.</p>
+
+    <p>When Sarah mentioned DXN, he said what he always said. She ordered the products anyway — for herself, not as a business argument. He did not engage. He just noticed, three weeks later, that his morning coffee tasted different. Then he noticed other things.</p>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="what-changed">
+      <h2>What Changed — And It Was Not the Business Pitch</h2>
+    </div>
+
+    <p>Omar is precise about this part of the story because he thinks it matters. He did not join DXN because someone persuaded him the income was good. He joined because he started feeling consistently better and could not honestly ignore it. Sarah had switched his morning coffee to DXN Lingzhi Black without announcing it. He noticed his afternoon energy crashes — which he had accepted as a fact of desk-job life — became less severe. His seasonal sinus problems that typically worsened every winter did not arrive with their usual weight that year. His sleep, which had been restless for as long as he could remember, became steadier.</p>
+
+    <p>He is careful not to overclaim. He does not say the products solved anything. He says the timing aligned with using them and the changes were noticeable enough that he started paying attention. He began reading about Ganoderma. He ordered the RG and GL capsules for himself and tracked how he felt over the following six weeks. By month three he had been buying products for three months with zero interest in building a business. The business interested him only when he did the maths: he was spending enough each month that registering as a distributor and accessing wholesale pricing made financial sense regardless of anything else. That is a very different starting point from joining because someone showed him an income projection.</p>
+
+    <div class="section-head" id="how-he-built">
+      <h2>How He Built It — Four Phases Over Eighteen Months</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Months 1–3: Just a Customer, Deliberately</h3>
+          <p>After registering as a distributor, Omar made himself a rule: no talking about the business to anyone for three months. He wanted to be certain his results were real before he said a word to anyone who trusted him. During this time he attended two Freedom with DXN Zoom sessions simply to understand the structure. He asked more questions than he expected to. By the end of month three he had enough personal experience and enough structural understanding to have an honest conversation — and he knew exactly what he would and would not promise.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Months 4–6: Speaking Only When Asked Directly</h3>
+          <p>When colleagues and friends asked why he seemed less tired, or what had changed since he started skipping the after-lunch coffee run, he told them honestly: he had switched to a different coffee and added a Ganoderma supplement, and it seemed to be helping. He did not turn those conversations into pitches. If someone wanted more information, he sent them a Zoom link or offered to let them try a sample. Two colleagues became customers during this period. Neither was pressured. One later became an active member of his team.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Months 7–12: Intentional but Unhurried</h3>
+          <p>At month seven Omar decided to build more deliberately. He set a modest goal: two or three meaningful conversations per week — not with strangers, but with people he already had genuine relationships with. Friends back in Egypt, contacts from a previous job, a cousin in Jordan who had been asking about health supplements independently. He started hosting a simple monthly product session over video call for his Egyptian family group. No presentation deck. Just him using the products on camera and answering questions as they came. Three family members registered within four months of those calls starting.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Months 13–18: Supporting His Team's Teams</h3>
+          <p>The shift that moved Omar toward Star Agent rank was not recruiting more people — it was investing more time in the people already in his team. He started joining weekly Zoom calls alongside his most active members, helping them answer questions their own contacts were asking. When his cousin in Jordan brought in two new members, Omar spent an evening walking them through what to expect in the first three months. By month eighteen he had twenty-one active members across the UAE, Egypt, and Jordan — and eleven of them had joined through referrals made by other members of his team, not by him directly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="rank-journey">
+      <h2>The Rank Progression — What Each Step Required</h2>
+    </div>
+
+    <p>Omar tracks his rank progression not as a source of pride but as a calibration tool. He knows which actions moved him forward and which months he stalled — usually months when he was too focused on recruiting instead of supporting the people already in his network.</p>
+
+    <p>His first rank movement happened at month five, earlier than he expected, because two product customers became active members and their combined volume pushed his group total above the Bronze threshold. He had not planned for that particular timeline. It happened because he was consistent in following up, not because he was aggressive in recruiting. The lesson he took: volume follows genuine activity, not performance.</p>
+
+    <p>The jump to Star Agent rank came between months fourteen and seventeen, driven almost entirely by team activity rather than his own personal recruiting. His cousin's network in Jordan had become active. One of his Dubai colleagues had brought in four people from his own social circle. Omar's role in those months was largely supportive — answering questions, sharing resources, attending calls — rather than direct outreach. He credits the weekly Zoom structure heavily. Without a consistent touchpoint that his team members could attend independently, the momentum would have dissipated.</p>
+
+    <div class="section-head" id="eighteen-months">
+      <h2>Eighteen Months In — The Real Numbers</h2>
+    </div>
+
+    <p>Omar does not romanticise his position. He still goes to his IT job every day. He has not replaced his salary. He does not have plans to resign next year. What he has built is a second income stream that is genuinely meaningful — consistent enough that it has changed the pressure he feels from his primary job rather than removing it entirely.</p>
+
+    <p>His monthly income from DXN at Star Agent rank sits between AED 2,200 and AED 3,600 depending on team activity. His family's monthly product use — Lingzhi coffee, Ganoderma capsules, and Spirulina — is now covered entirely by his distributor wholesale access, saving a meaningful amount compared to retail pricing. Sarah, who started this whole chain by ordering a bag of coffee, is now an active member of his team and manages most of the product conversations within their social network.</p>
+
+    <p>What he describes as the most significant change is not financial. It is the relationship he has with his primary job. He is still there by choice, not compulsion. He knows the number he needs to hit before that choice shifts further. He does not know when that will be. He says that not knowing feels completely different from the certainty of limitation he felt before he started.</p>
+
+    <div class="section-head" id="advice">
+      <h2>What He Tells Every Sceptic</h2>
+    </div>
+
+    <p>He does not argue with sceptics. He says his former self was making a reasonable inference from bad examples. Network marketing as a category includes schemes that deserve every suspicion directed at them. The question he now asks is more specific: what are the actual products, do people buy them because they work, and is the income structure driven by product volume or purely by recruitment? Those three questions, he says, will tell you what you are actually dealing with.</p>
+
+    <p>His practical advice for anyone considering DXN specifically: spend the first ninety days as a customer only. Do not recruit anyone. Do not share the business opportunity. Just use the products and observe honestly. If at the end of ninety days you are still buying because you want to — not because you feel obligated — then you have something real to share with people. If you are not, you have spent a modest amount on products and learned something important. Either way, the ninety days were not wasted.</p>
+
+    <p>The final thing he says, which surprises people: the scepticism was useful. It slowed him down enough to do it properly. He was not swept up in excitement and did not over-promise to the people he spoke to. Everyone he brought into DXN knew exactly what he had experienced and what he did not know. None of them felt misled later. He thinks that is why his retention rate is high — more than three quarters of the people who joined his team are still active. Starting sceptical, he says, turns out to be a reasonable foundation for building something that lasts.</p>
+
+    <div class="section-head" id="faq">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">Can you build a DXN business while working full-time?</p>
+        <p class="faq-a">Omar built his entire team while working full-time in IT support. Most of his business activity happens evenings and weekends. The weekly Zoom calls and WhatsApp communication mean he rarely needs to be physically present for meetings. He estimates the active building phase required five to eight hours per week — manageable alongside a demanding primary job, but it does require consistent time investment.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is Star Agent a high rank in DXN?</p>
+        <p class="faq-a">Star Agent is a meaningful mid-tier rank in the DXN structure, reached after building consistent product volume across an active team. It is not the highest rank available — Diamond and above sit significantly higher — but it represents a genuine, functioning business with reliable monthly income rather than early-stage commissions. Reaching it in eighteen months while working full-time and starting from zero is a realistic but above-average timeline.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Did he pressure friends and family to join?</p>
+        <p class="faq-a">This is the question he gets asked most. His answer is direct: no — and he believes pressure is one of the main reasons people quit or damage relationships in this industry. Everyone who joined his team came after their own questions, not after a pitch. Many had been watching him use the products for months before they asked about the business side. Patience, he says, is not a soft skill in this context — it is a structural advantage.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long before he earned meaningful income?</p>
+        <p class="faq-a">His first commission arrived at month four — small, but real. The income did not become meaningful — covering a significant monthly expense — until around month nine, when his team had reached a consistent level of activity. He advises new distributors to plan financially as though there will be no income for the first six months. That expectation makes the early stage feel sustainable rather than discouraging.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What would he do differently if he started again?</p>
+        <p class="faq-a">He would start attending the weekly Zoom sessions earlier. He waited two months before attending his first one and says he lost time solving problems the community had already answered. He would also document his personal product results from day one — not for social media, just for his own reference. When he eventually talked to people, having a clear record of what he had noticed and when made those conversations more credible than his memory alone would have been.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Still Deciding Whether DXN Is Right for You?</h3>
+      <p>Join our free weekly Zoom and hear from real distributors — no pitch, no obligation, just honest answers to the questions you actually have.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">Message Us on WhatsApp</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc">
+        <li><a href="#the-sceptic">The Man Who Said No</a></li>
+        <li><a href="#what-changed">What Changed His Mind</a></li>
+        <li><a href="#how-he-built">How He Built It — 4 Phases</a></li>
+        <li><a href="#rank-journey">The Rank Progression</a></li>
+        <li><a href="#eighteen-months">18 Months In — Numbers</a></li>
+        <li><a href="#advice">His Advice to Sceptics</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">📹</div>
+      <h4>Free Zoom Session</h4>
+      <p>Every week · Arabic &amp; English · No obligation</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="btn-sage">Book Your Spot</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Omar's Starting Point</h4>
+      <ul class="fact-list">
+        <li>IT professional, 11 years in Dubai</li>
+        <li>Strong sceptic of network marketing</li>
+        <li>Became a product customer first</li>
+        <li>No prior sales experience</li>
+        <li>Still works full-time alongside DXN</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Star Agent — What It Means</h4>
+      <ul class="fact-list">
+        <li>21 active members, 3 countries</li>
+        <li>AED 2,200–3,600 / month</li>
+        <li>Reached in 18 months from zero</li>
+        <li>75%+ team retention rate</li>
+        <li>Built without leaving full-time job</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

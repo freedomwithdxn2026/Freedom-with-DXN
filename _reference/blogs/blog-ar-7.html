@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DXN مقابل الوظيفة التقليدية: لماذا يختار المزيد من سكان الإمارات التسويق الشبكي | Freedom with DXN</title>
+<meta name="description" content="المزيد من سكان الإمارات يبنون أعمالًا جانبية بجانب وظائفهم. إليك مقارنة صادقة بين التسويق الشبكي مع DXN والوظيفة التقليدية — الدخل، المرونة، والمخاطر.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* LAYOUT */
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 60px;
+  }
+
+  /* ARTICLE */
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #ede8f8, #d8cff0);
+    border: 1.5px dashed var(--forest);
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--forest);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  /* VERSUS GRID */
+  .versus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 36px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .versus-col { padding: 28px 24px; }
+  .versus-col.employment { background: #f5f5f5; }
+  .versus-col.dxn { background: #edfaf3; }
+
+  .versus-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .versus-col.employment .versus-header { color: #4a4a4a; border-color: #ccc; }
+  .versus-col.dxn .versus-header { color: #1a7a4a; border-color: var(--emerald); }
+
+  .versus-list { list-style: none; }
+  .versus-list li {
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    color: #3a3a3a;
+    line-height: 1.5;
+  }
+  .versus-list li:last-child { border-bottom: none; }
+  .versus-col.employment .versus-list li::before { content: '\2014'; color: #999; flex-shrink: 0; }
+  .versus-col.dxn .versus-list li::before { content: '\2713'; color: var(--emerald); font-weight: 700; flex-shrink: 0; }
+
+  /* COMPARE TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .compare-table th {
+    background: var(--forest);
+    color: #fff;
+    padding: 13px 16px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .compare-table th:nth-child(2) { background: #5a4a96; }
+  .compare-table th:nth-child(3) { background: #1a7a4a; }
+
+  .compare-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #4a4a4a;
+    vertical-align: top;
+    font-size: 14px;
+  }
+
+  .compare-table tr:nth-child(even) td { background: #f7f5fc; }
+
+  .tag-red { color: var(--gold); font-weight: 600; }
+  .tag-green { color: #1a7a4a; font-weight: 600; }
+  .tag-neutral { color: #888; }
+
+  /* REALITY BOX */
+  .reality-box {
+    background: var(--forest);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+  }
+
+  .reality-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--sage);
+    margin-bottom: 18px;
+  }
+
+  .reality-list { list-style: none; }
+  .reality-list li {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    align-items: flex-start;
+  }
+  .reality-list li:last-child { border-bottom: none; }
+
+  .reality-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* PERSONA GRID */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .persona-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    border-right: 4px solid var(--emerald);
+    border-left: none;
+  }
+
+  .persona-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .persona-card p { font-size: 14px; color: #4a4a4a; margin-bottom: 0; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-right: 4px solid #d4a000;
+    border-left: none;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: #5a4800;
+    line-height: 1.7;
+  }
+  .disclaimer strong { color: #3a3000; }
+
+  /* FAQ */
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  /* CTA */
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  /* SIDEBAR */
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
+    .sidebar { order: 1; }
+    .hero { min-height: auto; }
+    .hero-content { padding-bottom: 48px; }
+    .hero-title { font-size: clamp(30px, 5vw, 52px); }
+    .versus-grid { grid-template-columns: 1fr; }
+    .persona-grid { grid-template-columns: 1fr; }
+    .compare-table { font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 10px 10px; }
+    .cta-banner { padding: 36px 28px; }
+    .cta-banner h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .sidebar-card h4 { font-size: 15px; }
+    .zoom-card { padding: 20px 16px; }
+    .zoom-card h4 { font-size: 15px; }
+    .versus-col { padding: 20px 16px; }
+    .versus-header { font-size: 14px; }
+    .versus-list li { font-size: 13px; }
+    .reality-box { padding: 24px 18px; }
+    .reality-list li { font-size: 14px; }
+    .persona-card { padding: 18px 16px; }
+    .persona-card h3 { font-size: 15px; }
+    .persona-card p { font-size: 13px; }
+    .compare-table { font-size: 12px; }
+    .compare-table th, .compare-table td { padding: 8px 8px; }
+    .disclaimer { font-size: 13px; padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">مقارنة · دخل جانبي في الإمارات</div>
+    <h1 class="hero-title">DXN مقابل<br><em>الوظيفة التقليدية</em><br>— مقارنة صادقة</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٨ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      المزيد من سكان الإمارات يبنون أعمالًا جانبية بجانب وظائفهم. إليك مقارنة صادقة بين التسويق الشبكي مع DXN والوظيفة التقليدية — سقف الدخل، المرونة، والمخاطر الحقيقية في كلا الجانبين.
+    </p>
+
+    <div class="section-head" id="context">
+      <h2>لماذا يبحث سكان الإمارات عن بديل للراتب</h2>
+    </div>
+
+    <p>الإمارات من أغلى الأماكن للعيش في العالم. الإيجار والتعليم والرعاية الصحية والتكلفة العامة للحياة المريحة في مدن مثل دبي وأبوظبي تعني أن الراتب الواحد لم يعد كافيًا لكثير من السكان — خاصة الوافدين. استطلاع أجرته شركة استشارات موارد بشرية إقليمية عام 2023 وجد أن أكثر من 60% من موظفي الإمارات يبحثون بنشاط عن مصدر دخل ثانٍ.</p>
+
+    <p>في الوقت نفسه، أصبحت لوائح العمل الحر وريادة الأعمال في الإمارات أكثر انفتاحًا بشكل ملحوظ في السنوات الأخيرة. عدد أكبر من الأشخاص مسموح لهم قانونيًا بإدارة أعمال جانبية صغيرة بجانب وظائفهم أكثر من أي وقت مضى. هذه هي البيئة التي جعلت التسويق الشبكي — وDXN تحديدًا — جذابًا لعدد متزايد من سكان الإمارات الذين يريدون أكثر دون التخلي عما لديهم.</p>
+
+    <div class="img-placeholder">صورة: تقسيم بصري — الجانب الأيمن مكتب شركة، الجانب الأيسر شخص يعمل بحرية على لابتوب في المنزل، مع أفق الإمارات في الخلفية</div>
+
+    <div class="section-head" id="versus">
+      <h2>جنبًا إلى جنب: الفروقات الأساسية</h2>
+    </div>
+
+    <div class="versus-grid">
+      <div class="versus-col employment">
+        <div class="versus-header">&#x1F3E2; الوظيفة التقليدية</div>
+        <ul class="versus-list">
+          <li>راتب شهري ثابت — مستقر لكن محدود</li>
+          <li>الزيادات تعتمد على قرار صاحب العمل</li>
+          <li>الدخل يتوقف عندما تتوقف عن العمل</li>
+          <li>الموقع مرتبط بالمكتب أو صاحب العمل</li>
+          <li>الإقامة مرتبطة بصاحب العمل</li>
+          <li>وقت محدود مع العائلة أثناء ساعات العمل</li>
+          <li>جدول الترقية تحدده الشركة</li>
+          <li>مصدر دخل واحد — خطر اعتماد عالٍ</li>
+        </ul>
+      </div>
+      <div class="versus-col dxn">
+        <div class="versus-header">&#x1F33F; التسويق الشبكي مع DXN</div>
+        <ul class="versus-list">
+          <li>الدخل ينمو مع نمو شبكتك — بلا سقف</li>
+          <li>أنت تتحكم في سرعة تقدمك</li>
+          <li>حجم المجموعة يولّد دخلًا شهريًا سلبيًا</li>
+          <li>اعمل من أي مكان — الهاتف، واتساب، زووم</li>
+          <li>غير مرتبط بأي صاحب عمل أو كفيل تأشيرة</li>
+          <li>ابنِ حول جدولك، وليس العكس</li>
+          <li>التقدم يعتمد على جهدك المستمر</li>
+          <li>مصدر دخل ثانٍ يعمل بجانب وظيفتك</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="table">
+      <h2>المقارنة الكاملة</h2>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>الفئة</th>
+          <th>الوظيفة التقليدية</th>
+          <th>التسويق الشبكي مع DXN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>تكلفة البدء</strong></td>
+          <td><span class="tag-neutral">لا شيء — صاحب العمل يدفع لك</span></td>
+          <td><span class="tag-green">منخفضة جدًا — رسوم تسجيل بسيطة</span></td>
+        </tr>
+        <tr>
+          <td><strong>سقف الدخل</strong></td>
+          <td><span class="tag-red">محدود بسلم الرواتب</span></td>
+          <td><span class="tag-green">غير محدود — ينمو مع حجم الشبكة</span></td>
+        </tr>
+        <tr>
+          <td><strong>استقرار الدخل</strong></td>
+          <td><span class="tag-green">راتب شهري مستقر</span></td>
+          <td><span class="tag-neutral">متغير — ينمو مع الوقت</span></td>
+        </tr>
+        <tr>
+          <td><strong>الوقت المطلوب</strong></td>
+          <td><span class="tag-red">دوام كامل، ساعات ثابتة</span></td>
+          <td><span class="tag-green">دوام جزئي — جدول مرن</span></td>
+        </tr>
+        <tr>
+          <td><strong>حرية الموقع</strong></td>
+          <td><span class="tag-red">المكتب أو ما يحدده صاحب العمل</span></td>
+          <td><span class="tag-green">عن بُعد بالكامل — الهاتف واللابتوب</span></td>
+        </tr>
+        <tr>
+          <td><strong>الدخل السلبي</strong></td>
+          <td><span class="tag-red">لا يوجد — دخل نشط فقط</span></td>
+          <td><span class="tag-green">نعم — حجم المجموعة يربح شهريًا</span></td>
+        </tr>
+        <tr>
+          <td><strong>مستوى المخاطرة</strong></td>
+          <td><span class="tag-neutral">فقدان الوظيفة، تسريح، خطر التأشيرة</span></td>
+          <td><span class="tag-green">مخاطر بدء منخفضة، بدون مخزون</span></td>
+        </tr>
+        <tr>
+          <td><strong>بناء المهارات</strong></td>
+          <td><span class="tag-neutral">مهارات خاصة بالوظيفة</span></td>
+          <td><span class="tag-green">تواصل، قيادة، تسويق</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-head" id="reality">
+      <h2>الحقيقة الصادقة لكلا المسارين</h2>
+    </div>
+
+    <p>هذه المقارنة ليست لنقول إن الوظيفة التقليدية سيئة. بالنسبة لمعظم الناس في الإمارات، وظيفتهم هي الأساس — وDXN تعمل أفضل كطبقة فوق ذلك الأساس، وليس كبديل له. السؤال ليس أيهما تختار. السؤال هو: هل تستطيع أن تعتمد على مصدر دخل واحد فقط؟</p>
+
+    <div class="reality-box">
+      <h3>ما لا يخبرك به أحد عن كلا الخيارين</h3>
+      <ul class="reality-list">
+        <li>
+          <span class="reality-icon">&#x1F4BC;</span>
+          <span><strong style="color:#fff;">مخاطر الوظيفة حقيقية.</strong> التسريح وإعادة هيكلة الشركات وإلغاء التأشيرة واقع في سوق الإمارات. مصدر دخل ثانٍ ليس رفاهية — إنه حماية.</span>
+        </li>
+        <li>
+          <span class="reality-icon">&#x23F3;</span>
+          <span><strong style="color:#fff;">DXN تحتاج وقتًا للبناء.</strong> الشهر الأول لن يحل محل راتبك. لكن الشهر الثاني عشر — مع جهد مستمر — يبدو مختلفًا تمامًا. الدخل يتراكم مع تراكم فريقك.</span>
+        </li>
+        <li>
+          <span class="reality-icon">&#x1F4F1;</span>
+          <span><strong style="color:#fff;">DXN تتناسب مع الوظيفة.</strong> معظم موزعي DXN النشطين في الإمارات يديرون عملهم في المساء وعطلات نهاية الأسبوع — ساعة إلى ساعتين يوميًا. مصممة لتكون موازية، وليست منافسة.</span>
+        </li>
+        <li>
+          <span class="reality-icon">&#x1F30D;</span>
+          <span><strong style="color:#fff;">شبكتك هي أصل مالي.</strong> على عكس الراتب الذي يتوقف عندما تتوقف، فريق DXN المبني جيدًا يستمر في توليد حجم مجموعة — وعمولة — حتى عندما تأخذ استراحة.</span>
+        </li>
+        <li>
+          <span class="reality-icon">&#x1F4C9;</span>
+          <span><strong style="color:#fff;">ليس الجميع ينجح.</strong> DXN تكافئ الجهد المستمر والصادق. من يتعامل معها كدخل سلبي من اليوم الأول نادرًا ما يرى نتائج. إنها عمل تجاري — تحتاج أن تُعمل عليه.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-head" id="who">
+      <h2>لمن تناسب DXN فعلًا؟</h2>
+    </div>
+
+    <p>DXN ليست مناسبة للجميع. إليك الأنواع الأربعة من الأشخاص الذين يميلون للنجاح بها في سياق الإمارات:</p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <h3>الموظف المحترف</h3>
+        <p>لديه راتب مستقر لكنه يريد مصدر دخل ثانٍ ينمو بشكل سلبي بجانب مسيرته المهنية. يدير DXN في المساء وعطلات نهاية الأسبوع دون التأثير على وظيفته.</p>
+      </div>
+      <div class="persona-card">
+        <h3>ربة المنزل أو الأب المقيم</h3>
+        <p>لديه وقت خلال النهار لكنه يحتاج مرونة كاملة في الجدول. نموذج DXN عبر واتساب وزووم يعني أن العمل يحدث كلما كان الأطفال نائمين أو مشغولين.</p>
+      </div>
+      <div class="persona-card">
+        <h3>الوافد الباحث عن الأمان</h3>
+        <p>يدرك أن الإقامة في الإمارات مرتبطة بالوظيفة. يريد عملًا يبقى عند تغيير الوظائف — ودخلًا لا يعتمد على صاحب عمل واحد.</p>
+      </div>
+      <div class="persona-card">
+        <h3>المهتم بالصحة والمنتجات</h3>
+        <p>يستخدم منتجات DXN بالفعل ويؤمن بها. المشاركة الطبيعية تقود إلى إحالات، والإحالات تقود إلى دخل — بدون بيع قسري.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>ملاحظة مهمة:</strong> DXN فرصة عمل مشروعة لكنها لا تضمن الدخل. النتائج تعتمد كليًا على جهدك الشخصي واستمراريتك ونشاط فريقك. هذا المقال لأغراض معلوماتية ولا يُعتبر نصيحة مالية.
+    </div>
+
+    <div class="section-head" id="faq">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل يمكنني العمل مع DXN وأنا موظف بدوام كامل في الإمارات؟</p>
+        <p class="faq-a">نعم. معظم موزعي DXN في الإمارات يديرون عملهم بدوام جزئي بجانب وظيفتهم بدوام كامل. العمل يتم بالكامل أونلاين عبر واتساب وزووم، لذا يتناسب بشكل طبيعي مع المساء وعطلات نهاية الأسبوع دون التأثير على وظيفتك.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل التسويق الشبكي قانوني في الإمارات؟</p>
+        <p class="faq-a">نعم. DXN تعمل بالكامل ضمن لوائح الإمارات ولديها حضور محلي مسجل. التسويق الشبكي قانوني في الإمارات عندما يُمارس من خلال شركات مشروعة قائمة على المنتجات مثل DXN.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كم من الوقت أحتاج لاستثماره أسبوعيًا؟</p>
+        <p class="faq-a">معظم الموزعين النشطين في الأشهر الستة الأولى يستثمرون ساعة إلى ساعتين يوميًا — نشر محتوى، متابعة عبر واتساب، وحضور أو استضافة جلسات زووم أسبوعية. مع نمو فريقك، يتحول الاستثمار من فعل كل شيء بنفسك إلى تدريب ودعم الآخرين.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">ماذا لو فقدت وظيفتي — هل يمكن لـ DXN أن تحل محل دخلي؟</p>
+        <p class="faq-a">بالنسبة لمعظم الناس، DXN تبدأ كمكمّل لدخل الوظيفة وتنمو مع الوقت. إذا بنيت فريقًا قويًا على مدى اثني عشر إلى أربعة وعشرين شهرًا، فإن دخل حجم المجموعة يمكن أن يصبح كبيرًا. لكننا لن ننصح أبدًا بالاعتماد على DXN كمصدر دخل وحيد من اليوم الأول.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كيف أبدأ إذا لم يسبق لي تجربة التسويق الشبكي؟</p>
+        <p class="faq-a">ابدأ بحضور جلسة زووم الأسبوعية المجانية. نشرح كل شيء — المنتجات ونموذج العمل وخطة التعويضات وعملية التسجيل — بالعربية والإنجليزية. لا حاجة لخبرة سابقة ولا التزام بالانضمام.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>انضم إلى اجتماع زووم الأسبوعي المجاني</h3>
+      <p>كل أسبوع نستضيف جلسة مباشرة بالعربية والإنجليزية — تغطي المنتجات وفرصة العمل وعملية التسجيل. احضر، اسأل أي شيء، غادر بدون أي التزام.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">سجّل عبر واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#context">لماذا يبحث سكان الإمارات</a></li>
+        <li><a href="#versus">المقارنة جنبًا إلى جنب</a></li>
+        <li><a href="#table">المقارنة الكاملة بالفئات</a></li>
+        <li><a href="#reality">الحقيقة الصادقة</a></li>
+        <li><a href="#who">لمن تناسب DXN؟</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>تدريب زووم مجاني</h4>
+      <p>نشرح نموذج عمل DXN مباشرة. كل أسبوع · عربي وإنجليزي · بدون التزام</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">احجز مقعدك</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>DXN كدخل جانبي</h4>
+      <ul class="fact-list">
+        <li>ابدأ بدوام جزئي بجانب وظيفتك</li>
+        <li>بدون مخزون أو مكتب</li>
+        <li>اعمل عبر واتساب وزووم</li>
+        <li>الدخل ينمو مع فريقك</li>
+        <li>دخل سلبي شهري من حجم المجموعة</li>
+        <li>بدون اعتماد على تأشيرة صاحب العمل</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>البدء مع DXN</h4>
+      <ul class="fact-list">
+        <li>رسوم تسجيل لمرة واحدة منخفضة</li>
+        <li>تدريب زووم أسبوعي مجاني</li>
+        <li>دعم بالعربية والإنجليزية</li>
+        <li>ابنِ بالسرعة التي تناسبك</li>
+        <li>شبكة إماراتية ودولية</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة تعويضات DXN بشرح مبسط — كيف تربح فعلًا | Freedom with DXN</title>
+<meta name="description" content="محتار من خطة تعويضات DXN؟ هذا الدليل المبسط يشرح بالضبط كيف تعمل النقاط والمكافآت والدخل السلبي — مع أمثلة حقيقية بالدرهم الإماراتي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* LAYOUT */
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 60px;
+  }
+
+  /* ARTICLE */
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #ede8f8, #d8cff0);
+    border: 1.5px dashed var(--forest);
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--forest);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  /* INCOME GRID */
+  .income-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .income-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    border-top: 3px solid var(--forest);
+  }
+
+  .income-card.highlight { border-top-color: var(--emerald); }
+  .income-card .icon { font-size: 26px; margin-bottom: 10px; }
+
+  .income-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 8px;
+  }
+
+  .income-card p { font-size: 14px; color: #4a4a4a; margin-bottom: 0; }
+
+  /* EXPLAINER BOX */
+  .explainer-box {
+    background: var(--forest);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+  }
+
+  .explainer-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; margin-bottom: 20px;
+    color: var(--sage);
+  }
+
+  .explainer-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .explainer-row:last-child { border-bottom: none; }
+
+  .explainer-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    min-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .explainer-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .explainer-value span {
+    background: rgba(67,175,115,0.2);
+    color: var(--sage);
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 8px;
+    font-weight: 400;
+  }
+
+  /* SCENARIO */
+  .scenario {
+    background: #f0fbf5;
+    border: 1px solid #b5e8cc;
+    border-right: 4px solid var(--emerald);
+    border-left: none;
+    border-radius: 6px;
+    padding: 28px 24px;
+    margin: 32px 0;
+  }
+
+  .scenario-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: #1a7a4a; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .scenario-title::before {
+    content: '📊';
+    font-size: 20px;
+  }
+
+  .scenario-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .scenario-table th {
+    background: rgba(67,175,115,0.15);
+    color: #1a7a4a;
+    padding: 10px 12px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .scenario-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(67,175,115,0.15);
+    color: #3a3a3a;
+  }
+
+  .scenario-table tr:last-child td { border-bottom: none; }
+
+  .scenario-total {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--emerald);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* RANK TABLE */
+  .rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .rank-table th {
+    background: var(--forest);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .rank-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #4a4a4a;
+    vertical-align: middle;
+  }
+
+  .rank-table tr:nth-child(even) td { background: #f7f5fc; }
+
+  .rank-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .rank-entry { background: #e8f5ee; color: #1a7a4a; }
+  .rank-mid   { background: #ede8f8; color: #46387b; }
+  .rank-senior { background: #fff0e8; color: #b85a00; }
+  .rank-top   { background: #fff0f0; color: #bf3c36; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-right: 4px solid #d4a000;
+    border-left: none;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: #5a4800;
+    line-height: 1.7;
+  }
+  .disclaimer strong { color: #3a3000; }
+
+  /* FAQ */
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  /* CTA */
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  /* SIDEBAR */
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
+    .sidebar { order: 1; }
+    .hero { min-height: auto; }
+    .hero-content { padding-bottom: 48px; }
+    .hero-title { font-size: clamp(30px, 5vw, 52px); }
+    .income-grid { grid-template-columns: 1fr; }
+    .cta-banner { padding: 36px 28px; }
+    .cta-banner h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .sidebar-card h4 { font-size: 15px; }
+    .zoom-card { padding: 20px 16px; }
+    .zoom-card h4 { font-size: 15px; }
+    .income-card { padding: 18px 16px; }
+    .income-card h3 { font-size: 15px; }
+    .income-card p { font-size: 13px; }
+    .explainer-box { padding: 24px 18px; }
+    .explainer-label { min-width: 110px; font-size: 13px; }
+    .explainer-value { font-size: 14px; }
+    .scenario { padding: 20px 16px; }
+    .scenario-table { font-size: 13px; }
+    .scenario-table th, .scenario-table td { padding: 8px 10px; }
+    .rank-table { font-size: 13px; }
+    .rank-table th, .rank-table td { padding: 10px 12px; }
+    .disclaimer { font-size: 13px; padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="/images/blog/5/1775538590_4642481.png" alt="خطة تعويضات DXN" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">فرصة عمل · دليل الدخل</div>
+    <h1 class="hero-title">خطة تعويضات DXN<br><em>بشرح مبسط</em><br>— كيف تربح فعلًا</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٨ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      محتار من خطة تعويضات DXN؟ لست وحدك. هذا الدليل يشرح بالضبط كيف تعمل النقاط والمكافآت والدخل السلبي — بلغة بسيطة، مع أمثلة حقيقية بالدرهم الإماراتي.
+    </p>
+
+    <div class="section-head" id="overview">
+      <h2>كيف يعمل نموذج دخل DXN</h2>
+    </div>
+
+    <p>تستخدم DXN هيكل تسويق أحادي المستوى — بمعنى أن كل موزع ينضم تحت راعٍ ويبني شبكته الخاصة نحو الأسفل. لا توجد أرجل ثنائية معقدة، ولا مصفوفات إجبارية، ولا قواعد تعيين محيرة. الدخل الذي تحققه مرتبط مباشرة بأمرين: المنتجات التي تبيعها أنت وفريقك، وحجم ونشاط شبكة الموزعين لديك.</p>
+
+    <p>كل شيء في خطة تعويضات DXN يدور حول وحدة واحدة: قيمة النقاط (PV). كل منتج تشتريه يحمل قيمة نقاط، وقيمة نقاطك الشهرية — مع قيمة نقاط شبكتك بالكامل — تحدد مستوى دخلك. كلما زادت قيمة نقاط مجموعتك الإجمالية، ارتفعت نسبة عمولتك.</p>
+
+    <div class="section-head" id="income-types">
+      <h2>الطرق الأربع للربح مع DXN</h2>
+    </div>
+
+    <div class="income-grid">
+      <div class="income-card highlight">
+        <div class="icon">&#x1F6D2;</div>
+        <h3>ربح التجزئة</h3>
+        <p>اشترِ المنتجات بسعر الموزع وبِعها بسعر التجزئة. الفرق هو ربحك الفوري — عادةً 25% على كل عملية بيع. لا يُشترط تحقيق أهداف شهرية لكسب هذا الربح.</p>
+      </div>
+      <div class="income-card highlight">
+        <div class="icon">&#x1F4CA;</div>
+        <h3>مكافأة المجموعة</h3>
+        <p>نسبة عمولة على إجمالي قيمة نقاط مجموعتك كل شهر. هذا هو الدخل المتكرر الأساسي — ينمو كلما نما فريقك وظل نشطًا.</p>
+      </div>
+      <div class="income-card">
+        <div class="icon">&#x2B50;</div>
+        <h3>مكافأة المجموعة النجمية</h3>
+        <p>بمجرد تأهلك كوكيل نجم أو أعلى، تكسب مكافآت إضافية على المجموعات التي يقودها موزعوك المباشرون المؤهلون كنجوم تحتك.</p>
+      </div>
+      <div class="income-card">
+        <div class="icon">&#x1F30D;</div>
+        <h3>المشاركة الدولية في الأرباح</h3>
+        <p>سفراء التاج وما فوق يشاركون في صندوق أرباح DXN العالمي — نسبة من إجمالي المبيعات العالمية توزع بين أصحاب أعلى الرتب.</p>
+      </div>
+    </div>
+
+    <div class="section-head" id="points">
+      <h2>فهم قيمة النقاط (PV)</h2>
+    </div>
+
+    <p>في كل مرة تشتري أنت أو شخص في شبكتك منتجًا من DXN، تُنتج تلك العملية قيمة نقاط. قيمة نقاط مجموعتك الشهرية هي مجموع جميع المشتريات التي قمت بها أنت وكل موزع في شبكتك بالكامل خلال ذلك الشهر. هذه القيمة الإجمالية لنقاط المجموعة هي ما يحدد نسبة عمولتك لذلك الشهر.</p>
+
+    <div class="explainer-box">
+      <h3>كيف تتحول نقاط المجموعة إلى عمولة</h3>
+      <div class="explainer-row">
+        <span class="explainer-label">100 – 299 PV</span>
+        <span class="explainer-value">عمولة 6% <span>مستوى الدخول</span></span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">300 – 599 PV</span>
+        <span class="explainer-value">عمولة 9% <span>نمو</span></span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">600 – 999 PV</span>
+        <span class="explainer-value">عمولة 12%</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">1,000 – 1,999 PV</span>
+        <span class="explainer-value">عمولة 15%</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">2,000 – 3,999 PV</span>
+        <span class="explainer-value">عمولة 18%</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">4,000+ PV</span>
+        <span class="explainer-value">عمولة 21% <span>وكيل نجم+</span></span>
+      </div>
+    </div>
+
+    <p>الفكرة الأساسية هنا هي أن دخلك ينمو ليس فقط عندما تبيع أنت أكثر — بل عندما يبني الأشخاص الذين قدمتهم إلى DXN نشاطهم الخاص أيضًا. هذا ما يخلق دخلًا سلبيًا متراكمًا مع مرور الوقت.</p>
+
+    <div class="section-head" id="example">
+      <h2>مثال حقيقي بالدرهم الإماراتي</h2>
+    </div>
+
+    <p>إليك صورة بسيطة وواقعية لما قد يبدو عليه الشهر الثالث لموزع نشط في الإمارات قدّم خمسة أشخاص إلى DXN وكل واحد منهم يشتري ويشارك المنتجات شخصيًا:</p>
+
+    <div class="scenario">
+      <div class="scenario-title">سيناريو دخل الشهر الثالث — موزع في الإمارات</div>
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>مصدر الدخل</th>
+            <th>النشاط</th>
+            <th>المبلغ التقديري بالدرهم</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ربح التجزئة</td>
+            <td>مبيعات شخصية لـ 4–5 عملاء</td>
+            <td>300 – 500 درهم</td>
+          </tr>
+          <tr>
+            <td>مكافأة المجموعة (9%)</td>
+            <td>نقاط المجموعة ~400 عبر 5 أعضاء نشطين</td>
+            <td>400 – 600 درهم</td>
+          </tr>
+          <tr>
+            <td>المكافأة التفاضلية</td>
+            <td>فرق العمولة على رتبة الشبكة السفلية</td>
+            <td>100 – 200 درهم</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="scenario-total">
+        <span>إجمالي الشهر الثالث التقديري</span>
+        <strong>800 – 1,300 درهم / شهريًا</strong>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>ملاحظة مهمة:</strong> الأرقام أعلاه هي أمثلة توضيحية فقط. يعتمد الدخل الفعلي كليًا على نشاطك الشخصي، وحجم واستمرارية فريقك، ومقدار الوقت الذي تستثمره. لا تضمن DXN أي دخل. تختلف النتائج بشكل كبير بين الموزعين. هذا عمل تجاري — يكافئ الجهد المستمر مع الوقت، وليس المشاركة السلبية.
+    </div>
+
+    <div class="section-head" id="ranks">
+      <h2>رتب موزعي DXN في لمحة</h2>
+    </div>
+
+    <p>كلما نمت قيمة نقاط مجموعتك شهرًا بعد شهر، تتأهل لرتب أعلى داخل DXN. كل رتبة تفتح أنواعًا إضافية من المكافآت وإمكانات ربح أعلى. إليك نظرة مبسطة على التدرج:</p>
+
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>الرتبة</th>
+          <th>نقاط المجموعة التقريبية</th>
+          <th>الميزة الرئيسية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-badge rank-entry">موزع</span></td>
+          <td>100 – 299 PV</td>
+          <td>ربح التجزئة + مكافأة مجموعة 6%</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-entry">وكيل</span></td>
+          <td>300 – 999 PV</td>
+          <td>حتى 12% مكافأة مجموعة</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-mid">وكيل نجم</span></td>
+          <td>4,000+ PV</td>
+          <td>عمولة 21% + فتح مكافأة المجموعة النجمية</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-senior">نجم روبي</span></td>
+          <td>نمو مستدام للمجموعة</td>
+          <td>مكافآت تفاضلية أعلى على النجوم في الشبكة السفلية</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-top">سفير التاج</span></td>
+          <td>شبكة كبيرة مستدامة</td>
+          <td>مشاركة دولية في الأرباح + مكافآت قيادية</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="img-placeholder">صورة: رسم بياني أنيق يوضح تدرج رتب DXN — من موزع إلى سفير التاج</div>
+
+    <div class="section-head" id="realistic">
+      <h2>ماذا يتطلب الأمر فعلًا؟</h2>
+    </div>
+
+    <p>الإجابة الصادقة هي: جهد يومي مستمر على مدى أشهر وليس أسابيع. DXN ليست مخططًا للثراء السريع ولن تنجح إذا سجلت وانتظرت أن تحدث الأمور. ما تقدمه هو نموذج عمل بتكلفة بدء منخفضة جدًا، بدون مخاطر مخزون، وإمكانات دخل تتوسع مع حجم ونشاط فريقك.</p>
+
+    <p>معظم موزعي DXN الناجحين في الإمارات يتبعون نمطًا بسيطًا: يستخدمون المنتجات شخصيًا، ويشاركون تجربتهم الحقيقية على وسائل التواصل الاجتماعي والواتساب، ويقدمون شخصين إلى خمسة أشخاص شهريًا للعمل، ويدعمون هؤلاء الأشخاص باستمرار من خلال تدريب زووم أسبوعي. عند القيام بذلك باستمرار على مدى ستة إلى اثني عشر شهرًا، يُبنى حجم مجموعة حقيقي ومتراكم.</p>
+
+    <p>الموزعون الذين يحققون دخلًا كبيرًا ليسوا أولئك الذين جندوا أكبر عدد من الأشخاص في الشهر الأول — بل هم الذين استمروا في الحضور، واستمروا في تدريب فريقهم، واستمروا في النمو بثبات مع مرور الوقت.</p>
+
+    <div class="section-head" id="faq">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل أحتاج لشراء كمية كبيرة من المنتجات للبدء؟</p>
+        <p class="faq-a">لا. لا تطلب DXN شراء مخزون كبير مسبقًا. معظم الموزعين يبدأون بطلب منتجات للاستخدام الشخصي، وبناء تجربة حقيقية، ثم مشاركة تلك التجربة مع الآخرين. تطلب ما تحتاجه، عندما تحتاجه.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كيف أحصل على أرباحي — نقدًا أم تحويل بنكي أم نقاط؟</p>
+        <p class="faq-a">تدفع DXN العمولات مباشرة إلى حسابك البنكي المسجل كل شهر، بمجرد وصول أرباحك إلى الحد الأدنى للصرف. تعتمد عملية الدفع الدقيقة والعملة على بلد تسجيلك.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل يمكنني تحقيق دخل بدون تجنيد أي شخص؟</p>
+        <p class="faq-a">نعم — من خلال ربح التجزئة. إذا اشتريت المنتجات بسعر الموزع وبعتها للعملاء بسعر التجزئة، تحتفظ بالفرق. لكن مكافأة المجموعة والدخل السلبي لا ينموان إلا عندما تبني فريقًا.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل هناك حصة مبيعات شهرية يجب أن ألتزم بها؟</p>
+        <p class="faq-a">لا تفرض DXN حصص شراء شهرية إجبارية. عمولتك تعتمد على قيمة نقاط المجموعة الفعلية لذلك الشهر. إذا كان نشاط مجموعتك أقل في شهر معين، ستكون عمولتك أقل لذلك الشهر — لكنك لا تفقد رتبتك أو شبكتك السفلية.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كيف أتعلم أكثر أو أبدأ في الإمارات؟</p>
+        <p class="faq-a">أفضل خطوة أولى هي حضور جلسة زووم الأسبوعية المجانية — نشرح خطة التعويضات مباشرة، ونجيب على جميع الأسئلة، ونوضح عملية التسجيل خطوة بخطوة. بدون التزام بالانضمام.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>انضم إلى اجتماع زووم الأسبوعي المجاني</h3>
+      <p>كل أسبوع نستضيف جلسة مباشرة بالعربية والإنجليزية — تغطي المنتجات وفرصة العمل وعملية التسجيل. احضر، اسأل أي شيء، احجز بدون أي التزام.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">سجّل عبر واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#overview">كيف يعمل النموذج</a></li>
+        <li><a href="#income-types">4 طرق للربح</a></li>
+        <li><a href="#points">فهم قيمة النقاط</a></li>
+        <li><a href="#example">مثال حقيقي بالدرهم</a></li>
+        <li><a href="#ranks">رتب الموزعين</a></li>
+        <li><a href="#realistic">ماذا يتطلب الأمر؟</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>تدريب زووم مجاني</h4>
+      <p>نشرح خطة التعويضات كاملة مباشرة. كل أسبوع · عربي وإنجليزي · بدون التزام</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">احجز مقعدك</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>حقائق سريعة عن الدخل</h4>
+      <ul class="fact-list">
+        <li>حتى 21% مكافأة مجموعة</li>
+        <li>ربح تجزئة على كل عملية بيع</li>
+        <li>بدون حصص شراء شهرية إجبارية</li>
+        <li>الدفع مباشرة للحساب البنكي</li>
+        <li>الدخل ينمو مع فريقك</li>
+        <li>إمكانية بناء شبكة دولية</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>البدء مع DXN</h4>
+      <ul class="fact-list">
+        <li>رسوم تسجيل لمرة واحدة منخفضة</li>
+        <li>لا يُشترط مخزون مسبق</li>
+        <li>اعمل بالكامل أونلاين من الإمارات</li>
+        <li>دعم بالعربية والإنجليزية</li>
+        <li>تدريب زووم أسبوعي مضمّن</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

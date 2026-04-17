@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كيف بنت أمٌّ في أبوظبي أول دخل مستقل لها مع DXN | Freedom with DXN</title>
+<meta name="description" content="طفلان في البيت، لا خبرة تجارية، وهاتف لا يفارق المطبخ. اثنا عشر شهرًا بعدها، بنت وكالة DXN متنامية من غرفة جلوسها. هذه قصتها الحقيقية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    height: 560px;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--forest);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-left: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-left: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    padding-top: 72px;
+    padding-bottom: 100px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-right: 4px solid var(--gold);
+    padding-right: 20px;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+  }
+
+  .steps { counter-reset: step; margin: 28px 0; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: start;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    background: var(--forest);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 6px; }
+  .step-body p { margin-bottom: 0; color: #4a4a4a; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'س'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-right: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2190'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  .sidebar { order: -1; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: 1; }
+    .hero { height: 420px; min-height: 360px; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 15px; line-height: 1.7; }
+    .hero { height: 340px; min-height: 300px; }
+    .hero-content { padding: 0 20px 36px; }
+    .hero-title { font-size: 28px; margin-bottom: 14px; }
+    .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 16px; }
+    .hero-meta { font-size: 12px; gap: 12px; }
+    .hero-meta span::before { margin-left: 12px; }
+    .page-wrap { padding: 0 16px; padding-top: 40px; padding-bottom: 40px; gap: 32px; }
+    .article-intro { font-size: 16px; padding-right: 14px; margin-bottom: 28px; }
+    .section-head { margin: 36px 0 14px; }
+    .section-head h2 { font-size: 20px; }
+    .step { grid-template-columns: 40px 1fr; gap: 12px; margin-bottom: 20px; }
+    .step-num { width: 40px; height: 40px; font-size: 17px; }
+    .step-body h3 { font-size: 16px; }
+    .step-body p { font-size: 14px; }
+    .faq-q { font-size: 15px; }
+    .faq-a { font-size: 14px; padding-right: 24px; }
+    .cta-banner { padding: 28px 20px; margin-top: 36px; }
+    .cta-banner h3 { font-size: 20px; }
+    .cta-banner p { font-size: 13px; margin-bottom: 20px; }
+    .btn-gold { padding: 12px 28px; font-size: 14px; }
+    .sidebar-card { padding: 20px 16px; }
+    .zoom-card { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">قصة نجاح · أبوظبي</div>
+    <h1 class="hero-title">قصتها،<br><em>دخلها،</em><br>بشروطها هي</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>٨ دقائق قراءة</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      طفلان دون الخامسة، لا خبرة تجارية، وهاتف لا يفارق طاولة المطبخ. اثنا عشر شهرًا بعدها، بنت وكالة DXN متنامية دفعت نفقات البقالة العائلية — ومنحتها شيئًا لا يمكن للمال شراؤه مباشرةً: إثبات لنفسها أنها قادرة.
+    </p>
+
+    <div class="section-head" id="where-it-started">
+      <h2>من أين بدأت قصتها</h2>
+    </div>
+
+    <p>فاطمة لم تكن تبحث عن فرصة عمل. كانت أمًّا بدوام كامل لطفلين صغيرين في أبوظبي، وفكرة إطلاق مشروع خاص بدت بعيدة — النوع الذي يحدث لأشخاص آخرين لديهم وقت أكثر، أو مال أكثر، أو ثقة أكثر. كانت أيامها مبنية على توصيل الأطفال للمدرسة ومواعيد القيلولة والإرهاق الهادئ الذي يصاحب الاعتناء بأطفال صغار دون مساعدة خارجية كبيرة.</p>
+
+    <p>المرة الأولى التي سمعت فيها عن DXN كانت عبر مجموعة واتساب عائلية. قريبة لها كانت تتحدث عن قهوة فطر الغانوديرما التي ساعدتها على النوم بشكل أفضل. قرأت فاطمة الرسالة، قالت في نفسها "ربما"، وأكملت يومها. بعد ثلاثة أسابيع، رسالة من جهة اخرى — هذه المرة عن جلسة أونلاين تشرح جانب العمل التجاري. انضمت إلى جلسة الزووم بدافع الفضول أكثر من أي شيء آخر. لم تكن تنوي الشراء.</p>
+
+    <p>ما لم تتوقعه أنها غادرت تلك الجلسة باهتمام حقيقي بالمنتجات. المضيفة كانت صريحة وغير مُلحّة. أجابت عن الأسئلة بصدق دون مبالغة في البيع. طلبت فاطمة مجموعة صغيرة للتجربة — قهوة DXN لينجزهي السوداء وكبسولات RG وGL من الغانوديرما — لتجربتها بنفسها أولًا. حديث العمل كان سيأتي لاحقًا، إن جاء أصلًا.</p>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="how-she-built-it">
+      <h2>كيف بنت مشروعها — ٤ مراحل غيّرت كل شيء</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">١</div>
+        <div class="step-body">
+          <h3>أصبحت عميلة أولًا — وبقيت كذلك</h3>
+          <p>خلال الأسابيع الثلاثة الأولى، لم تتحدث فاطمة لأحد عن DXN. استخدمت المنتجات فحسب. لاحظت تحسّنًا في نومها. الصداع الذي كانت تعاني منه منذ حملها الثاني أصبح أقل تكرارًا. شعرت بيقظة أكبر في الصباح دون الهبوط المعتاد في منتصف النهار. بحلول الأسبوع الرابع، لم تكن تستخدم المنتجات لأنها يجب عليها — بل لأنها تريد ذلك. هذا التحول أهم من أي تدريب مبيعات.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٢</div>
+        <div class="step-body">
+          <h3>شاركت مع من تثق بهم أصلًا</h3>
+          <p>أحاديثها الأولى لم تكن عروض مبيعات. أختها لاحظت أنها تبدو أقل تعبًا وسألتها عمّا تغيّر. أخبرتها فاطمة. جارتها ذكرت أنها تعاني من نقص الطاقة منذ ولادتها الأخيرة. فاطمة عرضت أن تجلب لها عينة من القهوة. لم يكن هؤلاء غرباء — كانوا أشخاصًا لديها علاقة معهم مسبقًا. في غضون ستة أسابيع، قدّمت أختها وجارتها أول طلبياتهما. لم تستخدم فاطمة نصًّا جاهزًا، ولم تحضر يوم تدريب، ولم تنشر شيئًا على وسائل التواصل الاجتماعي بعد.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٣</div>
+        <div class="step-body">
+          <h3>انضمت إلى جلسات الزووم الأسبوعية وتوقفت عن العمل وحدها</h3>
+          <p>عند الشهر الثاني، بدأت فاطمة في حضور جلسات زووم Freedom with DXN الأسبوعية بانتظام. هذا غيّر الأمور بشكل ملحوظ. بدأت تفهم هيكل العمل — كيف تعمل الإحالات، وكيف يُدعم الأعضاء الجدد، وكيف تجيب على الأسئلة الشائعة. لم تعد تبني عملًا منفردًا. حين كان لجارتها أسئلة عن منتج، كانت فاطمة تدعوها إلى زووم التالي ويجيب الفريق معًا. توقفت عن الشعور بأنها يجب أن تعرف كل شيء قبل أن تتقدم.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٤</div>
+        <div class="step-body">
+          <h3>كرّرت ما نجح معها</h3>
+          <p>بحلول الشهر الرابع، كان لديها خمسة أعضاء نشطين في فريقها الصغير. كل واحد منهم بدأ بنفس الطريقة — كعميل أولًا. أرشدت كل شخص عبر نفس العملية التي مرت بها: جرّب المنتجات، احضر الزووم، شارك مع شخص تثق به. لم تبنِ نظامًا معقدًا. كرّرت شيئًا بسيطًا. بحلول الشهر الثاني عشر، نما فريقها إلى سبعة أشخاص، وبدأ اثنان منهم في بناء فرقهم الصغيرة تحتها. لم يعد العمل يعتمد عليها وحدها كمن يتحدث إلى الناس.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-placeholder"></div>
+
+    <div class="section-head" id="day-in-life">
+      <h2>كيف يبدو يومها فعلًا</h2>
+    </div>
+
+    <p>فاطمة لا تزال أولًا وقبل كل شيء أمًّا. عملها في DXN يسير حول أطفالها، لا العكس. عادةً تقضي ٣٠ إلى ٤٥ دقيقة في الصباح تتحقق من الرسائل القادمة من فريقها وأي استفسارات وصلت عبر واتساب أثناء الليل. ترد عليها خلال قيلولة ابنتها الصباحية. إذا كان لأحد سؤال عن منتج، إما تجيب مباشرةً أو تحيله إلى جدول الزووم.</p>
+
+    <p>مرة كل أسبوعين إلى ثلاثة أسابيع، تستضيف تذوقًا صغيرًا للمنتجات في شقتها — أربعة أو خمسة أشخاص، جيران أو أصدقاء أصدقاء، على كوب شاي. لا عرض تقديمي رسمي. تُحضّر إبريق قهوة DXN لينجزهي، وتضع بعض مطويات السبيرولينا، وتجيب على الأسئلة بصدق. بعض تلك الجلسات تنتهي بطلب. وبعضها لا. لا تتابع بإلحاح — من كان مهتمًا يعود من تلقاء نفسه.</p>
+
+    <p>تحضر الزووم الأسبوعي إلكترونيًا، عادةً حين يخلد الأطفال للنوم مساءً. أحضرت اثنين من أعضاء فريقها معًا في مكالمة زووم واحدة حتى يطرحوا أسئلتهم ويشعروا بالانتماء لشيء أكبر من مجرد معاملة شراء. هذا الشعور بالانتماء، كما تقول، هو ما يُبقي الناس نشطين بعد أن يتلاشى الحماس الأولي للانضمام.</p>
+
+    <div class="section-head" id="one-year-in">
+      <h2>بعد عام — الأرقام الحقيقية</h2>
+    </div>
+
+    <p>فاطمة صريحة حول ما يبدو عليه مشروعها عند الشهر الثاني عشر. هي لا تكسب أعلى دخل. لم تُحلّ راتبًا كاملًا. لكنها بنت شيئًا حقيقيًا ومتسقًا وينمو دون أن تضطر إلى التضحية بالوقت الذي تقدّره أكثر مع أطفالها.</p>
+
+    <p>دخلها الشهري من DXN يغطي الآن نفقات البقالة العائلية ومستلزمات أطفالها التعليمية — ما بين ٨٠٠ و١٤٠٠ درهم شهريًا، بحسب نشاط فريقها. لقد تسجّلت كموزعة DXN منذ الشهر الثاني، مما يعني أنها تحصل على المنتجات بسعر الجملة للاستخدام اليومي لعائلتها. هذا التوفير وحده له قيمة كبيرة حين تكون كبسولات الغانوديرما والسبيرولينا جزءًا من روتين المنزل اليومي.</p>
+
+    <p>أكثر من المال، تذكر الثقة بالنفس. لم تكسب باستقلالية منذ ما قبل مولود أول أطفالها. امتلاك دخل — حتى ولو متواضع — بنته بنفسها، من هاتفها، أثناء نوم أطفالها، أعطاها شيئًا لم تدرك أنها كانت تفتقده. تقول إنها لا تعرف أين سيكون المشروع بعد ثلاث سنوات. لكنها تعرف أنها ستظل تفعله.</p>
+
+    <div class="section-head" id="her-advice">
+      <h2>نصيحتها لمن يتردد</h2>
+    </div>
+
+    <p>تقولها دون أن يُطلب منها: لا تنتظري حتى تشعري بالاستعداد. شعور الاستعداد لا يأتي قبل أن تبدأي — يأتي بعد أن تخطي بضع خطوات وتدركي أنك لم تقعي. لو انتظرت حتى شعرت بالثقة، كانت لا تزال تنتظر..</p>
+
+    <p>نصيحتها الثانية محددة: احصل على المنتجات أولًا. استخدمها. إذا أفادتك، ستأتي المحادثات بشكل طبيعي لأنك تشاركين شيئًا تؤمنين به فعلًا. إذا بدأت بمحاولة بيع شيء لم تجربيه شخصيًا، يشعر الناس بهذا الفاصل. المنتجات هي ما يجعل العمل يبدو صادقًا لا تجاريًا باردًا.</p>
+
+    <p>وأخيرًا: لا تحاولي فعل ذلك وحدك. الزووم الأسبوعي موجود تحديدًا لكي لا يضطر الموزعون الجدد إلى اكتشاف كل شيء من الصفر. كل سؤال كانت تخشى طرحه، كان شخص آخر قد طرحه في جلسة سابقة. احضري باستمرار، اطرحي أسئلتك، وادعمي من ينضمون بعدك بنفس الطريقة التي دُعمتِ بها. هذا هو النظام كله — وهو أبسط مما يبدو.</p>
+
+    <div class="section-head" id="faq">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">هل تحتاجين لمغادرة المنزل لبناء مشروع DXN؟</p>
+        <p class="faq-a">لا على الإطلاق. بنت فاطمة فريقها الأول من سبعة أشخاص بالكامل عبر واتساب، وتذوقات صغيرة في المنزل، وجلسات الزووم الأسبوعية. كثير من موزعي DXN النشطين في الإمارات يديرون مشاريعهم بالكامل تقريبًا من هواتفهم.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">ما كانت تكلفة البداية؟</p>
+        <p class="faq-a">بدأت بطلبية صغيرة من المنتجات — قهوة لينجزهي وكبسولات الغانوديرما — لتجربتها بنفسها أولًا. التسجيل كموزعة DXN منخفض التكلفة ولا رسوم شهرية أو أهداف شراء إلزامية. لم تستثمر مبلغًا ضخمًا في البداية.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">كم استغرق الأمر قبل أن ترى دخلًا حقيقيًا؟</p>
+        <p class="faq-a">أول إحالتين طلبتا في الشهر الثاني. أول دخل شهري ملموس ظهر في الشهر الرابع تقريبًا، حين كان لديها فريق صغير نشط. تنصح بتوقع مرحلة بناء تمتد من ٣ إلى ٦ أشهر قبل رؤية عوائد منتظمة.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">هل هذه الفرصة للنساء فقط أو الأمهات فقط؟</p>
+        <p class="faq-a">بالتأكيد لا. نموذج عمل DXN يناسب كل من يريد مرونة — آباء، طلاب، من يعملون بدوام جزئي، أو من يبحثون عن مصدر دخل إضافي. طبيعة العمل المنزلي القائم على الهاتف هي ما يجذب الجميع، لا هويتك الشخصية.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">ماذا لو لم ينجح الأمر معي؟</p>
+        <p class="faq-a">المنتجات نفسها ذات قيمة حقيقية بصرف النظر عن العمل التجاري. إذا سجّلت وجربت المنتجات وقررت أن الجانب التجاري ليس لك، لا تزالين تحصلين على أسعار الجملة لاحتياجاتك الشخصية. لا يوجد أي إلزام ببناء فريق.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>هل تريد سماع المزيد من قصص مثل فاطمة؟</h3>
+      <p>انضم إلى زووم الأسبوعي المجاني — أشخاص حقيقيون، أسئلة صادقة، بدون أي ضغط للبيع. جلسات بالعربية والإنجليزية كل أسبوع.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">راسلنا على واتساب</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>في هذا المقال</h4>
+      <ul class="toc">
+        <li><a href="#where-it-started">من أين بدأت قصتها</a></li>
+        <li><a href="#how-she-built-it">كيف بنت مشروعها</a></li>
+        <li><a href="#day-in-life">كيف يبدو يومها</a></li>
+        <li><a href="#one-year-in">بعد عام — الأرقام الحقيقية</a></li>
+        <li><a href="#her-advice">نصيحتها</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">📹</div>
+      <h4>جلسة زووم مجانية</h4>
+      <p>كل أسبوع · عربي وإنجليزي · بدون التزام</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" target="_blank" rel="noopener noreferrer" class="btn-sage">احجز مقعدك</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>نقطة بداية فاطمة</h4>
+      <ul class="fact-list">
+        <li>أم لطفلين دون الخامسة</li>
+        <li>لا خبرة تجارية سابقة</li>
+        <li>من المنزل في أبوظبي</li>
+        <li>صفر من خبرة المبيعات</li>
+        <li>بدأت بطلبية منتج واحدة</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>المنتجات التي تستخدمها يوميًا</h4>
+      <ul class="fact-list">
+        <li>قهوة لينجزهي السوداء</li>
+        <li>كبسولات RG غانوديرما</li>
+        <li>كبسولات GL غانوسيليوم</li>
+        <li>أقراص السبيرولينا</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

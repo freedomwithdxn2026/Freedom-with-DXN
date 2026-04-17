@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Ganoderma? The Superfood Mushroom in Your DXN Coffee Explained | Freedom with DXN</title>
+<meta name="description" content="Most people drink DXN coffee without knowing what Ganoderma actually is. Here's a simple, research-backed explanation of this powerful adaptogen superfood mushroom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a3a20 0%, #2d5a38 45%, #3a7a4a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder-text {
+    color: rgba(255,255,255,0.15);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    text-align: center;
+    padding: 24px;
+    max-width: 600px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    line-height: 1.5;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,58,32,0.96) 0%, rgba(45,90,56,0.4) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-right: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-right: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 72px clamp(20px, 5vw, 60px) 100px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-left: 4px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #43af73;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .timeline { margin: 28px 0; position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--emerald), var(--forest));
+    border-radius: 2px;
+  }
+
+  .timeline-item { margin-bottom: 28px; position: relative; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--emerald);
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--emerald);
+  }
+
+  .timeline-year {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p { margin-bottom: 0; font-size: 15px; }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .benefit-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    border-top: 3px solid var(--emerald);
+  }
+
+  .benefit-card .icon { font-size: 26px; margin-bottom: 10px; }
+  .benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .benefit-card p { font-size: 14px; color: #4a4a4a; margin-bottom: 0; }
+
+  .science-box {
+    background: var(--forest);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+    color: #fff;
+  }
+
+  .science-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--sage);
+  }
+
+  .science-box p { color: rgba(255,255,255,0.8); margin-bottom: 14px; font-size: 15px; }
+  .science-box p:last-child { margin-bottom: 0; }
+
+  .compound-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .compound-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    align-items: flex-start;
+  }
+
+  .compound-list li:last-child { border-bottom: none; }
+
+  .compound-name {
+    font-weight: 500;
+    color: var(--sage);
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+
+  .disclaimer {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-left: 4px solid #d4a000;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: #5a4800;
+    line-height: 1.7;
+  }
+
+  .disclaimer strong { color: #3a3000; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'Q'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-left: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2192'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: -1; }
+    .hero { min-height: auto; }
+    .benefits-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder">
+    <div class="hero-placeholder-text">HERO IMAGE — Ganoderma mushroom close-up with forest background</div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Product Education · Ganoderma</div>
+    <h1 class="hero-title">What is<br><em>Ganoderma?</em><br>The Superfood in Your Coffee</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      Most people drink DXN coffee without knowing what Ganoderma actually is. Here is a simple, research-backed explanation of this powerful adaptogen superfood mushroom — and why it has been used for over 2,000 years.
+    </p>
+
+    <div class="section-head" id="what-is">
+      <h2>What Is Ganoderma?</h2>
+    </div>
+
+    <p>Ganoderma Lucidum is a species of medicinal mushroom that grows naturally on the base of hardwood trees across Asia. It has been used for over 2,000 years in Chinese, Japanese, and Korean traditional medicine — and goes by many names: Lingzhi in Chinese, Reishi in Japanese, and Yeongji in Korean. All three names roughly translate to the same thing: the Mushroom of Immortality.</p>
+
+    <p>It is not the kind of mushroom you would find in a salad. Ganoderma has a hard, woody texture and a deeply bitter taste on its own — which is precisely why blending it into coffee or supplements is the most practical way to consume it daily. DXN was one of the first companies in the world to bring Ganoderma into a mainstream, everyday format.</p>
+
+    <div class="img-placeholder">IMAGE: Close-up of a fresh Ganoderma Lucidum mushroom on a wooden surface, rich red-brown colour with natural forest background</div>
+
+    <div class="section-head" id="history">
+      <h2>A 2,000-Year History</h2>
+    </div>
+
+    <p>Ganoderma is not a wellness trend invented for modern marketing. Its history is long, documented, and deeply embedded in Asian culture and medicine.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">200 BC – 200 AD</div>
+        <h3>First Written Records</h3>
+        <p>Ganoderma appears in the Shennong Ben Cao Jing — one of the oldest Chinese medical texts — classified as a superior herb with no toxic side effects, suitable for long-term daily use.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Ming Dynasty (1368–1644)</div>
+        <h3>Reserved for Royalty</h3>
+        <p>Ganoderma was so rare and prized that it was reserved for emperors and the Chinese imperial court. Finding one growing in the wild was considered an omen of good fortune.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1970s – 1980s</div>
+        <h3>Modern Scientific Research Begins</h3>
+        <p>Japanese and Chinese scientists began formally studying Ganoderma's active compounds, leading to large-scale cultivation and the first clinical research into its biological properties.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993</div>
+        <h3>DXN Founded</h3>
+        <p>Dr. Lim Siow Jin establishes DXN in Malaysia with a singular mission: to grow Ganoderma at scale and bring it into affordable, daily-use consumer products for the global market.</p>
+      </div>
+    </div>
+
+    <div class="section-head" id="science">
+      <h2>What Science Says About Ganoderma</h2>
+    </div>
+
+    <p>Modern research has identified hundreds of biologically active compounds in Ganoderma Lucidum. The most studied fall into two main categories: polysaccharides and triterpenoids. These compounds are believed to be responsible for many of the properties that traditional medicine attributed to the mushroom over centuries.</p>
+
+    <div class="science-box">
+      <h3>Key Active Compounds in Ganoderma</h3>
+      <ul class="compound-list">
+        <li>
+          <span class="compound-name">Polysaccharides</span>
+          <span>Complex carbohydrates that support immune system function. Beta-glucans — a type of polysaccharide — are among the most researched compounds in medicinal mushrooms.</span>
+        </li>
+        <li>
+          <span class="compound-name">Triterpenoids</span>
+          <span>Bitter compounds responsible for Ganoderma's characteristic taste. Research suggests they may support liver function and have anti-inflammatory properties.</span>
+        </li>
+        <li>
+          <span class="compound-name">Adenosine</span>
+          <span>A naturally occurring compound associated with relaxation and sleep quality. Also found in other plants used traditionally for calming effects.</span>
+        </li>
+        <li>
+          <span class="compound-name">Germanium</span>
+          <span>An organic trace element found in higher concentrations in Ganoderma than in most other natural foods. Subject of ongoing research interest.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important note:</strong> Ganoderma-based products, including DXN coffee and supplements, are food products — not medicines. They are not intended to diagnose, treat, cure, or prevent any disease or medical condition. The information in this article is educational and does not constitute medical advice. Always consult a qualified healthcare professional for any health concerns.
+    </div>
+
+    <div class="section-head" id="benefits">
+      <h2>Why People Add Ganoderma to Their Daily Routine</h2>
+    </div>
+
+    <p>Ganoderma is classified as an adaptogen — a natural substance that is thought to help the body adapt to physical and mental stress over time. Unlike stimulants that produce an immediate effect, adaptogens are typically used consistently over weeks and months, with benefits building gradually.</p>
+
+    <p>Here is what DXN users and the broader Ganoderma community most commonly report after making it a daily habit:</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="icon">&#x1F6E1;</div>
+        <h3>Immune Support</h3>
+        <p>The beta-glucans in Ganoderma are among the most researched compounds for immune system modulation. Many users incorporate it specifically for this reason.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1F634;</div>
+        <h3>Sleep Quality</h3>
+        <p>Ganoderma has been used in traditional medicine as a calming agent. Many daily users report improvements in sleep depth and how rested they feel upon waking.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x26A1;</div>
+        <h3>Sustained Energy</h3>
+        <p>Unlike the sharp spike and crash of regular caffeine, many DXN coffee drinkers describe a smoother, more sustained energy without the jitteriness.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1F9D8;</div>
+        <h3>Stress Adaptation</h3>
+        <p>As an adaptogen, Ganoderma is thought to support the body's response to everyday stress — helping the system maintain balance rather than being reactive.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x1FAC0;</div>
+        <h3>Liver &amp; Detox Support</h3>
+        <p>Triterpenoids found in Ganoderma have been the focus of liver health research. It has long been used in traditional medicine as a liver tonic.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">&#x2615;</div>
+        <h3>Gentler on the Stomach</h3>
+        <p>Many regular coffee drinkers who switch to DXN Lingzhi Coffee report reduced acidity and stomach discomfort — something attributed to the Ganoderma balancing effect.</p>
+      </div>
+    </div>
+
+    <div class="img-placeholder">IMAGE: DXN Ganoderma RG/GL capsules beside a cup of Lingzhi Coffee on a natural wood surface</div>
+
+    <div class="section-head" id="dxn">
+      <h2>How DXN Sources Its Ganoderma</h2>
+    </div>
+
+    <p>One of DXN's key differentiators is its farm-to-product control over the entire Ganoderma supply chain. DXN does not buy Ganoderma from external suppliers. The company grows, harvests, processes, and manufactures everything in its own certified facilities in Malaysia.</p>
+
+    <p>This matters because Ganoderma quality varies enormously depending on how and where it is grown. The substrate (the material the mushroom grows on), the harvest timing, and the extraction method all affect the concentration of active compounds in the final product. DXN's in-house control over each of these steps is why its products have maintained consistent quality across decades and markets.</p>
+
+    <p>Every DXN Ganoderma product — from RG and GL capsules to the Lingzhi Coffee range — starts from the same cultivated Ganoderma grown on DXN's farms. Whether you are drinking a cup of 3-in-1 coffee or taking a supplement capsule, the Ganoderma inside traces back to the same controlled source.</p>
+
+    <div class="section-head" id="faq">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">Is Ganoderma safe to consume daily?</p>
+        <p class="faq-a">Ganoderma has a long history of daily use in traditional medicine and is generally considered safe for healthy adults. As with any supplement, it is always advisable to consult your doctor before starting, especially if you are pregnant, breastfeeding, or on medication.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is Ganoderma halal?</p>
+        <p class="faq-a">Yes. Ganoderma is a plant-based mushroom, and DXN products containing Ganoderma are halal certified, making them suitable for Muslim consumers across the UAE and MENA region.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long does it take to feel the benefits?</p>
+        <p class="faq-a">Ganoderma is an adaptogen — its effects build gradually over consistent use. Most people report noticeable changes in energy or sleep quality after two to four weeks of daily consumption. It is not a quick fix but a long-term habit.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What is the difference between RG and GL?</p>
+        <p class="faq-a">RG (Reishi Gano) is made from the fruiting body of the Ganoderma mushroom, while GL (Ganocelium) is made from the mycelium — the root-like structure. Both contain complementary active compounds. DXN recommends taking them together for the most complete benefit, which is why they are often sold as a pair.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I get Ganoderma products in the UAE?</p>
+        <p class="faq-a">Yes. DXN products including Ganoderma supplements and Lingzhi Coffee are available in the UAE through registered DXN distributors. Contact us via WhatsApp and we can help you order the right products and arrange delivery.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Join Our Free Weekly Zoom Meeting</h3>
+      <p>Every week we host a free session in Arabic and English — covering products, the business opportunity, and the registration process. Attend, ask anything, leave with no obligation.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">Register via WhatsApp</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc">
+        <li><a href="#what-is">What Is Ganoderma?</a></li>
+        <li><a href="#history">A 2,000-Year History</a></li>
+        <li><a href="#science">What Science Says</a></li>
+        <li><a href="#benefits">Daily Routine Benefits</a></li>
+        <li><a href="#dxn">How DXN Sources It</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>Free Zoom Training</h4>
+      <p>Learn about Ganoderma products and the DXN business. Every week · Arabic &amp; English</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">Book Your Spot</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>DXN Ganoderma Products</h4>
+      <ul class="fact-list">
+        <li>RG Capsules (fruiting body)</li>
+        <li>GL Capsules (mycelium)</li>
+        <li>MycoVita supplement</li>
+        <li>Lingzhi Coffee 3-in-1</li>
+        <li>Lingzhi Black Coffee</li>
+        <li>Cordypine with Ganoderma</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Ganoderma Quick Facts</h4>
+      <ul class="fact-list">
+        <li>2,000+ years of traditional use</li>
+        <li>Also known as Reishi / Lingzhi</li>
+        <li>Classified as an adaptogen</li>
+        <li>Halal certified in DXN products</li>
+        <li>DXN grows its own supply</li>
+        <li>Available in UAE</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 DXN Products Every Beginner Should Try First | Freedom with DXN</title>
+<meta name="description" content="New to DXN? With over 1,000 products to choose from, here are the 5 best DXN products to start with — based on real experience from distributors in the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder-text {
+    color: rgba(255,255,255,0.15);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    text-align: center;
+    padding: 24px;
+    max-width: 600px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 6vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-right: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-right: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 72px clamp(20px, 5vw, 60px) 100px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-left: 4px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8f5ee, #d0eddc);
+    border: 1.5px dashed #43af73;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #43af73;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* PRODUCT CARDS */
+  .product-pick {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-pick::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--emerald), var(--forest));
+  }
+
+  .pick-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--forest);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+
+  .pick-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  .pick-label-best { background: var(--gold); color: #fff; }
+  .pick-label-daily { background: var(--emerald); color: #fff; }
+  .pick-label-essential { background: var(--forest); color: #fff; }
+
+  .product-pick h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 12px;
+  }
+
+  .product-pick .subtitle {
+    font-size: 14px;
+    color: var(--emerald);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .why-box {
+    background: #f3f0fa;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  .why-box h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+
+  .why-box ul { list-style: none; }
+
+  .why-box li {
+    font-size: 14px;
+    color: #4a4a4a;
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .why-box li::before { content: '\2713'; color: var(--emerald); font-weight: 700; flex-shrink: 0; }
+
+  /* QUICK COMPARE TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 14px;
+  }
+
+  .compare-table th {
+    background: var(--forest);
+    color: #fff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .compare-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #4a4a4a;
+    vertical-align: top;
+  }
+
+  .compare-table tr:nth-child(even) td { background: #f7f5fc; }
+
+  .compare-table .check { color: var(--emerald); font-weight: 700; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: #edfaf3;
+    border: 1px solid #b5e8cc;
+    border-left: 4px solid var(--emerald);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 15px;
+    color: #1a5a38;
+    line-height: 1.7;
+  }
+
+  .tip-box strong { color: #0d4028; }
+
+  /* FAQ */
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'Q'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-left: 32px; margin-bottom: 0; }
+
+  /* CTA */
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  /* SIDEBAR */
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2192'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+
+  .btn-sage:hover { opacity: 0.85; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: -1; }
+    .hero { min-height: auto; }
+    .compare-table { font-size: 12px; }
+    .compare-table th, .compare-table td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-placeholder">
+    <div class="hero-placeholder-text">HERO IMAGE — Flat lay of DXN products on a clean surface</div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Beginner Guide · UAE</div>
+    <h1 class="hero-title">5 DXN Products<br><em>Every Beginner</em><br>Should Try First</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      DXN has over 1,000 products. If you are new, that can feel overwhelming. So we asked our most experienced distributors in the UAE one question: if someone was starting from zero, which five products would you put in their hands first? Here is what they said — and why.
+    </p>
+
+    <div class="section-head" id="why">
+      <h2>Why Your First Products Matter</h2>
+    </div>
+
+    <p>The products you start with shape your entire DXN experience. Choose something you enjoy using every day and you will stick with it. Choose something that feels forced or unfamiliar and you will lose interest within a week.</p>
+
+    <p>Every product on this list was chosen for the same reason: it is something you can use daily, it replaces something you are already buying, and people genuinely notice a difference after a few weeks. No obscure supplements. No products that require a lifestyle overhaul. Just smart, practical starting points.</p>
+
+    <div class="img-placeholder">IMAGE: A curated flat lay of the 5 recommended DXN products on a clean, natural surface with soft lighting</div>
+
+    <div class="section-head" id="pick-1">
+      <h2>#1 — Lingzhi Coffee 3-in-1</h2>
+    </div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">1</span>
+        <span class="pick-label pick-label-best">Best Starting Point</span>
+      </div>
+      <h3>DXN Lingzhi Coffee 3-in-1</h3>
+      <p class="subtitle">The product that introduces more people to DXN than anything else.</p>
+      <p>If you drink coffee in the morning — and most people in the UAE do — this is the single easiest swap you can make. DXN Lingzhi Coffee 3-in-1 is a creamy, mild instant coffee blended with Ganoderma Lucidum extract. It tastes like a good cup of instant coffee, but with noticeably less acidity and a smoother finish.</p>
+      <p>Most new DXN users start here because the barrier is zero. You are not adding a new habit — you are upgrading an existing one. Within the first week, many people notice their coffee sits lighter on the stomach. Within a month, the energy feels more stable throughout the day.</p>
+      <div class="why-box">
+        <h4>Why Start Here</h4>
+        <ul>
+          <li>Replaces your existing morning coffee — no new habit needed</li>
+          <li>Creamy, familiar taste that most people enjoy immediately</li>
+          <li>Contains Ganoderma from DXN's own certified farms</li>
+          <li>Noticeably less acidic than regular instant coffee</li>
+          <li>The easiest product to share with friends and family</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-2">
+      <h2>#2 — Spirulina Tablets</h2>
+    </div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">2</span>
+        <span class="pick-label pick-label-daily">Daily Essential</span>
+      </div>
+      <h3>DXN Spirulina 500 Tablets</h3>
+      <p class="subtitle">The closest thing to a daily multivitamin in the DXN range.</p>
+      <p>DXN Spirulina is made from pure micro-algae — one of the most nutrient-dense foods on the planet. It contains protein, iron, B-vitamins, and a wide range of antioxidants, all in a simple tablet you take with water. No taste, no preparation, no hassle.</p>
+      <p>For people who skip breakfast, eat irregularly, or simply want to cover their nutritional bases, Spirulina fills the gaps that most modern diets leave open. It is particularly popular among people living in the UAE who maintain fast-paced work schedules and do not always have time for balanced meals.</p>
+      <div class="why-box">
+        <h4>Why Start Here</h4>
+        <ul>
+          <li>Rich in protein, iron, B-vitamins, and antioxidants</li>
+          <li>Simple tablet format — no mixing, no taste</li>
+          <li>Fills nutritional gaps from irregular eating habits</li>
+          <li>Ideal for busy professionals in the UAE</li>
+          <li>One of the most affordable DXN products per day</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-3">
+      <h2>#3 — Ganozhi Toothpaste</h2>
+    </div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">3</span>
+        <span class="pick-label pick-label-essential">Everyday Swap</span>
+      </div>
+      <h3>DXN Ganozhi Toothpaste</h3>
+      <p class="subtitle">The product that surprises people the most.</p>
+      <p>Nobody expects a toothpaste to be a standout product. But DXN Ganozhi Toothpaste is consistently one of the products that converts sceptics into believers. It contains Ganoderma extract and no artificial sweeteners — and the difference is something you feel immediately.</p>
+      <p>The first thing people notice is how clean their mouth feels after brushing. Not the chemical-mint-blast clean of most commercial toothpastes, but a genuine, lasting freshness. Many users report that their gums feel healthier within the first two weeks, and several dentists in the UAE have commented positively when patients switched to it.</p>
+      <div class="why-box">
+        <h4>Why Start Here</h4>
+        <ul>
+          <li>Replaces something you already buy every month</li>
+          <li>No artificial sweeteners — Ganoderma-infused formula</li>
+          <li>Noticeably cleaner, longer-lasting mouth feel</li>
+          <li>Users report healthier gums within 2 weeks</li>
+          <li>One tube lasts longer than most supermarket brands</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-4">
+      <h2>#4 — RG/GL Capsules</h2>
+    </div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">4</span>
+        <span class="pick-label pick-label-daily">Core Supplement</span>
+      </div>
+      <h3>DXN Reishi Gano (RG) + Ganocelium (GL)</h3>
+      <p class="subtitle">The purest form of Ganoderma in the DXN range.</p>
+      <p>If the Lingzhi Coffee introduces you to Ganoderma, RG and GL capsules are where you go deeper. RG is made from the fruiting body of the Ganoderma mushroom; GL is made from the mycelium — the root-like structure. Together they provide a broader spectrum of Ganoderma's active compounds than any single product.</p>
+      <p>Most serious DXN users take RG and GL daily alongside their coffee. They are typically the second or third product people add to their routine, once they have experienced the coffee and want to increase their Ganoderma intake. The capsule format makes them easy to take — two capsules with water, morning and evening.</p>
+      <div class="why-box">
+        <h4>Why Start Here</h4>
+        <ul>
+          <li>Pure Ganoderma in concentrated capsule form</li>
+          <li>RG + GL together cover a full spectrum of active compounds</li>
+          <li>Easy to take — no preparation or mixing</li>
+          <li>The natural next step after trying Lingzhi Coffee</li>
+          <li>Used daily by the majority of long-term DXN members</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="pick-5">
+      <h2>#5 — Cocozhi (Chocolate Drink)</h2>
+    </div>
+
+    <div class="product-pick">
+      <div>
+        <span class="pick-number">5</span>
+        <span class="pick-label pick-label-essential">Family Favourite</span>
+      </div>
+      <h3>DXN Cocozhi</h3>
+      <p class="subtitle">The product that wins over everyone who does not drink coffee.</p>
+      <p>Not everyone in your household drinks coffee. Children do not. Many adults prefer chocolate or tea. DXN Cocozhi solves this — it is a rich, creamy chocolate drink infused with Ganoderma extract, and it genuinely tastes like a premium hot chocolate.</p>
+      <p>Cocozhi is the product that turns a single DXN user into a DXN household. Once the kids start asking for it every evening, or your spouse starts choosing it over regular hot chocolate, the entire family is consuming Ganoderma daily without anyone thinking about it. That is powerful — and it is why experienced distributors always recommend having a box at home.</p>
+      <div class="why-box">
+        <h4>Why Start Here</h4>
+        <ul>
+          <li>Rich chocolate taste — loved by adults and children</li>
+          <li>Contains Ganoderma in a format non-coffee drinkers enjoy</li>
+          <li>Turns your household into a DXN household</li>
+          <li>Perfect as an evening drink or afternoon treat</li>
+          <li>One of the easiest products to introduce to sceptics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" id="compare">
+      <h2>Quick Comparison</h2>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Daily Use</th>
+          <th>Family</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lingzhi Coffee 3-in-1</strong></td>
+          <td>Beverage</td>
+          <td class="check">&#10003;</td>
+          <td>Adults</td>
+          <td>Morning coffee replacement</td>
+        </tr>
+        <tr>
+          <td><strong>Spirulina 500</strong></td>
+          <td>Supplement</td>
+          <td class="check">&#10003;</td>
+          <td>All ages</td>
+          <td>Nutritional foundation</td>
+        </tr>
+        <tr>
+          <td><strong>Ganozhi Toothpaste</strong></td>
+          <td>Personal care</td>
+          <td class="check">&#10003;</td>
+          <td>All ages</td>
+          <td>Daily oral care upgrade</td>
+        </tr>
+        <tr>
+          <td><strong>RG/GL Capsules</strong></td>
+          <td>Supplement</td>
+          <td class="check">&#10003;</td>
+          <td>Adults</td>
+          <td>Pure Ganoderma intake</td>
+        </tr>
+        <tr>
+          <td><strong>Cocozhi</strong></td>
+          <td>Beverage</td>
+          <td class="check">&#10003;</td>
+          <td>All ages</td>
+          <td>Non-coffee drinkers &amp; kids</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <strong>Distributor tip:</strong> You do not need to buy all five at once. Start with the Lingzhi Coffee 3-in-1 — use it for two weeks, experience the difference yourself, and then add one product at a time. The best DXN routine is one you build gradually and maintain consistently.
+    </div>
+
+    <div class="section-head" id="faq">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">Do I need to buy all five products to start?</p>
+        <p class="faq-a">No. Most people start with just the Lingzhi Coffee and add other products over time. The goal is to build a routine you enjoy, not to overload yourself on day one.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Are these products halal?</p>
+        <p class="faq-a">Yes. All DXN products listed here are halal certified, making them suitable for Muslim consumers across the UAE and MENA region.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Where can I buy DXN products in the UAE?</p>
+        <p class="faq-a">DXN products are available through registered distributors — not in regular retail shops. Contact us via WhatsApp and we will help you choose the right products and arrange delivery to your location.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can children use DXN products?</p>
+        <p class="faq-a">Cocozhi, Spirulina, and Ganozhi Toothpaste are commonly used by children. The coffee products contain caffeine and are intended for adults. As with any supplement, consult your pediatrician if you have concerns.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is it cheaper to register as a DXN member?</p>
+        <p class="faq-a">Yes. Registering as a DXN member gives you access to distributor pricing on all products — which is significantly lower than retail price. Registration is simple and requires a small one-time fee with no ongoing commitment.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Join Our Free Weekly Zoom Meeting</h3>
+      <p>Every week we host a free session in Arabic and English — covering products, the business opportunity, and the registration process. Attend, ask anything, leave with no obligation.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">Register via WhatsApp</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc">
+        <li><a href="#why">Why First Products Matter</a></li>
+        <li><a href="#pick-1">#1 Lingzhi Coffee 3-in-1</a></li>
+        <li><a href="#pick-2">#2 Spirulina Tablets</a></li>
+        <li><a href="#pick-3">#3 Ganozhi Toothpaste</a></li>
+        <li><a href="#pick-4">#4 RG/GL Capsules</a></li>
+        <li><a href="#pick-5">#5 Cocozhi</a></li>
+        <li><a href="#compare">Quick Comparison</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>Free Zoom Training</h4>
+      <p>Learn about DXN products and the business opportunity. Every week &middot; Arabic &amp; English</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">Book Your Spot</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Starter Kit Checklist</h4>
+      <ul class="fact-list">
+        <li>Lingzhi Coffee 3-in-1 (20 sachets)</li>
+        <li>Spirulina 500 tablets</li>
+        <li>Ganozhi Toothpaste</li>
+        <li>RG + GL capsules (30 each)</li>
+        <li>Cocozhi (20 sachets)</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Why Choose DXN</h4>
+      <ul class="fact-list">
+        <li>30+ years in the market</li>
+        <li>180+ countries worldwide</li>
+        <li>Own Ganoderma farms</li>
+        <li>Halal certified products</li>
+        <li>Low startup cost to join</li>
+        <li>Available across the UAE</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

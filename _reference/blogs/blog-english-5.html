@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DXN Compensation Plan Explained Simply — How You Actually Earn Money | Freedom with DXN</title>
+<meta name="description" content="Confused by the DXN compensation plan? This simple guide breaks down exactly how points, bonuses, and passive income work — with real examples in AED.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #46387b;
+    --emerald: #43af73;
+    --sage: #43af73;
+    --gold: #bf3c36;
+    --cream: #f7f5fc;
+    --warm-white: #fdfcff;
+    --ink: #1c1c1c;
+    --muted: #6b7280;
+    --border: #ddd8ef;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--forest);
+  }
+
+  .hero-img {
+    width: 100%;
+    display: block;
+    opacity: 0.55;
+    filter: saturate(1.1);
+  }
+
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c1878 0%, #46387b 45%, #5a4a96 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder-text {
+    color: rgba(255,255,255,0.15);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    text-align: center;
+    padding: 24px;
+    max-width: 600px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,24,120,0.95) 0%, rgba(70,56,123,0.3) 55%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 clamp(20px, 6vw, 100px) 64px;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5.5vw, 64px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--sage); }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-meta span::before { content: '·'; margin-right: 20px; }
+  .hero-meta span:first-child::before { content: ''; margin-right: 0; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 72px clamp(20px, 5vw, 60px) 100px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+  }
+
+  .article-intro {
+    font-size: 20px;
+    color: var(--emerald);
+    font-weight: 500;
+    border-left: 4px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .article p { margin-bottom: 22px; color: #3a3a3a; }
+
+  .section-head {
+    margin: 52px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .img-placeholder {
+    background: linear-gradient(135deg, #ede8f8, #d8cff0);
+    border: 1.5px dashed var(--forest);
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 36px 0;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--forest);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  .income-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .income-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    border-top: 3px solid var(--forest);
+  }
+
+  .income-card.highlight { border-top-color: var(--emerald); }
+  .income-card .icon { font-size: 26px; margin-bottom: 10px; }
+
+  .income-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 8px;
+  }
+
+  .income-card p { font-size: 14px; color: #4a4a4a; margin-bottom: 0; }
+
+  .explainer-box {
+    background: var(--forest);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin: 36px 0;
+  }
+
+  .explainer-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; margin-bottom: 20px;
+    color: var(--sage);
+  }
+
+  .explainer-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .explainer-row:last-child { border-bottom: none; }
+
+  .explainer-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    min-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .explainer-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .explainer-value span {
+    background: rgba(67,175,115,0.2);
+    color: var(--sage);
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    font-weight: 400;
+  }
+
+  .scenario {
+    background: #f0fbf5;
+    border: 1px solid #b5e8cc;
+    border-left: 4px solid var(--emerald);
+    border-radius: 6px;
+    padding: 28px 24px;
+    margin: 32px 0;
+  }
+
+  .scenario-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: #1a7a4a; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .scenario-title::before {
+    content: '📊';
+    font-size: 20px;
+  }
+
+  .scenario-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .scenario-table th {
+    background: rgba(67,175,115,0.15);
+    color: #1a7a4a;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .scenario-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(67,175,115,0.15);
+    color: #3a3a3a;
+  }
+
+  .scenario-table tr:last-child td { border-bottom: none; }
+
+  .scenario-total {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--emerald);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .rank-table th {
+    background: var(--forest);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .rank-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #4a4a4a;
+    vertical-align: middle;
+  }
+
+  .rank-table tr:nth-child(even) td { background: #f7f5fc; }
+
+  .rank-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .rank-entry { background: #e8f5ee; color: #1a7a4a; }
+  .rank-mid   { background: #ede8f8; color: #46387b; }
+  .rank-senior { background: #fff0e8; color: #b85a00; }
+  .rank-top   { background: #fff0f0; color: #bf3c36; }
+
+  .disclaimer {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-left: 4px solid #d4a000;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: #5a4800;
+    line-height: 1.7;
+  }
+  .disclaimer strong { color: #3a3000; }
+
+  .faq { margin: 8px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700; color: var(--forest);
+    margin-bottom: 8px; display: flex; gap: 10px;
+  }
+
+  .faq-q::before {
+    content: 'Q'; background: var(--gold); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 7px;
+    border-radius: 3px; flex-shrink: 0; margin-top: 3px; height: fit-content;
+  }
+
+  .faq-a { color: #4a4a4a; padding-left: 32px; margin-bottom: 0; }
+
+  .cta-banner {
+    background: var(--forest); border-radius: 10px;
+    padding: 48px 40px; text-align: center;
+    margin-top: 56px; position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(67,175,115,0.12);
+  }
+
+  .cta-banner h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; margin-bottom: 12px; }
+  .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 15px 36px; border-radius: 4px; text-decoration: none;
+    font-weight: 500; font-size: 15px; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(191,60,54,0.4); }
+
+  .sidebar-card {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--forest); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .toc { list-style: none; }
+  .toc li { padding: 8px 0; border-bottom: 1px solid #f0ebe3; font-size: 14px; }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { color: var(--emerald); text-decoration: none; display: flex; gap: 8px; align-items: start; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: '\2192'; font-size: 12px; margin-top: 1px; flex-shrink: 0; color: var(--emerald); }
+
+  .fact-list { list-style: none; }
+  .fact-list li { font-size: 14px; color: #4a4a4a; padding: 7px 0; border-bottom: 1px solid #f0ebe3; display: flex; gap: 10px; align-items: center; }
+  .fact-list li:last-child { border-bottom: none; }
+  .fact-list li::before { content: '\2713'; color: var(--sage); font-weight: 700; font-size: 13px; }
+
+  .zoom-card {
+    background: var(--forest); color: #fff; border-radius: 8px;
+    padding: 28px 24px; text-align: center; margin-bottom: 28px;
+  }
+  .zoom-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .zoom-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .zoom-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+
+  .btn-sage {
+    display: inline-block; background: var(--sage); color: #fff;
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .btn-sage:hover { opacity: 0.85; }
+
+  @media (max-width: 860px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { order: -1; }
+    .hero { min-height: auto; }
+    .income-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="/images/blog/5/1775538590_4642481.png" alt="DXN Compensation Plan" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Business Opportunity · Income Guide</div>
+    <h1 class="hero-title">DXN Compensation Plan<br><em>Explained Simply</em><br>— How You Actually Earn</h1>
+    <div class="hero-meta">
+      <span>Freedom with DXN</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <article class="article">
+
+    <p class="article-intro">
+      Confused by the DXN compensation plan? You are not alone. This guide breaks down exactly how points, bonuses, and passive income work — in plain language, with real examples in AED.
+    </p>
+
+    <div class="section-head" id="overview">
+      <h2>How DXN's Income Model Works</h2>
+    </div>
+
+    <p>DXN uses a single-level marketing structure — meaning every distributor joins under a sponsor and builds their own network downward. There are no complex binary legs, no forced matrices, and no confusing placement rules. The income you earn is directly tied to two things: the products you and your team sell, and the size and activity of your distributor network.</p>
+
+    <p>Everything in DXN's compensation plan revolves around one unit: the Point Value (PV). Every product you purchase carries a PV, and your monthly PV — combined with the PV of your entire downline — determines your income level. The higher your total group PV, the higher your commission percentage.</p>
+
+    <div class="section-head" id="income-types">
+      <h2>The Four Ways You Earn with DXN</h2>
+    </div>
+
+    <div class="income-grid">
+      <div class="income-card highlight">
+        <div class="icon">&#x1F6D2;</div>
+        <h3>Retail Profit</h3>
+        <p>Buy products at distributor price, sell at retail price. The difference is your immediate profit — typically 25% on every sale. No monthly targets required to earn this.</p>
+      </div>
+      <div class="income-card highlight">
+        <div class="icon">&#x1F4CA;</div>
+        <h3>Group Bonus</h3>
+        <p>A percentage commission on your total group PV every month. This is the core recurring income — it grows as your team grows and stays active.</p>
+      </div>
+      <div class="income-card">
+        <div class="icon">&#x2B50;</div>
+        <h3>Star Group Bonus</h3>
+        <p>Once you qualify as a Star Agent or above, you earn additional bonuses on the groups led by your direct Star-qualified distributors below you.</p>
+      </div>
+      <div class="income-card">
+        <div class="icon">&#x1F30D;</div>
+        <h3>International Profit Sharing</h3>
+        <p>Crown Ambassadors and above participate in DXN's global profit-sharing pool — a percentage of total worldwide sales distributed among the top rank holders.</p>
+      </div>
+    </div>
+
+    <div class="section-head" id="points">
+      <h2>Understanding Point Value (PV)</h2>
+    </div>
+
+    <p>Every time you or someone in your downline purchases a DXN product, that purchase generates a Point Value. Your monthly group PV is the sum of all purchases made by you and every distributor in your entire network that month. This total group PV is what determines your commission percentage for that month.</p>
+
+    <div class="explainer-box">
+      <h3>How Group PV Translates to Commission</h3>
+      <div class="explainer-row">
+        <span class="explainer-label">100 – 299 PV</span>
+        <span class="explainer-value">6% commission <span>Entry Level</span></span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">300 – 599 PV</span>
+        <span class="explainer-value">9% commission <span>Growing</span></span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">600 – 999 PV</span>
+        <span class="explainer-value">12% commission</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">1,000 – 1,999 PV</span>
+        <span class="explainer-value">15% commission</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">2,000 – 3,999 PV</span>
+        <span class="explainer-value">18% commission</span>
+      </div>
+      <div class="explainer-row">
+        <span class="explainer-label">4,000+ PV</span>
+        <span class="explainer-value">21% commission <span>Star Agent+</span></span>
+      </div>
+    </div>
+
+    <p>The key insight here is that your income grows not just when you personally sell more — but when the people you introduce to DXN also build their own activity. This is what creates passive, compounding income over time.</p>
+
+    <div class="section-head" id="example">
+      <h2>A Real Example in AED</h2>
+    </div>
+
+    <p>Here is a simple, realistic picture of what Month 3 might look like for an active distributor in the UAE who has introduced five people to DXN and each of those five are personally buying and sharing products:</p>
+
+    <div class="scenario">
+      <div class="scenario-title">Month 3 Income Scenario — UAE Distributor</div>
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Income Source</th>
+            <th>Activity</th>
+            <th>Estimated AED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Retail Profit</td>
+            <td>Personal sales to 4–5 customers</td>
+            <td>AED 300 – 500</td>
+          </tr>
+          <tr>
+            <td>Group Bonus (9%)</td>
+            <td>Group PV ~400 across 5 active members</td>
+            <td>AED 400 – 600</td>
+          </tr>
+          <tr>
+            <td>Differential Bonus</td>
+            <td>Commission difference on downline rank</td>
+            <td>AED 100 – 200</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="scenario-total">
+        <span>Estimated Month 3 Total</span>
+        <strong>AED 800 – 1,300 / month</strong>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important:</strong> The figures above are illustrative examples only. Actual income depends entirely on your personal activity, the size and consistency of your team, and how much time you invest. DXN does not guarantee any income. Results vary significantly between distributors. This is a business — it rewards consistent effort over time, not passive participation.
+    </div>
+
+    <div class="section-head" id="ranks">
+      <h2>DXN Distributor Ranks at a Glance</h2>
+    </div>
+
+    <p>As your group PV grows month after month, you qualify for higher ranks within DXN. Each rank unlocks additional bonus types and higher earning potential. Here is a simplified view of the progression:</p>
+
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Approx. Group PV</th>
+          <th>Key Benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-badge rank-entry">Distributor</span></td>
+          <td>100 – 299 PV</td>
+          <td>Retail profit + 6% group bonus</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-entry">Agent</span></td>
+          <td>300 – 999 PV</td>
+          <td>Up to 12% group bonus</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-mid">Star Agent</span></td>
+          <td>4,000+ PV</td>
+          <td>21% commission + Star Group Bonus unlocked</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-senior">Star Ruby</span></td>
+          <td>Sustained group growth</td>
+          <td>Higher differential bonuses on downline Stars</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge rank-top">Crown Ambassador</span></td>
+          <td>Large sustained network</td>
+          <td>International profit sharing + leadership bonuses</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="img-placeholder">IMAGE: Clean infographic-style visual showing DXN rank progression — distributor to Crown Ambassador</div>
+
+    <div class="section-head" id="realistic">
+      <h2>What Does It Actually Take?</h2>
+    </div>
+
+    <p>The honest answer is: consistent daily effort over months, not weeks. DXN is not a get-rich-quick scheme and it does not work if you sign up and wait for things to happen. What it does offer is a business model with very low startup cost, no inventory risk, and income potential that scales with the size and activity of your team.</p>
+
+    <p>Most successful DXN distributors in the UAE follow a simple pattern: they use the products personally, share their genuine experience on social media and WhatsApp, introduce two to five people per month to the business, and support those people consistently through weekly Zoom training. Done consistently over six to twelve months, this builds real, compounding group volume.</p>
+
+    <p>The distributors who earn significant income are not the ones who recruited the most people in month one — they are the ones who kept showing up, kept training their team, and kept growing steadily over time.</p>
+
+    <div class="section-head" id="faq">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">Do I need to buy a large stock of products to start?</p>
+        <p class="faq-a">No. DXN does not require you to purchase bulk inventory upfront. Most distributors start by ordering products for personal use, building genuine experience, and then sharing that experience with others. You order what you need, when you need it.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I get paid — cash, bank transfer, or points?</p>
+        <p class="faq-a">DXN pays commissions directly to your registered bank account each month, once your earnings reach the minimum payout threshold. The exact payment process and currency depend on your country of registration.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I earn income without recruiting anyone?</p>
+        <p class="faq-a">Yes — through retail profit. If you buy products at distributor price and sell them to customers at retail price, you keep the margin. However, the group bonus and passive income components only grow when you build a team.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is there a monthly sales quota I have to meet?</p>
+        <p class="faq-a">DXN does not impose forced monthly purchase quotas. Your commission is based on actual group PV that month. If your group activity is lower in a given month, your commission for that month will be lower — but you do not lose your rank or downline.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I learn more or get started in the UAE?</p>
+        <p class="faq-a">The best first step is to attend our free weekly Zoom session — we walk through the compensation plan live, answer all questions, and explain the registration process step by step. No obligation to join.</p>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Join Our Free Weekly Zoom Meeting</h3>
+      <p>Every week we host a free session in Arabic and English — covering products, the business opportunity, and the registration process. Attend, ask anything, leave with no obligation.</p>
+      <a href="https://wa.me/message/EFSQ2IDNVG3YB1" class="btn-gold">Register via WhatsApp</a>
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc">
+        <li><a href="#overview">How the Model Works</a></li>
+        <li><a href="#income-types">4 Ways You Earn</a></li>
+        <li><a href="#points">Understanding PV</a></li>
+        <li><a href="#example">Real Example in AED</a></li>
+        <li><a href="#ranks">Distributor Ranks</a></li>
+        <li><a href="#realistic">What Does It Take?</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="zoom-card">
+      <div class="icon">&#x1F4F9;</div>
+      <h4>Free Zoom Training</h4>
+      <p>We explain the full comp plan live. Every week &middot; Arabic &amp; English &middot; No obligation</p>
+      <a href="https://calendly.com/freedom-with-dxn2026/welcome-to-freedom-with-dxn" class="btn-sage">Book Your Spot</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Income Quick Facts</h4>
+      <ul class="fact-list">
+        <li>Up to 21% group bonus</li>
+        <li>Retail profit on every sale</li>
+        <li>No forced monthly quotas</li>
+        <li>Paid direct to bank account</li>
+        <li>Income grows with your team</li>
+        <li>International network possible</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Getting Started</h4>
+      <ul class="fact-list">
+        <li>Low one-time registration fee</li>
+        <li>No inventory required upfront</li>
+        <li>Work fully online from UAE</li>
+        <li>Arabic &amp; English support</li>
+        <li>Weekly Zoom training included</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>
