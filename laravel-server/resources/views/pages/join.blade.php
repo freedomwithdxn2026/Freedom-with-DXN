@@ -353,7 +353,7 @@
             </p>
             <div class="video-wrapper reveal">
                 <div class="video-frame">
-                    <iframe id="join-video" src="https://www.youtube.com/embed/{{ $videoId }}?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1" title="DXN Opportunity" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="join-video" src="https://www.youtube.com/embed/{{ $videoId }}?playsinline=1&rel=0&enablejsapi=1" title="DXN Opportunity" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -481,19 +481,6 @@
 </div>
 
 @push('scripts')
-<script>
-function onYouTubeIframeAPIReady() {
-    new YT.Player('join-video', {
-        events: {
-            onReady: function(e) {
-                e.target.unMute();
-                e.target.setVolume(80);
-            }
-        }
-    });
-}
-</script>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function() {
     // FAQ accordion toggle
