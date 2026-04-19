@@ -39,7 +39,44 @@ class CartController extends Controller
         $cart[$id] = ($cart[$id] ?? 0) + $qty;
         session(['cart' => $cart]);
 
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'count' => array_sum($cart),
+            ]);
+        }
+
         return back()->with('success', 'Product added to cart!');
+    }
+
+    public function data()
+    {
+        $cart = session('cart', []);
+        $items = [];
+        $total = 0;
+        $count = 0;
+
+        foreach ($cart as $id => $qty) {
+            $product = Product::find($id);
+            if ($product) {
+                $items[] = [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'price' => (float) $product->price,
+                    'image' => $product->landing_image ?: ($product->image ?: ''),
+                    'quantity' => (int) $qty,
+                    'subtotal' => (float) $product->price * $qty,
+                ];
+                $total += $product->price * $qty;
+                $count += $qty;
+            }
+        }
+
+        return response()->json([
+            'items' => $items,
+            'total' => $total,
+            'count' => $count,
+        ]);
     }
 
     public function update(Request $request)

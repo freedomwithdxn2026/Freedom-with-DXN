@@ -103,7 +103,7 @@
     {{-- Action Buttons --}}
     <div class="px-4 pt-2 pb-4 space-y-2">
         {{-- Add to Cart --}}
-        <form method="POST" action="{{ route('cart.add') }}">
+        <form method="POST" action="{{ route('cart.add') }}" data-cart-add>
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="quantity" value="1">

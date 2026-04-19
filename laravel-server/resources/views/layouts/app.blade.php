@@ -88,8 +88,73 @@
 
     @stack('styles')
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col" x-data>
+    {{-- Alpine cart store --}}
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('cart', {
+                open: false,
+                count: {{ (int) array_sum(session('cart', [])) }},
+                items: [],
+                total: 0,
+                justAdded: false,
+                _csrf() { return document.querySelector('meta[name=csrf-token]')?.content || ''; },
+                async refresh() {
+                    try {
+                        const res = await fetch('{{ route('cart.data') }}', { headers: { 'Accept': 'application/json' }, credentials: 'same-origin' });
+                        if (!res.ok) return;
+                        const data = await res.json();
+                        this.items = data.items;
+                        this.total = data.total;
+                        this.count = data.count;
+                    } catch (e) {}
+                },
+                async add(productId, quantity = 1) {
+                    try {
+                        const res = await fetch('{{ route('cart.add') }}', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json',
+                                'X-CSRF-TOKEN': this._csrf(),
+                                'X-Requested-With': 'XMLHttpRequest',
+                            },
+                            credentials: 'same-origin',
+                            body: JSON.stringify({ product_id: productId, quantity }),
+                        });
+                        if (res.status === 401 || res.redirected) { window.location.href = '{{ route('login') }}'; return; }
+                        if (!res.ok) return;
+                        await this.refresh();
+                        this.open = true;
+                        this.justAdded = true;
+                        setTimeout(() => { this.justAdded = false; }, 2500);
+                    } catch (e) {}
+                },
+                async remove(productId) {
+                    try {
+                        await fetch('/cart/remove/' + productId, {
+                            method: 'DELETE',
+                            headers: { 'X-CSRF-TOKEN': this._csrf(), 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                            credentials: 'same-origin',
+                        });
+                        await this.refresh();
+                    } catch (e) {}
+                },
+            });
+        });
+
+        document.addEventListener('submit', (e) => {
+            const form = e.target.closest('form[data-cart-add]');
+            if (!form) return;
+            e.preventDefault();
+            const pid = form.querySelector('input[name="product_id"]')?.value;
+            const qty = parseInt(form.querySelector('input[name="quantity"]')?.value || '1', 10);
+            if (pid && window.Alpine) window.Alpine.store('cart').add(pid, qty);
+        });
+    </script>
+
     @include('partials.navbar')
+    @include('partials.cart-drawer')
 
     {{-- Flash Messages --}}
     @if(session('success'))
