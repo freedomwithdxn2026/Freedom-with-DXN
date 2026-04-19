@@ -156,7 +156,7 @@
             @foreach([
                 ['value' => '1993', 'label' => $lang === 'ar' ? 'تأسست عام' : 'Founded'],
                 ['value' => '180+', 'label' => $lang === 'ar' ? 'دولة' : 'Countries'],
-                ['value' => '9M+', 'label' => $lang === 'ar' ? 'عضو' : 'Members'],
+                ['value' => '22M+', 'label' => $lang === 'ar' ? 'عضو' : 'Members'],
                 ['value' => '1000+', 'label' => $lang === 'ar' ? 'منتج' : 'Products'],
             ] as $stat)
                 <div class="text-center p-6 rounded-2xl" style="background: rgba(191,60,54,0.08);">
