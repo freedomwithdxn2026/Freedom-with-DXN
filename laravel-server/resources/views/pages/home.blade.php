@@ -19,7 +19,7 @@
     "description": "Premium DXN health products including Lingzhi Coffee, Cocozhi, and Spirulina.",
     "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+971506662875",
+        "telephone": "+971555574958",
         "contactType": "customer service",
         "availableLanguage": ["English", "Arabic"]
     },

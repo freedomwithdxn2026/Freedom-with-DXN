@@ -58,7 +58,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                    <input type="text" name="contact[phone]" value="{{ $contact['phone'] ?? '' }}" class="input-field" placeholder="+971 50 666 2875">
+                    <input type="text" name="contact[phone]" value="{{ $contact['phone'] ?? '' }}" class="input-field" placeholder="+971 55 557 4958">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>

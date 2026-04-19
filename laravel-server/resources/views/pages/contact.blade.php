@@ -20,7 +20,7 @@
     "mainEntity": {
         "@type": "LocalBusiness",
         "name": "Freedom with DXN",
-        "telephone": "{{ $settings->contact['phone'] ?? '+971 50 666 2875' }}",
+        "telephone": "{{ $settings->contact['phone'] ?? '+971 55 557 4958' }}",
         "email": "{{ $settings->contact['email'] ?? 'info@freedomwithdxn.com' }}",
         "address": {
             "@type": "PostalAddress",
@@ -65,7 +65,7 @@
                 </p>
             </div>
             @foreach([
-                ['label' => $lang === 'ar' ? 'هاتف / واتساب' : 'Phone / WhatsApp', 'value' => $settings->contact['phone'] ?? '+971 50 666 2875'],
+                ['label' => $lang === 'ar' ? 'هاتف / واتساب' : 'Phone / WhatsApp', 'value' => $settings->contact['phone'] ?? '+971 55 557 4958'],
                 ['label' => $lang === 'ar' ? 'البريد الإلكتروني' : 'Email', 'value' => $settings->contact['email'] ?? 'info@freedomwithdxn.com'],
             ] as $item)
                 <div class="flex items-start gap-3">
