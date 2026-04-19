@@ -68,7 +68,7 @@
             @foreach([
                 ['title' => 'Low Startup Cost', 'desc' => 'Start with minimal investment. No expensive kits or inventory required.'],
                 ['title' => 'Global Business', 'desc' => 'One membership works in 180+ countries. Travel and earn anywhere.'],
-                ['title' => 'Strong Community', 'desc' => 'Join a supportive network of 9 million+ distributors worldwide.'],
+                ['title' => 'Strong Community', 'desc' => 'Join a supportive network of 22 million+ distributors worldwide.'],
                 ['title' => 'Multiple Income Streams', 'desc' => 'Earn from retail profits, group bonuses, royalty income, and more.'],
             ] as $item)
                 <div class="card p-6 text-center">

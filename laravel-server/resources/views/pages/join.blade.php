@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Join DXN - Say Yes to Your Financial Freedom | Freedom With DXN')
-@section('description', 'Join the DXN team and say yes to financial freedom. 6M+ members worldwide, 180+ countries, 30+ years established. Use referral code 141019805 to start.')
+@section('description', 'Join the DXN team and say yes to financial freedom. 22M+ members worldwide, 180+ countries, 30+ years established. Use referral code 141019805 to start.')
 @section('keywords', 'join DXN team, DXN business opportunity, DXN distributor UAE, referral code 141019805')
 
 @php
@@ -25,14 +25,14 @@
     $benefits = $lang === 'ar' ? [
         ['icon' => '✦', 'title' => 'منتجات عالمية المستوى', 'desc' => 'مكملات الجانوديرما وقهوة لينجي ومنتجات صحية معتمدة من GMP ومصنوعة في مزارع DXN الخاصة.'],
         ['icon' => '◈', 'title' => 'دخل سلبي حقيقي', 'desc' => 'اكسب عمولات على مبيعاتك ومبيعات فريقك. الدخل يتراكم مع نمو شبكتك.'],
-        ['icon' => '◉', 'title' => 'شبكة عالمية', 'desc' => 'انضم إلى مجتمع من أكثر من 6 ملايين عضو نشط حول العالم. تواصل وتعلم وانمُ.'],
+        ['icon' => '◉', 'title' => 'شبكة عالمية', 'desc' => 'انضم إلى مجتمع من أكثر من 22 مليون عضو نشط حول العالم. تواصل وتعلم وانمُ.'],
         ['icon' => '◎', 'title' => 'اعمل من أي مكان', 'desc' => 'لا مكتب. لا مواعيد. ابنِ عملك من المنزل أو المقهى أو أثناء السفر.'],
         ['icon' => '✧', 'title' => 'تدريب أسبوعي مجاني', 'desc' => 'جلسات زووم أسبوعية بالعربية والإنجليزية تغطي المنتجات والعمل والنمو الشخصي.'],
         ['icon' => '✪', 'title' => 'إرشاد شخصي', 'desc' => 'ستحصل على دعم شخصي مباشر مني لتتقدم أسرع وتتجنب الأخطاء الشائعة.'],
     ] : [
         ['icon' => '✦', 'title' => 'World-Class Products', 'desc' => 'Ganoderma supplements, Lingzhi coffee, and wellness products — GMP certified and cultivated on DXN farms.'],
         ['icon' => '◈', 'title' => 'Real Passive Income', 'desc' => 'Earn commissions on your sales and your team\'s. Income compounds as your network grows.'],
-        ['icon' => '◉', 'title' => 'Global Network', 'desc' => 'Join a community of 6+ million active members worldwide. Connect, learn, grow together.'],
+        ['icon' => '◉', 'title' => 'Global Network', 'desc' => 'Join a community of 22+ million active members worldwide. Connect, learn, grow together.'],
         ['icon' => '◎', 'title' => 'Work From Anywhere', 'desc' => 'No office. No fixed hours. Build your business from home, a cafe, or while traveling.'],
         ['icon' => '✧', 'title' => 'Free Weekly Training', 'desc' => 'Weekly Zoom sessions in Arabic and English covering products, business, and personal growth.'],
         ['icon' => '✪', 'title' => 'Personal Mentorship', 'desc' => 'Get direct 1-on-1 mentorship from me to move faster and avoid common mistakes.'],
