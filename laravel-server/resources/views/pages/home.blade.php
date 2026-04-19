@@ -127,12 +127,14 @@
         <p class="text-white/80 mb-8 max-w-2xl mx-auto">
             {{ $lang === 'ar' ? '3 دقائق توضح لك كل ما تحتاج معرفته عن DXN وكيف يمكنك البدء اليوم.' : '3 minutes that show you everything you need to know about DXN and how to start today.' }}
         </p>
-        <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl" style="padding-top: 56.25%;">
-            <iframe class="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/ltrQYyUNgU0?playsinline=1&rel=0"
-                    title="{{ $lang === 'ar' ? 'فرصة DXN' : 'DXN Opportunity' }}"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen loading="lazy"></iframe>
+        <div class="relative p-1 rounded-3xl shadow-2xl" style="background: linear-gradient(135deg, #46387b, #43af73 40%, #c9a84c 70%, #bf3c36);">
+            <div class="relative w-full overflow-hidden rounded-2xl bg-black" style="padding-top: 56.25%;">
+                <iframe class="absolute inset-0 w-full h-full border-0"
+                        src="https://www.youtube.com/embed/ltrQYyUNgU0?playsinline=1&rel=0"
+                        title="{{ $lang === 'ar' ? 'فرصة DXN' : 'DXN Opportunity' }}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen loading="lazy"></iframe>
+            </div>
         </div>
     </div>
 </section>
