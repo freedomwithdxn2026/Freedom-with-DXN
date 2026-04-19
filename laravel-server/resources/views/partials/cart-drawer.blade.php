@@ -1,5 +1,18 @@
 @php $lang = session('lang', 'en'); $isAr = $lang === 'ar'; @endphp
 
+@push('styles')
+<style>
+    /* YouTube/Vimeo iframes and the hero <video> can paint above fixed overlays
+       in some compositing paths. Hide them while the cart drawer is open. */
+    body.cart-open iframe,
+    body.cart-open video { visibility: hidden; }
+    body.cart-open { overflow: hidden; }
+</style>
+@endpush
+
+{{-- Body-class toggler for iframe bleed-through + scroll lock --}}
+<div x-data x-effect="document.body.classList.toggle('cart-open', $store.cart.open)" style="display: none;"></div>
+
 {{-- Backdrop --}}
 <div x-show="$store.cart.open"
      x-transition:enter="transition ease-out duration-200"
@@ -9,7 +22,7 @@
      x-transition:leave-start="opacity-100"
      x-transition:leave-end="opacity-0"
      @click="$store.cart.open = false"
-     class="fixed inset-0 z-[60] bg-black/50"
+     class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
      style="display: none;"></div>
 
 {{-- Drawer --}}
