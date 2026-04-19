@@ -44,8 +44,15 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div><label class="block text-sm font-medium text-gray-700 mb-1">Title *</label><input type="text" name="title" required class="input-field"></div>
-                <div><label class="block text-sm font-medium text-gray-700 mb-1">العنوان بالعربي (Arabic Title)</label><input type="text" name="title_ar" class="input-field" dir="rtl" placeholder="اختياري"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-1">Title *</label><input type="text" id="new-title" name="title" required class="input-field"></div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        العنوان بالعربي
+                        <button type="button" onclick="retranslate('new-title','new-title-ar','new-title-status')" class="text-xs text-blue-500 hover:underline mr-1">↩ ترجمة</button>
+                        <span id="new-title-status" class="text-xs text-gray-400"></span>
+                    </label>
+                    <input type="text" id="new-title-ar" name="title_ar" class="input-field" dir="rtl" placeholder="يُترجم تلقائياً...">
+                </div>
                 <div><label class="block text-sm font-medium text-gray-700 mb-1">Category *</label>
                     <select name="category" required class="input-field">
                         @foreach(['health','business','products','success-stories','tips'] as $cat)
@@ -56,8 +63,15 @@
                 <div><label class="block text-sm font-medium text-gray-700 mb-1">Image URL</label><input type="text" name="image" class="input-field"></div>
                 <div class="flex items-center pt-6"><label class="flex items-center gap-2"><input type="checkbox" name="published" value="1" checked> Published</label></div>
             </div>
-            <div><label class="block text-sm font-medium text-gray-700 mb-1">Excerpt</label><input type="text" name="excerpt" class="input-field"></div>
-            <div><label class="block text-sm font-medium text-gray-700 mb-1">المقتطف بالعربي (Arabic Excerpt)</label><input type="text" name="excerpt_ar" class="input-field" dir="rtl" placeholder="اختياري"></div>
+            <div><label class="block text-sm font-medium text-gray-700 mb-1">Excerpt</label><input type="text" id="new-excerpt" name="excerpt" class="input-field"></div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    المقتطف بالعربي
+                    <button type="button" onclick="retranslate('new-excerpt','new-excerpt-ar','new-excerpt-status')" class="text-xs text-blue-500 hover:underline mr-1">↩ ترجمة</button>
+                    <span id="new-excerpt-status" class="text-xs text-gray-400"></span>
+                </label>
+                <input type="text" id="new-excerpt-ar" name="excerpt_ar" class="input-field" dir="rtl" placeholder="يُترجم تلقائياً...">
+            </div>
 
             {{-- Rich Text Editor (default) --}}
             <div id="editor-rich">
@@ -222,5 +236,45 @@
 
     // Init TinyMCE on page load (default mode)
     initTinyMCE();
+
+    // ── Auto-translate EN → AR ────────────────────────────────────────────────
+    async function translateToAr(text) {
+        const res = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=en|ar');
+        const data = await res.json();
+        return data.responseData?.translatedText || null;
+    }
+
+    function debounce(fn, ms) {
+        let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+    }
+
+    async function retranslate(enId, arId, statusId) {
+        const text = document.getElementById(enId).value.trim();
+        if (!text) return;
+        const status = document.getElementById(statusId);
+        status.textContent = 'جارٍ الترجمة...';
+        const translated = await translateToAr(text);
+        if (translated) {
+            document.getElementById(arId).value = translated;
+            status.textContent = '✓';
+            setTimeout(() => status.textContent = '', 2000);
+        } else {
+            status.textContent = '✗ فشل';
+        }
+    }
+
+    function setupAutoTranslate(enId, arId, statusId) {
+        const enEl = document.getElementById(enId);
+        const arEl = document.getElementById(arId);
+        if (!enEl || !arEl) return;
+        const doTranslate = debounce(async () => {
+            if (!enEl.value.trim() || arEl.value.trim()) return;
+            retranslate(enId, arId, statusId);
+        }, 900);
+        enEl.addEventListener('input', doTranslate);
+    }
+
+    setupAutoTranslate('new-title',   'new-title-ar',   'new-title-status');
+    setupAutoTranslate('new-excerpt', 'new-excerpt-ar', 'new-excerpt-status');
 </script>
 @endsection
