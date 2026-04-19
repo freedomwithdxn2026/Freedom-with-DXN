@@ -115,20 +115,25 @@
     </div>
 </section>
 
-{{-- Stats --}}
-<section class="py-12" style="background-color: #452aa8;" aria-label="{{ $lang === 'ar' ? 'إحصائيات DXN' : 'DXN Statistics' }}">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-        @foreach([
-            ['v' => '180+', 'l' => $lang === 'ar' ? 'دولة' : 'Countries'],
-            ['v' => '22M+', 'l' => $lang === 'ar' ? 'عضو' : 'Members'],
-            ['v' => '35+', 'l' => $lang === 'ar' ? 'عاماً' : 'Years'],
-            ['v' => '1000+', 'l' => $lang === 'ar' ? 'منتج' : 'Products'],
-        ] as $stat)
-            <div class="text-center text-white">
-                <div class="text-3xl font-bold" style="color: #5ddf8e;">{{ $stat['v'] }}</div>
-                <div class="text-white text-sm">{{ $stat['l'] }}</div>
-            </div>
-        @endforeach
+{{-- Join DXN Video --}}
+<section class="py-16 md:py-20" style="background-color: #452aa8;" aria-label="{{ $lang === 'ar' ? 'فيديو انضم إلى DXN' : 'Join DXN video' }}">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="text-sm font-semibold uppercase tracking-widest mb-3" style="color: #f1d47f;">
+            {{ $lang === 'ar' ? 'شاهد هذا أولًا' : 'Watch This First' }}
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">
+            {{ $lang === 'ar' ? 'رحلتك نحو الحرية تبدأ الآن' : 'Your Journey to Freedom Begins Now' }}
+        </h2>
+        <p class="text-white/80 mb-8 max-w-2xl mx-auto">
+            {{ $lang === 'ar' ? '3 دقائق توضح لك كل ما تحتاج معرفته عن DXN وكيف يمكنك البدء اليوم.' : '3 minutes that show you everything you need to know about DXN and how to start today.' }}
+        </p>
+        <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl" style="padding-top: 56.25%;">
+            <iframe class="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/ltrQYyUNgU0?playsinline=1&rel=0"
+                    title="{{ $lang === 'ar' ? 'فرصة DXN' : 'DXN Opportunity' }}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen loading="lazy"></iframe>
+        </div>
     </div>
 </section>
 
