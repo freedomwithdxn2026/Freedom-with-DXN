@@ -95,18 +95,24 @@
                 </div>
 
                 {{-- Cart --}}
-                <button type="button" @click="$store.cart.open = true; $store.cart.refresh()" aria-label="{{ $lang === 'ar' ? 'عربة التسوق' : 'Shopping cart' }}"
-                        class="relative text-brand-violet hover:text-brand-green transition-colors p-1.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                    </svg>
-                    <span x-show="$store.cart.count > 0"
-                          x-text="$store.cart.count > 99 ? '99+' : $store.cart.count"
-                          x-transition:enter="transition ease-out duration-200"
-                          x-transition:enter-start="opacity-0 scale-50"
-                          x-transition:enter-end="opacity-100 scale-100"
-                          class="cart-badge tabular-nums"></span>
-                </button>
+                <div class="relative" @click.outside="$store.cart.open = false">
+                    <button type="button"
+                            @click="$store.cart.open = !$store.cart.open; if ($store.cart.open) $store.cart.refresh()"
+                            aria-label="{{ $lang === 'ar' ? 'عربة التسوق' : 'Shopping cart' }}"
+                            :aria-expanded="$store.cart.open.toString()"
+                            class="relative text-brand-violet hover:text-brand-green transition-colors p-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span x-show="$store.cart.count > 0"
+                              x-text="$store.cart.count > 99 ? '99+' : $store.cart.count"
+                              x-transition:enter="transition ease-out duration-200"
+                              x-transition:enter-start="opacity-0 scale-50"
+                              x-transition:enter-end="opacity-100 scale-100"
+                              class="cart-badge tabular-nums"></span>
+                    </button>
+                    @include('partials.cart-drawer')
+                </div>
 
                 {{-- Auth --}}
                 @auth

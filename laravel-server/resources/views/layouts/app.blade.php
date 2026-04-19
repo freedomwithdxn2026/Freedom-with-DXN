@@ -154,7 +154,6 @@
     </script>
 
     @include('partials.navbar')
-    @include('partials.cart-drawer')
 
     {{-- Flash Messages --}}
     @if(session('success'))
