@@ -96,6 +96,8 @@ Route::get('/blog/{blog}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/blog/{blog}/raw', [BlogController::class, 'showRaw'])->name('blog.show.raw');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'contactStore'])->name('contact.store');
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms-of-service');
 
 // Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
