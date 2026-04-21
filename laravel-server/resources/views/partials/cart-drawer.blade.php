@@ -9,7 +9,7 @@
      x-transition:leave-start="opacity-100 scale-100 translate-y-0"
      x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
      @keydown.escape.window="$store.cart.open = false"
-     class="fixed top-16 sm:top-20 lg:top-28 {{ $isAr ? 'left-4' : 'right-4' }} mt-2 w-[22rem] max-w-[calc(100vw-2rem)] z-[70] origin-top-{{ $isAr ? 'left' : 'right' }}"
+     class="absolute top-full {{ $isAr ? 'left-0' : 'right-0' }} mt-1 w-[22rem] max-w-[calc(100vw-2rem)] z-[70] origin-top-{{ $isAr ? 'left' : 'right' }}"
      style="display: none;"
      role="dialog"
      aria-label="{{ $isAr ? 'عربة التسوق' : 'Shopping cart' }}">
@@ -41,7 +41,6 @@
          x-transition:leave-end="opacity-0 -translate-y-2"
          class="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold"
          style="background-color: #edfaf3; color: #43af73; display: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#43af73" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
         {{ $isAr ? '✓ تمت الإضافة إلى السلة!' : '✓ Added to cart!' }}
     </div>
 
