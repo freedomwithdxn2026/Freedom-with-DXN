@@ -34,6 +34,20 @@
         </button>
     </div>
 
+    {{-- Added banner --}}
+    <div x-show="$store.cart.justAdded"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         class="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold"
+         style="background-color: #edfaf3; color: #236b43; display: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#236b43" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        {{ $isAr ? '✓ تمت الإضافة إلى السلة!' : '✓ Added to cart!' }}
+    </div>
+
     {{-- Items --}}
     <div class="max-h-[18rem] overflow-y-auto px-4 py-2">
         <template x-if="$store.cart.items.length === 0">
