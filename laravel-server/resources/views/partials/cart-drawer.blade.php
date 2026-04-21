@@ -9,13 +9,10 @@
      x-transition:leave-start="opacity-100 scale-100 translate-y-0"
      x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
      @keydown.escape.window="$store.cart.open = false"
-     class="absolute top-full {{ $isAr ? 'left-0' : 'right-0' }} mt-2 w-[22rem] max-w-[calc(100vw-1.5rem)] z-[70] origin-top-{{ $isAr ? 'left' : 'right' }}"
+     class="fixed top-16 sm:top-20 lg:top-28 {{ $isAr ? 'left-4' : 'right-4' }} mt-2 w-[22rem] max-w-[calc(100vw-2rem)] z-[70] origin-top-{{ $isAr ? 'left' : 'right' }}"
      style="display: none;"
      role="dialog"
      aria-label="{{ $isAr ? 'عربة التسوق' : 'Shopping cart' }}">
-
-    {{-- Arrow tip --}}
-    <div class="absolute -top-1.5 {{ $isAr ? 'left-5' : 'right-5' }} w-3 h-3 bg-white border-t border-l border-gray-100 rotate-45 z-10"></div>
 
     {{-- Card --}}
     <div class="overflow-hidden rounded-2xl shadow-2xl border border-gray-100 bg-white">
