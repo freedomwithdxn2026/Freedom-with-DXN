@@ -210,15 +210,11 @@
             </div>
         </div>
         <div class="grid grid-cols-1 gap-4">
-            @foreach([
-                ['d' => 'Sunday', 't' => '3pm-5pm', 'b' => 'Arabic'],
-            ] as $s)
-                <div class="bg-white rounded-xl p-6 shadow-sm min-h-[184px] flex flex-col justify-start" style="border: 1px solid rgba(55,28,155,0.1);">
-                    <p class="font-bold" style="color: #46387b;">{{ $s['d'] }}</p>
-                    <p class="text-sm text-gray-600 mt-1">{{ $s['t'] }}</p>
-                    <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-2 font-medium w-fit" style="background: rgba(67,175,115,0.12); color: #38a868;">{{ $s['b'] }}</span>
-                </div>
-            @endforeach
+            <div class="bg-white rounded-xl p-6 shadow-sm min-h-[184px] flex flex-col justify-start" style="border: 1px solid rgba(55,28,155,0.1);">
+                <p class="font-bold" style="color: #46387b;">{{ $lang === 'ar' ? 'الأحد' : 'Sunday' }}</p>
+                <p class="text-sm text-gray-600 mt-1">{{ $lang === 'ar' ? '٣م–٥م' : '3pm-5pm' }}</p>
+                <span class="inline-block text-xs px-2 py-0.5 rounded-full mt-2 font-medium w-fit" style="background: rgba(67,175,115,0.12); color: #38a868;">{{ $lang === 'ar' ? 'عربي' : 'Arabic' }}</span>
+            </div>
         </div>
     </div>
 </section>

@@ -55,7 +55,7 @@
     ];
 
     $zoomSessions = [
-        ['day' => 'Sunday', 'time' => '3pm-5pm', 'lang_label' => 'Arabic', 'accent' => '#43af73'],
+        ['day' => $lang === 'ar' ? 'الأحد' : 'Sunday', 'time' => $lang === 'ar' ? '٣م–٥م' : '3pm-5pm', 'lang_label' => $lang === 'ar' ? 'عربي' : 'Arabic', 'accent' => '#43af73'],
     ];
 
     $faqs = $lang === 'ar' ? [
