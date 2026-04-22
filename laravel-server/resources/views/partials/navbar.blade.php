@@ -79,7 +79,7 @@
                                   x-transition:enter="transition ease-out duration-200"
                                   x-transition:enter-start="opacity-0 scale-50"
                                   x-transition:enter-end="opacity-100 scale-100"
-                                  style="display:none; position:absolute; top:-7px; right:-9px; min-width:18px; height:18px; padding:0 4px; border-radius:999px; background:#1a1a1a; color:#fff; font-size:11px; font-weight:700; line-height:18px; text-align:center; box-sizing:border-box; pointer-events:none;"></span>
+                                  style="display:none; position:absolute; top:-7px; right:-9px; min-width:18px; height:18px; padding:0 4px; border-radius:999px; background:#bf3c36; color:#fff; font-size:11px; font-weight:700; line-height:18px; text-align:center; box-sizing:border-box; pointer-events:none;"></span>
                         </div>
                     </button>
                     @include('partials.cart-drawer')
