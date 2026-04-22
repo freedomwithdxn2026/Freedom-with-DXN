@@ -42,7 +42,7 @@
          class="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold"
          style="background-color: #edfaf3; color: #43af73; display: none;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#43af73" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        {{ $isAr ? '✓ تمت الإضافة إلى السلة!' : '✓ Added to cart!' }}
+        {{ $isAr ? 'تمت الإضافة إلى السلة!' : 'Added to cart!' }}
     </div>
 
     {{-- Items --}}
