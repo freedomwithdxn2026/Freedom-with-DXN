@@ -34,10 +34,10 @@
      aria-label="{{ $lang === 'ar' ? 'التنقل الرئيسي' : 'Main navigation' }}"
      x-data="{ menuOpen: false, dropdownOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="nav-inner flex items-center justify-between h-16 sm:h-20 lg:h-28 transition-all duration-300">
+        <div class="nav-inner flex items-center justify-between h-12 sm:h-14 lg:h-16 transition-all duration-300">
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0">
-                <img src="/footer-lg.png" alt="Grow with DXN - Home" width="200" height="96" class="nav-logo h-12 sm:h-16 lg:h-24 w-auto object-contain transition-all duration-300">
+                <img src="/footer-lg.png" alt="Grow with DXN - Home" width="200" height="96" class="nav-logo h-8 sm:h-10 lg:h-12 w-auto object-contain transition-all duration-300">
             </a>
 
             {{-- Desktop Nav --}}
