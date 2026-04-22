@@ -34,7 +34,7 @@
                 <h3 class="font-bold text-dxn-darkgreen text-lg mt-6 mb-2">{{ $lang === 'ar' ? 'طريقة الدفع' : 'Payment Method' }}</h3>
                 <div class="space-y-2">
                     <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-                        <input type="radio" name="payment_method" value="cod" checked class="accent-dxn-green">
+                        <input type="radio" name="payment_method" value="cash" checked class="accent-dxn-green">
                         <span>{{ $lang === 'ar' ? 'الدفع عند الاستلام' : 'Cash on Delivery' }}</span>
                     </label>
                     <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">

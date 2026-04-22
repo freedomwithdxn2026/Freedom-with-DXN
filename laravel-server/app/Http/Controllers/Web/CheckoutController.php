@@ -38,7 +38,7 @@ class CheckoutController extends Controller
             'city' => 'required|string',
             'country' => 'required|string',
             'phone' => 'required|string',
-            'payment_method' => 'required|in:cod,bank_transfer',
+            'payment_method' => 'required|in:cash,bank_transfer',
         ]);
 
         $cart = session('cart', []);
