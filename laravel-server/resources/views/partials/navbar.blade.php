@@ -33,7 +33,7 @@
 </style>
 @endpush
 
-<nav class="sticky top-0 bg-white z-50 transition-all duration-300"
+<nav class="fixed top-0 left-0 right-0 w-full bg-white z-50 transition-all duration-300"
      aria-label="{{ $lang === 'ar' ? 'التنقل الرئيسي' : 'Main navigation' }}"
      x-data="{ menuOpen: false, dropdownOpen: false, scrolled: false }"
      x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
