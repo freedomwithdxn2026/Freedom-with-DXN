@@ -94,9 +94,9 @@
                             @click="$store.cart.open = !$store.cart.open; if ($store.cart.open) $store.cart.refresh()"
                             aria-label="{{ $lang === 'ar' ? 'عربة التسوق' : 'Shopping cart' }}"
                             :aria-expanded="$store.cart.open.toString()"
-                            class="w-10 h-10 rounded-full flex items-center justify-center text-brand-violet hover:text-brand-green hover:bg-brand-violet/10 transition-colors">
+                            class="flex items-center justify-center text-brand-violet hover:text-brand-green transition-colors">
                         <div class="relative inline-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                             </svg>
                             <span x-show="$store.cart.count > 0"
