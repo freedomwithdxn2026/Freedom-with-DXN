@@ -96,7 +96,7 @@
                 <a href="{{ $hero['btn1Link'] ?? route('products') }}" class="btn-primary px-8 py-3.5 shadow-lg">
                     {{ $lang === 'ar' ? 'تسوق المنتجات' : ($hero['btn1Text'] ?? 'Shop Now') }}
                 </a>
-                <a href="{{ $hero['btn2Link'] ?? route('join') }}" class="inline-flex items-center justify-center border-2 border-white text-white hover:bg-brand-violet hover:border-brand-violet px-8 py-3.5 rounded-xl font-semibold transition-all">
+                <a href="{{ $hero['btn2Link'] ?? route('join') }}" class="inline-flex items-center justify-center border-2 border-white text-white hover:bg-brand-violet hover:border-brand-violet px-8 py-3.5 rounded-full font-semibold transition-all">
                     {{ $lang === 'ar' ? 'ابدأ رحلتي' : ($hero['btn2Text'] ?? 'Start My Journey') }}
                 </a>
             </div>
