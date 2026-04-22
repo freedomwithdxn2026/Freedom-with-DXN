@@ -38,6 +38,7 @@ class CheckoutController extends Controller
             'city' => 'required|string',
             'country' => 'required|string',
             'phone' => 'required|string',
+            'email' => 'required|email',
             'payment_method' => 'required|in:cash,bank_transfer',
         ]);
 
@@ -73,6 +74,7 @@ class CheckoutController extends Controller
                 'city' => $request->city,
                 'country' => $request->country,
                 'phone' => $request->phone,
+                'email' => $request->email,
             ]),
         ]);
 

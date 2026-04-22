@@ -30,6 +30,10 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">{{ $lang === 'ar' ? 'الهاتف *' : 'Phone *' }}</label>
                     <input type="tel" name="phone" required value="{{ old('phone') }}" class="input-field">
                 </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{{ $lang === 'ar' ? 'البريد الإلكتروني *' : 'Email *' }}</label>
+                    <input type="email" name="email" required value="{{ old('email', auth()->user()->email ?? '') }}" class="input-field" placeholder="your@email.com">
+                </div>
 
                 <h3 class="font-bold text-dxn-darkgreen text-lg mt-6 mb-2">{{ $lang === 'ar' ? 'طريقة الدفع' : 'Payment Method' }}</h3>
                 <div class="space-y-2">
